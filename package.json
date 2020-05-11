@@ -1,0 +1,46 @@
+{
+  "name": "vue-adminlte",
+  "version": "0.1.0",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "demo": "vue-cli-service demo",
+    "docs": "npm run docs:serve",
+    "docs:build": "vue-cli-service docs --mode build",
+    "docs:serve": "vue-cli-service docs --mode serve",
+    "prepublish": "vue-cli-service lint && vue-cli-service docs --mode build && vue-cli-service build",
+    "start": "vue-cli-service serve"
+  },
+  "main": "dist/vue-adminlte.common.js",
+  "module": "dist/vue-adminlte.esm.js",
+  "unpkg": "dist/vue-adminlte.umd.min.js",
+  "files": [
+    "dist/vue-adminlte.common.js",
+    "dist/vue-adminlte.umd.min.js",
+    "dist/vue-adminlte.umd.js",
+    "dist/vue-adminlte.esm.js",
+    "src"
+  ],
+  "dependencies": {
+    "core-js": "^3.6.4"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.3.0",
+    "@vue/cli-plugin-eslint": "^4.3.0",
+    "@vue/cli-service": "^4.3.0",
+    "@vue/eslint-config-standard": "^5.1.2",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-vue": "^6.2.2",
+    "vue-cli-plugin-p11n": "^0.4.0",
+    "vue-template-compiler": "^2.6.11",
+    "vue": "^2.6.11"
+  },
+  "jsdelivr": "dist/vue-adminlte.umd.min.js",
+  "sideeffects": false
+}
