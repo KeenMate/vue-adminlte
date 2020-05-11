@@ -9,7 +9,7 @@
     "docs": "npm run docs:serve",
     "docs:build": "vue-cli-service docs --mode build",
     "docs:serve": "vue-cli-service docs --mode serve",
-    "prepublish": "vue-cli-service lint && vue-cli-service docs --mode build && vue-cli-service build",
+    "prepublish": "vue-cli-service lint && vue-cli-service build",
     "start": "vue-cli-service serve"
   },
   "main": "dist/vue-adminlte.common.js",
@@ -39,7 +39,8 @@
     "eslint-plugin-vue": "^6.2.2",
     "vue-cli-plugin-p11n": "^0.4.0",
     "vue-template-compiler": "^2.6.11",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+	  "webpack": "^4.43.0"
   },
   "jsdelivr": "dist/vue-adminlte.umd.min.js",
   "sideeffects": false
