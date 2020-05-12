@@ -1,0 +1,3 @@
+[submodule "src/vendors/adminlte"]
+	path = src/vendors/adminlte
+	url = git@github.com:KeenMate/AdminLTE.git

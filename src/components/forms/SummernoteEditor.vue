@@ -12,7 +12,3 @@ export default {
   }
 }
 </script>
-
-<style>
-  @import "AdminLTE/plugins/summernote/summernote-bs4.min.css";
-</style>

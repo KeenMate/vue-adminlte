@@ -1,17 +1,17 @@
 <template>
-  <div class="demo">
-    <h1>Plugin Demo</h1>
-    <p>add: {{ a }} + {{ b }} = {{ $add(a, b) }}</p>
-  </div>
+	<div>
+		<DemoSidenav />
+		<FormsPage />
+	</div>
 </template>
 
 <script>
+import DemoSidenav from "./DemoSidenav"
+import FormsPage from "./FormsPage"
+
 export default {
-  name: 'demo',
-  data: () => ({ a: 1, b: 1 })
+	name: "demo",
+	components: {FormsPage, DemoSidenav},
+	data: () => ({a: 1, b: 1})
 }
-</script>
-
-<style>
-
-</style>
+</script><style></style>

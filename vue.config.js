@@ -1,9 +1,16 @@
 const path = require("path")
+const webpack = require("webpack")
 
 module.exports = {
   configureWebpack: {
     resolve: {
-      AdminLTE: path.join(__dirname, "src/vendors/adminlte")
-    }
+      alias: {
+	      AdminLTE: path.resolve(__dirname, "src/vendors/adminlte"),
+	      jquery: path.resolve(__dirname, "src/vendors/adminlte/plugins/jquery")
+      }
+    },
+	  externals: {
+    	jquery: "$"
+	  }
   }
 }
