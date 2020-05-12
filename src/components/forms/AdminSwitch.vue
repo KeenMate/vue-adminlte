@@ -37,10 +37,12 @@ export default {
 		innerWrapperStyles() {
 			const styles = ["custom-control custom-switch"]
 
-			if (this.switchOffColor)
+			if (this.switchOffColor) {
 				styles.push("custom-switch-off-" + this.switchOffColor)
-			if (this.switchOnColor)
+			}
+			if (this.switchOnColor) {
 				styles.push("custom-switch-on-" + this.switchOnColor)
+			}
 
 			return styles
 		}

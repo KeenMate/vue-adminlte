@@ -120,32 +120,33 @@ export default {
 		innerInputStyles() {
 			const styles = ["form-control"]
 
-			if (this.isInvalid)
+			if (this.isInvalid) {
 				styles.push("is-invalid")
-			else if (this.isValid)
+			} else if (this.isValid) {
 				styles.push("is-valid")
-			else if (this.isWarning)
+			} else if (this.isWarning) {
 				styles.push("is-warning")
+			}
 
 			return styles
-		}
-		,
+		},
 		isInputGroup() {
 			return this.$scopedSlots.prepend || this.$scopedSlots.append
-		}
-		,
+		},
 		wrapperStyles() {
 			const styles = []
 
-			if (this.isInputGroup)
+			if (this.isInputGroup) {
 				styles.push("input-group")
-			else
+			} else {
 				styles.push("form-group")
+			}
 
-			if (this.isSmall)
+			if (this.isSmall) {
 				styles.push("input-group-sm")
-			else if (this.isLarge)
+			} else if (this.isLarge) {
 				styles.push("input-group-lg")
+			}
 
 			return styles
 		}

@@ -35,9 +35,11 @@ export default {
 		filteredListeners() {
 			const listeners = {}
 
-			for (const key in this.$listeners)
-				if (key !== "input")
+			for (const key in this.$listeners) {
+				if (key !== "input") {
 					listeners[key] = this.$listeners[key]
+				}
+			}
 
 			return listeners
 		}

@@ -1,5 +1,7 @@
 <template>
-	<span class="">New</span>
+	<span :class="spanStyles">
+		<slot></slot>
+	</span>
 </template>
 
 <script>

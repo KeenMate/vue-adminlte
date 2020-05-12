@@ -11,6 +11,7 @@
 
 <script>
 import FormLabel from "./FormLabel"
+
 export default {
 	name: "AdminSelect",
 	components: {FormLabel},

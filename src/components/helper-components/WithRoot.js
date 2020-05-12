@@ -1,20 +1,19 @@
 export default {
 	functional: true,
+	name: "WithRoot",
 	props: {
 		if: Boolean
 	},
 	render(h, context) {
 		const {children, props} = context
 
-		if (props.if) {
-			return children
-		} else {
-			return children
+		return props.if
+			? children
+			: children
 				.map((child) => {
 					if (child.children) return child.children
 					return child.componentOptions != null ? child.componentOptions.children : null
 				})
-				.filter((list) => list) // remove any null and void
-		}
+				.filter((list) => list)
 	}
 }

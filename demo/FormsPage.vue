@@ -459,24 +459,24 @@
 </template>
 
 <script>
-import Page from "../src/components/structure/Page"
-import FormInput from "../src/components/forms/FormInput"
-import Checkbox from "../src/components/forms/Checkbox"
-import CheckboxGroup from "../src/components/forms/CheckboxGroup"
-import RadioGroup from "../src/components/forms/RadioGroup"
-import AdminSelect from "../src/components/forms/AdminSelect"
-import AdminSwitch from "../src/components/forms/AdminSwitch"
+// import Page from "../src/components/structure/Page"
+// import FormInput from "../src/components/forms/FormInput"
+// import Checkbox from "../src/components/forms/Checkbox"
+// import CheckboxGroup from "../src/components/forms/CheckboxGroup"
+// import RadioGroup from "../src/components/forms/RadioGroup"
+// import AdminSelect from "../src/components/forms/AdminSelect"
+// import AdminSwitch from "../src/components/forms/AdminSwitch"
 
 export default {
 	name: "FormsPage",
-	components: {
-		AdminSwitch,
-		AdminSelect, RadioGroup,
-		CheckboxGroup,
-		Checkbox,
-		FormInput,
-		Page
-	},
+	// components: {
+	// 	AdminSwitch,
+	// 	AdminSelect, RadioGroup,
+	// 	CheckboxGroup,
+	// 	Checkbox,
+	// 	FormInput,
+	// 	Page
+	// },
 	data() {
 		return {
 			checkboxOptions: [
