@@ -3,7 +3,14 @@
 		<FormLabel :fas-icon="fasIcon" :far-icon="farIcon" :input-id="inputId">
 			{{label}}
 		</FormLabel>
-		<select :id="inputId" class="form-control" :multiple="isMultiple" :disabled="isDisabled">
+		<select
+			:id="inputId"
+			class="form-control"
+			:multiple="isMultiple"
+			:disabled="isDisabled"
+			:value="value"
+			@input="$emit('input', $event.target.value)"
+		>
 			<slot></slot>
 		</select>
 	</div>

@@ -123,7 +123,8 @@
 							<FormInput>
 								<template #prepend>
 									<span class="input-group-text">
-										<input type="checkbox">
+										<!--<input type="checkbox">-->
+										<Checkbox :value="true"></Checkbox>
 									</span>
 								</template>
 							</FormInput>

@@ -55,6 +55,10 @@ export default {
 	name: "FormInput",
 	components: {WithRoot, FormLabel},
 	props: {
+		/**
+		 * @type {String}
+		 * This is value
+		 */
 		value: null,
 		label: String,
 		isInvalid: Boolean,
