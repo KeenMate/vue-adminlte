@@ -26,7 +26,8 @@ export default {
 		paddingless: Boolean,
 		isInfo: Boolean,
 		isSuccess: Boolean,
-		isDanger: Boolean
+		isDanger: Boolean,
+		isWarning: Boolean
 	},
 	computed: {
 		cardStyles() {
@@ -41,6 +42,8 @@ export default {
 				styles.push("card-success")
 			if (this.isDanger)
 				styles.push("card-danger")
+			if (this.isWarning)
+				styles.push("card-warning")
 
 			return styles
 		}

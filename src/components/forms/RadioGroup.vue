@@ -2,23 +2,21 @@
 	<FormCheckGroup
 		:check-component="component"
 		v-bind="{...$attrs, ...$props}"
+		:value="[value]"
 		v-on="filteredListeners"
 		@input="onInput"
 	/>
 </template>
 
 <script>
-import Checkbox from "./Checkbox"
 import FormCheckGroup from "./FormCheckGroup"
+import Radio from "./Radio"
 
 export default {
-	name: "CheckboxGroup",
+	name: "RadioGroup",
 	components: {FormCheckGroup},
 	props: {
-		value: {
-			type: Array,
-			default: () => []
-		},
+		value: null,
 		options: {
 			type: Array,
 			default: () => []
@@ -46,15 +44,12 @@ export default {
 	},
 	methods: {
 		onInput(option, checked) {
-			this.$emit("input", checked
-				? [...this.value, this.getValue(option)]
-				: this.value.filter(x => x !== this.getValue(option))
-			)
+			this.$emit("input", this.getValue(option))
 		}
 	},
 	data() {
 		return {
-			component: Checkbox
+			component: Radio
 		}
 	}
 }

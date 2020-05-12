@@ -1,5 +1,5 @@
 <template>
-	<FormCheck type="checkbox" v-bind="{...$attrs, ...$props}" v-on="$listeners">
+	<FormCheck type="radio" v-bind="{...$attrs, ...$props}" v-on="$listeners">
 		<slot></slot>
 	</FormCheck>
 </template>
@@ -8,7 +8,7 @@
 import FormCheck from "./FormCheck"
 
 export default {
-	name: "Checkbox",
+	name: "Radio",
 	components: {FormCheck},
 	props: {
 		inputId: String,

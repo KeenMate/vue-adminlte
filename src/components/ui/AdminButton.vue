@@ -29,7 +29,7 @@ export default {
 			else if (this.isWarning)
 				styles.push("btn-warning")
 
-			return styles.join(" ")
+			return styles
 		}
 	}
 }

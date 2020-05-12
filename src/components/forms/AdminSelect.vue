@@ -1,9 +1,9 @@
 <template>
 	<div class="form-group">
-		<FormLabel :fa-icon="faIcon" :input-id="inputId">
+		<FormLabel :fas-icon="fasIcon" :far-icon="farIcon" :input-id="inputId">
 			{{label}}
 		</FormLabel>
-		<select :id="inputId" class="form-control" :multiple="multiple">
+		<select :id="inputId" class="form-control" :multiple="isMultiple" :disabled="isDisabled">
 			<slot></slot>
 		</select>
 	</div>
@@ -18,8 +18,10 @@ export default {
 		label: String,
 		inputId: String,
 		value: String,
-		multiple: Boolean,
-		faIcon: String
+		isMultiple: Boolean,
+		isDisabled: Boolean,
+		fasIcon: String,
+		farIcon: String
 	}
 }
 </script>

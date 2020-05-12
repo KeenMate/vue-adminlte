@@ -1,6 +1,6 @@
 <template>
 	<label :for="inputId">
-		<i v-if="faIcon" :class="'fas fa-' + faIcon"></i>
+		<i v-if="fasIcon || farIcon" :class="'fa' + (fasIcon && 's' || 'r') + ' fa-' + (fasIcon || farIcon)"></i>
 		<slot></slot>
 	</label>
 </template>
@@ -9,8 +9,9 @@
 export default {
 	name: "FormLabel",
 	props: {
-		faIcon: String,
-		inputId: String
+		inputId: String,
+		fasIcon: String,
+		farIcon: String
 	}
 }
 </script>

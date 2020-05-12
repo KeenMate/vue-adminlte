@@ -27,7 +27,7 @@ export default {
 			else if (this.isPrimary)
 				styles.push("badge-primary")
 
-			return styles.join(" ")
+			return styles
 		}
 	}
 }

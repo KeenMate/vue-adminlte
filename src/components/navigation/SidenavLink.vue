@@ -32,7 +32,7 @@ export default {
 			if (this.isOpen)
 				styles.push("menu-open")
 
-			return styles.join(" ")
+			return styles
 		},
 		linkStyles() {
 			const styles = ["nav-link"]
@@ -40,7 +40,7 @@ export default {
 			if (this.isActive)
 				styles.push("active")
 
-			return styles.join(" ")
+			return styles
 		}
 	}
 }

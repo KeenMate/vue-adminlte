@@ -1,19 +1,43 @@
 <template>
 	<div :class="wrapperStyles">
-		<FormLabel :class="labelStyles" v-if="!isInputGroup && (label || faIcon)" :fa-icon="faIcon" :input-id="inputId">
+		<FormLabel
+			v-if="!isInputGroup && (label || fasIcon)"
+			:class="labelStyles"
+			:input-id="inputId"
+			:fas-icon="fasIcon"
+			:far-icon="farIcon"
+		>
 			{{label}}
 		</FormLabel>
 		<div v-if="$scopedSlots.prepend" class="input-group-prepend">
 			<slot name="prepend"></slot>
 		</div>
-		<input
-			:class="[...innerInputStyles, ...inputStyles]"
-			:type="type"
-			:id="inputId"
-			:placeholder="placeholder"
-			:value="value"
-			@input="$emit('input', $event.target.value)"
-		>
+		<!--<div v-if="isHorizontal" :class="horizontalStyles"></div>-->
+		<WithRoot :if="isHorizontal">
+			<div :class="horizontalStyles">
+				<textarea
+					v-if="isTextarea"
+					:class="[...innerInputStyles, ...inputStyles]"
+					:id="inputId"
+					:placeholder="placeholder"
+					:value="value"
+					:disabled="isDisabled"
+					:rows="rows"
+					:cols="cols"
+					@input="$emit('input', $event.target.value)"
+				></textarea>
+				<input
+					v-else
+					:class="[...innerInputStyles, ...inputStyles]"
+					:type="type"
+					:id="inputId"
+					:placeholder="placeholder"
+					:value="value"
+					:disabled="isDisabled"
+					@input="$emit('input', $event.target.value)"
+				>
+			</div>
+		</WithRoot>
 		<span v-if="$scopedSlots['invalid-msg'] && isInvalid" class="error invalid-feedback">
 			<slot name="invalid-msg"></slot>
 		</span>
@@ -21,28 +45,26 @@
 			<slot name="append"></slot>
 		</div>
 	</div>
-	<!--
-	<div class="input-group mb-3">
-		<div class="input-group-prepend">
-			<span class="input-group-text">@</span>
-		</div>
-		<input type="text" class="form-control" placeholder="Username">
-	</div>-->
 </template>
 
 <script>
 import FormLabel from "./FormLabel"
+import WithRoot from "../helper-components/WithRoot"
 
 export default {
 	name: "FormInput",
-	components: {FormLabel},
+	components: {WithRoot, FormLabel},
 	props: {
 		value: null,
 		label: String,
 		isInvalid: Boolean,
+		isValid: Boolean,
+		isWarning: Boolean,
 		inputId: String,
 		placeholder: String,
-		faIcon: String,
+		isHorizontal: Boolean,
+		fasIcon: String,
+		farIcon: String,
 		isSmall: Boolean,
 		isLarge: Boolean,
 		labelStyles: {
@@ -53,9 +75,19 @@ export default {
 			type: Array,
 			default: () => []
 		},
+		horizontalStyles: {
+			type: Array,
+			default:
+				() => []
+		},
+		isDisabled: Boolean,
+		isTextarea: Boolean,
+		rows: [String, Number],
+		cols: [String, Number],
 		type: {
 			type: String,
-			default: "text",
+			default:
+				"text",
 			validator(x) {
 				return [
 					"button",
@@ -90,12 +122,18 @@ export default {
 
 			if (this.isInvalid)
 				styles.push("is-invalid")
+			else if (this.isValid)
+				styles.push("is-valid")
+			else if (this.isWarning)
+				styles.push("is-warning")
 
 			return styles
-		},
+		}
+		,
 		isInputGroup() {
 			return this.$scopedSlots.prepend || this.$scopedSlots.append
-		},
+		}
+		,
 		wrapperStyles() {
 			const styles = []
 

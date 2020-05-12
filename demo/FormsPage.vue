@@ -178,7 +178,8 @@
 						label="Email"
 						placeholder="Email"
 						:label-styles="['col-sm-2']"
-						:input-styles="['col-sm-10']"
+						:horizontal-styles="['col-sm-10']"
+						is-horizontal
 					/>
 					<FormInput class="row"
 						input-id="inputPassword3"
@@ -186,7 +187,8 @@
 						label="Password"
 						placeholder="Password"
 						:label-styles="['col-sm-2']"
-						:input-styles="['col-sm-10']"
+						:horizontal-styles="['col-sm-10']"
+						is-horizontal
 					/>
 					<div class="form-group">
 						<div class="offset-sm-2 col-sm-10">
@@ -207,158 +209,111 @@
 			<!-- right column -->
 			<div class="col-md-6">
 				<!-- general form elements disabled -->
-				<div class="card card-warning">
-					<div class="card-header">
-						<h3 class="card-title">General Elements</h3>
-					</div>
-					<!-- /.card-header -->
-					<div class="card-body">
-						<form role="form">
-							<div class="row">
-								<div class="col-sm-6">
-									<!-- text input -->
-									<div class="form-group">
-										<label>Text</label>
-										<input type="text" class="form-control" placeholder="Enter ...">
-									</div>
-								</div>
-								<div class="col-sm-6">
-									<div class="form-group">
-										<label>Text Disabled</label>
-										<input type="text" class="form-control" placeholder="Enter ..." disabled>
-									</div>
-								</div>
+				<Card title="General Elements" is-warning>
+					<form role="form">
+						<div class="row">
+							<div class="col-sm-6">
+								<FormInput label="Text" placeholder="Enter ..." />
 							</div>
-							<div class="row">
-								<div class="col-sm-6">
-									<!-- textarea -->
-									<div class="form-group">
-										<label>Textarea</label>
-										<textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
-									</div>
-								</div>
-								<div class="col-sm-6">
-									<div class="form-group">
-										<label>Textarea Disabled</label>
-										<textarea class="form-control" rows="3" placeholder="Enter ..." disabled></textarea>
-									</div>
-								</div>
+							<div class="col-sm-6">
+								<FormInput label="Text Disabled" placeholder="Enter ..." is-disabled />
 							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<!-- textarea -->
+								<FormInput label="Textarea" rows="3" placeholder="Enter ..." is-textarea />
+							</div>
+							<div class="col-sm-6">
+								<FormInput label="Textarea Disabled" rows="3" placeholder="Enter ..." is-textarea is-disabled />
+							</div>
+						</div>
 
-							<!-- input states -->
-							<div class="form-group">
-								<label class="col-form-label" for="inputSuccess"><i class="fas fa-check"></i> Input with
-									success</label>
-								<input type="text" class="form-control is-valid" id="inputSuccess" placeholder="Enter ...">
-							</div>
-							<div class="form-group">
-								<label class="col-form-label" for="inputWarning"><i class="far fa-bell"></i> Input with
-									warning</label>
-								<input type="text" class="form-control is-warning" id="inputWarning" placeholder="Enter ...">
-							</div>
-							<div class="form-group">
-								<label class="col-form-label" for="inputError"><i class="far fa-times-circle"></i> Input with
-									error</label>
-								<input type="text" class="form-control is-invalid" id="inputError" placeholder="Enter ...">
-							</div>
+						<!-- input states -->
+						<FormInput
+							label="Input with success"
+							fas-icon="check"
+							placeholder="Enter ..."
+							is-valid
+						/>
+						<FormInput
+							label="Input with warning"
+							far-icon="bell"
+							placeholder="Enter ..."
+							is-warning
+						/>
+						<FormInput
+							label="Input with error"
+							far-icon="times-circle"
+							placeholder="Enter ..."
+							is-invalid
+						/>
 
-							<div class="row">
-								<div class="col-sm-6">
-									<!-- checkbox -->
-									<div class="form-group">
-										<div class="form-check">
-											<input class="form-check-input" type="checkbox">
-											<label class="form-check-label">Checkbox</label>
-										</div>
-										<div class="form-check">
-											<input class="form-check-input" type="checkbox" checked>
-											<label class="form-check-label">Checkbox checked</label>
-										</div>
-										<div class="form-check">
-											<input class="form-check-input" type="checkbox" disabled>
-											<label class="form-check-label">Checkbox disabled</label>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-6">
-									<!-- radio -->
-									<div class="form-group">
-										<div class="form-check">
-											<input class="form-check-input" type="radio" name="radio1">
-											<label class="form-check-label">Radio</label>
-										</div>
-										<div class="form-check">
-											<input class="form-check-input" type="radio" name="radio1" checked>
-											<label class="form-check-label">Radio checked</label>
-										</div>
-										<div class="form-check">
-											<input class="form-check-input" type="radio" disabled>
-											<label class="form-check-label">Radio disabled</label>
-										</div>
-									</div>
-								</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<!-- checkbox -->
+								<CheckboxGroup
+									:options="checkboxOptions"
+									v-model="checkedCheckboxes"
+									:get-text="x => x.text"
+									:get-value="x => x.value"
+									:get-disabled="x => x.disabled"
+								/>
 							</div>
+							<div class="col-sm-6">
+								<RadioGroup
+									:options="radioOptions"
+									v-model="radioValue"
+									:get-text="x => x.text"
+									:get-value="x => x.value"
+									:get-disabled="x => x.disabled"
+								/>
+							</div>
+						</div>
 
-							<div class="row">
-								<div class="col-sm-6">
-									<!-- select -->
-									<div class="form-group">
-										<label>Select</label>
-										<select class="form-control">
-											<option>option 1</option>
-											<option>option 2</option>
-											<option>option 3</option>
-											<option>option 4</option>
-											<option>option 5</option>
-										</select>
-									</div>
-								</div>
-								<div class="col-sm-6">
-									<div class="form-group">
-										<label>Select Disabled</label>
-										<select class="form-control" disabled>
-											<option>option 1</option>
-											<option>option 2</option>
-											<option>option 3</option>
-											<option>option 4</option>
-											<option>option 5</option>
-										</select>
-									</div>
-								</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<AdminSelect label="Select">
+									<option>option 1</option>
+									<option>option 2</option>
+									<option>option 3</option>
+									<option>option 4</option>
+									<option>option 5</option>
+								</AdminSelect>
 							</div>
+							<div class="col-sm-6">
+								<AdminSelect label="Select Disabled" is-disabled>
+									<option>option 1</option>
+									<option>option 2</option>
+									<option>option 3</option>
+									<option>option 4</option>
+									<option>option 5</option>
+								</AdminSelect>
+							</div>
+						</div>
 
-							<div class="row">
-								<div class="col-sm-6">
-									<!-- Select multiple-->
-									<div class="form-group">
-										<label>Select Multiple</label>
-										<select multiple class="form-control">
-											<option>option 1</option>
-											<option>option 2</option>
-											<option>option 3</option>
-											<option>option 4</option>
-											<option>option 5</option>
-										</select>
-									</div>
-								</div>
-								<div class="col-sm-6">
-									<div class="form-group">
-										<label>Select Multiple Disabled</label>
-										<select multiple class="form-control" disabled>
-											<option>option 1</option>
-											<option>option 2</option>
-											<option>option 3</option>
-											<option>option 4</option>
-											<option>option 5</option>
-										</select>
-									</div>
-								</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<AdminSelect label="Select Multiple" is-multiple>
+									<option>option 1</option>
+									<option>option 2</option>
+									<option>option 3</option>
+									<option>option 4</option>
+									<option>option 5</option>
+								</AdminSelect>
 							</div>
-						</form>
-					</div>
-					<!-- /.card-body -->
-				</div>
-				<!-- /.card -->
+							<div class="col-sm-6">
+								<AdminSelect label="Select Multiple Disabled" is-multiple is-disabled>
+									<option>option 1</option>
+									<option>option 2</option>
+									<option>option 3</option>
+									<option>option 4</option>
+									<option>option 5</option>
+								</AdminSelect>
+							</div>
+						</div>
+					</form>
+				</Card>
 				<!-- general form elements disabled -->
 				<div class="card card-secondary">
 					<div class="card-header">
@@ -460,36 +415,26 @@
 								</div>
 							</div>
 
-							<div class="form-group">
-								<div class="custom-control custom-switch">
-									<input type="checkbox" class="custom-control-input" id="customSwitch1">
-									<label class="custom-control-label" for="customSwitch1">Toggle this custom switch element</label>
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
-									<input type="checkbox" class="custom-control-input" id="customSwitch3">
-									<label class="custom-control-label" for="customSwitch3">Toggle this custom switch element with custom
-										colors danger/success</label>
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="custom-control custom-switch">
-									<input type="checkbox" class="custom-control-input" disabled id="customSwitch2">
-									<label class="custom-control-label" for="customSwitch2">Disabled custom switch element</label>
-								</div>
-							</div>
+							<AdminSwitch input-id="customSwitch1">
+								Toggle this custom switch element
+							</AdminSwitch>
+							<AdminSwitch input-id="customSwitch3" switch-off-color="danger" switch-on-color="success">
+								Toggle this custom switch element with custom colors danger/success
+							</AdminSwitch>
+							<AdminSwitch input-id="customSwitch2" is-disabled>
+								Disabled custom switch element
+							</AdminSwitch>
 							<div class="form-group">
 								<label for="customRange1">Custom range</label>
 								<input type="range" class="custom-range" id="customRange1">
 							</div>
 							<div class="form-group">
 								<label for="customRange1">Custom range (custom-range-danger)</label>
-								<input type="range" class="custom-range custom-range-danger" id="customRange1">
+								<input type="range" class="custom-range custom-range-danger" id="customRange12">
 							</div>
 							<div class="form-group">
 								<label for="customRange1">Custom range (custom-range-teal)</label>
-								<input type="range" class="custom-range custom-range-teal" id="customRange1">
+								<input type="range" class="custom-range custom-range-teal" id="customRange13">
 							</div>
 							<div class="form-group">
 								<!-- <label for="customFile">Custom File</label> -->
@@ -517,9 +462,56 @@
 import Page from "../src/components/structure/Page"
 import FormInput from "../src/components/forms/FormInput"
 import Checkbox from "../src/components/forms/Checkbox"
+import CheckboxGroup from "../src/components/forms/CheckboxGroup"
+import RadioGroup from "../src/components/forms/RadioGroup"
+import AdminSelect from "../src/components/forms/AdminSelect"
+import AdminSwitch from "../src/components/forms/AdminSwitch"
 
 export default {
 	name: "FormsPage",
-	components: {Checkbox, FormInput, Page}
+	components: {
+		AdminSwitch,
+		AdminSelect, RadioGroup,
+		CheckboxGroup,
+		Checkbox,
+		FormInput,
+		Page
+	},
+	data() {
+		return {
+			checkboxOptions: [
+				{
+					value: "cb1",
+					text: "Checkbox"
+				},
+				{
+					value: "cb2",
+					text: "Checkbox checked"
+				},
+				{
+					value: "cb3",
+					text: "Checkbox disabled",
+					disabled: true
+				}
+			],
+			checkedCheckboxes: ["cb2"],
+			radioOptions: [
+				{
+					value: "r1",
+					text: "Radio"
+				},
+				{
+					value: "r2",
+					text: "Radio checked"
+				},
+				{
+					value: "r3",
+					text: "Radio disabled",
+					disabled: true
+				}
+			],
+			radioValue: "r2"
+		}
+	}
 }
 </script>

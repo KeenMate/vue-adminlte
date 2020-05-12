@@ -1,6 +1,6 @@
 <template>
 	<Sidenav>
-		<SidenavLink link="#" fa-icon="tachometer-alt" nested>
+		<SidenavLink link="#" fas-icon="tachometer-alt" nested>
 			Dashboard
 			<i class="right fas fa-angle-left"></i>
 			<template #sublinks>
@@ -19,7 +19,7 @@
 			Widgets
 			<span class="right badge badge-danger">New</span>
 		</SidenavLink>
-		<SidenavLink link="#" fa-icon="copy" nested>
+		<SidenavLink link="#" fas-icon="copy" nested>
 			Layout Options
 			<i class="fas fa-angle-left right"></i><span class="badge badge-info right">6</span>
 			<template #sublinks>
@@ -46,7 +46,7 @@
 				</SidenavLink>
 			</template>
 		</SidenavLink>
-		<SidenavLink link="#" fa-icon="chart-pie" nested>
+		<SidenavLink link="#" fas-icon="chart-pie" nested>
 			Charts
 			<i class="right fas fa-angle-left"></i>
 			<template #sublinks>
@@ -61,7 +61,7 @@
 				</SidenavLink>
 			</template>
 		</SidenavLink>
-		<SidenavLink link="#" fa-icon="tree" nested>
+		<SidenavLink link="#" fas-icon="tree" nested>
 			UI Elements
 			<i class="fas fa-angle-left right"></i>
 			<template #sublinks>
@@ -109,7 +109,7 @@
 				</SidenavLink>
 			</template>
 		</SidenavLink>
-		<SidenavLink link="#" fa-icon="table" nested>
+		<SidenavLink link="#" fas-icon="table" nested>
 			Tables
 			<i class="fas fa-angle-left right"></i>
 			<template #sublinks>
@@ -131,7 +131,7 @@
 		<SidenavLink link="../gallery.html">
 			Gallery
 		</SidenavLink>
-		<SidenavLink link="#" fa-icon="envelope" nested>
+		<SidenavLink link="#" fas-icon="envelope" nested>
 			Mailbox
 			<i class="fas fa-angle-left right"></i>
 			<template #sublinks>
@@ -146,7 +146,7 @@
 				</SidenavLink>
 			</template>
 		</SidenavLink>
-		<SidenavLink link="#" fa-icon="book" nested>
+		<SidenavLink link="#" fas-icon="book" nested>
 			Pages
 			<i class="fas fa-angle-left right"></i>
 			<template #sublinks>
@@ -176,7 +176,7 @@
 				</SidenavLink>
 			</template>
 		</SidenavLink>
-		<SidenavLink link="#" fa-icon="plus-square" nested>
+		<SidenavLink link="#" fas-icon="plus-square" nested>
 			Extras
 			<i class="fas fa-angle-left right"></i>
 			<template #sublinks>
@@ -223,13 +223,13 @@
 			Documentation
 		</SidenavLink>
 		<li class="nav-header">LABELS</li>
-		<SidenavLink link="#" fa-icon="circle text-danger">
+		<SidenavLink link="#" fas-icon="circle text-danger">
 			Important
 		</SidenavLink>
-		<SidenavLink link="#" fa-icon="circle text-warning">
+		<SidenavLink link="#" fas-icon="circle text-warning">
 			Warning
 		</SidenavLink>
-		<SidenavLink link="#" fa-icon="circle text-info">
+		<SidenavLink link="#" fas-icon="circle text-info">
 			InformationalInformational
 		</SidenavLink>
 	</Sidenav>

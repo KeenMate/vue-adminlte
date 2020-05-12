@@ -1,6 +1,6 @@
 {
   "name": "vue-adminlte",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -38,9 +38,11 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^6.2.2",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^8.0.2",
+    "vue": "^2.6.11",
     "vue-cli-plugin-p11n": "^0.4.0",
     "vue-template-compiler": "^2.6.11",
-    "vue": "^2.6.11",
     "webpack": "^4.43.0"
   },
   "jsdelivr": "dist/vue-adminlte.umd.min.js",
