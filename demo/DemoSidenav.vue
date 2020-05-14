@@ -1,5 +1,11 @@
 <template>
 	<Sidenav>
+		<template #brand>
+			<a href="../../index3.html" class="brand-link">
+				<!--<img alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">-->
+				<span class="brand-text font-weight-light">AdminLTE 3</span>
+			</a>
+		</template>
 		<SidenavLink link="#" fas-icon="tachometer-alt" nested>
 			Dashboard
 			<i class="right fas fa-angle-left"></i>
@@ -17,7 +23,7 @@
 		</SidenavLink>
 		<SidenavLink link="../widgets.html">
 			Widgets
-			<span class="right badge badge-danger">New</span>
+			<Badge is-danger is-right>New</Badge>
 		</SidenavLink>
 		<SidenavLink link="#" fas-icon="copy" nested>
 			Layout Options
@@ -91,11 +97,11 @@
 				</SidenavLink>
 			</template>
 		</SidenavLink>
-		<SidenavLink link="#" nested isOpen>
+		<SidenavLink link="#" nested is-open>
 			Forms
 			<i class="fas fa-angle-left right"></i>
 			<template #sublinks>
-				<SidenavLink link="../forms/general.html" isActive>
+				<SidenavLink link="../forms/general.html" is-active>
 					General Elements
 				</SidenavLink>
 				<SidenavLink link="../forms/advanced.html">

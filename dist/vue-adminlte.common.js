@@ -1,21 +1,21 @@
 /*!
- * vue-adminlte v0.1.1 
+ * vue-adminlte v0.1.3 
  * (c) 2020 Benjamin Horne
  * Released under the MIT License.
  */
 'use strict';
 
-var Card = require("./components/structure/Card");
+var Card = require("./components/structure/Card").default;
 
-var CardTable = require("./components/structure/CardTable");
+var CardTable = require("./components/structure/CardTable").default;
 
-var CardTools = require("./components/structure/CardTools");
+var CardTools = require("./components/structure/CardTools").default;
 
-var Gallery = require("./components/structure/Gallery");
+var Gallery = require("./components/structure/Gallery").default;
 
-var SummernoteEditor = require("./components/forms/SummernoteEditor");
+var SummernoteEditor = require("./components/forms/SummernoteEditor").default;
 
-var UploadFile = require("./components/forms/UploadFile");
+var UploadFile = require("./components/forms/UploadFile").default;
 
 require("AdminLTE/dist/css/adminlte.css");
 
@@ -23,39 +23,39 @@ require("AdminLTE/dist/css/adminlte-condensed.css");
 
 require("AdminLTE/plugins/summernote/summernote-bs4.min.css");
 
-var Page = require("./components/structure/Page");
+var Page = require("./components/structure/Page").default;
 
-var AdminSelect = require("./components/forms/AdminSelect");
+var AdminSelect = require("./components/forms/AdminSelect").default;
 
-var AdminSwitch = require("./components/forms/AdminSwitch");
+var AdminSwitch = require("./components/forms/AdminSwitch").default;
 
-var Checkbox = require("./components/forms/Checkbox");
+var Checkbox = require("./components/forms/Checkbox").default;
 
-var CheckboxGroup = require("./components/forms/CheckboxGroup");
+var CheckboxGroup = require("./components/forms/CheckboxGroup").default;
 
-var FormCheck = require("./components/forms/FormCheck");
+var FormCheck = require("./components/forms/FormCheck").default;
 
-var FormCheckGroup = require("./components/forms/FormCheckGroup");
+var FormCheckGroup = require("./components/forms/FormCheckGroup").default;
 
-var FormInput = require("./components/forms/FormInput");
+var FormInput = require("./components/forms/FormInput").default;
 
-var FormLabel = require("./components/forms/FormLabel");
+var FormLabel = require("./components/forms/FormLabel").default;
 
-var Radio = require("./components/forms/Radio");
+var Radio = require("./components/forms/Radio").default;
 
-var RadioGroup = require("./components/forms/RadioGroup");
+var RadioGroup = require("./components/forms/RadioGroup").default;
 
-var WithRoot = require("./components/helper-components/WithRoot");
+var WithRoot = require("./components/helper-components/WithRoot").default;
 
-var Sidenav = require("./components/navigation/Sidenav");
+var Sidenav = require("./components/navigation/Sidenav").default;
 
-var SidenavLink = require("./components/navigation/SidenavLink");
+var SidenavLink = require("./components/navigation/SidenavLink").default;
 
-var AdminButton = require("./components/ui/AdminButton");
+var AdminButton = require("./components/ui/AdminButton").default;
 
-var Badge = require("./components/ui/Badge");
+var Badge = require("./components/ui/Badge").default;
 
-var version = "0.1.1";
+var version = "0.1.3";
 
 var install = function install(Vue) {
   // forms
@@ -92,9 +92,6 @@ var plugin = {
   install: install,
   version: version
 };
-
-if (typeof window !== "undefined" && window.Vue) {
-  window.Vue.use(plugin);
-}
+if (typeof window !== "undefined" && window.Vue) window.Vue.use(plugin);
 
 module.exports = plugin;

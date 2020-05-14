@@ -1,8 +1,6 @@
 <template>
 	<div class="content-wrapper">
-		<section class="content-header">
-			<slot name="header"></slot>
-		</section>
+		<slot name="header"></slot>
 		<section class="content">
 			<div class="container-fluid">
 				<slot></slot>

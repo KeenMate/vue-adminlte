@@ -12,7 +12,8 @@ export default {
 		isWarning: Boolean,
 		isSuccess: Boolean,
 		isInfo: Boolean,
-		isPrimary: Boolean
+		isPrimary: Boolean,
+		isRight: Boolean
 	},
 	computed: {
 		spanStyles() {
@@ -28,6 +29,9 @@ export default {
 				styles.push("badge-info")
 			else if (this.isPrimary)
 				styles.push("badge-primary")
+
+			if (this.isRight)
+				styles.push("right")
 
 			return styles
 		}

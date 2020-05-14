@@ -1,19 +1,7 @@
 <template>
 	<Page>
 		<template #header>
-			<div class="container-fluid">
-				<div class="row mb-2">
-					<div class="col-sm-6">
-						<h1>General Form</h1>
-					</div>
-					<div class="col-sm-6">
-						<ol class="breadcrumb float-sm-right">
-							<li class="breadcrumb-item"><a href="#">Home</a></li>
-							<li class="breadcrumb-item active">General Form</li>
-						</ol>
-					</div>
-				</div>
-			</div>
+			<PageHeader  title="General Form" :breadcrumbs="currentBreadcrumbs" />
 		</template>
 		<div class="row">
 			<!-- left column -->
@@ -145,7 +133,7 @@
 					<p>Large: <code>.input-group.input-group-lg</code></p>
 					<FormInput is-large>
 						<template #prepend>
-							<button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+							<button ref="dropdownToggle" type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
 								Action
 							</button>
 							<ul class="dropdown-menu">
@@ -191,7 +179,7 @@
 						:horizontal-styles="['col-sm-10']"
 						is-horizontal
 					/>
-					<div class="form-group">
+					<div class="row form-group">
 						<div class="offset-sm-2 col-sm-10">
 							<Checkbox input-id="exampleCheck2">
 								Remember me
@@ -274,43 +262,43 @@
 
 						<div class="row">
 							<div class="col-sm-6">
-								<AdminSelect label="Select">
+								<LteSelect label="Select">
 									<option>option 1</option>
 									<option>option 2</option>
 									<option>option 3</option>
 									<option>option 4</option>
 									<option>option 5</option>
-								</AdminSelect>
+								</LteSelect>
 							</div>
 							<div class="col-sm-6">
-								<AdminSelect label="Select Disabled" is-disabled>
+								<LteSelect label="Select Disabled" is-disabled>
 									<option>option 1</option>
 									<option>option 2</option>
 									<option>option 3</option>
 									<option>option 4</option>
 									<option>option 5</option>
-								</AdminSelect>
+								</LteSelect>
 							</div>
 						</div>
 
 						<div class="row">
 							<div class="col-sm-6">
-								<AdminSelect label="Select Multiple" is-multiple>
+								<LteSelect label="Select Multiple" is-multiple>
 									<option>option 1</option>
 									<option>option 2</option>
 									<option>option 3</option>
 									<option>option 4</option>
 									<option>option 5</option>
-								</AdminSelect>
+								</LteSelect>
 							</div>
 							<div class="col-sm-6">
-								<AdminSelect label="Select Multiple Disabled" is-multiple is-disabled>
+								<LteSelect label="Select Multiple Disabled" is-multiple is-disabled>
 									<option>option 1</option>
 									<option>option 2</option>
 									<option>option 3</option>
 									<option>option 4</option>
 									<option>option 5</option>
-								</AdminSelect>
+								</LteSelect>
 							</div>
 						</div>
 					</form>
@@ -416,15 +404,15 @@
 								</div>
 							</div>
 
-							<AdminSwitch input-id="customSwitch1">
+							<LteSwitch input-id="customSwitch1">
 								Toggle this custom switch element
-							</AdminSwitch>
-							<AdminSwitch input-id="customSwitch3" switch-off-color="danger" switch-on-color="success">
+							</LteSwitch>
+							<LteSwitch input-id="customSwitch3" switch-off-color="danger" switch-on-color="success">
 								Toggle this custom switch element with custom colors danger/success
-							</AdminSwitch>
-							<AdminSwitch input-id="customSwitch2" is-disabled>
+							</LteSwitch>
+							<LteSwitch input-id="customSwitch2" is-disabled>
 								Disabled custom switch element
-							</AdminSwitch>
+							</LteSwitch>
 							<div class="form-group">
 								<label for="customRange1">Custom range</label>
 								<input type="range" class="custom-range" id="customRange1">
@@ -460,24 +448,23 @@
 </template>
 
 <script>
-// import Page from "../src/components/structure/Page"
-// import FormInput from "../src/components/forms/FormInput"
-// import Checkbox from "../src/components/forms/Checkbox"
-// import CheckboxGroup from "../src/components/forms/CheckboxGroup"
-// import RadioGroup from "../src/components/forms/RadioGroup"
-// import AdminSelect from "../src/components/forms/AdminSelect"
-// import AdminSwitch from "../src/components/forms/AdminSwitch"
+// import {Dropdown} from "../src/vendors/adminlte/build/js/VueDropdown"
+// import $ from "jquery"
+// import Popper from "../src/components/Popper"
+import PageHeader from "../src/components/application/PageHeader"
 
 export default {
 	name: "FormsPage",
-	// components: {
-	// 	AdminSwitch,
-	// 	AdminSelect, RadioGroup,
-	// 	CheckboxGroup,
-	// 	Checkbox,
-	// 	FormInput,
-	// 	Page
-	// },
+	components: {PageHeader},
+	mounted() {
+		// Does not work (it can just open dropdown, does not close it
+		// $(this.$refs.dropdownToggle).on("click", function (event) {
+		// 	event.preventDefault()
+		// 	event.stopPropagation()
+		//
+		// 	Dropdown._jQueryInterface.call($(this), "toggleSubmenu")
+		// })
+	},
 	data() {
 		return {
 			checkboxOptions: [
@@ -511,7 +498,19 @@ export default {
 					disabled: true
 				}
 			],
-			radioValue: "r2"
+			radioValue: "r2",
+			currentBreadcrumbs: [
+				{
+					key: 1,
+					text: "Home",
+					to: "#"
+				},
+				{
+					key: 2,
+					text: "General form",
+					to: "#"
+				}
+			]
 		}
 	}
 }

@@ -17,7 +17,7 @@
 
 <script>
 export default {
-	name: "AdminSwitch",
+	name: "LteSwitch",
 	props: {
 		inputId: String,
 		value: Boolean,

@@ -15,9 +15,10 @@ module.exports = {
 		"no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
 		"quotes": ["error", "double"],
 		"indent": ["error", "tab"],
-		"no-tabs": ["error", {allowIndentationTabs: true}],
+		"no-tabs": "off",
 		"space-before-function-paren": ["warn", "never"],
 		"object-curly-spacing": ["warn", "never"],
-		"curly": ["warn", "multi"]
+		"curly": ["warn", "multi"],
+		"no-mixed-operators": "off"
 	}
 }

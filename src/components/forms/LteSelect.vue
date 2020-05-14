@@ -20,7 +20,7 @@
 import FormLabel from "./FormLabel"
 
 export default {
-	name: "AdminSelect",
+	name: "LteSelect",
 	components: {FormLabel},
 	props: {
 		label: String,

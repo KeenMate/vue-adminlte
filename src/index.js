@@ -6,11 +6,15 @@ const SummernoteEditor = require("./components/forms/SummernoteEditor").default
 const UploadFile = require("./components/forms/UploadFile").default
 
 require("AdminLTE/dist/css/adminlte.css")
-require("AdminLTE/dist/css/adminlte-condensed.css")
+require("AdminLTE/build/scss/AdminLTE-condensed.scss")
 require("AdminLTE/plugins/summernote/summernote-bs4.min.css")
-const Page = require("./components/structure/Page").default
-const AdminSelect = require("./components/forms/AdminSelect").default
-const AdminSwitch = require("./components/forms/AdminSwitch").default
+const Page = require("./components/application/Page").default
+const PageHeader = require("./components/application/PageHeader").default
+const TopNavigation = require("./components/navigation/TopNavigation").default
+const TopNavLink = require("./components/navigation/TopNavLink").default
+const PageBreadcrumbs = require("./components/navigation/PageBreadcrumbs").default
+const LteSelect = require("./components/forms/LteSelect").default
+const LteSwitch = require("./components/forms/LteSwitch").default
 const Checkbox = require("./components/forms/Checkbox").default
 const CheckboxGroup = require("./components/forms/CheckboxGroup").default
 const FormCheck = require("./components/forms/FormCheck").default
@@ -28,9 +32,14 @@ const Badge = require("./components/ui/Badge").default
 const version = "__VERSION__"
 
 const install = Vue => {
+	// application
+	Vue.component(Page.name, Page)
+	Vue.component(PageHeader.name, PageHeader)
+	Vue.component(TopNavigation.name, TopNavigation)
+
 	// forms
-	Vue.component(AdminSelect.name, AdminSelect)
-	Vue.component(AdminSwitch.name, AdminSwitch)
+	Vue.component(LteSelect.name, LteSelect)
+	Vue.component(LteSwitch.name, LteSwitch)
 	Vue.component(Checkbox.name, Checkbox)
 	Vue.component(CheckboxGroup.name, CheckboxGroup)
 	Vue.component(FormCheck.name, FormCheck)
@@ -49,13 +58,14 @@ const install = Vue => {
 	// navigation
 	Vue.component(Sidenav.name, Sidenav)
 	Vue.component(SidenavLink.name, SidenavLink)
+	Vue.component(TopNavLink.name, TopNavLink)
+	Vue.component(PageBreadcrumbs.name, PageBreadcrumbs)
 
 	// structure
 	Vue.component(Card.name, Card)
 	Vue.component(CardTable.name, CardTable)
 	Vue.component(CardTools.name, CardTools)
 	Vue.component(Gallery.name, Gallery)
-	Vue.component(Page.name, Page)
 
 	// ui
 	Vue.component(AdminButton.name, AdminButton)

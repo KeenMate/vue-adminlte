@@ -1,7 +1,7 @@
 <template>
 	<li :class="liStyles">
 		<a :href="link" :class="linkStyles">
-			<i v-if="faIcon" :class="'nav-icon fas fa-' + faIcon"></i>
+			<i v-if="fasIcon" :class="'nav-icon fas fa-' + fasIcon"></i>
 			<p>
 				<slot></slot>
 			</p>
@@ -17,7 +17,7 @@ export default {
 	name: "SidenavLink",
 	props: {
 		link: String,
-		faIcon: String,
+		fasIcon: String,
 		nested: Boolean,
 		isActive: Boolean,
 		isOpen: Boolean
