@@ -8,8 +8,9 @@
 			<div class="col-md-6">
 				<!-- general form elements -->
 				<Card title="Quick Example" is-info>
-					<FormInput type="email" input-id="exampleInputEmail1" placeholder="Enter email" />
+					<FormInput v-model="textValue" type="email" input-id="exampleInputEmail1" placeholder="Enter email" />
 					<FormInput
+						v-model="textValue"
 						type="password"
 						input-id="exampleInputPassword1"
 						label="Password"
@@ -20,7 +21,7 @@
 							Your password must be at least 5 characters long
 						</template>
 					</FormInput>
-					<FormInput type="password" label="Password" placeholder="Password" />
+					<FormInput v-model="textValue" type="password" label="Password" placeholder="Password" />
 					<div class="form-group">
 						<label for="exampleInputFile">File input</label>
 						<div class="input-group">
@@ -42,39 +43,39 @@
 
 				<!-- Form Element sizes -->
 				<Card title="Different Height" is-success>
-					<FormInput placeholder=".form-control-lg" size-large />
+					<FormInput v-model="textValue"  placeholder=".form-control-lg" size-large />
 					<br>
-					<FormInput placeholder="Default input" />
+					<FormInput v-model="textValue" placeholder="Default input" />
 					<br>
-					<FormInput placeholder=".form-control-sm" is-small />
+					<FormInput v-model="textValue" placeholder=".form-control-sm" is-small />
 				</Card>
 
 				<Card title="Different Width" is-danger>
 					<div class="row">
 						<div class="col-3">
-							<FormInput placeholder=".col-3" />
+							<FormInput v-model="textValue" placeholder=".col-3" />
 						</div>
 						<div class="col-4">
-							<FormInput placeholder=".col-4" />
+							<FormInput v-model="textValue" placeholder=".col-4" />
 						</div>
 						<div class="col-5">
-							<FormInput placeholder=".col-5" />
+							<FormInput v-model="textValue" placeholder=".col-5" />
 						</div>
 					</div>
 				</Card>
 
 				<Card title="Input Addon" is-info>
-					<FormInput class="mb-3" placeholder="Username">
+					<FormInput v-model="textValue" class="mb-3" placeholder="Username">
 						<template #prepend>
 							<span class="input-group-text">@</span>
 						</template>
 					</FormInput>
-					<FormInput class="mb-3">
+					<FormInput v-model="textValue" class="mb-3">
 						<template #append>
 							<span class="input-group-text">.00</span>
 						</template>
 					</FormInput>
-					<FormInput class="mb-3">
+					<FormInput v-model="textValue" class="mb-3">
 						<template #prepend>
 							<span class="input-group-text">$</span>
 						</template>
@@ -84,17 +85,17 @@
 					</FormInput>
 
 					<h4>With icons</h4>
-					<FormInput class="mb-3" type="email" placeholder="Email">
+					<FormInput v-model="textValue" class="mb-3" type="email" placeholder="Email">
 						<template #prepend>
 							<span class="input-group-text"><i class="fas fa-envelope"></i></span>
 						</template>
 					</FormInput>
-					<FormInput class="mb-3">
+					<FormInput v-model="textValue" class="mb-3">
 						<template #append>
 							<span class="input-group-text"><i class="fas fa-check"></i></span>
 						</template>
 					</FormInput>
-					<FormInput>
+					<FormInput v-model="textValue">
 						<template #prepend>
 							<span class="input-group-text">
 								<i class="fas fa-dollar-sign"></i>
@@ -108,7 +109,7 @@
 					<h5 class="mt-4 mb-2">With checkbox and radio inputs</h5>
 					<div class="row">
 						<div class="col-lg-6">
-							<FormInput>
+							<FormInput v-model="textValue">
 								<template #prepend>
 									<span class="input-group-text">
 										<!--<input type="checkbox">-->
@@ -119,7 +120,7 @@
 						</div>
 						<!-- /.col-lg-6 -->
 						<div class="col-lg-6">
-							<FormInput>
+							<FormInput v-model="textValue">
 								<template #prepend>
 									<span class="input-group-text"><input type="radio"></span>
 								</template>
@@ -131,7 +132,7 @@
 
 					<h5 class="mt-4 mb-2">With buttons</h5>
 					<p>Large: <code>.input-group.input-group-lg</code></p>
-					<FormInput is-large>
+					<FormInput v-model="textValue" is-large>
 						<template #prepend>
 							<button ref="dropdownToggle" type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
 								Action
@@ -147,14 +148,14 @@
 					</FormInput>
 
 					<p>Normal</p>
-					<FormInput class="mb-3">
+					<FormInput v-model="textValue" class="mb-3">
 						<template #prepend>
 							<button type="button" class="btn btn-danger">Action</button>
 						</template>
 					</FormInput>
 
 					<p>Small <code>.input-group.input-group-sm</code></p>
-					<FormInput is-small>
+					<FormInput v-model="textValue" is-small>
 						<template #append>
 							<button type="button" class="btn btn-info btn-flat">Go!</button>
 						</template>
@@ -162,7 +163,9 @@
 				</Card>
 
 				<Card title="Horizontal Form" is-info>
-					<FormInput class="row"
+					<FormInput
+						v-model="textValue"
+						class="row"
 						input-id="inputEmail3"
 						label="Email"
 						placeholder="Email"
@@ -170,7 +173,9 @@
 						:horizontal-styles="['col-sm-10']"
 						is-horizontal
 					/>
-					<FormInput class="row"
+					<FormInput
+						v-model="textValue"
+						class="row"
 						input-id="inputPassword3"
 						type="password"
 						label="Password"
@@ -202,36 +207,39 @@
 					<form role="form">
 						<div class="row">
 							<div class="col-sm-6">
-								<FormInput label="Text" placeholder="Enter ..." />
+								<FormInput v-model="textValue" label="Text" placeholder="Enter ..." />
 							</div>
 							<div class="col-sm-6">
-								<FormInput label="Text Disabled" placeholder="Enter ..." is-disabled />
+								<FormInput v-model="textValue" label="Text Disabled" placeholder="Enter ..." is-disabled />
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-sm-6">
 								<!-- textarea -->
-								<FormInput label="Textarea" rows="3" placeholder="Enter ..." is-textarea />
+								<FormInput v-model="textValue" label="Textarea" rows="3" placeholder="Enter ..." is-textarea />
 							</div>
 							<div class="col-sm-6">
-								<FormInput label="Textarea Disabled" rows="3" placeholder="Enter ..." is-textarea is-disabled />
+								<FormInput v-model="textValue" label="Textarea Disabled" rows="3" placeholder="Enter ..." is-textarea is-disabled />
 							</div>
 						</div>
 
 						<!-- input states -->
 						<FormInput
+							v-model="textValue"
 							label="Input with success"
 							fas-icon="check"
 							placeholder="Enter ..."
 							is-valid
 						/>
 						<FormInput
+							v-model="textValue"
 							label="Input with warning"
 							far-icon="bell"
 							placeholder="Enter ..."
 							is-warning
 						/>
 						<FormInput
+							v-model="textValue"
 							label="Input with error"
 							far-icon="times-circle"
 							placeholder="Enter ..."
@@ -467,6 +475,7 @@ export default {
 	},
 	data() {
 		return {
+			textValue: "",
 			checkboxOptions: [
 				{
 					value: "cb1",

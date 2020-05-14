@@ -57,7 +57,7 @@ export default {
 	props: {
 		/**
 		 * @type {String}
-		 * This is value
+		 * @description This is value
 		 */
 		value: null,
 		label: String,
