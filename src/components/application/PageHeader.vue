@@ -1,18 +1,7 @@
 <template>
 	<section class="content-header">
-		<!--<div class="container-fluid">
-			<div class="row mb-2">
-				<div class="col-sm-6">
-					<h1>
-						{{title}}
-					</h1>
-				</div>
-				<div class="col-sm-6">
-					<PageBreadcrumbs :breadcrumbs="breadcrumbsWithDefault" />
-				</div>
-			</div>
-		</div>-->
 		<h1>
+			<i v-if="iconStyles" :class="iconStyles"></i>
 			{{title}}
 		</h1>
 		<PageBreadcrumbs :breadcrumbs="breadcrumbsWithDefault" />
@@ -33,17 +22,39 @@ export default {
 		 * (expecting 'breadcrumb' field to exist in meta object of route)
 		 * @type {[{key: String, text: String, to: String | Object}]}
 		 */
-		breadcrumbs: Array
+		breadcrumbs: Array,
+		icon: String,
+		fas: Boolean,
+		far: Boolean
 	},
 	computed: {
+		iconStyles() {
+			const styles = []
+
+			if (!this.icon)
+				return null
+
+			if (this.fas)
+				styles.push("fas")
+			else if (this.far)
+				styles.push("far")
+			else
+				styles.push("fas")
+
+			if (this.icon)
+				styles.push("fa-" + this.icon)
+
+			return styles.join(" ")
+		},
 		breadcrumbsWithDefault() {
 			if (this.breadcrumbs)
 				return this.breadcrumbs
 
 			return this.$route.matched
+				.filter(x => x.meta && x.meta.breadcrumb)
 				.map(x => ({
 					to: {name: x.name},
-					text: x.meta && x.meta.breadbrumb || ""
+					text: x.meta && x.meta.breadcrumb || ""
 				}))
 		}
 	}
@@ -56,5 +67,9 @@ export default {
 		align-items: center;
 		justify-content: space-between;
 		padding: 0 1rem;
+	}
+
+	h1 {
+		line-height: 1.5;
 	}
 </style>

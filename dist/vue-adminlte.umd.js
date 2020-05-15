@@ -23,15 +23,23 @@
 
 	require("AdminLTE/dist/css/adminlte.css");
 
-	require("AdminLTE/dist/css/adminlte-condensed.css");
+	require("AdminLTE/build/scss/AdminLTE-condensed.scss");
 
 	require("AdminLTE/plugins/summernote/summernote-bs4.min.css");
 
-	var Page = require("./components/structure/Page").default;
+	var Page = require("./components/application/Page").default;
 
-	var AdminSelect = require("./components/forms/AdminSelect").default;
+	var PageHeader = require("./components/application/PageHeader").default;
 
-	var AdminSwitch = require("./components/forms/AdminSwitch").default;
+	var TopNavigation = require("./components/navigation/TopNavigation").default;
+
+	var TopNavLink = require("./components/navigation/TopNavLink").default;
+
+	var PageBreadcrumbs = require("./components/navigation/PageBreadcrumbs").default;
+
+	var LteSelect = require("./components/forms/LteSelect").default;
+
+	var LteSwitch = require("./components/forms/LteSwitch").default;
 
 	var Checkbox = require("./components/forms/Checkbox").default;
 
@@ -62,9 +70,13 @@
 	var version = "0.1.3";
 
 	var install = function install(Vue) {
-	  // forms
-	  Vue.component(AdminSelect.name, AdminSelect);
-	  Vue.component(AdminSwitch.name, AdminSwitch);
+	  // application
+	  Vue.component(Page.name, Page);
+	  Vue.component(PageHeader.name, PageHeader);
+	  Vue.component(TopNavigation.name, TopNavigation); // forms
+
+	  Vue.component(LteSelect.name, LteSelect);
+	  Vue.component(LteSwitch.name, LteSwitch);
 	  Vue.component(Checkbox.name, Checkbox);
 	  Vue.component(CheckboxGroup.name, CheckboxGroup);
 	  Vue.component(FormCheck.name, FormCheck);
@@ -80,13 +92,14 @@
 	  Vue.component(WithRoot.name, WithRoot); // navigation
 
 	  Vue.component(Sidenav.name, Sidenav);
-	  Vue.component(SidenavLink.name, SidenavLink); // structure
+	  Vue.component(SidenavLink.name, SidenavLink);
+	  Vue.component(TopNavLink.name, TopNavLink);
+	  Vue.component(PageBreadcrumbs.name, PageBreadcrumbs); // structure
 
 	  Vue.component(Card.name, Card);
 	  Vue.component(CardTable.name, CardTable);
 	  Vue.component(CardTools.name, CardTools);
-	  Vue.component(Gallery.name, Gallery);
-	  Vue.component(Page.name, Page); // ui
+	  Vue.component(Gallery.name, Gallery); // ui
 
 	  Vue.component(AdminButton.name, AdminButton);
 	  Vue.component(Badge.name, Badge);

@@ -1,23 +1,22 @@
 <template>
 	<div>
 		<TopNavigation>
-			<TopNavLink>Home</TopNavLink>
-			<TopNavLink>Contact</TopNavLink>
+			<TopNavLink :to="{name: 'forms-general'}">Forms</TopNavLink>
+			<TopNavLink :to="{name: 'ui-general'}">UI Elements</TopNavLink>
 		</TopNavigation>
 		<DemoSidenav />
-		<FormsPage />
+		<router-view></router-view>
 	</div>
 </template>
 
 <script>
 import DemoSidenav from "./DemoSidenav"
-import FormsPage from "./FormsPage"
 import TopNavigation from "../src/components/navigation/TopNavigation"
 import TopNavLink from "../src/components/navigation/TopNavLink"
 
 export default {
-	name: "demo",
-	components: {TopNavLink, TopNavigation, FormsPage, DemoSidenav},
+	name: "Demo",
+	components: {TopNavLink, TopNavigation, DemoSidenav},
 	data: () => ({a: 1, b: 1})
 }
 </script>

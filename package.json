@@ -4,6 +4,10 @@
 		"email": "benjamin.horne@keenmate.com",
 		"name": "Benjamin Horne"
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/KeenMate/vue-adminlte.git"
+	},
 	"license": "MIT",
 	"version": "0.1.3",
 	"scripts": {
@@ -30,7 +34,8 @@
 	"dependencies": {
 		"core-js": "^3.6.4",
 		"jquery": "^3.5.1",
-		"vue-popperjs": "^2.3.0"
+		"vue-popperjs": "^2.3.0",
+		"vue-router": "^3.1.6"
 	},
 	"devDependencies": {
 		"@vue/cli-plugin-babel": "^4.3.0",

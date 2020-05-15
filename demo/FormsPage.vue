@@ -1,7 +1,10 @@
 <template>
 	<Page>
 		<template #header>
-			<PageHeader  title="General Form" :breadcrumbs="currentBreadcrumbs" />
+			<PageHeader
+				title="General Form"
+				far icon="copy"
+			/>
 		</template>
 		<div class="row">
 			<!-- left column -->
@@ -456,23 +459,11 @@
 </template>
 
 <script>
-// import {Dropdown} from "../src/vendors/adminlte/build/js/VueDropdown"
-// import $ from "jquery"
-// import Popper from "../src/components/Popper"
 import PageHeader from "../src/components/application/PageHeader"
 
 export default {
 	name: "FormsPage",
 	components: {PageHeader},
-	mounted() {
-		// Does not work (it can just open dropdown, does not close it
-		// $(this.$refs.dropdownToggle).on("click", function (event) {
-		// 	event.preventDefault()
-		// 	event.stopPropagation()
-		//
-		// 	Dropdown._jQueryInterface.call($(this), "toggleSubmenu")
-		// })
-	},
 	data() {
 		return {
 			textValue: "",
