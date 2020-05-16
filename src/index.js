@@ -31,6 +31,8 @@ const Badge = require("./components/ui/Badge").default
 
 const version = "__VERSION__"
 
+// This is some change to test docs workflow include path
+
 const install = Vue => {
 	// application
 	Vue.component(Page.name, Page)
