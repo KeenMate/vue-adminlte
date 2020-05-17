@@ -1,4 +1,10 @@
+
+
 module.exports = {
+  title: 'AdminLTE in VueJS',
+  description:
+		"VueJS implementation of AdminLTE condensed template",	
+  base: '/vue-adminlte/',
   plugins: [
     require('./plugin.js')
   ],
@@ -10,8 +16,9 @@ module.exports = {
     }
   },
   themeConfig: {
-    repo: '/vue-adminlte',
+    repo: 'keenmate/vue-adminlte',
     docsDir: 'docs',
+    editLinks: true,
     locales: {
       '/': {
         label: 'English',

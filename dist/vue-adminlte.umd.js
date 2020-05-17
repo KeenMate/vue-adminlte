@@ -67,7 +67,7 @@
 
 	var Badge = require("./components/ui/Badge").default;
 
-	var version = "0.1.3";
+	var version = "0.1.3"; // This is some change to test docs workflow include path
 
 	var install = function install(Vue) {
 	  // application

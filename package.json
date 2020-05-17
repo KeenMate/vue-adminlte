@@ -35,7 +35,8 @@
 		"core-js": "^3.6.4",
 		"jquery": "^3.5.1",
 		"vue-popperjs": "^2.3.0",
-		"vue-router": "^3.1.6"
+		"vue-router": "^3.1.6",
+		"vuepress-plugin-sitemap": "^2.3.1"
 	},
 	"devDependencies": {
 		"@vue/cli-plugin-babel": "^4.3.0",
@@ -56,7 +57,9 @@
 		"vuepress": "^1.5.0",
 		"vue-cli-plugin-p11n": "^0.4.0",
 		"vue-template-compiler": "^2.6.11",
-		"webpack": "^4.43.0"
+		"webpack": "^4.43.0",
+		"vuepress-plugin-autometa": "^0.1.13",
+		"@vuepress/plugin-back-to-top": "^1.2.0"
 	},
 	"jsdelivr": "dist/vue-adminlte.umd.min.js",
 	"sideeffects": false
