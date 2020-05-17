@@ -3,7 +3,7 @@
 module.exports = {
   title: 'AdminLTE in VueJS',
   description:
-		"VueJS implementation of AdminLTE condensed template",	
+		"VueJS implementation of AdminLTE pro-desktop oriented template",	
   base: '/vue-adminlte/',
   plugins: [
     require('./plugin.js')
@@ -11,8 +11,8 @@ module.exports = {
   locales: {
     '/': {
       lang: 'en-US',
-      title: 'VueAdminlte',
-      description: 'VueAdminlte for Vue.js'
+      title: 'AdminLTE in VueJS',
+      description: 'VueJS implementation of AdminLTE pro-desktop oriented template'
     }
   },
   themeConfig: {
