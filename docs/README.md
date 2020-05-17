@@ -1,5 +1,7 @@
 # Introduction
 
+## The ultime change about universe, life and everything
+
 `VueAdminlte` plugin is plugin for [Vue.js](http://vuejs.org).
 Features include:
 
