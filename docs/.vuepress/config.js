@@ -1,17 +1,24 @@
+
+
 module.exports = {
+  title: 'AdminLTE in VueJS',
+  description:
+		"VueJS implementation of AdminLTE pro-desktop oriented template",	
+  base: '/vue-adminlte/',
   plugins: [
     require('./plugin.js')
   ],
   locales: {
     '/': {
       lang: 'en-US',
-      title: 'VueAdminlte',
-      description: 'VueAdminlte for Vue.js'
+      title: 'AdminLTE in VueJS',
+      description: 'VueJS implementation of AdminLTE pro-desktop oriented template'
     }
   },
   themeConfig: {
-    repo: '/vue-adminlte',
+    repo: 'keenmate/vue-adminlte',
     docsDir: 'docs',
+    editLinks: true,
     locales: {
       '/': {
         label: 'English',

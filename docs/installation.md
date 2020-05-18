@@ -16,13 +16,13 @@ Include vue-adminlte after Vue and it will install itself automatically:
 ## NPM
 
 ```sh
-$ npm install vue-adminlte
+$ npm install keenmate@vue-adminlte
 ```
 
 ## Yarn
 
 ```sh
-$ yarn add vue-adminlte
+$ yarn add keenmate@vue-adminlte
 ```
 
 When used with a module system, you must explicitly install the `vue-adminlte` via `Vue.use()`:
@@ -42,7 +42,7 @@ You will have to clone directly from GitHub and build `vue-adminlte` yourself if
 you want to use the latest dev build.
 
 ```sh
-$ git clone https://github.com//vue-adminlte.git node_modules/vue-adminlte
+$ git clone https://github.com/keenmate/vue-adminlte.git node_modules/vue-adminlte
 $ cd node_modules/vue-adminlte
 $ npm install
 $ npm run build
