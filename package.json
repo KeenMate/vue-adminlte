@@ -15,8 +15,9 @@
 		"build": "vue-cli-service build",
 		"lint": "vue-cli-service lint",
 		"demo": "vue-cli-service demo",
+		"demo:build": "NODE_ENV=demo vue-cli-service demo --mode build",
 		"docs": "npm run docs:serve",
-		"docs:build": "vuepress build docs",
+		"docs:build": "npm run demo:build && cd docs && vuepress build && cd .. && mv demo/dist docs/.vuepress/dist/demo",
 		"docs:serve": "vue-cli-service docs --mode serve",
 		"prepublish": "vue-cli-service build",
 		"start": "vue-cli-service serve"

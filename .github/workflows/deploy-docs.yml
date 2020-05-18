@@ -9,6 +9,7 @@ on:
     branches: [ master ]
     paths:
     - docs/**
+    - demo/**
   pull_request:
     branches: [ master ]
 
