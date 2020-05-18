@@ -2,7 +2,7 @@
 node_modules
 public
 dist/**/*
-demo/dist/
+demo/dist/**/*
 coverage
 docs/.vuepress/dist
 
