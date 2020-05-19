@@ -13,11 +13,14 @@
 	"scripts": {
 		"serve": "vue-cli-service serve",
 		"build": "vue-cli-service build",
+		"testis": "vue-cli-service inspect",
 		"lint": "vue-cli-service lint",
 		"demo": "vue-cli-service demo components/Demo.vue",
 		"demo:build": "NODE_ENV=demo vue-cli-service demo --mode build components/Demo.vue",
 		"docs": "npm run docs:serve",
-		"docs:build": "npm run demo:build && cd docs && vuepress build && cd .. && mv demo/dist docs/.vuepress/dist/demo",
+		"backup": "npm run demo:build && cd docs && vuepress build && cd .. && mv demo/dist docs/.vuepress/dist/demo",
+		"docs:build": "npm run webpack-inspect",
+		"webpack-inspect": "vue-cli-service inspect",
 		"docs:serve": "vue-cli-service docs --mode serve",
 		"prepublish": "vue-cli-service build",
 		"start": "vue-cli-service serve"
