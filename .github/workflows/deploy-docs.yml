@@ -38,7 +38,7 @@ jobs:
         npm rebuild node-sass
       
     - name: vuepress-deploy
-      uses: jenkey2011/vuepress-deploy@master
+      uses: keenmate/vuepress-deploy@master
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         TARGET_REPO: KeenMate/vue-adminlte
