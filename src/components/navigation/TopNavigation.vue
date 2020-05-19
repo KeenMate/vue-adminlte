@@ -25,7 +25,8 @@ export default {
 		noBars: Boolean
 	},
 	mounted() {
-		this.pushMenu = import("AdminLTE/build/js/PushMenu.js")
+		// this.pushMenu = import("AdminLTE/build/js/PushMenu.js")
+		this.pushMenu = import("../../vendors/adminlte/build/js/PushMenu.js")
 	},
 	data() {
 		return {

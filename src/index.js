@@ -1,6 +1,9 @@
-import "AdminLTE/dist/css/adminlte.css"
-import "AdminLTE/build/scss/AdminLTE-condensed.scss"
-import "AdminLTE/plugins/summernote/summernote-bs4.min.css"
+// import "AdminLTE/dist/css/adminlte.css"
+// import "AdminLTE/build/scss/AdminLTE-condensed.scss"
+// import "AdminLTE/plugins/summernote/summernote-bs4.min.css"
+import "./vendors/adminlte/dist/css/adminlte.css"
+import "./vendors/adminlte/build/scss/AdminLTE-condensed.scss"
+import "./vendors/adminlte/plugins/summernote/summernote-bs4.min.css"
 
 import * as components from "./components"
 

@@ -22,7 +22,8 @@
 export default {
 	name: "Sidenav",
 	mounted() {
-		this.treeview = import("AdminLTE/build/js/Treeview.js")
+		// this.treeview = import("AdminLTE/build/js/Treeview.js")
+		this.treeview = import("../../vendors/adminlte/build/js/Treeview.js")
 	},
 	data() {
 		return {

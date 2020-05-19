@@ -3,7 +3,8 @@
 </template>
 
 <script>
-import "AdminLTE/plugins/summernote/summernote-bs4.min"
+// import "AdminLTE/plugins/summernote/summernote-bs4.min"
+import "../../vendors/adminlte/plugins/summernote/summernote-bs4.min"
 
 export default {
 	name: "SummernoteEditor",
