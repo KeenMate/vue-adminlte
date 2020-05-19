@@ -27,6 +27,11 @@ jobs:
       with:
         submodules: recursive
 
+    - name: Configure Node.js version
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+
     - name: "npm i"
       run: npm i
       
