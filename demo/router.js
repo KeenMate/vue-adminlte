@@ -6,6 +6,7 @@ import FormsPage from "./screens/FormsPage.vue"
 import UiPage from "./screens/UiPage.vue"
 import NotImplemented from "./screens/NotImplemented.vue"
 
+
 const routes = [
 	{
 		path: "/",
