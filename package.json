@@ -19,7 +19,7 @@
 		"demo:build": "NODE_ENV=demo vue-cli-service demo --mode build components/Demo.vue",
 		"docs": "npm run docs:serve",
 		"backup": "npm run demo:build && cd docs && vuepress build && cd .. && mv demo/dist docs/.vuepress/dist/demo",
-		"docs:build": "npm run webpack-inspect",
+		"docs:build": "npm run webpack-inspect && npm run backup",
 		"webpack-inspect": "vue-cli-service inspect",
 		"docs:serve": "vue-cli-service docs --mode serve",
 		"prepublish": "vue-cli-service build",
