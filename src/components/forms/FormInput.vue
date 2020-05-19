@@ -56,10 +56,15 @@ export default {
 	components: {WithRoot, FormLabel},
 	props: {
 		/**
-		 * @type {String}
+		 * @type {any}
 		 * @description This is value
 		 */
 		value: null,
+
+		/**
+		 * @type {String}
+		 * @description This is THE label
+		 */
 		label: String,
 		isInvalid: Boolean,
 		isValid: Boolean,
@@ -67,7 +72,17 @@ export default {
 		inputId: String,
 		placeholder: String,
 		isHorizontal: Boolean,
+
+		/**
+		 * @type {String}
+		 * @description icon combined with 'fas' class
+		 */
 		fasIcon: String,
+
+		/**
+		 * @type {String}
+		 * @description icon combined with 'far' class
+		 */
 		farIcon: String,
 		isSmall: Boolean,
 		isLarge: Boolean,
@@ -79,6 +94,11 @@ export default {
 			type: Array,
 			default: () => []
 		},
+
+		/**
+		 * @type {Array}
+		 * @description Styles for horizontally positioned form input
+		 */
 		horizontalStyles: {
 			type: Array,
 			default:
@@ -86,12 +106,26 @@ export default {
 		},
 		isDisabled: Boolean,
 		isTextarea: Boolean,
+
+		/**
+		 * @type {String | Number}
+		 * @description Passed down to textarea if configured like so
+		 */
 		rows: [String, Number],
+
+		/**
+		 * @type {String | Number}
+		 * @description Passed down to textarea if configured like so
+		 */
 		cols: [String, Number],
+
+		/**
+		 * @type {"button" | "checkbox" | "color" | "date" | "datetime-local" | "email" | "file" | "hidden" | "image" | "month" | "number" | "password" | "radio" | "range" | "reset" | "search" | "submit" | "tel" | "text" | "time" | "url" | "week"}
+		 * @description type of the input
+		 */
 		type: {
 			type: String,
-			default:
-				"text",
+			default: "text",
 			validator(x) {
 				return [
 					"button",

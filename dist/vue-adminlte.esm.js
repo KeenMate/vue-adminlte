@@ -1,5 +1,5 @@
 /*!
- * vue-adminlte v0.1.3 
+ * vue-adminlte v0.1.4 
  * (c) 2020 Benjamin Horne
  * Released under the MIT License.
  */
@@ -61,7 +61,7 @@ var AdminButton = require("./components/ui/AdminButton").default;
 
 var Badge = require("./components/ui/Badge").default;
 
-var version = "0.1.3"; // This is some change to test docs workflow include path
+var version = "0.1.4"; // This is some change to test docs workflow include path
 
 var install = function install(Vue) {
   // application

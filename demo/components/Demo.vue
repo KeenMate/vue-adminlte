@@ -11,12 +11,10 @@
 
 <script>
 import DemoSidenav from "./DemoSidenav"
-import TopNavigation from "../src/components/navigation/TopNavigation"
-import TopNavLink from "../src/components/navigation/TopNavLink"
 
 export default {
 	name: "Demo",
-	components: {TopNavLink, TopNavigation, DemoSidenav},
+	components: {DemoSidenav},
 	data: () => ({a: 1, b: 1})
 }
 </script>

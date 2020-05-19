@@ -459,11 +459,9 @@
 </template>
 
 <script>
-import PageHeader from "../src/components/application/PageHeader"
 
 export default {
 	name: "FormsPage",
-	components: {PageHeader},
 	data() {
 		return {
 			textValue: "",

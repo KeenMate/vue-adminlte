@@ -1,8 +1,10 @@
 import VueRouter from "vue-router"
 
-import FormsPage from "./FormsPage"
-import Empty from "../src/components/Empty"
-import UiPage from "./UiPage"
+import Empty from "@/components/Empty.vue"
+
+import FormsPage from "./screens/FormsPage.vue"
+import UiPage from "./screens/UiPage.vue"
+import NotImplemented from "./screens/NotImplemented.vue"
 
 const routes = [
 	{
@@ -46,6 +48,11 @@ const routes = [
 				]
 			}
 		]
+	},
+	{
+		path: "*",
+		name: "not-implemented",
+		component: NotImplemented
 	}
 ]
 

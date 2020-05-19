@@ -6,26 +6,26 @@
 				<span class="brand-text font-weight-light">AdminLTE 3</span>
 			</a>
 		</template>
-		<SidenavLink link="#" fas-icon="tachometer-alt" nested>
+		<SidenavLink link="#/not-implemented" fas-icon="tachometer-alt" nested>
 			Dashboard
 			<i class="right fas fa-angle-left"></i>
 			<template #sublinks>
-				<SidenavLink link="../../index.html">
+				<SidenavLink link="#/not-implemented">
 					Dashboard v1
 				</SidenavLink>
-				<SidenavLink link="../../index2.html">
+				<SidenavLink link="#/not-implemented">
 					Dashboard v2
 				</SidenavLink>
-				<SidenavLink link="../../index3.html">
+				<SidenavLink link="#/not-implemented">
 					Dashboard v3
 				</SidenavLink>
 			</template>
 		</SidenavLink>
-		<SidenavLink link="../widgets.html">
+		<SidenavLink link="#/not-implemented">
 			Widgets
 			<Badge is-danger is-right>New</Badge>
 		</SidenavLink>
-		<SidenavLink link="#" fas-icon="copy" nested>
+		<SidenavLink link="#/not-implemented" fas-icon="copy" nested>
 			Layout Options
 			<i class="fas fa-angle-left right"></i><span class="badge badge-info right">6</span>
 			<template #sublinks>
@@ -35,7 +35,7 @@
 				<SidenavLink link="../layout/top-nav-sidebar.html">
 					Top Navigation + Sidebar
 				</SidenavLink>
-				<SidenavLink link="../layout/boxed.html">
+				<SidenavLink link="#/not-implemented">
 					Boxed
 				</SidenavLink>
 				<SidenavLink link="../layout/fixed-sidebar.html">
@@ -52,99 +52,99 @@
 				</SidenavLink>
 			</template>
 		</SidenavLink>
-		<SidenavLink link="#" fas-icon="chart-pie" nested>
+		<SidenavLink link="#/not-implemented" fas-icon="chart-pie" nested>
 			Charts
 			<i class="right fas fa-angle-left"></i>
 			<template #sublinks>
-				<SidenavLink link="../charts/chartjs.html">
+				<SidenavLink link="#/not-implemented">
 					ChartJS
 				</SidenavLink>
-				<SidenavLink link="../charts/flot.html">
+				<SidenavLink link="#/not-implemented">
 					Flot
 				</SidenavLink>
-				<SidenavLink link="../charts/inline.html">
+				<SidenavLink link="#/not-implemented">
 					Inline
 				</SidenavLink>
 			</template>
 		</SidenavLink>
-		<SidenavLink link="#" fas-icon="tree" nested>
+		<SidenavLink link="#/not-implemented" fas-icon="tree" nested>
 			UI Elements
 			<i class="fas fa-angle-left right"></i>
 			<template #sublinks>
-				<SidenavLink link="../UI/general.html">
+				<SidenavLink link="#/not-implemented">
 					General
 				</SidenavLink>
-				<SidenavLink link="../UI/icons.html">
+				<SidenavLink link="#/not-implemented">
 					Icons
 				</SidenavLink>
-				<SidenavLink link="../UI/buttons.html">
+				<SidenavLink link="#/not-implemented">
 					Buttons
 				</SidenavLink>
-				<SidenavLink link="../UI/sliders.html">
+				<SidenavLink link="#/not-implemented">
 					Sliders
 				</SidenavLink>
-				<SidenavLink link="../UI/modals.html">
+				<SidenavLink link="#/not-implemented">
 					Modals &amp; Alerts
 				</SidenavLink>
-				<SidenavLink link="../UI/navbar.html">
+				<SidenavLink link="#/not-implemented">
 					Navbar &amp; Tabs
 				</SidenavLink>
-				<SidenavLink link="../UI/timeline.html">
+				<SidenavLink link="#/not-implemented">
 					Timeline
 				</SidenavLink>
-				<SidenavLink link="../UI/ribbons.html">
+				<SidenavLink link="#/not-implemented">
 					Ribbons
 				</SidenavLink>
 			</template>
 		</SidenavLink>
-		<SidenavLink link="#" nested is-open>
+		<SidenavLink link="#/not-implemented" nested is-open>
 			Forms
 			<i class="fas fa-angle-left right"></i>
 			<template #sublinks>
-				<SidenavLink link="../forms/general.html" is-active>
+				<SidenavLink link="#/not-implemented" is-active>
 					General Elements
 				</SidenavLink>
-				<SidenavLink link="../forms/advanced.html">
+				<SidenavLink link="#/not-implemented">
 					Advanced Elements
 				</SidenavLink>
-				<SidenavLink link="../forms/editors.html">
+				<SidenavLink link="#/not-implemented">
 					Editors
 				</SidenavLink>
-				<SidenavLink link="../forms/validation.html">
+				<SidenavLink link="#/not-implemented">
 					Validation
 				</SidenavLink>
 			</template>
 		</SidenavLink>
-		<SidenavLink link="#" fas-icon="table" nested>
+		<SidenavLink link="#/not-implemented" fas-icon="table" nested>
 			Tables
 			<i class="fas fa-angle-left right"></i>
 			<template #sublinks>
-				<SidenavLink link="../tables/simple.html">
+				<SidenavLink link="#/not-implemented">
 					Simple Tables
 				</SidenavLink>
-				<SidenavLink link="../tables/data.html">
+				<SidenavLink link="#/not-implemented">
 					DataTables
 				</SidenavLink>
-				<SidenavLink link="../tables/jsgrid.html">
+				<SidenavLink link="#/not-implemented">
 					jsGrid
 				</SidenavLink>
 			</template>
 		</SidenavLink>
 		<li class="nav-header">EXAMPLES</li>
-		<SidenavLink link="../calendar.html">
+		<SidenavLink link="#/not-implemented">
 			Callendar
 			<span class="badge badge-info right">2</span></SidenavLink>
-		<SidenavLink link="../gallery.html">
+		<SidenavLink link="#/not-implemented">
 			Gallery
 		</SidenavLink>
-		<SidenavLink link="#" fas-icon="envelope" nested>
+		<SidenavLink link="#/not-implemented" fas-icon="envelope" nested>
 			Mailbox
 			<i class="fas fa-angle-left right"></i>
 			<template #sublinks>
-				<SidenavLink link="../mailbox/mailbox.html">
+				<SidenavLink link="#/not-implemented">
 					Inbox
 				</SidenavLink>
-				<SidenavLink link="../mailbox/compose.html">
+				<SidenavLink link="#/not-implemented">
 					Compose
 				</SidenavLink>
 				<SidenavLink link="../mailbox/read-mail.html">
@@ -152,20 +152,20 @@
 				</SidenavLink>
 			</template>
 		</SidenavLink>
-		<SidenavLink link="#" fas-icon="book" nested>
+		<SidenavLink link="#/not-implemented" fas-icon="book" nested>
 			Pages
 			<i class="fas fa-angle-left right"></i>
 			<template #sublinks>
-				<SidenavLink link="../examples/invoice.html">
+				<SidenavLink link="#/not-implemented">
 					Invoice
 				</SidenavLink>
-				<SidenavLink link="../examples/profile.html">
+				<SidenavLink link="#/not-implemented">
 					Profile
 				</SidenavLink>
 				<SidenavLink link="../examples/e-commerce.html">
 					E-commerce
 				</SidenavLink>
-				<SidenavLink link="../examples/projects.html">
+				<SidenavLink link="#/not-implemented">
 					Projects
 				</SidenavLink>
 				<SidenavLink link="../examples/project-add.html">
@@ -177,19 +177,19 @@
 				<SidenavLink link="../examples/project-detail.html">
 					Project Detail
 				</SidenavLink>
-				<SidenavLink link="../examples/contacts.html">
+				<SidenavLink link="#/not-implemented">
 					Contacts
 				</SidenavLink>
 			</template>
 		</SidenavLink>
-		<SidenavLink link="#" fas-icon="plus-square" nested>
+		<SidenavLink link="#/not-implemented" fas-icon="plus-square" nested>
 			Extras
 			<i class="fas fa-angle-left right"></i>
 			<template #sublinks>
-				<SidenavLink link="../examples/login.html">
+				<SidenavLink link="#/not-implemented">
 					Login
 				</SidenavLink>
-				<SidenavLink link="../examples/register.html">
+				<SidenavLink link="#/not-implemented">
 					Register
 				</SidenavLink>
 				<SidenavLink link="../examples/forgot-password.html">
@@ -198,7 +198,7 @@
 				<SidenavLink link="../examples/recover-password.html">
 					Recover Password
 				</SidenavLink>
-				<SidenavLink link="../examples/lockscreen.html">
+				<SidenavLink link="#/not-implemented">
 					Lockscreen
 				</SidenavLink>
 				<SidenavLink link="../examples/legacy-user-menu.html">
@@ -207,19 +207,19 @@
 				<SidenavLink link="../examples/language-menu.html">
 					Language Menu
 				</SidenavLink>
-				<SidenavLink link="../examples/404.html">
+				<SidenavLink link="#/not-implemented">
 					Error 404
 				</SidenavLink>
-				<SidenavLink link="../examples/500.html">
+				<SidenavLink link="#/not-implemented">
 					Error 500
 				</SidenavLink>
-				<SidenavLink link="../examples/pace.html">
+				<SidenavLink link="#/not-implemented">
 					Pace
 				</SidenavLink>
-				<SidenavLink link="../examples/blank.html">
+				<SidenavLink link="#/not-implemented">
 					Blank Page
 				</SidenavLink>
-				<SidenavLink link="../../starter.html">
+				<SidenavLink link="#/not-implemented">
 					Starter Page
 				</SidenavLink>
 			</template>
@@ -229,25 +229,21 @@
 			Documentation
 		</SidenavLink>
 		<li class="nav-header">LABELS</li>
-		<SidenavLink link="#" fas-icon="circle text-danger">
+		<SidenavLink link="#/not-implemented" fas-icon="circle text-danger">
 			Important
 		</SidenavLink>
-		<SidenavLink link="#" fas-icon="circle text-warning">
+		<SidenavLink link="#/not-implemented" fas-icon="circle text-warning">
 			Warning
 		</SidenavLink>
-		<SidenavLink link="#" fas-icon="circle text-info">
+		<SidenavLink link="#/not-implemented" fas-icon="circle text-info">
 			InformationalInformational
 		</SidenavLink>
 	</Sidenav>
 </template>
 
 <script>
-import Sidenav from "../src/components/navigation/Sidenav"
-import SidenavLink from "../src/components/navigation/SidenavLink"
-
 export default {
-	name: "DemoSidenav",
-	components: {SidenavLink, Sidenav}
+	name: "DemoSidenav"
 }
 </script>
 

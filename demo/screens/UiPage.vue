@@ -1026,11 +1026,8 @@
 </template>
 
 <script>
-import Page from "../src/components/application/Page"
-
 export default {
-	name: "UiPage",
-	components: {Page}
+	name: "UiPage"
 }
 </script>
 
