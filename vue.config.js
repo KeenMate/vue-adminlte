@@ -1,6 +1,9 @@
 const path = require("path")
 
 module.exports = {
+	publicPath: process.env.NODE_ENV === "demo"
+		? "/vue-adminlte/demo/"
+		: "/",
 	configureWebpack: {
 		resolve: {
 			alias: {
