@@ -33,7 +33,9 @@ jobs:
         node-version: '12.x'
 
     - name: "npm i"
-      run: npm i
+      run: | 
+        npm i
+        npm rebuild node-sass
       
     - name: vuepress-deploy
       uses: jenkey2011/vuepress-deploy@master
