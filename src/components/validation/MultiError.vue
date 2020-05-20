@@ -1,7 +1,8 @@
 <template>
 	<BaseExtractor v-bind="{...$attrs, ...$props}" class="spanWrapper">
 		<template slot-scope="{errorMessage}">
-			<span class="tag is-danger">{{errorMessage}}</span>
+			<!--<span class="tag is-danger">{{errorMessage}}</span>-->
+			<span class="badge bg-warning">{{errorMessage}}</span>
 		</template>
 	</BaseExtractor>
 </template>
@@ -14,7 +15,7 @@ export default {
 	props: [
 		"validator",
 		"attributes",
-		"messaages"
+		"messages"
 	],
 	components: {
 		BaseExtractor: templates.multiErrorExtractor.baseMultiErrorExtractor
@@ -22,12 +23,16 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 	.spanWrapper {
-		margin-bottom: 14px
-	}
+		margin-bottom: .5rem;
 
-	.spanWrapper > div {
-		margin-bottom: 5px;
+		& > div {
+			display: inline;
+
+			&:not(:last-child) {
+				margin-right: .2rem;
+			}
+		}
 	}
 </style>

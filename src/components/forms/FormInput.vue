@@ -23,7 +23,7 @@
 					:disabled="isDisabled"
 					:rows="rows"
 					:cols="cols"
-					@input="$emit('input', $event.target.value)"
+					v-on="{...$listeners, input: ev => $emit('input', ev.target.value)}"
 				></textarea>
 				<input
 					v-else
@@ -34,7 +34,7 @@
 					:value="value"
 					:disabled="isDisabled"
 					:pattern="pattern"
-					@input="$emit('input', $event.target.value)"
+					v-on="{...$listeners, input: ev => $emit('input', ev.target.value)}"
 				>
 			</div>
 		</WithRoot>

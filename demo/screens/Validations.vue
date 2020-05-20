@@ -5,8 +5,6 @@
 		</template>
 		<ImmediateValidations />
 		<OnSubmitValidations />
-		<!--<Card title="Immediate validation" is-warning>
-		</Card>-->
 	</Page>
 </template>
 

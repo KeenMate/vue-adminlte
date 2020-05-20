@@ -19,6 +19,7 @@ module.exports = {
 		"space-before-function-paren": ["warn", "never"],
 		"object-curly-spacing": ["warn", "never"],
 		"curly": ["warn", "multi"],
-		"no-mixed-operators": "off"
+		"no-mixed-operators": "off",
+		"operator-linebreak": ["error", "before"]
 	}
 }
