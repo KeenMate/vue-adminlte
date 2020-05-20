@@ -5,7 +5,7 @@ import Empty from "@/components/Empty.vue"
 import FormsPage from "./screens/FormsPage.vue"
 import UiPage from "./screens/UiPage.vue"
 import NotImplemented from "./screens/NotImplemented.vue"
-
+import Validations from "./screens/Validations"
 
 const routes = [
 	{
@@ -26,6 +26,14 @@ const routes = [
 						component: FormsPage,
 						meta: {
 							breadcrumb: "General"
+						}
+					},
+					{
+						path: "validations",
+						name: "forms-validations",
+						component: Validations,
+						meta: {
+							breadcrumb: "Validations"
 						}
 					}
 				]

@@ -12,7 +12,6 @@
 		<div v-if="$scopedSlots.prepend" class="input-group-prepend">
 			<slot name="prepend"></slot>
 		</div>
-		<!--<div v-if="isHorizontal" :class="horizontalStyles"></div>-->
 		<WithRoot :if="isHorizontal">
 			<div :class="horizontalStyles">
 				<textarea
@@ -34,6 +33,7 @@
 					:placeholder="placeholder"
 					:value="value"
 					:disabled="isDisabled"
+					:pattern="pattern"
 					@input="$emit('input', $event.target.value)"
 				>
 			</div>
@@ -72,6 +72,12 @@ export default {
 		inputId: String,
 		placeholder: String,
 		isHorizontal: Boolean,
+
+		/**
+		 * @type {String}
+		 * @description Mask used for input
+		 */
+		pattern: String,
 
 		/**
 		 * @type {String}
@@ -158,13 +164,12 @@ export default {
 		innerInputStyles() {
 			const styles = ["form-control"]
 
-			if (this.isInvalid) {
+			if (this.isInvalid)
 				styles.push("is-invalid")
-			} else if (this.isValid) {
+			else if (this.isValid)
 				styles.push("is-valid")
-			} else if (this.isWarning) {
+			else if (this.isWarning)
 				styles.push("is-warning")
-			}
 
 			return styles
 		},
@@ -174,17 +179,15 @@ export default {
 		wrapperStyles() {
 			const styles = []
 
-			if (this.isInputGroup) {
+			if (this.isInputGroup)
 				styles.push("input-group")
-			} else {
+			else
 				styles.push("form-group")
-			}
 
-			if (this.isSmall) {
+			if (this.isSmall)
 				styles.push("input-group-sm")
-			} else if (this.isLarge) {
+			else if (this.isLarge)
 				styles.push("input-group-lg")
-			}
 
 			return styles
 		}

@@ -1,35 +1,81 @@
 <template>
 	<div class="form-group">
-		<FormLabel :fas-icon="fasIcon" :far-icon="farIcon" :input-id="inputId">
+		<FormLabel
+			:class="labelStyles"
+			:fas-icon="fasIcon"
+			:far-icon="farIcon"
+			input-id="inputId"
+		>
 			{{label}}
 		</FormLabel>
-		<select
-			:id="inputId"
-			class="form-control"
-			:multiple="isMultiple"
-			:disabled="isDisabled"
-			:value="value"
-			@input="$emit('input', $event.target.value)"
-		>
-			<slot></slot>
-		</select>
+		<WithRoot :if="isHorizontal">
+			<div :class="horizontalStyles">
+				<select
+					:id="inputId"
+					:class="[...innerInputStyles, ...inputStyles]"
+					:multiple="isMultiple"
+					:disabled="isDisabled"
+					:value="value"
+					@input="$emit('input', $event.target.value)"
+				>
+					<slot></slot>
+				</select>
+			</div>
+		</WithRoot>
 	</div>
 </template>
 
 <script>
 import FormLabel from "./FormLabel"
+import WithRoot from "../helper-components/WithRoot"
 
 export default {
 	name: "LteSelect",
-	components: {FormLabel},
+	components: {WithRoot, FormLabel},
 	props: {
 		label: String,
 		inputId: String,
 		value: String,
+		fasIcon: String,
+		farIcon: String,
 		isMultiple: Boolean,
 		isDisabled: Boolean,
-		fasIcon: String,
-		farIcon: String
+		isHorizontal: Boolean,
+
+		/**
+		 * @type {Array}
+		 * @description Styles for horizontally positioned form input
+		 */
+		horizontalStyles: {
+			type: Array,
+			default:
+				() => []
+		},
+
+		/**
+		 * @type {Array}
+		 * @description classes applied to label
+		 */
+		labelStyles: {
+			type: Array,
+			default: () => []
+		},
+
+		/**
+		 * @type {Array}
+		 * @description classes applied to input
+		 */
+		inputStyles: {
+			type: Array,
+			default: () => []
+		}
+	},
+	computed: {
+		innerInputStyles() {
+			return [
+				"form-control"
+			].filter(x => x).join(" ")
+		}
 	}
 }
 </script>

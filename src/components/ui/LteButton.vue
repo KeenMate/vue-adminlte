@@ -1,20 +1,26 @@
 <template>
-	<button :class="buttonStyles">
+	<button :type="buttonType" :class="buttonStyles">
 		<slot></slot>
 	</button>
 </template>
 
 <script>
 export default {
-	name: "AdminButton",
+	name: "LteButton",
 	props: {
 		isPrimary: Boolean,
 		isSecondary: Boolean,
 		isInfo: Boolean,
 		isDanger: Boolean,
-		isWarning: Boolean
+		isWarning: Boolean,
+		isSubmit: Boolean
 	},
 	computed: {
+		buttonType() {
+			return this.isSubmit
+				? "submit"
+				: "button"
+		},
 		buttonStyles() {
 			const styles = ["btn"]
 

@@ -1,5 +1,5 @@
 <template>
-	<div class="form-group">
+	<div :class="formGroupStyles">
 		<component
 			:is="checkComponent"
 			v-for="option in options"
@@ -37,11 +37,27 @@ export default {
 			default: () => x => x
 		},
 		getDisabled: Function,
-		name: String
+		name: String,
+		isHorizontal: Boolean
+	},
+	computed: {
+		formGroupStyles() {
+			return [
+				"form-group",
+				this.isHorizontal && "horizontal"
+			].filter(x => x)
+				.join(" ")
+		}
 	}
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+	.form-group.horizontal {
+		display: flex;
 
+		& > .form-check:not(:first-child) {
+			margin-left: .5rem;
+		}
+	}
 </style>

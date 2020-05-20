@@ -2,6 +2,7 @@
 	<div>
 		<TopNavigation>
 			<TopNavLink :to="{name: 'forms-general'}">Forms</TopNavLink>
+			<TopNavLink :to="{name: 'forms-validations'}">Validations</TopNavLink>
 			<TopNavLink :to="{name: 'ui-general'}">UI Elements</TopNavLink>
 		</TopNavigation>
 		<DemoSidenav />

@@ -496,19 +496,7 @@ export default {
 					disabled: true
 				}
 			],
-			radioValue: "r2",
-			currentBreadcrumbs: [
-				{
-					key: 1,
-					text: "Home",
-					to: "#"
-				},
-				{
-					key: 2,
-					text: "General form",
-					to: "#"
-				}
-			]
+			radioValue: "r2"
 		}
 	}
 }
