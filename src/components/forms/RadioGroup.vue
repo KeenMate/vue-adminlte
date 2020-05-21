@@ -11,6 +11,7 @@
 <script>
 import FormCheckGroup from "./FormCheckGroup"
 import Radio from "./Radio"
+import validatedInputProps from "./validatedInputProps"
 
 export default {
 	name: "RadioGroup",
@@ -29,7 +30,8 @@ export default {
 			type: Function,
 			default: () => x => x
 		},
-		getDisabled: Function
+		getDisabled: Function,
+		...validatedInputProps
 	},
 	computed: {
 		filteredListeners() {

@@ -11,6 +11,8 @@
 </template>
 
 <script>
+// todo: Check if it is possible to add valid/invalid state to this form input
+
 export default {
 	name: "UploadFile"
 }

@@ -20,6 +20,9 @@
 				>
 					<slot></slot>
 				</select>
+				<FormInputFeedback :visible="computedInvalidity || computedValidity" :styles="feedbackStyles">
+					{{computedFeedback}}
+				</FormInputFeedback>
 			</div>
 		</WithRoot>
 	</div>
@@ -28,10 +31,12 @@
 <script>
 import FormLabel from "./FormLabel"
 import WithRoot from "../helper-components/WithRoot"
+import FormInputFeedback from "./FormInputFeedback"
+import validatedInputProps from "./validatedInputProps"
 
 export default {
 	name: "LteSelect",
-	components: {WithRoot, FormLabel},
+	components: {FormInputFeedback, WithRoot, FormLabel},
 	props: {
 		label: String,
 		inputId: String,
@@ -41,6 +46,14 @@ export default {
 		isMultiple: Boolean,
 		isDisabled: Boolean,
 		isHorizontal: Boolean,
+
+		...validatedInputProps,
+
+		/**
+		 * @type {String}
+		 * @description Sets state of this form input to 'warning'
+		 */
+		isWarning: String,
 
 		/**
 		 * @type {Array}
@@ -71,9 +84,56 @@ export default {
 		}
 	},
 	computed: {
+		computedFeedback() {
+			const invalid = this.computedInvalidity
+			const valid = this.computedValidity
+
+			if (invalid !== undefined && invalid)
+				return this.invalidMsg
+
+			if (valid !== undefined && valid)
+				return this.validMsg
+
+			return undefined
+		},
+		computedInvalidity() {
+			if (this.isInvalid !== undefined)
+				return this.isInvalid
+
+			return this.validatorHasErrors
+		},
+		computedValidity() {
+			return this.isValid
+
+			// use this code to enable "success" state to be set by 'validator'
+			// if (this.isValid !== undefined)
+			// 	return this.isValid
+			//
+			// const anyErrors = this.validatorHasErrors
+			//
+			// return anyErrors === null
+			// 	? null
+			// 	: !anyErrors
+		},
+		validatorHasErrors() {
+			if (!this.validator || !this.validator.$dirty)
+				return null
+
+			return this.validator.$anyError
+		},
+		feedbackStyles() {
+			return [
+				this.computedInvalidity && "error invalid-feedback",
+				this.computedValidity && "success valid-feedback"
+			].filter(x => x)
+				.join(" ")
+		},
 		innerInputStyles() {
 			return [
-				"form-control"
+				"form-control",
+				this.computedValidity && "is-valid",
+				this.computedInvalidity && "is-invalid",
+				this.isWarning && "is-warning"
 			].filter(x => x).join(" ")
 		}
 	}

@@ -1,9 +1,11 @@
 <template>
-	<Card title="Immediate validation" is-info>
+	<Card title="Immediate validation (per field)" is-info>
 		<FormInput
 			v-model="$v.firstName.$model"
+			:validator="$v.firstName"
+			invalid-msg="This field is required"
 			class="row"
-			input-id="immediate-first-name-input"
+			input-id="per-field-first-name-input"
 			label="First name"
 			placeholder="First name"
 			:label-styles="['col-sm-2']"
@@ -12,8 +14,10 @@
 		/>
 		<FormInput
 			v-model="$v.lastName.$model"
+			:validator="$v.lastName"
+			invalid-msg="This field is required"
 			class="row"
-			input-id="immediate-last-name-input"
+			input-id="per-field-last-name-input"
 			label="Last name"
 			placeholder="Last name"
 			:label-styles="['col-sm-2']"
@@ -22,8 +26,10 @@
 		/>
 		<FormInput
 			v-model="$v.password.$model"
+			:validator="$v.password"
+			invalid-msg="This field is required, must contain 2 spaces and 1 special character"
 			class="row"
-			input-id="immediate-password-input"
+			input-id="per-field-password-input"
 			type="password"
 			label="Password"
 			placeholder="Password"
@@ -33,9 +39,11 @@
 		/>
 		<FormInput
 			v-model="$v.age.$model"
+			:validator="$v.age"
+			invalid-msg="This field is required and must be between 25 and 38"
 			type="number"
 			class="row"
-			input-id="immediate-age-input"
+			input-id="per-field-age-input"
 			label="Age"
 			placeholder="Age"
 			:label-styles="['col-sm-2']"
@@ -45,9 +53,11 @@
 		<hr>
 		<LteSelect
 			v-model="$v.region.$model"
+			:validator="$v.region"
+			invalid-msg="This field is required"
 			label="Region"
 			class="row"
-			input-id="immediate-region-select"
+			input-id="per-field-region-select"
 			:label-styles="['col-sm-2']"
 			:horizontal-styles="['col-sm-10']"
 			is-horizontal
@@ -58,22 +68,26 @@
 		</LteSelect>
 		<template v-if="region === 'eu'">
 			<FormInput
-				v-model="eid"
+				v-model="$v.eid.$model"
+				:validator="$v.eid"
+				invalid-msg="This field is required and must be in format: '{2-letter country}-{4-digit id}' e.g. 'CZ-1234'"
 				class="row"
-				input-id="immediate-eid-input"
+				input-id="per-field-eid-input"
 				label="EU Identification"
 				placeholder="EU Identification"
 				:label-styles="['col-sm-2']"
 				:horizontal-styles="['col-sm-10']"
 				is-horizontal
-				@blur="$v.eid.$touch()"
 			/>
+			<!-- @blur="$v.eid.$touch()" -->
 		</template>
 		<template v-else-if="region === 'usa'">
 			<div class="row form-group">
 				<div class="offset-sm-2 col-sm-10">
 					<CheckboxGroup
 						v-model="$v.agreedUpon.$model"
+						:validator="$v.agreedUpon"
+						invalid-msg="You must check NDA and Citizen-ship checkboxes!"
 						:options="agreements"
 						:get-text="x => x.text"
 						:get-value="x => x.value"
@@ -83,13 +97,6 @@
 				</div>
 			</div>
 		</template>
-
-		<hr v-if="$v.$invalid">
-		<MultiError
-			:validator="$v"
-			:messages="validationMessages"
-			:attributes="validationAttributes"
-		/>
 
 		<template #footer>
 			<!--<button type="submit" class="btn btn-info">Sign in</button>-->
@@ -104,7 +111,7 @@ import {required, requiredIf, between} from "vuelidate/lib/validators"
 import {charMinCount, contains, masked, specialCharRegexp, validateIf} from "../../src/helpers/validators"
 
 export default {
-	name: "ImmediateValidations",
+	name: "PerFieldMessagesValidations",
 	computed: {
 		isEURegion() {
 			return this.region === "eu"

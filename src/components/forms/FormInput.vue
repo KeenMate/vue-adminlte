@@ -36,6 +36,9 @@
 					:pattern="pattern"
 					v-on="{...$listeners, input: ev => $emit('input', ev.target.value)}"
 				>
+				<FormInputFeedback :visible="computedInvalidity || computedValidity" :styles="feedbackStyles">
+					{{computedFeedback}}
+				</FormInputFeedback>
 			</div>
 		</WithRoot>
 		<span v-if="$scopedSlots['invalid-msg'] && isInvalid" class="error invalid-feedback">
@@ -50,10 +53,12 @@
 <script>
 import FormLabel from "./FormLabel"
 import WithRoot from "../helper-components/WithRoot"
+import FormInputFeedback from "./FormInputFeedback"
+import validatedInputProps from "./validatedInputProps"
 
 export default {
 	name: "FormInput",
-	components: {WithRoot, FormLabel},
+	components: {FormInputFeedback, WithRoot, FormLabel},
 	props: {
 		/**
 		 * @type {any}
@@ -66,8 +71,6 @@ export default {
 		 * @description This is THE label
 		 */
 		label: String,
-		isInvalid: Boolean,
-		isValid: Boolean,
 		isWarning: Boolean,
 		inputId: String,
 		placeholder: String,
@@ -76,6 +79,7 @@ export default {
 		/**
 		 * @type {String}
 		 * @description Mask used for input
+		 * @deprecated
 		 */
 		pattern: String,
 
@@ -107,8 +111,7 @@ export default {
 		 */
 		horizontalStyles: {
 			type: Array,
-			default:
-				() => []
+			default: () => []
 		},
 		isDisabled: Boolean,
 		isTextarea: Boolean,
@@ -158,15 +161,60 @@ export default {
 					"week"
 				].indexOf(x) !== -1
 			}
-		}
+		},
+		...validatedInputProps
 	},
 	computed: {
+		computedFeedback() {
+			const invalid = this.computedInvalidity
+			const valid = this.computedValidity
+
+			if (invalid !== undefined && invalid)
+				return this.invalidMsg
+
+			if (valid !== undefined && valid)
+				return this.validMsg
+
+			return undefined
+		},
+		computedInvalidity() {
+			if (this.isInvalid !== undefined)
+				return this.isInvalid
+
+			return this.validatorHasErrors
+		},
+		computedValidity() {
+			return this.isValid
+
+			// use this code to enable "success" state to be set by 'validator'
+			// if (this.isValid !== undefined)
+			// 	return this.isValid
+			//
+			// const anyErrors = this.validatorHasErrors
+			//
+			// return anyErrors === null
+			// 	? null
+			// 	: !anyErrors
+		},
+		validatorHasErrors() {
+			if (!this.validator || !this.validator.$dirty)
+				return null
+
+			return this.validator.$anyError
+		},
+		feedbackStyles() {
+			return [
+				this.computedInvalidity && "error invalid-feedback",
+				this.computedValidity && "success valid-feedback"
+			].filter(x => x)
+				.join(" ")
+		},
 		innerInputStyles() {
 			const styles = ["form-control"]
 
-			if (this.isInvalid)
+			if (this.computedInvalidity)
 				styles.push("is-invalid")
-			else if (this.isValid)
+			else if (this.computedValidity)
 				styles.push("is-valid")
 			else if (this.isWarning)
 				styles.push("is-warning")

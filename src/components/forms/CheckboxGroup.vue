@@ -10,6 +10,7 @@
 <script>
 import Checkbox from "./Checkbox"
 import FormCheckGroup from "./FormCheckGroup"
+import validatedInputProps from "./validatedInputProps"
 
 export default {
 	name: "CheckboxGroup",
@@ -31,7 +32,8 @@ export default {
 			type: Function,
 			default: () => x => x
 		},
-		getDisabled: Function
+		getDisabled: Function,
+		...validatedInputProps
 	},
 	computed: {
 		filteredListeners() {
