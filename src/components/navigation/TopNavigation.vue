@@ -2,7 +2,7 @@
 	<nav class="main-header navbar navbar-expand navbar-white navbar-light">
 		<!-- Left navbar links -->
 		<ul class="navbar-nav">
-			<li v-if="!noBars" class="nav-item">
+			<li v-if="!noBars" class="nav-item" @click="$emit('toggle-sidenav')">
 				<a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
 			</li>
 			<slot></slot>

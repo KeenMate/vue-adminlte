@@ -1,5 +1,6 @@
 export {default as Page} from "./application/Page"
 export {default as PageHeader} from "./application/PageHeader"
+export {default as AppContainer} from "./application/AppContainer"
 
 export {default as Checkbox} from "./forms/Checkbox"
 export {default as CheckboxGroup} from "./forms/CheckboxGroup"

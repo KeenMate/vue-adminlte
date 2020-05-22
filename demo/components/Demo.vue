@@ -1,13 +1,13 @@
 <template>
-	<div>
-		<TopNavigation>
+	<AppContainer>
+		<TopNavigation #top-nav>
 			<TopNavLink :to="{name: 'forms-general'}">Forms</TopNavLink>
 			<TopNavLink :to="{name: 'forms-validations'}">Validations</TopNavLink>
 			<TopNavLink :to="{name: 'ui-general'}">UI Elements</TopNavLink>
 		</TopNavigation>
-		<DemoSidenav />
+		<DemoSidenav #side-nav />
 		<router-view></router-view>
-	</div>
+	</AppContainer>
 </template>
 
 <script>
