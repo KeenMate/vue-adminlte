@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import FormInputFeedback from "./FormInputFeedback"
+import FormInputFeedback from "./FormInputFeedback.vue"
 import validatedInputProps from "./validatedInputProps"
 
 export default {

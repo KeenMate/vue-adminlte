@@ -29,9 +29,9 @@
 </template>
 
 <script>
-import FormLabel from "./FormLabel"
+import FormLabel from "./FormLabel.vue"
 import WithRoot from "../helper-components/WithRoot"
-import FormInputFeedback from "./FormInputFeedback"
+import FormInputFeedback from "./FormInputFeedback.vue"
 import validatedInputProps from "./validatedInputProps"
 
 export default {

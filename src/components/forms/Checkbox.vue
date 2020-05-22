@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import FormCheck from "./FormCheck"
+import FormCheck from "./FormCheck.vue"
 
 export default {
 	name: "Checkbox",
