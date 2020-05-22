@@ -15,8 +15,7 @@ import DemoSidenav from "./DemoSidenav"
 
 export default {
 	name: "Demo",
-	components: {DemoSidenav},
-	data: () => ({a: 1, b: 1})
+	components: {DemoSidenav}
 }
 </script>
 
