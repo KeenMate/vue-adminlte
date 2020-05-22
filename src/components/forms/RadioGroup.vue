@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import FormCheckGroup from "./FormCheckGroup"
-import Radio from "./Radio"
+import FormCheckGroup from "./FormCheckGroup.vue"
+import Radio from "./Radio.vue"
 import validatedInputProps from "./validatedInputProps"
 
 export default {

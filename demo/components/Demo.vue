@@ -1,13 +1,13 @@
 <template>
-	<div>
-		<TopNavigation>
+	<AppContainer>
+		<TopNavigation #top-nav>
 			<TopNavLink :to="{name: 'forms-general'}">Forms</TopNavLink>
 			<TopNavLink :to="{name: 'forms-validations'}">Validations</TopNavLink>
 			<TopNavLink :to="{name: 'ui-general'}">UI Elements</TopNavLink>
 		</TopNavigation>
-		<DemoSidenav />
+		<DemoSidenav #side-nav />
 		<router-view></router-view>
-	</div>
+	</AppContainer>
 </template>
 
 <script>
@@ -20,6 +20,6 @@ export default {
 </script>
 
 <style lang="scss">
-	/*@import "~AdminLTE/plugins/fontawesome-free/css/all.min.css";*/
+	@import "~AdminLTE/plugins/fontawesome-free/css/all.min.css";
 	@import "../../src/vendors/adminlte/plugins/fontawesome-free/css/all.min.css";
 </style>

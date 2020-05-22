@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import PageBreadcrumbs from "../navigation/PageBreadcrumbs"
+import PageBreadcrumbs from "../navigation/PageBreadcrumbs.vue"
 
 export default {
 	name: "PageHeader",

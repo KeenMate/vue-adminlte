@@ -24,8 +24,8 @@
 </template>
 
 <script>
-import Card from "./Card"
-import CardTools from "./CardTools"
+import Card from "./Card.vue"
+import CardTools from "./CardTools.vue"
 
 export default {
 	name: "Gallery",

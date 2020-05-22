@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import Checkbox from "./Checkbox"
-import FormCheckGroup from "./FormCheckGroup"
+import Checkbox from "./Checkbox.vue"
+import FormCheckGroup from "./FormCheckGroup.vue"
 import validatedInputProps from "./validatedInputProps"
 
 export default {

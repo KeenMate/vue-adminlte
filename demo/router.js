@@ -6,12 +6,18 @@ import FormsPage from "./screens/FormsPage.vue"
 import UiPage from "./screens/UiPage.vue"
 import NotImplemented from "./screens/NotImplemented.vue"
 import Validations from "./screens/Validations"
+import MainPage from "./screens/MainPage"
 
 const routes = [
 	{
 		path: "/",
 		component: Empty,
 		children: [
+			{
+				path: "/",
+				name: "main",
+				component: MainPage
+			},
 			{
 				path: "forms",
 				name: "forms",
