@@ -22,7 +22,6 @@ export default {
 </script>
 
 <style lang="scss">
-	/*@import "~AdminLTE/plugins/fontawesome-free/css/all.min.css";*/
 	@import "../../src/vendors/adminlte/build/scss/AdminLTE.scss";
 	@import "../../src/vendors/adminlte/build/scss/AdminLTE-condensed.scss";
 	@import "../../src/vendors/adminlte/plugins/fontawesome-free/css/all.min.css";
