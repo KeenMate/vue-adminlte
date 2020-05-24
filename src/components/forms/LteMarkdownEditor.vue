@@ -1,5 +1,5 @@
 <template>
-	<v-markdown-editor />
+	<markdown-editor />
 </template>
 
 <script>
