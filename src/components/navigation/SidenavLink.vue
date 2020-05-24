@@ -1,12 +1,12 @@
 <template>
 	<li :class="liStyles">
-		<a :href="link" :class="linkStyles">
+		<router-link :to="to" :class="linkStyles">
 			<i v-if="fasIcon" :class="'nav-icon fas fa-' + fasIcon"></i>
 			<p>
 				<slot></slot>
 			</p>
-		</a>
-		<ul v-if="nested && $scopedSlots.sublinks" class="nav nav-treeview">
+		</router-link>
+		<ul v-if="$scopedSlots.sublinks" class="nav nav-treeview">
 			<slot name="sublinks"></slot>
 		</ul>
 	</li>
@@ -16,10 +16,18 @@
 export default {
 	name: "SidenavLink",
 	props: {
-		link: String,
+		/**
+		 * @type {String | {name: String, path: String}}
+		 * @description Passed to &lt;router-link&gt; tag
+		 */
+		to: null,
 		fasIcon: String,
-		nested: Boolean,
 		isActive: Boolean,
+
+		/**
+		 * @type {Boolean}
+		 * @description Controls whether sublinks are displayed or not
+		 */
 		isOpen: Boolean
 	},
 	computed: {
