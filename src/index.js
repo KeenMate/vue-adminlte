@@ -4,6 +4,8 @@
 // import "./vendors/adminlte/dist/css/adminlte.css"
 // import "./vendors/adminlte/build/scss/AdminLTE-condensed.scss"
 
+import VMarkdownEditor from "v-markdown-editor"
+
 import * as components from "./components"
 
 const version = "__VERSION__"
@@ -11,6 +13,8 @@ const version = "__VERSION__"
 // This is some change to test docs workflow include path
 
 const install = Vue => {
+	Vue.use(VMarkdownEditor)
+
 	Object
 		.keys(components)
 		.forEach(name => {
