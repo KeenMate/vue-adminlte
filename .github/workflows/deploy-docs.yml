@@ -7,9 +7,9 @@ name: CI
 on:
   push:
     branches: [ master ]
-    paths:
-    - docs/**
-    - demo/**
+    # paths:
+    # - docs/**
+    # - demo/**
   pull_request:
     branches: [ master ]
 
