@@ -4,7 +4,7 @@
 
 <script>
 export default {
-	name: "MarkdownEditor"
+	name: "LteMarkdownEditor"
 }
 </script>
 

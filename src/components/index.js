@@ -2,7 +2,7 @@ export {default as Page} from "./application/Page.vue"
 export {default as PageHeader} from "./application/PageHeader.vue"
 export {default as AppContainer} from "./application/AppContainer.vue"
 
-export {default as LteMarkdownEditor} from "./forms/MarkdownEditor.vue"
+export {default as LteMarkdownEditor} from "./forms/LteMarkdownEditor.vue"
 export {default as Checkbox} from "./forms/Checkbox.vue"
 export {default as CheckboxGroup} from "./forms/CheckboxGroup.vue"
 export {default as FormCheck} from "./forms/FormCheck.vue"
