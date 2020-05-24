@@ -1,7 +1,7 @@
 const path = require("path")
 
 const rollupPostcss = require("rollup-plugin-postcss")
-const rollupNodeResolve = require("@rollup/plugin-node-resolve").default
+// const rollupNodeResolve = require("@rollup/plugin-node-resolve").default
 const rollupAlias = require("@rollup/plugin-alias")
 
 module.exports = {
@@ -16,18 +16,18 @@ module.exports = {
 					jquery: "$"
 				},
 				plugins: [
-					rollupPostcss({
-						extensions: [".css", ".scss", ".sass", ".less"]
-					}),
-					rollupNodeResolve({
-						customResolveOptions: {
-							moduleDirectory: "node_modules"
-						}
-					}),
+					// rollupNodeResolve({
+					// 	customResolveOptions: {
+					// 		moduleDirectory: "node_modules"
+					// 	}
+					// }),
 					rollupAlias({
 						entries: {
 							AdminLTE: path.resolve(__dirname, "src/vendors/adminlte")
 						}
+					}),
+					rollupPostcss({
+						extensions: [".css", ".scss", ".sass", ".less"]
 					})
 				]
 			}

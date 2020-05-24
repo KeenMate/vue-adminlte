@@ -5,8 +5,7 @@
 <script>
 // import "AdminLTE/plugins/summernote/summernote-bs4.min"
 // import "AdminLTE/plugins/summernote/summernote-bs4.min.css"
-import "../../vendors/adminlte/plugins/summernote/summernote-bs4.min.js"
-import "../../vendors/adminlte/plugins/summernote/summernote-bs4.min.css"
+import "../../vendors/adminlte/plugins/summernote/summernote-bs4.min"
 
 import $ from "jquery"
 
@@ -17,3 +16,7 @@ export default {
 	}
 }
 </script>
+
+<style lang="scss">
+	@import "../../vendors/adminlte/plugins/summernote/summernote-bs4.min.css";
+</style>
