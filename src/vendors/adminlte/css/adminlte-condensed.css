@@ -1,0 +1,171 @@
+/* GLOBALS */
+body {
+  font-size: 0.9rem;
+  font-family: "Fira Sans Condensed";
+}
+
+/* NAVIGATION */
+.navbar {
+  padding: .2rem .5rem;
+}
+
+.nav-link {
+  padding: 0.15rem 1rem;
+}
+
+.nav-sidebar > .nav-item .nav-icon
+{
+  margin-right: 0;
+}
+
+li.nav-item.has-treeview > ul.nav {
+  padding-left: .35rem;
+}
+
+.nav-sidebar .nav-link > .right, .nav-sidebar .nav-link > p > .right
+{
+  top: .3rem;
+}
+
+.main-header .nav-link {
+  height: 2rem;
+}
+
+.navbar-nav .nav-link {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.navbar-expand .navbar-nav .nav-link {
+  padding-left: .5rem;
+  padding-right: .5rem;
+}
+
+.main-footer {
+  padding: .3rem
+}
+
+
+/* FORMS and FORM CONTROLS */
+
+.form-control {
+  padding-left: .3rem;
+  padding-right: .3rem;
+  height: calc(1.7rem + 2px);
+  font-size: .9rem;
+}
+
+select.form-control {
+  padding: 0;
+}
+
+select.form-control > option {
+  padding-left: .25rem;
+}
+
+.custom-file-input {
+  height: calc(1.7rem + 2px);
+}
+
+.custom-file-label {
+  height: calc(1.7rem + 2px);
+}
+
+.custom-file-label::after {
+  padding-left: .3rem;
+  padding-right: .3rem;
+  height: calc(1.7rem + 1px);
+  border-bottom: 1px solid #ced4da;
+}
+
+textarea {
+  min-height: 80px;
+}
+
+.btn {
+  padding-left: .3rem;
+  padding-right: .3rem;
+  line-height: 1;
+  font-size: .8rem;
+}
+
+.form-check {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 0;
+}
+
+.form-check .form-check-input {
+  position: static;
+  margin-top: 0;
+  margin-left: 0;
+}
+
+.card-header {
+  padding: 0.35rem 0.5rem;
+}
+
+.card-body,
+.card-footer {
+  padding: .5rem
+}
+
+.card-title {
+  font-size: 1rem;
+}
+
+.form-group {
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.form-group .custom-control {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.form-group .custom-control custom-control-label {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.form-group .custom-control custom-control-label::before {
+  margin: auto
+}
+
+.form-group label {
+  font-size: .8rem;
+  margin-bottom: 0 !important;
+}
+
+.input-group-text {
+  padding-left: .3rem;
+  padding-right: .3rem;
+  font-size: .8rem;
+  height: calc(1.7rem + 2px);
+  -ms-flex-align: normal;
+  align-items: normal;
+  padding: .4rem;
+}
+
+.input-group > .input-group-prepend .input-group-text {
+  line-height: 1;
+}
+
+
+.custom-control-label::after {
+  /* content: none; */
+}
+
+.content-header {
+  padding: .2rem .5rem;
+}
+/*# sourceMappingURL=adminlte-condensed.css.map */

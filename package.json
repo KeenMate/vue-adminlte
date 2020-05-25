@@ -1,5 +1,8 @@
 {
 	"name": "@keenmate/vue-adminlte",
+	"version": "0.1.17",
+	"description": "",
+	"license": "MIT",
 	"author": {
 		"email": "benjamin.horne@keenmate.com",
 		"name": "Benjamin Horne"
@@ -8,8 +11,16 @@
 		"type": "git",
 		"url": "https://github.com/KeenMate/vue-adminlte.git"
 	},
-	"license": "MIT",
-	"version": "0.1.17",
+	"main": "dist/vue-adminlte.umd.js",
+	"module": "dist/vue-adminlte.esm.js",
+	"unpkg": "dist/vue-adminlte.min.js",
+	"files": [
+		"dist/vue-adminlte.common.js",
+		"dist/vue-adminlte.umd.min.js",
+		"dist/vue-adminlte.umd.js",
+		"dist/vue-adminlte.esm.js",
+		"src/"
+	],
 	"scripts": {
 		"serve": "vue-cli-service serve",
 		"build": "vue-cli-service build",
@@ -23,19 +34,9 @@
 		"prepublish": "vue-cli-service build",
 		"start": "vue-cli-service serve"
 	},
-	"main": "dist/vue-adminlte.common.js",
-	"module": "dist/vue-adminlte.esm.js",
-	"files": [
-		"dist/vue-adminlte.common.js",
-		"dist/vue-adminlte.umd.min.js",
-		"dist/vue-adminlte.umd.js",
-		"dist/vue-adminlte.esm.js",
-		"src/"
-	],
 	"dependencies": {
 		"core-js": "^3.6.4",
 		"jquery": "^3.5.1",
-		"v-markdown-editor": "^1.2.5",
 		"vue-popperjs": "^2.3.0",
 		"vue-router": "^3.1.6",
 		"vuelidate": "^0.7.5",
@@ -58,6 +59,7 @@
 		"eslint-plugin-promise": "^4.2.1",
 		"eslint-plugin-standard": "^4.0.0",
 		"eslint-plugin-vue": "^6.2.2",
+		"esm": "^3.2.25",
 		"node-sass": "^4.14.1",
 		"rollup-plugin-postcss": "^3.1.1",
 		"sass": "^1.26.5",

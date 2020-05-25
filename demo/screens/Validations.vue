@@ -16,9 +16,9 @@
 </template>
 
 <script>
-import ImmediateValidations from "../components/ImmediateValidations"
-import OnSubmitValidations from "../components/OnSubmitValidations"
-import PerFieldMessagesValidations from "../components/PerFieldMessagesValidations"
+import ImmediateValidations from "../components/ImmediateValidations.vue"
+import OnSubmitValidations from "../components/OnSubmitValidations.vue"
+import PerFieldMessagesValidations from "../components/PerFieldMessagesValidations.vue"
 
 export default {
 	name: "Validations",

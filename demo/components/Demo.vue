@@ -1,23 +1,24 @@
 <template>
-	<AppContainer>
+	<app-container>
 		<template #top-nav>
-			<TopNavigation>
-				<TopNavLink :to="{name: 'forms-general'}">Forms</TopNavLink>
-				<TopNavLink :to="{name: 'forms-validations'}">Validations</TopNavLink>
-				<TopNavLink :to="{name: 'ui-general'}">UI Elements</TopNavLink>
-			</TopNavigation>
+			<top-navigation>
+				<top-nav-link :to="{name: 'forms-general'}">Forms</top-nav-link>
+				<top-nav-link :to="{name: 'forms-validations'}">Validations</top-nav-link>
+				<top-nav-link :to="{name: 'ui-general'}">UI Elements</top-nav-link>
+			</top-navigation>
 		</template>
 		<DemoSidenav #side-nav />
 		<router-view></router-view>
-	</AppContainer>
+	</app-container>
 </template>
 
 <script>
 import DemoSidenav from "./DemoSidenav"
+import {TopNavLink, TopNavigation, AppContainer} from "../../src"
 
 export default {
 	name: "Demo",
-	components: {DemoSidenav}
+	components: {AppContainer, TopNavigation, TopNavLink, DemoSidenav}
 }
 </script>
 

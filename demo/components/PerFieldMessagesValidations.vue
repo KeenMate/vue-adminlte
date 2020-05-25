@@ -1,6 +1,6 @@
 <template>
-	<Card title="Immediate validation (per field)" is-info>
-		<FormInput
+	<card title="Immediate validation (per field)" is-info>
+		<form-input
 			v-model="$v.firstName.$model"
 			:validator="$v.firstName"
 			invalid-msg="This field is required"
@@ -12,7 +12,7 @@
 			:horizontal-styles="['col-sm-10']"
 			is-horizontal
 		/>
-		<FormInput
+		<form-input
 			v-model="$v.lastName.$model"
 			:validator="$v.lastName"
 			invalid-msg="This field is required"
@@ -24,7 +24,7 @@
 			:horizontal-styles="['col-sm-10']"
 			is-horizontal
 		/>
-		<FormInput
+		<form-input
 			v-model="$v.password.$model"
 			:validator="$v.password"
 			invalid-msg="This field is required, must contain 2 spaces and 1 special character"
@@ -37,7 +37,7 @@
 			:horizontal-styles="['col-sm-10']"
 			is-horizontal
 		/>
-		<FormInput
+		<form-input
 			v-model="$v.age.$model"
 			:validator="$v.age"
 			invalid-msg="This field is required and must be between 25 and 38"
@@ -51,7 +51,7 @@
 			is-horizontal
 		/>
 		<hr>
-		<LteSelect
+		<lte-select
 			v-model="$v.region.$model"
 			:validator="$v.region"
 			invalid-msg="This field is required"
@@ -65,9 +65,9 @@
 			<option value="" selected>Choose region</option>
 			<option value="eu">EU</option>
 			<option value="usa">USA</option>
-		</LteSelect>
+		</lte-select>
 		<template v-if="region === 'eu'">
-			<FormInput
+			<form-input
 				v-model="$v.eid.$model"
 				:validator="$v.eid"
 				invalid-msg="This field is required and must be in format: '{2-letter country}-{4-digit id}' e.g. 'CZ-1234'"
@@ -84,7 +84,7 @@
 		<template v-else-if="region === 'usa'">
 			<div class="row form-group">
 				<div class="offset-sm-2 col-sm-10">
-					<CheckboxGroup
+					<checkbox-group
 						v-model="$v.agreedUpon.$model"
 						:validator="$v.agreedUpon"
 						invalid-msg="You must check NDA and Citizen-ship checkboxes!"
@@ -101,17 +101,25 @@
 		<template #footer>
 			<!--<button type="submit" class="btn btn-info">Sign in</button>-->
 			<!--<button type="submit" class="btn btn-default float-right">Cancel</button>-->
-			<LteButton is-primary is-submit @click.native="onSubmit">Register</LteButton>
+			<lte-button is-primary is-submit @click.native="onSubmit">Register</lte-button>
 		</template>
-	</Card>
+	</card>
 </template>
 
 <script>
 import {required, requiredIf, between} from "vuelidate/lib/validators"
 import {charMinCount, contains, masked, specialCharRegexp, validateIf} from "../../src/helpers/validators"
+import {
+	Card,
+	FormInput,
+	LteSelect,
+	CheckboxGroup,
+	LteButton
+} from "../../src"
 
 export default {
 	name: "PerFieldMessagesValidations",
+	components: {Card, CheckboxGroup, LteSelect, LteButton, FormInput},
 	computed: {
 		isEURegion() {
 			return this.region === "eu"

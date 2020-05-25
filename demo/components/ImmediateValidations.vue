@@ -1,6 +1,6 @@
 <template>
-	<Card title="Immediate validation" is-info>
-		<FormInput
+	<card title="Immediate validation" is-info>
+		<form-input
 			v-model="$v.firstName.$model"
 			class="row"
 			input-id="immediate-first-name-input"
@@ -10,7 +10,7 @@
 			:horizontal-styles="['col-sm-10']"
 			is-horizontal
 		/>
-		<FormInput
+		<form-input
 			v-model="$v.lastName.$model"
 			class="row"
 			input-id="immediate-last-name-input"
@@ -20,7 +20,7 @@
 			:horizontal-styles="['col-sm-10']"
 			is-horizontal
 		/>
-		<FormInput
+		<form-input
 			v-model="$v.password.$model"
 			class="row"
 			input-id="immediate-password-input"
@@ -31,7 +31,7 @@
 			:horizontal-styles="['col-sm-10']"
 			is-horizontal
 		/>
-		<FormInput
+		<form-input
 			v-model="$v.age.$model"
 			type="number"
 			class="row"
@@ -43,7 +43,7 @@
 			is-horizontal
 		/>
 		<hr>
-		<LteSelect
+		<lte-select
 			v-model="$v.region.$model"
 			label="Region"
 			class="row"
@@ -55,9 +55,9 @@
 			<option value="" selected>Choose region</option>
 			<option value="eu">EU</option>
 			<option value="usa">USA</option>
-		</LteSelect>
+		</lte-select>
 		<template v-if="region === 'eu'">
-			<FormInput
+			<form-input
 				v-model="eid"
 				class="row"
 				input-id="immediate-eid-input"
@@ -72,7 +72,7 @@
 		<template v-else-if="region === 'usa'">
 			<div class="row form-group">
 				<div class="offset-sm-2 col-sm-10">
-					<CheckboxGroup
+					<checkbox-group
 						v-model="$v.agreedUpon.$model"
 						:options="agreements"
 						:get-text="x => x.text"
@@ -85,7 +85,7 @@
 		</template>
 
 		<hr v-if="$v.$invalid">
-		<MultiError
+		<multi-error
 			:validator="$v"
 			:messages="validationMessages"
 			:attributes="validationAttributes"
@@ -94,17 +94,26 @@
 		<template #footer>
 			<!--<button type="submit" class="btn btn-info">Sign in</button>-->
 			<!--<button type="submit" class="btn btn-default float-right">Cancel</button>-->
-			<LteButton is-primary is-submit @click.native="onSubmit">Register</LteButton>
+			<lte-button is-primary is-submit @click.native="onSubmit">Register</lte-button>
 		</template>
-	</Card>
+	</card>
 </template>
 
 <script>
 import {required, requiredIf, between} from "vuelidate/lib/validators"
 import {charMinCount, contains, masked, specialCharRegexp, validateIf} from "../../src/helpers/validators"
+import {
+	Card,
+	FormInput,
+	LteSelect,
+	CheckboxGroup,
+	MultiError,
+	LteButton
+} from "../../src"
 
 export default {
 	name: "ImmediateValidations",
+	components: {LteButton, MultiError, CheckboxGroup, LteSelect, FormInput, Card},
 	computed: {
 		isEURegion() {
 			return this.region === "eu"

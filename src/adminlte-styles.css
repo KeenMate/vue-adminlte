@@ -1,0 +1,10 @@
+/* Paths are meant to be relative to dist/ directory */
+
+/* compiled adminlte library*/
+@import "./css/adminlte.min.css";
+@import "./css/adminlte-condensed.css";
+
+/* compiled styles */
+/*@import "./assets/out.css";*/
+
+/*@import "./styles.css";*/
