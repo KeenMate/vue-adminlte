@@ -4,6 +4,7 @@
 // import "./vendors/adminlte/build/scss/AdminLTE-condensed.scss"
 
 import * as components from "./components"
+export * from "./components"
 
 const version = "__VERSION__"
 
