@@ -26,7 +26,7 @@ export default {
 	/*@import "../../src/vendors/adminlte/build/scss/AdminLTE.scss";*/
 	/*@import "../../src/vendors/adminlte/build/scss/AdminLTE-condensed.scss";*/
 
-	@import "../../src/vendors/adminlte/dist/css/adminlte.min.css";
-	@import "../../src/vendors/adminlte/dist/css/adminlte-condensed.css";
+	@import "../../src/vendors/adminlte/css/adminlte.min.css";
+	@import "../../src/vendors/adminlte/css/adminlte-condensed.css";
 	@import "../../src/vendors/adminlte/plugins/fontawesome-free/css/all.min.css";
 </style>
