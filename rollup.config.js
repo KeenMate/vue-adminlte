@@ -1,11 +1,12 @@
-import commonjs from "@rollup/plugin-commonjs" // Convert CommonJS modules to ES6
-import vue from "rollup-plugin-vue" // Handle .vue SFC files
-// import buble from "@rollup/plugin-buble" // Transpile/polyfill with reasonable browser support
+import commonjs from "@rollup/plugin-commonjs"
+import vue from "rollup-plugin-vue"
 import resolve from "@rollup/plugin-node-resolve"
 import babel from "@rollup/plugin-babel"
 import {terser} from "rollup-plugin-terser"
 import styles from "rollup-plugin-styles"
 import copy from "rollup-plugin-copy"
+import serve from "rollup-plugin-serve"
+import livereload from "rollup-plugin-livereload"
 
 import pkg from "./package.json"
 
@@ -15,12 +16,8 @@ const commonOutput = {
 	sourcemap: true
 }
 
-export default {
-	input: "src/index.js", // Path relative to package.json
-	// output: {
-	// 	name: "minimal-vue-package",
-	// 	exports: "named"
-	// },
+const config = {
+	input: "src/index.js",
 	output: [
 		{
 			file: pkg.main,
@@ -40,31 +37,24 @@ export default {
 			...commonOutput
 		}
 	],
-	external: [
-		...Object.keys(pkg.dependencies || {})
-	],
 	plugins: [
-		resolve(),
+		resolve({
+			extensions: [".js", ".vue"]
+		}),
 		commonjs(),
 		vue({
 			css: true, // Dynamically inject css as a <style> tag
 			compileTemplate: true // Explicitly convert template to render function
 		}),
-		// postcss({
-		// 	extract: path.resolve("dist/styles.css"),
-		// 	minimize: true,
-		// 	sourceMap: true,
-		// 	plugins: [postcssImport(), postcssUrl()]
-		// }),
 		styles({
 			mode: ["extract", "out.css"]
 			// mode: "extract"
 		}),
 		babel({
-			"babelHelpers": "inline",
-			"extensions": [".js", ".jsx", ".es6", ".es", ".mjs", ".vue"]
+			babelHelpers: "runtime",
+			plugins: ["@babel/plugin-transform-runtime"],
+			extensions: [".js", ".jsx", ".es6", ".es", ".mjs", ".vue"]
 		}),
-		// buble(), // Transpile to ES5
 		// terser(),
 		copy({
 			targets: [
@@ -74,3 +64,16 @@ export default {
 		})
 	]
 }
+
+if (process.env.NODE_ENV === "development") {
+	config.plugins.push(livereload("dist"))
+	config.plugins.push(serve({
+		contentBase: "public",
+		open: true,
+		port: 8080
+	}))
+}
+
+if (!process.env.DEV) config.external = Object.keys(pkg.dependencies || {})
+
+export default config

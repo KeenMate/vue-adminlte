@@ -1,5 +1,5 @@
 <template>
-	<Page>
+	<page>
 		<template #header>
 			<PageHeader
 				title="General Form"
@@ -10,9 +10,9 @@
 			<!-- left column -->
 			<div class="col-md-6">
 				<!-- general form elements -->
-				<Card title="Quick Example" is-info>
-					<FormInput v-model="textValue" type="email" input-id="exampleInputEmail1" placeholder="Enter email" />
-					<FormInput
+				<card title="Quick Example" is-info>
+					<form-input v-model="textValue" type="email" input-id="exampleInputEmail1" placeholder="Enter email" />
+					<form-input
 						v-model="textValue"
 						type="password"
 						input-id="exampleInputPassword1"
@@ -23,8 +23,8 @@
 						<template #invalid-msg>
 							Your password must be at least 5 characters long
 						</template>
-					</FormInput>
-					<FormInput v-model="textValue" type="password" label="Password" placeholder="Password" />
+					</form-input>
+					<form-input v-model="textValue" type="password" label="Password" placeholder="Password" />
 					<div class="form-group">
 						<label for="exampleInputFile">File input</label>
 						<div class="input-group">
@@ -37,68 +37,68 @@
 							</div>
 						</div>
 					</div>
-					<Checkbox input-id="exampleCheck1">Check me out</Checkbox>
+					<checkbox input-id="exampleCheck1">Check me out</checkbox>
 
 					<template #footer>
 						<button type="submit" class="btn btn-primary">Submit</button>
 					</template>
-				</Card>
+				</card>
 
 				<!-- Form Element sizes -->
-				<Card title="Different Height" is-success>
-					<FormInput v-model="textValue"  placeholder=".form-control-lg" size-large />
+				<card title="Different Height" is-success>
+					<form-input v-model="textValue" placeholder=".form-control-lg" size-large />
 					<br>
-					<FormInput v-model="textValue" placeholder="Default input" />
+					<form-input v-model="textValue" placeholder="Default input" />
 					<br>
-					<FormInput v-model="textValue" placeholder=".form-control-sm" is-small />
-				</Card>
+					<form-input v-model="textValue" placeholder=".form-control-sm" is-small />
+				</card>
 
-				<Card title="Different Width" is-danger>
+				<card title="Different Width" is-danger>
 					<div class="row">
 						<div class="col-3">
-							<FormInput v-model="textValue" placeholder=".col-3" />
+							<form-input v-model="textValue" placeholder=".col-3" />
 						</div>
 						<div class="col-4">
-							<FormInput v-model="textValue" placeholder=".col-4" />
+							<form-input v-model="textValue" placeholder=".col-4" />
 						</div>
 						<div class="col-5">
-							<FormInput v-model="textValue" placeholder=".col-5" />
+							<form-input v-model="textValue" placeholder=".col-5" />
 						</div>
 					</div>
-				</Card>
+				</card>
 
-				<Card title="Input Addon" is-info>
-					<FormInput v-model="textValue" class="mb-3" placeholder="Username">
+				<card title="Input Addon" is-info>
+					<form-input v-model="textValue" class="mb-3" placeholder="Username">
 						<template #prepend>
 							<span class="input-group-text">@</span>
 						</template>
-					</FormInput>
-					<FormInput v-model="textValue" class="mb-3">
+					</form-input>
+					<form-input v-model="textValue" class="mb-3">
 						<template #append>
 							<span class="input-group-text">.00</span>
 						</template>
-					</FormInput>
-					<FormInput v-model="textValue" class="mb-3">
+					</form-input>
+					<form-input v-model="textValue" class="mb-3">
 						<template #prepend>
 							<span class="input-group-text">$</span>
 						</template>
 						<template #append>
 							<span class="input-group-text">.00</span>
 						</template>
-					</FormInput>
+					</form-input>
 
 					<h4>With icons</h4>
-					<FormInput v-model="textValue" class="mb-3" type="email" placeholder="Email">
+					<form-input v-model="textValue" class="mb-3" type="email" placeholder="Email">
 						<template #prepend>
 							<span class="input-group-text"><i class="fas fa-envelope"></i></span>
 						</template>
-					</FormInput>
-					<FormInput v-model="textValue" class="mb-3">
+					</form-input>
+					<form-input v-model="textValue" class="mb-3">
 						<template #append>
 							<span class="input-group-text"><i class="fas fa-check"></i></span>
 						</template>
-					</FormInput>
-					<FormInput v-model="textValue">
+					</form-input>
+					<form-input v-model="textValue">
 						<template #prepend>
 							<span class="input-group-text">
 								<i class="fas fa-dollar-sign"></i>
@@ -107,27 +107,27 @@
 						<template #append>
 							<div class="input-group-text"><i class="fas fa-ambulance"></i></div>
 						</template>
-					</FormInput>
+					</form-input>
 
 					<h5 class="mt-4 mb-2">With checkbox and radio inputs</h5>
 					<div class="row">
 						<div class="col-lg-6">
-							<FormInput v-model="textValue">
+							<form-input v-model="textValue">
 								<template #prepend>
 									<span class="input-group-text">
 										<!--<input type="checkbox">-->
-										<Checkbox :value="true"></Checkbox>
+										<checkbox :value="true"></checkbox>
 									</span>
 								</template>
-							</FormInput>
+							</form-input>
 						</div>
 						<!-- /.col-lg-6 -->
 						<div class="col-lg-6">
-							<FormInput v-model="textValue">
+							<form-input v-model="textValue">
 								<template #prepend>
 									<span class="input-group-text"><input type="radio"></span>
 								</template>
-							</FormInput>
+							</form-input>
 						</div>
 						<!-- /.col-lg-6 -->
 					</div>
@@ -135,7 +135,7 @@
 
 					<h5 class="mt-4 mb-2">With buttons</h5>
 					<p>Large: <code>.input-group.input-group-lg</code></p>
-					<FormInput v-model="textValue" is-large>
+					<form-input v-model="textValue" is-large>
 						<template #prepend>
 							<button ref="dropdownToggle" type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
 								Action
@@ -148,25 +148,25 @@
 								<li class="dropdown-item"><a href="#">Separated link</a></li>
 							</ul>
 						</template>
-					</FormInput>
+					</form-input>
 
 					<p>Normal</p>
-					<FormInput v-model="textValue" class="mb-3">
+					<form-input v-model="textValue" class="mb-3">
 						<template #prepend>
 							<button type="button" class="btn btn-danger">Action</button>
 						</template>
-					</FormInput>
+					</form-input>
 
 					<p>Small <code>.input-group.input-group-sm</code></p>
-					<FormInput v-model="textValue" is-small>
+					<form-input v-model="textValue" is-small>
 						<template #append>
 							<button type="button" class="btn btn-info btn-flat">Go!</button>
 						</template>
-					</FormInput>
-				</Card>
+					</form-input>
+				</card>
 
-				<Card title="Horizontal Form" is-info>
-					<FormInput
+				<card title="Horizontal Form" is-info>
+					<form-input
 						v-model="textValue"
 						class="row"
 						input-id="inputEmail3"
@@ -176,7 +176,7 @@
 						:horizontal-styles="['col-sm-10']"
 						is-horizontal
 					/>
-					<FormInput
+					<form-input
 						v-model="textValue"
 						class="row"
 						input-id="inputPassword3"
@@ -189,9 +189,9 @@
 					/>
 					<div class="row form-group">
 						<div class="offset-sm-2 col-sm-10">
-							<Checkbox input-id="exampleCheck2">
+							<checkbox input-id="exampleCheck2">
 								Remember me
-							</Checkbox>
+							</checkbox>
 						</div>
 					</div>
 
@@ -199,49 +199,54 @@
 						<button type="submit" class="btn btn-info">Sign in</button>
 						<button type="submit" class="btn btn-default float-right">Cancel</button>
 					</template>
-				</Card>
+				</card>
 
 			</div>
 			<!--/.col (left) -->
 			<!-- right column -->
 			<div class="col-md-6">
 				<!-- general form elements disabled -->
-				<Card title="General Elements" is-warning>
+				<card title="General Elements" is-warning>
 					<form role="form">
 						<div class="row">
 							<div class="col-sm-6">
-								<FormInput v-model="textValue" label="Text" placeholder="Enter ..." />
+								<form-input v-model="textValue" label="Text" placeholder="Enter ..." />
 							</div>
 							<div class="col-sm-6">
-								<FormInput v-model="textValue" label="Text Disabled" placeholder="Enter ..." is-disabled />
+								<form-input v-model="textValue" label="Text Disabled" placeholder="Enter ..." is-disabled />
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-sm-6">
 								<!-- textarea -->
-								<FormInput v-model="textValue" label="Textarea" rows="3" placeholder="Enter ..." is-textarea />
+								<form-input v-model="textValue" label="Textarea" rows="3" placeholder="Enter ..." is-textarea />
 							</div>
 							<div class="col-sm-6">
-								<FormInput v-model="textValue" label="Textarea Disabled" rows="3" placeholder="Enter ..." is-textarea is-disabled />
+								<form-input v-model="textValue"
+									label="Textarea Disabled"
+									rows="3"
+									placeholder="Enter ..."
+									is-textarea
+									is-disabled />
 							</div>
 						</div>
 
 						<!-- input states -->
-						<FormInput
+						<form-input
 							v-model="textValue"
 							label="Input with success"
 							fas-icon="check"
 							placeholder="Enter ..."
 							is-valid
 						/>
-						<FormInput
+						<form-input
 							v-model="textValue"
 							label="Input with warning"
 							far-icon="bell"
 							placeholder="Enter ..."
 							is-warning
 						/>
-						<FormInput
+						<form-input
 							v-model="textValue"
 							label="Input with error"
 							far-icon="times-circle"
@@ -252,16 +257,16 @@
 						<div class="row">
 							<div class="col-sm-6">
 								<!-- checkbox -->
-								<CheckboxGroup
+								<checkbox-group
 									:options="checkboxOptions"
-									v-model="checkedCheckboxes"
+									v-model="checkedcheckboxes"
 									:get-text="x => x.text"
 									:get-value="x => x.value"
 									:get-disabled="x => x.disabled"
 								/>
 							</div>
 							<div class="col-sm-6">
-								<RadioGroup
+								<radio-group
 									:options="radioOptions"
 									v-model="radioValue"
 									:get-text="x => x.text"
@@ -273,47 +278,47 @@
 
 						<div class="row">
 							<div class="col-sm-6">
-								<LteSelect label="Select">
+								<lte-select label="Select">
 									<option>option 1</option>
 									<option>option 2</option>
 									<option>option 3</option>
 									<option>option 4</option>
 									<option>option 5</option>
-								</LteSelect>
+								</lte-select>
 							</div>
 							<div class="col-sm-6">
-								<LteSelect label="Select Disabled" is-disabled>
+								<lte-select label="Select Disabled" is-disabled>
 									<option>option 1</option>
 									<option>option 2</option>
 									<option>option 3</option>
 									<option>option 4</option>
 									<option>option 5</option>
-								</LteSelect>
+								</lte-select>
 							</div>
 						</div>
 
 						<div class="row">
 							<div class="col-sm-6">
-								<LteSelect label="Select Multiple" is-multiple>
+								<lte-select label="Select Multiple" is-multiple>
 									<option>option 1</option>
 									<option>option 2</option>
 									<option>option 3</option>
 									<option>option 4</option>
 									<option>option 5</option>
-								</LteSelect>
+								</lte-select>
 							</div>
 							<div class="col-sm-6">
-								<LteSelect label="Select Multiple Disabled" is-multiple is-disabled>
+								<lte-select label="Select Multiple Disabled" is-multiple is-disabled>
 									<option>option 1</option>
 									<option>option 2</option>
 									<option>option 3</option>
 									<option>option 4</option>
 									<option>option 5</option>
-								</LteSelect>
+								</lte-select>
 							</div>
 						</div>
 					</form>
-				</Card>
+				</card>
 				<!-- general form elements disabled -->
 				<div class="card card-secondary">
 					<div class="card-header">
@@ -327,16 +332,16 @@
 									<!-- checkbox -->
 									<div class="form-group">
 										<div class="custom-control custom-checkbox">
-											<input class="custom-control-input" type="checkbox" id="customCheckbox1" value="option1">
-											<label for="customCheckbox1" class="custom-control-label">Custom Checkbox</label>
+											<input class="custom-control-input" type="checkbox" id="customcheckbox1" value="option1">
+											<label for="customcheckbox1" class="custom-control-label">Custom checkbox</label>
 										</div>
 										<div class="custom-control custom-checkbox">
-											<input class="custom-control-input" type="checkbox" id="customCheckbox2" checked>
-											<label for="customCheckbox2" class="custom-control-label">Custom Checkbox checked</label>
+											<input class="custom-control-input" type="checkbox" id="customcheckbox2" checked>
+											<label for="customcheckbox2" class="custom-control-label">Custom checkbox checked</label>
 										</div>
 										<div class="custom-control custom-checkbox">
-											<input class="custom-control-input" type="checkbox" id="customCheckbox3" disabled>
-											<label for="customCheckbox3" class="custom-control-label">Custom Checkbox disabled</label>
+											<input class="custom-control-input" type="checkbox" id="customcheckbox3" disabled>
+											<label for="customcheckbox3" class="custom-control-label">Custom checkbox disabled</label>
 										</div>
 									</div>
 								</div>
@@ -415,15 +420,15 @@
 								</div>
 							</div>
 
-							<LteSwitch input-id="customSwitch1">
+							<lte-switch input-id="customSwitch1">
 								Toggle this custom switch element
-							</LteSwitch>
-							<LteSwitch input-id="customSwitch3" switch-off-color="danger" switch-on-color="success">
+							</lte-switch>
+							<lte-switch input-id="customSwitch3" switch-off-color="danger" switch-on-color="success">
 								Toggle this custom switch element with custom colors danger/success
-							</LteSwitch>
-							<LteSwitch input-id="customSwitch2" is-disabled>
+							</lte-switch>
+							<lte-switch input-id="customSwitch2" is-disabled>
 								Disabled custom switch element
-							</LteSwitch>
+							</lte-switch>
 							<div class="form-group">
 								<label for="customRange1">Custom range</label>
 								<input type="range" class="custom-range" id="customRange1">
@@ -455,28 +460,39 @@
 			<!--/.col (right) -->
 		</div>
 		<!-- /.row -->
-	</Page>
+	</page>
 </template>
 
 <script>
+import {
+	Card,
+	FormInput,
+	LteSelect,
+	RadioGroup,
+	Checkbox,
+	CheckboxGroup,
+	Page,
+	LteSwitch
+} from "../../src"
 
 export default {
 	name: "FormsPage",
+	components: {Page, LteSwitch, Card, CheckboxGroup, LteSelect, FormInput, Checkbox, RadioGroup},
 	data() {
 		return {
 			textValue: "",
 			checkboxOptions: [
 				{
 					value: "cb1",
-					text: "Checkbox"
+					text: "checkbox"
 				},
 				{
 					value: "cb2",
-					text: "Checkbox checked"
+					text: "checkbox checked"
 				},
 				{
 					value: "cb3",
-					text: "Checkbox disabled",
+					text: "checkbox disabled",
 					disabled: true
 				}
 			],

@@ -1,12 +1,12 @@
 import VueRouter from "vue-router"
 
-import Empty from "@/components/Empty.vue"
+import {Empty} from "../src/components"
 
 import FormsPage from "./screens/FormsPage.vue"
 import UiPage from "./screens/UiPage.vue"
 import NotImplemented from "./screens/NotImplemented.vue"
-import Validations from "./screens/Validations"
-import MainPage from "./screens/MainPage"
+import Validations from "./screens/Validations.vue"
+import MainPage from "./screens/MainPage.vue"
 
 const routes = [
 	{

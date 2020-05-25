@@ -1,15 +1,16 @@
 <template>
-	<div>
-		<hello-world name="Jofrey" />
-	</div>
+	<app-container>
+		<lte-button is-warning>The Warning button</lte-button>
+	</app-container>
 </template>
 
 <script>
-import {HelloWorld} from "./components"
+import AppContainer from "./components/application/AppContainer"
+import {LteButton} from "./components"
 
 export default {
 	name: "App",
-	components: {"hello-world": HelloWorld}
+	components: {LteButton, AppContainer}
 }
 </script>
 
