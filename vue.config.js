@@ -1,8 +1,8 @@
 const path = require("path")
 
-const rollupPostcss = require("rollup-plugin-postcss")
-// const rollupNodeResolve = require("@rollup/plugin-node-resolve").default
-const rollupAlias = require("@rollup/plugin-alias")
+const postcss = require("rollup-plugin-postcss")
+const alias = require("@rollup/plugin-alias")
+const copy = require("@rollup/plugin-copy")
 
 module.exports = {
 	publicPath: process.env.NODE_ENV === "demo"
@@ -16,18 +16,18 @@ module.exports = {
 					jquery: "$"
 				},
 				plugins: [
-					// rollupNodeResolve({
-					// 	customResolveOptions: {
-					// 		moduleDirectory: "node_modules"
-					// 	}
-					// }),
-					rollupAlias({
+					alias({
 						entries: {
 							AdminLTE: path.resolve(__dirname, "src/vendors/adminlte")
 						}
 					}),
-					rollupPostcss({
+					postcss({
 						extensions: [".css", ".scss", ".sass", ".less"]
+					}),
+					copy({
+						targets: [
+							{src: "src/vendors/adminlte", dest: "dist/adminlte"}
+						]
 					})
 				]
 			}
