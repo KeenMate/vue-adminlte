@@ -53,6 +53,7 @@
 		"@vue/eslint-config-standard": "^5.1.2",
 		"@vuepress/plugin-back-to-top": "^1.2.0",
 		"babel-eslint": "^10.1.0",
+		"cross-env-file": "^1.0.0",
 		"eslint": "^6.7.2",
 		"eslint-plugin-compat": "^3.5.1",
 		"eslint-plugin-import": "^2.20.2",
