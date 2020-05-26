@@ -109,17 +109,9 @@
 <script>
 import {required, requiredIf, between} from "vuelidate/lib/validators"
 import {charMinCount, contains, masked, specialCharRegexp, validateIf} from "../../src/helpers/validators"
-import {
-	Card,
-	FormInput,
-	LteSelect,
-	CheckboxGroup,
-	LteButton
-} from "../../src"
 
 export default {
 	name: "PerFieldMessagesValidations",
-	components: {Card, CheckboxGroup, LteSelect, LteButton, FormInput},
 	computed: {
 		isEURegion() {
 			return this.region === "eu"

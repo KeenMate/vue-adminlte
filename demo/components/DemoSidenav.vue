@@ -242,14 +242,8 @@
 </template>
 
 <script>
-import {SidenavLink, Badge} from "../../src"
-
 export default {
-	name: "DemoSidenav",
-	components: {
-		Badge,
-		SidenavLink
-	}
+	name: "DemoSidenav"
 }
 </script>
 

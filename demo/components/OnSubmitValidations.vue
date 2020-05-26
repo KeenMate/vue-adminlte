@@ -101,18 +101,9 @@
 <script>
 import {between, required, requiredIf} from "vuelidate/lib/validators"
 import {charMinCount, contains, masked, specialCharRegexp, validateIf} from "../../src/helpers/validators"
-import {
-	Card,
-	FormInput,
-	LteSelect,
-	CheckboxGroup,
-	MultiError,
-	LteButton
-} from "../../src"
 
 export default {
 	name: "OnSubmitValidations",
-	components: {LteButton, MultiError, CheckboxGroup, LteSelect, FormInput, Card},
 	computed: {
 		isEURegion() {
 			return this.region === "eu"
