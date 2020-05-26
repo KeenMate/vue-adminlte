@@ -1,8 +1,9 @@
 <template>
 	<BaseExtractor v-bind="{...$attrs, ...$props}" class="spanWrapper">
 		<template slot-scope="{errorMessage}">
-			<!--<span class="tag is-danger">{{errorMessage}}</span>-->
-			<span class="badge bg-warning">{{errorMessage}}</span>
+			<slot :message="errorMessage">
+				<span class="badge bg-warning">{{errorMessage}}</span>
+			</slot>
 		</template>
 	</BaseExtractor>
 </template>
@@ -12,14 +13,15 @@ import {templates} from "vuelidate-error-extractor"
 
 export default {
 	name: "MultiError",
+	components: {
+		BaseExtractor: templates.multiErrorExtractor.baseMultiErrorExtractor
+	},
 	props: [
 		"validator",
 		"attributes",
-		"messages"
-	],
-	components: {
-		BaseExtractor: templates.multiErrorExtractor.baseMultiErrorExtractor
-	}
+		"messages",
+		"isBlock"
+	]
 }
 </script>
 
