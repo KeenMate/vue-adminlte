@@ -37,6 +37,7 @@
 	"dependencies": {
 		"core-js": "^3.6.4",
 		"jquery": "^3.5.1",
+		"vue-fragment": "^1.5.1",
 		"vue-popperjs": "^2.3.0",
 		"vue-router": "^3.1.6",
 		"vuelidate": "^0.7.5",

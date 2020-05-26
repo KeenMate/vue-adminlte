@@ -23,13 +23,17 @@ export default {
 	computed: {
 		bodyStyles() {
 			return [
-				this.$scopedSlots["side-nav"] && "sidebar-mini"
+				this.$scopedSlots["side-nav"] && "sidebar-mini" || "no-sidebar"
 			].filter(x => x).join(" ")
 		}
 	}
 }
 </script>
 
-<style scoped>
-
+<style lang="scss">
+	.no-sidebar {
+		.main-header {
+		margin-left: 0;
+		}
+	}
 </style>
