@@ -1,7 +1,7 @@
 <template>
 	<card title="Immediate validation" is-info>
 		<form-input
-			v-model="$v.firstName.$model"
+			v-model="firstName"
 			class="row"
 			input-id="immediate-first-name-input"
 			label="First name"
@@ -9,6 +9,9 @@
 			:label-styles="['col-sm-2']"
 			:horizontal-styles="['col-sm-10']"
 			is-horizontal
+			:is-valid="$v.firstName.$dirty ? !$v.firstName.$anyError : undefined"
+			:is-invalid="$v.firstName.$dirty ? $v.firstName.$anyError : undefined"
+			@blur="$v.firstName.$touch()"
 		/>
 		<form-input
 			v-model="$v.lastName.$model"
@@ -19,6 +22,9 @@
 			:label-styles="['col-sm-2']"
 			:horizontal-styles="['col-sm-10']"
 			is-horizontal
+			:is-valid="$v.lastName.$dirty ? !$v.lastName.$anyError : undefined"
+			:is-invalid="$v.lastName.$dirty ? $v.lastName.$anyError : undefined"
+			@blur="$v.lastName.$touch()"
 		/>
 		<form-input
 			v-model="$v.password.$model"
@@ -30,6 +36,9 @@
 			:label-styles="['col-sm-2']"
 			:horizontal-styles="['col-sm-10']"
 			is-horizontal
+			:is-valid="$v.password.$dirty ? !$v.password.$anyError : undefined"
+			:is-invalid="$v.password.$dirty ? $v.password.$anyError : undefined"
+			@blur="$v.password.$touch()"
 		/>
 		<form-input
 			v-model="$v.age.$model"
@@ -41,6 +50,9 @@
 			:label-styles="['col-sm-2']"
 			:horizontal-styles="['col-sm-10']"
 			is-horizontal
+			:is-valid="$v.age.$dirty ? !$v.age.$anyError : undefined"
+			:is-invalid="$v.age.$dirty ? $v.age.$anyError : undefined"
+			@blur="$v.age.$touch()"
 		/>
 		<hr>
 		<lte-select
@@ -51,6 +63,9 @@
 			:label-styles="['col-sm-2']"
 			:horizontal-styles="['col-sm-10']"
 			is-horizontal
+			:is-valid="$v.region.$dirty ? !$v.region.$anyError : undefined"
+			:is-invalid="$v.region.$dirty ? $v.region.$anyError : undefined"
+			@blur="$v.region.$touch()"
 		>
 			<option value="" selected>Choose region</option>
 			<option value="eu">EU</option>
@@ -66,6 +81,8 @@
 				:label-styles="['col-sm-2']"
 				:horizontal-styles="['col-sm-10']"
 				is-horizontal
+				:is-valid="$v.eid.$dirty ? !$v.eid.$anyError : undefined"
+				:is-invalid="$v.eid.$dirty ? $v.eid.$anyError : undefined"
 				@blur="$v.eid.$touch()"
 			/>
 		</template>
