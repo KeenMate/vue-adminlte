@@ -32,8 +32,9 @@ export default {
 
 <style lang="scss">
 	.no-sidebar {
-		.main-header {
-		margin-left: 0;
+		.main-header,
+		.content-wrapper {
+			margin-left: 0 !important;
 		}
 	}
 </style>
