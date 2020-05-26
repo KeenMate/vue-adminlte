@@ -5,7 +5,7 @@ import {Empty} from "../src/components"
 import FormsPage from "./screens/FormsPage.vue"
 import UiPage from "./screens/UiPage.vue"
 import NotImplemented from "./screens/NotImplemented.vue"
-import Validations from "./screens/Validations.vue"
+import Validations from "./screens/ValidationsPage.vue"
 import MainPage from "./screens/MainPage.vue"
 
 const routes = [

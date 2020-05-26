@@ -1,18 +1,18 @@
 <template>
-	<Page>
+	<page>
 		<template #header>
-			<PageHeader title="Validations" fas icon="search" />
+			<page-header title="Validations" fas icon="search" />
 		</template>
 		<div class="row">
 			<div class="col-md-6">
-				<ImmediateValidations />
-				<OnSubmitValidations />
+				<immediate-validations />
+				<on-submit-validations />
 			</div>
 			<div class="col-md-6">
-				<PerFieldMessagesValidations />
+				<per-field-messages-validations />
 			</div>
 		</div>
-	</Page>
+	</page>
 </template>
 
 <script>
@@ -21,7 +21,7 @@ import OnSubmitValidations from "../components/OnSubmitValidations.vue"
 import PerFieldMessagesValidations from "../components/PerFieldMessagesValidations.vue"
 
 export default {
-	name: "Validations",
+	name: "ValidationsPage",
 	components: {PerFieldMessagesValidations, OnSubmitValidations, ImmediateValidations}
 }
 </script>
