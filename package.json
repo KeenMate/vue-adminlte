@@ -27,7 +27,7 @@
 		"testis": "vue-cli-service inspect",
 		"lint": "vue-cli-service lint",
 		"demo": "vue-cli-service demo components/Demo.vue",
-		"demo:build": "NODE_ENV=demo vue-cli-service demo --mode build components/Demo.vue",
+		"demo:build": "cross-env-file -p .env.demo-build.json vue-cli-service demo --mode build components/Demo.vue",
 		"docs": "npm run docs:serve",
 		"docs:build": "npm run demo:build && cd docs && vuepress build && cd .. && mv demo/dist docs/.vuepress/dist/demo",
 		"docs:serve": "vue-cli-service docs --mode serve",

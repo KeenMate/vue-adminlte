@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import TopNavigation from "../navigation/TopNavigation"
-import Sidenav from "../navigation/Sidenav"
+import TopNavigation from "../navigation/TopNavigation.vue"
+import Sidenav from "../navigation/Sidenav.vue"
 
 export default {
 	name: "AppContainer",

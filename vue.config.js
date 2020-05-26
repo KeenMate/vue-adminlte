@@ -2,15 +2,10 @@ const path = require("path")
 
 const postcss = require("rollup-plugin-postcss")
 const alias = require("@rollup/plugin-alias")
-const copy = require("@rollup/plugin-copy")
-
-const pubpath = process.env.NODE_ENV === "demo"
-	? "/vue-adminlte/demo/"
-	: "/"
-console.log("Current public path: ", pubpath)
+const copy = require("rollup-plugin-copy")
 
 module.exports = {
-	publicPath: pubpath,
+	publicPath: process.env.PUBLIC_PATH || "/",
 	pluginOptions: {
 		p11n: {
 			configureRollup: {
