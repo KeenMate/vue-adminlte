@@ -19,14 +19,14 @@
 </template>
 
 <script>
-import AdminLTE from "../../vendors/adminlte/js/adminlte.min"
+import {Treeview} from "../../vendors/adminlte/js/adminlte"
 import $ from "jquery"
 
 export default {
 	name: "Sidenav",
-	async mounted() {
+	mounted() {
 		// this.treeview = import("AdminLTE/build/js/Treeview.js")
-		this.treeview = AdminLTE.Treeview($)
+		this.treeview = Treeview($)
 	},
 	data() {
 		return {
