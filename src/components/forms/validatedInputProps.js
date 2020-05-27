@@ -8,7 +8,10 @@ export default {
 	 * @description Sets state of this form input to 'invalid'
 	 * Overrides validator's validity
 	 */
-	isInvalid: Boolean,
+	isInvalid: {
+		type: Boolean,
+		default: undefined
+	},
 
 	/**
 	 * @type {String}
@@ -21,7 +24,10 @@ export default {
 	 * @description Sets state of this form input to 'valid'
 	 * Overrides validator's validity
 	 */
-	isValid: Boolean,
+	isValid: {
+		type: Boolean,
+		default: undefined
+	},
 
 	/**
 	 * @type {String}
