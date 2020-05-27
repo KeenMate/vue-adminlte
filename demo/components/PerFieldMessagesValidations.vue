@@ -1,7 +1,7 @@
 <template>
 	<card title="Immediate validation (per field)" is-info>
 		<form-input
-			v-model="$v.firstName.$model"
+			v-model="firstName"
 			:validator="$v.firstName"
 			invalid-msg="This field is required"
 			class="row"
@@ -11,9 +11,10 @@
 			:label-styles="['col-sm-2']"
 			:horizontal-styles="['col-sm-10']"
 			is-horizontal
+			@blur="$v.firstName.$touch()"
 		/>
 		<form-input
-			v-model="$v.lastName.$model"
+			v-model="lastName"
 			:validator="$v.lastName"
 			invalid-msg="This field is required"
 			class="row"
@@ -23,9 +24,10 @@
 			:label-styles="['col-sm-2']"
 			:horizontal-styles="['col-sm-10']"
 			is-horizontal
+			@blur="$v.lastName.$touch()"
 		/>
 		<form-input
-			v-model="$v.password.$model"
+			v-model="password"
 			:validator="$v.password"
 			invalid-msg="This field is required, must contain 2 spaces and 1 special character"
 			class="row"
@@ -36,9 +38,10 @@
 			:label-styles="['col-sm-2']"
 			:horizontal-styles="['col-sm-10']"
 			is-horizontal
+			@blur="$v.password.$touch()"
 		/>
 		<form-input
-			v-model="$v.age.$model"
+			v-model="age"
 			:validator="$v.age"
 			invalid-msg="This field is required and must be between 25 and 38"
 			type="number"
@@ -49,10 +52,11 @@
 			:label-styles="['col-sm-2']"
 			:horizontal-styles="['col-sm-10']"
 			is-horizontal
+			@blur="$v.age.$touch()"
 		/>
 		<hr>
 		<lte-select
-			v-model="$v.region.$model"
+			v-model="region"
 			:validator="$v.region"
 			invalid-msg="This field is required"
 			label="Region"
@@ -61,6 +65,7 @@
 			:label-styles="['col-sm-2']"
 			:horizontal-styles="['col-sm-10']"
 			is-horizontal
+			@blur="$v.region.$touch()"
 		>
 			<option value="" selected>Choose region</option>
 			<option value="eu">EU</option>
@@ -68,7 +73,7 @@
 		</lte-select>
 		<template v-if="region === 'eu'">
 			<form-input
-				v-model="$v.eid.$model"
+				v-model="eid"
 				:validator="$v.eid"
 				invalid-msg="This field is required and must be in format: '{2-letter country}-{4-digit id}' e.g. 'CZ-1234'"
 				class="row"
@@ -78,14 +83,14 @@
 				:label-styles="['col-sm-2']"
 				:horizontal-styles="['col-sm-10']"
 				is-horizontal
+				@blur="$v.eid.$touch()"
 			/>
-			<!-- @blur="$v.eid.$touch()" -->
 		</template>
 		<template v-else-if="region === 'usa'">
 			<div class="row form-group">
 				<div class="offset-sm-2 col-sm-10">
 					<checkbox-group
-						v-model="$v.agreedUpon.$model"
+						v-model="agreedUpon"
 						:validator="$v.agreedUpon"
 						invalid-msg="You must check NDA and Citizen-ship checkboxes!"
 						:options="agreements"
@@ -93,6 +98,7 @@
 						:get-value="x => x.value"
 						:get-disabled="x => x.disabled"
 						is-horizontal
+						@blur="$v.agreedUpon.$touch()"
 					/>
 				</div>
 			</div>
@@ -125,11 +131,6 @@ export default {
 			this.$v.$touch()
 
 			await this.$nextTick()
-
-			if (this.$v.$anyError)
-				alert("Form contains errors")
-			else
-				alert("Form is ok!")
 		}
 	},
 	validations() {
