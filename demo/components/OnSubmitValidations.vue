@@ -9,6 +9,8 @@
 			:label-styles="['col-sm-2']"
 			:horizontal-styles="['col-sm-10']"
 			is-horizontal
+			:is-valid="$v.firstName.$dirty ? !$v.firstName.$anyError : undefined"
+			:is-invalid="$v.firstName.$dirty ? $v.firstName.$anyError : undefined"
 		/>
 		<form-input
 			v-model="lastName"
@@ -19,6 +21,8 @@
 			:label-styles="['col-sm-2']"
 			:horizontal-styles="['col-sm-10']"
 			is-horizontal
+			:is-valid="$v.lastName.$dirty ? !$v.lastName.$anyError : undefined"
+			:is-invalid="$v.lastName.$dirty ? $v.lastName.$anyError : undefined"
 		/>
 		<form-input
 			v-model="password"
@@ -30,6 +34,8 @@
 			:label-styles="['col-sm-2']"
 			:horizontal-styles="['col-sm-10']"
 			is-horizontal
+			:is-valid="$v.password.$dirty ? !$v.password.$anyError : undefined"
+			:is-invalid="$v.password.$dirty ? $v.password.$anyError : undefined"
 		/>
 		<form-input
 			v-model="age"
@@ -41,6 +47,8 @@
 			:label-styles="['col-sm-2']"
 			:horizontal-styles="['col-sm-10']"
 			is-horizontal
+			:is-valid="$v.age.$dirty ? !$v.age.$anyError : undefined"
+			:is-invalid="$v.age.$dirty ? $v.age.$anyError : undefined"
 		/>
 		<hr>
 		<lte-select
@@ -51,6 +59,8 @@
 			:label-styles="['col-sm-2']"
 			:horizontal-styles="['col-sm-10']"
 			is-horizontal
+			:is-valid="$v.region.$dirty ? !$v.region.$anyError : undefined"
+			:is-invalid="$v.region.$dirty ? $v.region.$anyError : undefined"
 		>
 			<option value="" selected>Choose region</option>
 			<option value="eu">EU</option>
@@ -66,6 +76,8 @@
 				:label-styles="['col-sm-2']"
 				:horizontal-styles="['col-sm-10']"
 				is-horizontal
+				:is-valid="$v.eid.$dirty ? !$v.eid.$anyError : undefined"
+				:is-invalid="$v.eid.$dirty ? $v.eid.$anyError : undefined"
 			/>
 		</template>
 		<template v-else-if="region === 'usa'">
@@ -78,6 +90,8 @@
 						:get-value="x => x.value"
 						:get-disabled="x => x.disabled"
 						is-horizontal
+						:is-valid="$v.agreedUpon.$dirty ? !$v.agreedUpon.$anyError : undefined"
+						:is-invalid="$v.agreedUpon.$dirty ? $v.agreedUpon.$anyError : undefined"
 					/>
 				</div>
 			</div>
