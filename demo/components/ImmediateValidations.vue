@@ -135,11 +135,6 @@ export default {
 			this.$v.$touch()
 
 			await this.$nextTick()
-
-			if (this.$v.$anyError)
-				alert("Form contains errors")
-			else
-				alert("Form is ok!")
 		}
 	},
 	validations() {
