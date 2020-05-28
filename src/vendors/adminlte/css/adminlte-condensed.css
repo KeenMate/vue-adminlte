@@ -9,12 +9,23 @@ body {
   padding: .2rem .5rem;
 }
 
-.nav-link {
-  padding: 0.15rem 1rem;
+.sidebar {
+  padding: 0 .2rem;
 }
 
-.nav-sidebar > .nav-item .nav-icon
-{
+.nav-link {
+  padding: 0.15rem .3rem;
+}
+
+.nav-link.active {
+  margin-right: .5rem;
+}
+
+.nav-sidebar .nav-header:not(:first-of-type) {
+  padding: .7rem .5rem .5rem .5rem;
+}
+
+.nav-sidebar > .nav-item .nav-icon {
   margin-right: 0;
 }
 
@@ -22,8 +33,7 @@ li.nav-item.has-treeview > ul.nav {
   padding-left: .35rem;
 }
 
-.nav-sidebar .nav-link > .right, .nav-sidebar .nav-link > p > .right
-{
+.nav-sidebar .nav-link > .right, .nav-sidebar .nav-link > p > .right {
   top: .3rem;
 }
 
@@ -44,12 +54,10 @@ li.nav-item.has-treeview > ul.nav {
 }
 
 .main-footer {
-  padding: .3rem
+  padding: .3rem;
 }
 
-
 /* FORMS and FORM CONTROLS */
-
 .form-control {
   padding-left: .3rem;
   padding-right: .3rem;
@@ -111,7 +119,7 @@ textarea {
 
 .card-body,
 .card-footer {
-  padding: .5rem
+  padding: .5rem;
 }
 
 .card-title {
@@ -119,8 +127,11 @@ textarea {
 }
 
 .form-group {
+  margin-bottom: .5rem;
+}
+
+.form-group:not(.row) {
   margin: 0;
-  margin-bottom: 5px;
 }
 
 .form-group .custom-control {
@@ -128,6 +139,10 @@ textarea {
   display: flex;
   -ms-flex-align: center;
   align-items: center;
+}
+
+.form-group .invalid-feedback.empty, .form-group .valid-feedback.empty {
+  margin-top: 0;
 }
 
 .form-group .custom-control custom-control-label {
@@ -138,7 +153,7 @@ textarea {
 }
 
 .form-group .custom-control custom-control-label::before {
-  margin: auto
+  margin: auto;
 }
 
 .form-group label {
@@ -146,9 +161,16 @@ textarea {
   margin-bottom: 0 !important;
 }
 
-.input-group-text {
+.input-group-append .input-group-text {
   padding-left: .3rem;
   padding-right: .3rem;
+  font-size: .8rem;
+  height: calc(1.7rem + 2px);
+  -ms-flex-align: normal;
+  align-items: normal;
+}
+
+.input-group-prepend .input-group-text {
   font-size: .8rem;
   height: calc(1.7rem + 2px);
   -ms-flex-align: normal;
@@ -160,12 +182,58 @@ textarea {
   line-height: 1;
 }
 
-
 .custom-control-label::after {
   /* content: none; */
 }
 
 .content-header {
   padding: .2rem .5rem;
+}
+
+.form-group select.form-control.is-invalid {
+  background-position: right calc(.375em + .6rem) center !important;
+}
+
+.card-body.p-0 > .note-editor {
+  margin-bottom: 0 !important;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.content-wrapper {
+  padding-top: .6rem;
+}
+
+.card-tools {
+  height: 0.875em;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.table tr > td:last-child {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.table tr > td > button > i {
+  font-size: .6rem;
+}
+
+.table tr > td:last-child > button:not(:last-child) {
+  margin-right: 3px;
+}
+
+textarea {
+  font-family: 'Fira Code', monospace;
+}
+
+.note-status-output {
+  height: auto !important;
 }
 /*# sourceMappingURL=adminlte-condensed.css.map */

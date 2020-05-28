@@ -19,11 +19,18 @@ import Sidenav from "../navigation/Sidenav.vue"
 export default {
 	name: "AppContainer",
 	components: {Sidenav, TopNavigation},
-	props: {},
+	props: {
+		/**
+		 * @type {Boolean}
+		 * @description Sets .3rem margin for app container
+		 */
+		horizontalSpaced: Boolean
+	},
 	computed: {
 		bodyStyles() {
 			return [
-				this.$scopedSlots["side-nav"] && "sidebar-mini" || "no-sidebar"
+				this.$scopedSlots["side-nav"] && "sidebar-mini" || "no-sidebar",
+				this.horizontalSpaced && "mh"
 			].filter(x => x).join(" ")
 		}
 	}
@@ -36,5 +43,10 @@ export default {
 		.content-wrapper {
 			margin-left: 0 !important;
 		}
+	}
+
+	.mh {
+		margin-left: .3rem;
+		margin-right: .3rem;
 	}
 </style>

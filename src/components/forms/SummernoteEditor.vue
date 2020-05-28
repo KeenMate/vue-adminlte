@@ -12,7 +12,19 @@ import $ from "jquery"
 export default {
 	name: "SummernoteEditor",
 	mounted() {
-		$(this.$refs.textarea).summernote()
+		$(this.$refs.textarea).summernote({
+			callbacks: {
+				onChange: this.onSummernoteChange
+			}
+		})
+	},
+	beforeDestroy() {
+		$(this.$refs.textarea).summernote("destroy")
+	},
+	methods: {
+		onSummernoteChange(content) {
+			this.$emit("input", content)
+		}
 	}
 }
 </script>

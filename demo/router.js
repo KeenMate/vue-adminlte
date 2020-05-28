@@ -7,6 +7,7 @@ import UiPage from "./screens/UiPage.vue"
 import NotImplemented from "./screens/NotImplemented.vue"
 import Validations from "./screens/ValidationsPage.vue"
 import MainPage from "./screens/MainPage.vue"
+import SummernoteEditorPage from "./screens/SummernoteEditorPage"
 
 const routes = [
 	{
@@ -61,6 +62,14 @@ const routes = [
 						}
 					}
 				]
+			},
+			{
+				name: "summernote-editor",
+				path: "summernote-editor",
+				component: SummernoteEditorPage,
+				meta: {
+					breadcrumb: "Summernote editor"
+				}
 			}
 		]
 	},

@@ -1,11 +1,15 @@
 import Vue from "vue"
 import App from "~entry"
-import VueAdminLte from "../src"
 import VueRouter from "vue-router"
-import router from "./router"
 import {Plugin as VueFragment} from "vue-fragment"
 import Vuelidate from "vuelidate"
 import VuelidateErrorExtractor, {templates} from "vuelidate-error-extractor"
+import "bootstrap"
+import "@popperjs/core"
+
+import VueAdminLte from "../src"
+import router from "./router"
+import "../src/vue-adminlte-setup"
 
 Vue.use(VueAdminLte)
 Vue.use(VueRouter)

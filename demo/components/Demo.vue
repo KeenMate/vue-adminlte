@@ -4,6 +4,7 @@
 			<top-nav-link :to="{name: 'forms-general'}">Forms</top-nav-link>
 			<top-nav-link :to="{name: 'forms-validations'}">Validations</top-nav-link>
 			<top-nav-link :to="{name: 'ui-general'}">UI Elements</top-nav-link>
+			<top-nav-link :to="{name: 'summernote-editor'}">Summernote editor</top-nav-link>
 		</template>
 		<template #side-nav>
 			<DemoSidenav />

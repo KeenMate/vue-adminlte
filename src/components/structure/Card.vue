@@ -7,7 +7,7 @@
 			</h3>
 			<slot name="header"></slot>
 		</div>
-		<div :class="'card-body' + (paddingless && ' p-0' || '')">
+		<div :class="'card-body' + (isPaddingless && ' p-0' || '')">
 			<slot></slot>
 		</div>
 		<div v-if="$scopedSlots.footer" class="card-footer">
@@ -25,7 +25,7 @@ export default {
 		title: String,
 		icon: String,
 		outlined: Boolean,
-		paddingless: Boolean,
+		isPaddingless: Boolean,
 		isInfo: Boolean,
 		isSuccess: Boolean,
 		isDanger: Boolean,
