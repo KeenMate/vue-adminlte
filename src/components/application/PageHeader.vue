@@ -11,6 +11,14 @@
 <script>
 import PageBreadcrumbs from "../navigation/PageBreadcrumbs.vue"
 
+/**
+ * @typedef RouteItem
+ * @type {object | string}
+ * @param key {string}
+ * @param text {string} Visible part
+ * @param to {string | object} To be passed to &lt;router-link&gt;
+ */
+
 export default {
 	name: "PageHeader",
 	components: {PageBreadcrumbs},
@@ -20,7 +28,7 @@ export default {
 		 * @description Array of objects containing visible text, unique key and VueRouter's "to" for routing for building breadcrumbs.
 		 * When not specified value will be taken from $route.matched routes to build breadcrumbs from routes' metadata
 		 * (expecting 'breadcrumb' field to exist in meta object of route)
-		 * @type {[{key: String, text: String, to: String | Object}]}
+		 * @type {Array<RouteItem>}
 		 */
 		breadcrumbs: Array,
 		icon: String,

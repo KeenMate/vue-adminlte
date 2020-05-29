@@ -5,14 +5,12 @@
 		</template>
 		<table :class="tableStyles">
 			<thead>
-			<tr>
 				<slot name="head-tr"></slot>
-			</tr>
 			</thead>
 			<tbody>
-			<tr v-for="(item, i) in items" :key="item[itemKey]">
+			<template v-for="(item, i) in items" :key="itemKey && item[itemKey] || item">
 				<slot :item="item" :index="i"></slot>
-			</tr>
+			</template>
 			</tbody>
 		</table>
 	</Card>
