@@ -1,8 +1,8 @@
 /*!
- * AdminLTE v3.0.4 (https://adminlte.io)
- * Copyright 2014-2020 Colorlib <http://colorlib.com>
- * Licensed under MIT (https://github.com/ColorlibHQ/AdminLTE/blob/master/LICENSE)
- */
+	* AdminLTE v3.0.4 (https://adminlte.io)
+	* Copyright 2014-2020 Colorlib <http://colorlib.com>
+	* Licensed under MIT (https://github.com/ColorlibHQ/AdminLTE/blob/master/LICENSE)
+	*/
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('jquery')) :
   typeof define === 'function' && define.amd ? define(['exports', 'jquery'], factory) :
@@ -1861,6 +1861,8 @@
     return Toasts;
   }(jQuery);
 
+  Treeview($);
+
   exports.CardRefresh = CardRefresh;
   exports.CardWidget = CardWidget;
   exports.ControlSidebar = ControlSidebar;
@@ -1875,4 +1877,4 @@
   Object.defineProperty(exports, '__esModule', { value: true });
 
 })));
-//# sourceMappingURL=adminlte.js.map
+//# sourceMappingURL=adminlte.umd.js.map

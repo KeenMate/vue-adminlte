@@ -214,13 +214,6 @@ textarea {
   justify-content: center;
 }
 
-.table tr > td:last-child {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-}
-
 .table tr > td > button > i {
   font-size: .6rem;
 }

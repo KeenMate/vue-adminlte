@@ -13,6 +13,9 @@ export default {
 	name: "SummernoteEditor",
 	mounted() {
 		$(this.$refs.textarea).summernote({
+			codemirror: {
+				theme: "monokai"
+			},
 			callbacks: {
 				onChange: this.onSummernoteChange
 			}

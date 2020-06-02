@@ -1,16 +1,18 @@
 <template>
 	<Card v-bind="$attrs" paddingless>
-		<template v-if="$scopedSlots.header" #header>
-			<slot name="header"></slot>
+		<template v-if="$scopedSlots['card-header']" #header>
+			<slot name="card-header"></slot>
 		</template>
 		<table :class="tableStyles">
 			<thead>
-				<slot name="head-tr"></slot>
+			<tr>
+				<slot name="head"></slot>
+			</tr>
 			</thead>
 			<tbody>
-			<template v-for="(item, i) in items" :key="itemKey && item[itemKey] || item">
+			<tr v-for="(item, i) in items" :key="itemKey && item[itemKey] || item">
 				<slot :item="item" :index="i"></slot>
-			</template>
+			</tr>
 			</tbody>
 		</table>
 	</Card>
@@ -40,5 +42,7 @@ export default {
 </script>
 
 <style scoped>
-
+	.table-row {
+		display: table-row;
+	}
 </style>

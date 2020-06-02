@@ -8,6 +8,7 @@ import NotImplemented from "./screens/NotImplemented.vue"
 import Validations from "./screens/ValidationsPage.vue"
 import MainPage from "./screens/MainPage.vue"
 import SummernoteEditorPage from "./screens/SummernoteEditorPage"
+import ComponentsPage from "./screens/ComponentsPage"
 
 const routes = [
 	{
@@ -70,6 +71,11 @@ const routes = [
 				meta: {
 					breadcrumb: "Summernote editor"
 				}
+			},
+			{
+				path: "/components",
+				name: "components",
+				component: ComponentsPage
 			}
 		]
 	},

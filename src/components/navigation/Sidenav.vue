@@ -19,7 +19,7 @@
 </template>
 
 <script>
-const Treeview = require("../../vendors/adminlte/js/adminlte").Treeview
+import {Treeview} from "../../vendors/adminlte/js/adminlte.esm"
 import $ from "jquery"
 
 export default {
