@@ -115,6 +115,30 @@ textarea {
 
 .card-header {
   padding: 0.35rem 0.5rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.card-header > .card-title {
+  float: none;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.card-header > .card-tools {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  -ms-flex-pack: center;
+  justify-content: center;
+  float: none;
+  margin-right: 0;
+  height: .5rem;
 }
 
 .card-body,
@@ -202,16 +226,6 @@ textarea {
 
 .content-wrapper {
   padding-top: .6rem;
-}
-
-.card-tools {
-  height: 0.875em;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: end;
-  align-items: flex-end;
-  -ms-flex-pack: center;
-  justify-content: center;
 }
 
 .table tr > td > button > i {
