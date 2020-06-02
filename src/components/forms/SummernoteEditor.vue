@@ -56,8 +56,10 @@ export default {
 			this.$emit("input", content)
 		}
 	},
-	data: {
-		$editor: null
+	data() {
+		return {
+			$editor: null
+		}
 	}
 }
 </script>
