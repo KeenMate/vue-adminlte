@@ -1,7 +1,7 @@
 <template>
 	<div :class="cardStyles">
 		<div class="card-header">
-			<h3 v-if="title" class="card-title">
+			<h3 class="card-title">
 				<i v-if="icon" :class="'fas ' + icon"></i>
 				{{title}}
 			</h3>
