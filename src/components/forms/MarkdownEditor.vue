@@ -14,14 +14,14 @@ export default {
 </script>
 
 <style lang="scss">
-	@import "~easymde/dist/easymde.min.css";
+	@import "../../../node_modules/easymde/dist/easymde.min";
 
 	.editor-toolbar {
 		border-radius: 0 !important;
 		padding: 0 !important;
 
-	&:before, &:after {
-		           margin: 0 !important;
-	           }
+		&:before, &:after {
+			margin: 0 !important;
+		}
 	}
 </style>
