@@ -15,6 +15,7 @@ export {default as LteSwitch} from "./forms/LteSwitch.vue"
 export {default as Radio} from "./forms/Radio.vue"
 export {default as RadioGroup} from "./forms/RadioGroup.vue"
 export {default as SummernoteEditor} from "./forms/SummernoteEditor.vue"
+export {default as MarkdownEditor} from "./forms/MarkdownEditor.vue"
 export {default as UploadFile} from "./forms/UploadFile.vue"
 export {default as validatedInputProps} from "./forms/validatedInputProps"
 
