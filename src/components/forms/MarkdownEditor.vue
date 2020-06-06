@@ -1,5 +1,5 @@
 <template>
-	<vue-easymde />
+	<vue-easymde v-bind="$attrs" v-on="$listeners" />
 </template>
 
 <script>
