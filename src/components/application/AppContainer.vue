@@ -1,7 +1,7 @@
 <template>
 	<div :class="bodyStyles">
 		<div class="wrapper">
-			<top-navigation v-if="$scopedSlots['top-nav']">
+			<top-navigation v-if="$scopedSlots['top-nav']" :no-bars="noBars">
 				<slot name="top-nav"></slot>
 			</top-navigation>
 			<sidenav v-if="$scopedSlots['side-nav']">
@@ -24,7 +24,13 @@ export default {
 		 * @type {Boolean}
 		 * @description Sets .3rem margin for app container
 		 */
-		horizontalSpaced: Boolean
+		horizontalSpaced: Boolean,
+
+		/**
+		 * @type {Boolean}
+		 * @description Passes this prop to `top-navigation` sub component
+		 */
+		noBars: Boolean
 	},
 	computed: {
 		bodyStyles() {
