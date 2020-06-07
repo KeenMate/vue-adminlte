@@ -13,8 +13,10 @@
 						<th>The Title</th>
 					</template>
 					<template #default="{item, index}">
-						<td>{{index + 1}}</td>
-						<td>{{item.title}}</td>
+						<tr :key="item.id">
+							<td>{{index + 1}}</td>
+							<td>{{item.title}}</td>
+						</tr>
 					</template>
 				</card-table>
 			</div>

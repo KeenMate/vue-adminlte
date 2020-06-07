@@ -10,9 +10,7 @@
 			</tr>
 			</thead>
 			<tbody>
-			<tr v-for="(item, i) in items" :key="itemKey && item[itemKey] || item">
-				<slot :item="item" :index="i"></slot>
-			</tr>
+			<slot v-for="(item, i) in items" :item="item" :index="i"></slot>
 			</tbody>
 		</table>
 	</Card>
