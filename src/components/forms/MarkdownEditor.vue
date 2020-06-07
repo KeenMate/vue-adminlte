@@ -1,5 +1,5 @@
 <template>
-	<vue-easymde v-bind="$attrs" v-on="$listeners" />
+	<vue-easymde ref="vueEasyMde" v-bind="$attrs" v-on="$listeners" />
 </template>
 
 <script>
@@ -9,6 +9,11 @@ export default {
 	name: "MarkdownEditor",
 	components: {
 		VueEasymde
+	},
+	watch: {
+		value(_val) {
+			this.$refs.vueEasyMde.initialize()
+		}
 	}
 }
 </script>
