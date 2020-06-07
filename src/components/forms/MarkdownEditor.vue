@@ -11,8 +11,10 @@ export default {
 		VueEasymde
 	},
 	watch: {
-		value(_val) {
-			this.$refs.vueEasyMde.initialize()
+		"$attrs.value"(val) {
+			console.log("Initializing editor")
+			this.$refs.vueEasyMde.isValueUpdateFromInner = false
+			// this.$refs.vueEasyMde.initialize()
 		}
 	}
 }
