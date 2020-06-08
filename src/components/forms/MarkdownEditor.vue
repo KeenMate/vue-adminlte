@@ -1,5 +1,5 @@
 <template>
-	<vue-easymde ref="vueEasyMde" v-bind="$attrs" v-on="$listeners" />
+	<vue-easymde ref="vueEasyMde" v-bind="$attrs" v-on="$listeners" @input="onInput" />
 </template>
 
 <script>
@@ -13,8 +13,20 @@ export default {
 	watch: {
 		"$attrs.value"(val) {
 			console.log("Initializing editor")
-			this.$refs.vueEasyMde.isValueUpdateFromInner = false
+
+			this.$refs.vueEasyMde.isValueUpdateFromInner = val === this.valueFromNested
 			// this.$refs.vueEasyMde.initialize()
+		}
+	},
+	methods: {
+		onInput(val) {
+			console.log("Input captured")
+			this.valueFromNested = val
+		}
+	},
+	data() {
+		return {
+			valueFromNested: this.$attrs.value
 		}
 	}
 }
