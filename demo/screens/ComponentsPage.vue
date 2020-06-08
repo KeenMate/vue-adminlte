@@ -3,7 +3,13 @@
 		<template #header>
 			<page-header title="Components" />
 		</template>
-
+		<div class="row">
+			<div class="col-md-6">
+				<card title="File upload test">
+					<file-upload v-model="uploadedFile" />
+				</card>
+			</div>
+		</div>
 		<div class="row">
 			<div class="col-md-3">
 				<card-table :items="myTableItems" item-key="id" is-paddingless>
@@ -55,7 +61,8 @@ export default {
 					title: "Title"
 				}
 			],
-			sampleContent: "<h1>Hello world</h1>"
+			sampleContent: "<h1>Hello world</h1>",
+			uploadedFile: null
 		}
 	}
 }

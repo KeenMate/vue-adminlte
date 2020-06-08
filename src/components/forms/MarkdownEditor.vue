@@ -15,12 +15,10 @@ export default {
 			console.log("Initializing editor")
 
 			this.$refs.vueEasyMde.isValueUpdateFromInner = val === this.valueFromNested
-			// this.$refs.vueEasyMde.initialize()
 		}
 	},
 	methods: {
 		onInput(val) {
-			console.log("Input captured")
 			this.valueFromNested = val
 		}
 	},
