@@ -6,6 +6,7 @@
 				class="custom-file-input"
 				:id="id"
 				:multiple="isMultiple"
+				:accept="accept"
 				@input="onInput">
 			<label class="custom-file-label" :for="id">{{label}}</label>
 		</div>
@@ -33,10 +34,21 @@ export default {
 		/**
 		 * @type {string}
 		 * @description Label for file input
+		 * @default "Choose file"
 		 */
 		label: {
 			type: String,
 			default: "Choose file"
+		},
+
+		/**
+		 * @type {string}
+		 * @default "*"
+		 * @description Passed to input tag
+		 */
+		accept: {
+			type: String,
+			default: "*"
 		}
 	},
 	methods: {
