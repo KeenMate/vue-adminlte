@@ -2,15 +2,18 @@
 	<vue-file-pond
 		:files="files"
 		:accepted-file-types="accept"
-		:server="server" />
+		:server="server"
+		:allow-revert="allowRevert"
+	/>
 </template>
 
 <script>
 import vueFilePond from "vue-filepond"
 
+import FilePondExifOrientation from "filepond-plugin-image-exif-orientation"
 import FilePondPreview from "filepond-plugin-image-preview"
 
-const VueFilePond = vueFilePond(FilePondPreview)
+const VueFilePond = vueFilePond(FilePondExifOrientation, FilePondPreview)
 
 export default {
 	name: "ImageUpload",
@@ -29,7 +32,16 @@ export default {
 		 * qwe
 		 * @type {string | object}
 		 */
-		server: [String, Object]
+		server: [String, Object],
+
+		/**
+		 * @default true
+		 * @type {Boolean}
+		 */
+		allowRevert: {
+			type: Boolean,
+			default: false
+		}
 	},
 	components: {
 		VueFilePond
