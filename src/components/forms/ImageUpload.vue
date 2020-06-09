@@ -8,8 +8,6 @@
 <script>
 import vueFilePond from "vue-filepond"
 
-import "filepond/dist/filepond.min.css"
-
 import FilePondPreview from "filepond-plugin-image-preview"
 import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css"
 
@@ -40,6 +38,6 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style>
+	@import "~filepond/dist/filepond.min.css";
 </style>
