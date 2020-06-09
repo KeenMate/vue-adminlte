@@ -9,6 +9,9 @@
 					<file-upload v-model="uploadedFile" />
 				</card>
 			</div>
+			<div class="col-md-6">
+				<image-upload server="/" :files="someFiles" accept="image/jpeg" />
+			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-3">
@@ -31,6 +34,10 @@
 					<summernote-editor v-model="sampleContent" />
 				</card>
 
+				<card title="EasyMDE editor demo" is-paddingless>
+					<markdown-editor v-model="sampleContent" />
+				</card>
+
 				<h3>Sample output:</h3>
 				<p v-html="sampleContent"></p>
 			</div>
@@ -43,6 +50,7 @@ export default {
 	name: "ComponentsPage",
 	data() {
 		return {
+			someFiles: [],
 			myTableItems: [
 				{
 					id: 1,

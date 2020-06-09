@@ -37,8 +37,11 @@
 	"dependencies": {
 		"@popperjs/core": "^2.4.0",
 		"core-js": "^3.6.4",
+		"filepond": "^4.15.1",
+		"filepond-plugin-image-preview": "^4.6.4",
 		"jquery": "^3.5.1",
 		"vue-easymde": "^1.2.1",
+		"vue-filepond": "^6.0.2",
 		"vue-fragment": "^1.5.1",
 		"vue-popperjs": "^2.3.0",
 		"vue-router": "^3.1.6",
