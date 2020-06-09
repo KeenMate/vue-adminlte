@@ -4,6 +4,7 @@
 		:accepted-file-types="accept"
 		:server="server"
 		:allow-revert="allowRevert"
+		:allow-multiple="allowMultiple"
 	/>
 </template>
 
@@ -35,13 +36,14 @@ export default {
 		server: [String, Object],
 
 		/**
-		 * @default true
 		 * @type {Boolean}
 		 */
-		allowRevert: {
-			type: Boolean,
-			default: false
-		}
+		allowRevert: Boolean,
+
+		/**
+		 * @type {Boolean}
+		 */
+		allowMultiple: Boolean
 	},
 	components: {
 		VueFilePond
