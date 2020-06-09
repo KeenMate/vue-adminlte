@@ -9,7 +9,6 @@
 import vueFilePond from "vue-filepond"
 
 import FilePondPreview from "filepond-plugin-image-preview"
-import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css"
 
 const VueFilePond = vueFilePond(FilePondPreview)
 
@@ -40,4 +39,5 @@ export default {
 
 <style>
 	@import "~filepond/dist/filepond.min.css";
+	@import "~filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css";
 </style>
