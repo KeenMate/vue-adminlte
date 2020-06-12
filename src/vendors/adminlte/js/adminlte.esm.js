@@ -741,6 +741,7 @@ var PushMenu = function ($) {
  * License MIT
  * --------------------------------------------
  */
+
 var Treeview = function Treeview($) {
   /**
     * Constants
