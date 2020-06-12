@@ -11,6 +11,7 @@ export default {
 		isPrimary: Boolean,
 		isSecondary: Boolean,
 		isInfo: Boolean,
+		isSuccess: Boolean,
 		isDanger: Boolean,
 		isWarning: Boolean,
 		isSubmit: Boolean
@@ -32,6 +33,8 @@ export default {
 				styles.push("btn-info")
 			else if (this.isDanger)
 				styles.push("btn-danger")
+			else if (this.isSuccess)
+				styles.push("btn-success")
 			else if (this.isWarning)
 				styles.push("btn-warning")
 
