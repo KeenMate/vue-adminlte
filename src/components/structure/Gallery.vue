@@ -12,11 +12,13 @@
 					data-category="1"
 					:data-sort="image.title"
 				>
-					<a :href="image.src"
-						data-toggle="lightbox"
-						:data-title="image.title">
-						<img :src="image.msrc" class="img-fluid mb-2" :alt="image.title">
-					</a>
+					<slot :image="image">
+						<a :href="image.src"
+							data-toggle="lightbox"
+							:data-title="image.title">
+							<img :src="image.msrc" class="img-fluid mb-2" :alt="image.title">
+						</a>
+					</slot>
 				</div>
 			</div>
 		</template>
