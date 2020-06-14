@@ -4,13 +4,14 @@
 			<CardTools />
 		</template>
 		<template #default>
-			<div class="filter-container p-0 row">
+			<div
+				v-for="imageRow in imagesGrid"
+				class="row"
+			>
 				<div
-					v-for="image in images"
+					v-for="image in imageRow"
 					:key="image[imageKey]"
-					class="filter-item col-sm-2"
-					data-category="1"
-					:data-sort="image.title"
+					:class="columnClass"
 				>
 					<slot :image="image">
 						<a :href="image.src"
@@ -29,6 +30,8 @@
 import Card from "./Card.vue"
 import CardTools from "./CardTools.vue"
 
+const BS_MaxColumnSize = 12
+
 export default {
 	name: "Gallery",
 	inheritAttrs: false,
@@ -38,7 +41,31 @@ export default {
 			type: Array,
 			default: () => []
 		},
-		imageKey: String
+		imageKey: String,
+
+		/**
+		 * Number of columns the gallery component should render
+		 * @type {number | string}
+		 * @default 4
+		 */
+		cols: {
+			type: [Number, String],
+			default: 4
+		}
+	},
+	computed: {
+		columnClass() {
+			return "col-md-" + (BS_MaxColumnSize / Number(this.cols))
+		},
+		imagesGrid() {
+			const result = []
+			const colsNumber = Number(this.cols)
+
+			for (let rowIndex = 0; rowIndex < this.images.length / colsNumber; rowIndex++)
+				result.push(this.images.slice(rowIndex * colsNumber, (rowIndex + 1) * colsNumber))
+
+			return result
+		}
 	}
 }
 </script>
