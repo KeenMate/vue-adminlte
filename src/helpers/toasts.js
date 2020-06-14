@@ -7,7 +7,7 @@ export default function defaultToast(config) {
 
 	$(document).Toasts("create", {
 		autohide: true,
-		delay: 750,
+		delay: 5000,
 		...config
 	})
 }
