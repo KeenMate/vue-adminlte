@@ -12,42 +12,47 @@ export default function defaultToast(config) {
 	})
 }
 
-export function successToast(title, body) {
+export function successToast(title, body, config = {}) {
 	defaultToast({
 		title,
 		body,
-		class: "bg-success"
+		class: "bg-success",
+		...config
 	})
 }
 
-export function infoToast(title, body) {
+export function infoToast(title, body, config = {}) {
 	defaultToast({
 		title,
 		body,
-		class: "bg-info"
+		class: "bg-info",
+		...config
 	})
 }
 
-export function warningToast(title, body) {
+export function warningToast(title, body, config = {}) {
 	defaultToast({
 		title,
 		body,
-		class: "bg-warning"
+		class: "bg-warning",
+		...config
 	})
 }
 
-export function dangerToast(title, body) {
+export function dangerToast(title, body, config = {}) {
 	defaultToast({
 		title,
 		body,
-		class: "bg-danger"
+		class: "bg-danger",
+		...config
 	})
 }
 
-export function maroonToast(title, body) {
+export function maroonToast(title, body, config = {}) {
 	defaultToast({
 		title,
 		body,
-		class: "bg-maroon"
+		class: "bg-maroon",
+		...config
 	})
 }
