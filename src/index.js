@@ -6,6 +6,8 @@
 import * as components from "./components"
 export * from "./components"
 
+export * as Toast from "./helpers/toasts"
+
 const version = "__VERSION__"
 
 const install = Vue => {

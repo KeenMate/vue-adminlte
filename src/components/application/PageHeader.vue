@@ -28,7 +28,7 @@ export default {
 		 * @description Array of objects containing visible text, unique key and VueRouter's "to" for routing for building breadcrumbs.
 		 * When not specified value will be taken from $route.matched routes to build breadcrumbs from routes' metadata
 		 * (expecting 'breadcrumb' field to exist in meta object of route)
-		 * @type {Array<RouteItem>}
+		 * @type {RouteItem[]}
 		 */
 		breadcrumbs: Array,
 		icon: String,
