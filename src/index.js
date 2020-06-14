@@ -6,7 +6,8 @@
 import * as components from "./components"
 export * from "./components"
 
-export * as Toast from "./helpers/toasts"
+import * as ToastModule from "./helpers/toasts"
+export const Toast = ToastModule
 
 const version = "__VERSION__"
 
