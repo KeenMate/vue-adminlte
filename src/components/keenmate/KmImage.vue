@@ -12,7 +12,7 @@
 
 <script>
 export default {
-	name: "KMImage",
+	name: "KmImage",
 	props: {
 		/**
 		 * Src of the Image
