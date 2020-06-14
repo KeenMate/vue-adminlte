@@ -70,23 +70,14 @@ export default {
 }
 </script>
 
-<style scoped>
-	.filter-container {
-		padding: 3px;
-		position: relative;
-		width: 100%;
-		display: flex;
-		flex-wrap: wrap;
-		/*height: 582px;*/
+<style lang="scss">
+	.row {
+		margin-bottom: .5rem;
 	}
 
-	.filter-item {
-		opacity: 1;
-		transform: scale(1) translate3d(0px, 0px, 0px);
-		backface-visibility: hidden;
-		perspective: 1000px;
-		transform-style: preserve-3d;
-		width: 196.4px;
-		transition: all 0.5s ease-out 0ms, width 1ms ease 0s;
+	img {
+		&:hover {
+			cursor: pointer;
+		}
 	}
 </style>
