@@ -1,0 +1,130 @@
+.img-fluid,
+.img-container,
+.img-thumbnail {
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	display: block;
+	position: relative;
+	background-color: transparent;
+	-webkit-transition: all 0.3s ease-in-out;
+	vertical-align: middle;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	overflow: visible;
+}
+.img-thumbnail {
+	padding: 0.25rem;
+	background-color: #ffffff;
+	border: 1px solid #dfdfdf;
+	border-radius: 0.25rem;
+}
+.img-container .image-overlay:hover:before,
+.img-container .image-overlay:hover:after {
+	opacity: 1;
+	-webkit-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+}
+.img-container {
+	display: block;
+}
+.img-container img {
+	position: relative;
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+}
+.img-container .image-overlay {
+	position: absolute;
+	padding: 2em;
+	background-color: rgba(27, 161, 226, 0.7);
+	color: #ffffff;
+	text-align: center;
+	border-radius: inherit;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	opacity: 0;
+	overflow: hidden;
+	left: 0;
+	font-size: 0.875rem;
+	line-height: 1rem;
+	-webkit-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+}
+.img-container .image-overlay * {
+	color: #ffffff;
+}
+.img-container .image-overlay:hover {
+	opacity: 1;
+}
+.img-container .image-overlay:before,
+.img-container .image-overlay:after {
+	display: block;
+	position: absolute;
+	content: "";
+	border: 1px solid rgba(255, 255, 255, 0.7);
+	top: 1em;
+	bottom: 1em;
+	left: 1em;
+	right: 1em;
+	opacity: 0;
+	border-radius: inherit;
+	-webkit-transform: scale(1.5);
+	-ms-transform: scale(1.5);
+	transform: scale(1.5);
+	-webkit-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.img-container.rounded img {
+	border-radius: 0.25rem;
+}
+.img-container .image-overlay:after {
+	border-left: none;
+	border-right: none;
+	bottom: 1em;
+	top: 1em;
+}
+.img-container.thumbnail {
+	padding: 0.25rem;
+	border: 1px solid #dfdfdf;
+	background-color: #ffffff;
+}
+.img-container.thumbnail .title {
+	font-size: 0.9rem;
+	line-height: 1;
+}
+.img-container .image-overlay:before {
+	border-top: none;
+	border-bottom: none;
+	bottom: 1em;
+	top: 1em;
+}
+.img-container.cover {
+	background-size: cover;
+	background: no-repeat 100% 100%;
+}
+figure {
+	margin: 0 0 1rem;
+}
+figure img {
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	display: block;
+	position: relative;
+	vertical-align: middle;
+	background-color: transparent;
+	-webkit-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.img-container img + .title {
+	margin-top: 0.25rem;
+}
+.img-container .title + img {
+	margin-top: 0.25rem;
+}
