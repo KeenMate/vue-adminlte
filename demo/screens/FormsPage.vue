@@ -259,7 +259,7 @@
 								<!-- checkbox -->
 								<checkbox-group
 									:options="checkboxOptions"
-									v-model="checkedcheckboxes"
+									v-model="checkedCheckboxes"
 									:get-text="x => x.text"
 									:get-value="x => x.value"
 									:get-disabled="x => x.disabled"

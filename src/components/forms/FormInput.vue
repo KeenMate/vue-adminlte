@@ -2,7 +2,7 @@
 	<div :class="wrapperStyles">
 		<FormLabel
 			v-if="!isInputGroup && (label || fasIcon)"
-			:class="labelStyles"
+			:class="computedLabelStyles"
 			:input-id="inputId"
 			:fas-icon="fasIcon"
 			:far-icon="farIcon"
@@ -208,6 +208,13 @@ export default {
 				this.computedValidity && "success valid-feedback"
 			].filter(x => x)
 				.join(" ")
+		},
+		computedLabelStyles() {
+			const styles = [...this.labelStyles]
+
+			this.isHorizontal && styles.push("col-form-label")
+
+			return styles.join(" ")
 		},
 		innerInputStyles() {
 			const styles = ["form-control"]

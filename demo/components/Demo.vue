@@ -8,7 +8,7 @@
 			<top-nav-link :to="{name: 'components'}">Components</top-nav-link>
 		</template>
 		<template #side-nav>
-			<DemoSidenav />
+			<demo-sidenav />
 		</template>
 		<router-view></router-view>
 	</app-container>
@@ -16,11 +16,10 @@
 
 <script>
 import DemoSidenav from "./DemoSidenav"
-import {TopNavLink, AppContainer} from "../../src"
 
 export default {
 	name: "Demo",
-	components: {AppContainer, TopNavLink, DemoSidenav}
+	components: {DemoSidenav}
 }
 </script>
 
@@ -29,6 +28,6 @@ export default {
 	/*@import "../../src/vendors/adminlte/build/scss/AdminLTE-condensed.scss";*/
 
 	@import "../../src/vendors/adminlte/css/adminlte.min.css";
-	@import "../../src/vendors/adminlte/css/adminlte-condensed.css";
+	/*@import "../../src/vendors/adminlte/css/adminlte-condensed.css";*/
 	@import "../../src/vendors/adminlte/plugins/fontawesome-free/css/all.min.css";
 </style>
