@@ -1,6 +1,7 @@
 <template>
 	<Card v-bind="$attrs">
 		<template #header>
+			<slot name="card-header"></slot>
 			<CardTools />
 		</template>
 		<template #default>
@@ -22,6 +23,9 @@
 					</slot>
 				</div>
 			</div>
+		</template>
+		<template #footer>
+			<slot name="card-footer"></slot>
 		</template>
 	</Card>
 </template>
