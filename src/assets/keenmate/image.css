@@ -149,6 +149,16 @@ figure img {
 	-ms-transform: rotate(-45deg);
 	transform: rotate(-45deg);
 }
+.selected::after {
+	position: absolute;
+	display: block;
+	border-top: 28px solid #5ebdec;
+	border-left: 28px solid transparent;
+	right: -1px;
+	content: "";
+	top: -1px;
+	z-index: 100;
+}
 .drop-shadow {
 	-webkit-box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.4);
 	box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.4);
