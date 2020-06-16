@@ -1,5 +1,5 @@
 <template>
-	<app-container top-nav-color="orange">
+	<app-container top-nav-color="indigo">
 		<template #top-nav>
 			<top-nav-link :to="{name: 'forms-general'}">Forms</top-nav-link>
 			<top-nav-link :to="{name: 'forms-validations'}">Validations</top-nav-link>
