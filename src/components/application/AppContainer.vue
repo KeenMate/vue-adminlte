@@ -1,7 +1,7 @@
 <template>
 	<div :class="bodyStyles">
 		<div class="wrapper">
-			<top-navigation v-if="$scopedSlots['top-nav']" :no-bars="noBars">
+			<top-navigation v-if="$scopedSlots['top-nav']" :no-bars="noBars" :class="navbarClasses">
 				<slot name="top-nav"></slot>
 			</top-navigation>
 			<sidenav v-if="$scopedSlots['side-nav']">
@@ -30,9 +30,98 @@ export default {
 		 * @type {Boolean}
 		 * @description Passes this prop to `top-navigation` sub component
 		 */
-		noBars: Boolean
+		noBars: Boolean,
+
+		topNavColor: {
+			type: String
+		}
 	},
 	computed: {
+		navbarClasses() {
+			const classes = []
+
+			if (this.topNavColor)
+				switch (this.topNavColor) {
+					case "primary":
+						classes.push("navbar-dark")
+						classes.push("navbar-" + this.topNavColor)
+						break
+					case "secondary":
+						classes.push("navbar-dark")
+						classes.push("navbar-" + this.topNavColor)
+						break
+					case "info":
+						classes.push("navbar-dark")
+						classes.push("navbar-" + this.topNavColor)
+						break
+					case "success":
+						classes.push("navbar-dark")
+						classes.push("navbar-" + this.topNavColor)
+						break
+					case "danger":
+						classes.push("navbar-dark")
+						classes.push("navbar-" + this.topNavColor)
+						break
+					case "indigo":
+						classes.push("navbar-dark")
+						classes.push("navbar-" + this.topNavColor)
+						break
+					case "purple":
+						classes.push("navbar-dark")
+						classes.push("navbar-" + this.topNavColor)
+						break
+					case "pink":
+						classes.push("navbar-dark")
+						classes.push("navbar-" + this.topNavColor)
+						break
+					case "navy":
+						classes.push("navbar-dark")
+						classes.push("navbar-" + this.topNavColor)
+						break
+					case "lightblue":
+						classes.push("navbar-dark")
+						classes.push("navbar-" + this.topNavColor)
+						break
+					case "teal":
+						classes.push("navbar-dark")
+						classes.push("navbar-" + this.topNavColor)
+						break
+					case "cyan":
+						classes.push("navbar-dark")
+						classes.push("navbar-" + this.topNavColor)
+						break
+					case "dark":
+						classes.push("navbar-dark")
+						classes.push("navbar-" + this.topNavColor)
+						break
+					case "gray-dark":
+						classes.push("navbar-dark")
+						classes.push("navbar-" + this.topNavColor)
+						break
+					case "gray":
+						classes.push("navbar-dark")
+						classes.push("navbar-" + this.topNavColor)
+						break
+					case "light":
+						classes.push("navbar-light")
+						classes.push("navbar-" + this.topNavColor)
+						break
+					case "warning":
+						classes.push("navbar-light")
+						classes.push("navbar-" + this.topNavColor)
+						break
+					case "white":
+						classes.push("navbar-light")
+						classes.push("navbar-" + this.topNavColor)
+						break
+					case "orange":
+						classes.push("navbar-light")
+						classes.push("navbar-" + this.topNavColor)
+						break
+				}
+
+			return classes.join(" ")
+		},
 		bodyStyles() {
 			return [
 				this.$scopedSlots["side-nav"] && "sidebar-mini" || "no-sidebar",

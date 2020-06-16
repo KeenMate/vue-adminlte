@@ -1,5 +1,5 @@
 <template>
-	<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+	<nav class="main-header navbar navbar-expand navbar-light">
 		<!-- Left navbar links -->
 		<ul class="navbar-nav">
 			<li v-if="!noBars" class="nav-item" @click="$emit('toggle-sidenav')">
