@@ -5,6 +5,7 @@ import {Plugin as VueFragment} from "vue-fragment"
 import Vuelidate from "vuelidate"
 import VuelidateErrorExtractor, {templates} from "vuelidate-error-extractor"
 import "bootstrap"
+// import "bootstrap/js/dist/modal"
 import "@popperjs/core"
 
 import VueAdminLte from "../src"

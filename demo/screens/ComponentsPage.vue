@@ -5,6 +5,13 @@
 		</template>
 		<div class="row">
 			<div class="col-md-6">
+				<lte-button is-info @click.native="toggleModal">
+					Open modal
+				</lte-button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
 				<card title="File upload test">
 					<file-upload v-model="uploadedFile" />
 				</card>
@@ -42,14 +49,29 @@
 				<p v-html="sampleContent"></p>
 			</div>
 		</div>
+		<modal ref="modal">
+			<template #header>Some modal header title</template>
+			<form-input v-model="modalInput" />
+			<template #footer>
+				<lte-button @click.native="toggleModal">
+					Close
+				</lte-button>
+			</template>
+		</modal>
 	</page>
 </template>
 
 <script>
 export default {
 	name: "ComponentsPage",
+	methods: {
+		toggleModal() {
+			this.$refs.modal.toggle()
+		}
+	},
 	data() {
 		return {
+			modalInput: "",
 			someFiles: [],
 			myTableItems: [
 				{

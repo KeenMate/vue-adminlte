@@ -33,6 +33,8 @@ export {default as CardTable} from "./structure/CardTable.vue"
 export {default as CardTools} from "./structure/CardTools.vue"
 export {default as Gallery} from "./structure/Gallery.vue"
 
+export {default as Modal} from "./ui/modal/Modal.vue"
+export {default as ModalHeader} from "./ui/modal/ModalHeader.vue"
 export {default as LteButton} from "./ui/LteButton.vue"
 export {default as Badge} from "./ui/Badge.vue"
 
