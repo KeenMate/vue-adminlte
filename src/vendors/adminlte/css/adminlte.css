@@ -31447,4 +31447,20 @@ textarea {
 .note-status-output {
   height: auto !important;
 }
+
+.modal-content .modal-header {
+  padding: .3rem;
+}
+
+.modal-content .modal-header h4 {
+  font-size: 1rem;
+}
+
+.modal-content .modal-body {
+  padding: .3rem;
+}
+
+.modal-content .modal-footer {
+  padding: 0;
+}
 /*# sourceMappingURL=adminlte.css.map */
