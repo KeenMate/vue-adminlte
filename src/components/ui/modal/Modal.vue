@@ -20,7 +20,7 @@
 import $ from "jquery"
 // import BsModal from "bootstrap/js/dist/modal"
 
-import ModalHeader from "./ModalHeader"
+import ModalHeader from "./ModalHeader.vue"
 
 export default {
 	name: "Modal",
