@@ -1,23 +1,57 @@
-.img-fluid,
 .img-container,
+.img-fluid,
 .img-thumbnail {
 	width: 100%;
 	max-width: 100%;
 	height: auto;
 	display: block;
 	position: relative;
+	vertical-align: middle;
 	background-color: transparent;
 	-webkit-transition: all 0.3s ease-in-out;
-	vertical-align: middle;
 	-o-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
 	overflow: visible;
 }
 .img-thumbnail {
 	padding: 0.25rem;
-	background-color: #ffffff;
 	border: 1px solid #dfdfdf;
 	border-radius: 0.25rem;
+	background-color: #ffffff;
+}
+.img-container {
+	display: block;
+}
+.img-container img {
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	position: relative;
+}
+.img-container .image-overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	opacity: 0;
+	overflow: hidden;
+	font-size: 0.875rem;
+	line-height: 1rem;
+	padding: 2em;
+	background-color: rgba(27, 161, 226, 0.7);
+	color: #ffffff;
+	text-align: center;
+	border-radius: inherit;
+	-webkit-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.img-container .image-overlay * {
+	color: #ffffff;
+}
+.img-container .image-overlay:hover {
+	opacity: 1;
 }
 .img-container .image-overlay:hover:before,
 .img-container .image-overlay:hover:after {
@@ -25,40 +59,6 @@
 	-webkit-transform: scale(1);
 	-ms-transform: scale(1);
 	transform: scale(1);
-}
-.img-container {
-	display: block;
-}
-.img-container img {
-	position: relative;
-	width: 100%;
-	max-width: 100%;
-	height: auto;
-}
-.img-container .image-overlay {
-	position: absolute;
-	padding: 2em;
-	background-color: rgba(27, 161, 226, 0.7);
-	color: #ffffff;
-	text-align: center;
-	border-radius: inherit;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	opacity: 0;
-	overflow: hidden;
-	left: 0;
-	font-size: 0.875rem;
-	line-height: 1rem;
-	-webkit-transition: all 0.3s ease-in-out;
-	transition: all 0.3s ease-in-out;
-	-o-transition: all 0.3s ease-in-out;
-}
-.img-container .image-overlay * {
-	color: #ffffff;
-}
-.img-container .image-overlay:hover {
-	opacity: 1;
 }
 .img-container .image-overlay:before,
 .img-container .image-overlay:after {
@@ -79,14 +79,20 @@
 	-o-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
 }
-.img-container.rounded img {
-	border-radius: 0.25rem;
-}
 .img-container .image-overlay:after {
 	border-left: none;
 	border-right: none;
 	bottom: 1em;
 	top: 1em;
+}
+.img-container .image-overlay:before {
+	border-top: none;
+	border-bottom: none;
+	bottom: 1em;
+	top: 1em;
+}
+.img-container.rounded img {
+	border-radius: 0.25rem;
 }
 .img-container.thumbnail {
 	padding: 0.25rem;
@@ -97,11 +103,11 @@
 	font-size: 0.9rem;
 	line-height: 1;
 }
-.img-container .image-overlay:before {
-	border-top: none;
-	border-bottom: none;
-	bottom: 1em;
-	top: 1em;
+.img-container img + .title {
+	margin-top: 0.25rem;
+}
+.img-container .title + img {
+	margin-top: 0.25rem;
 }
 .img-container.cover {
 	background-size: cover;
@@ -122,9 +128,31 @@ figure img {
 	-o-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
 }
-.img-container img + .title {
-	margin-top: 0.25rem;
+.selected {
+	-webkit-box-shadow: 0 0 0 4px #5ebdec !important;
+	 box-shadow: 0 0 0 4px #5ebdec !important;
 }
-.img-container .title + img {
-	margin-top: 0.25rem;
+.selected::before {
+	background-color: transparent;
+	border-color: #ffffff !important;
+	border-left: 2px solid;
+	border-bottom: 2px solid;
+	position: absolute;
+	display: block;
+	content: "";
+	z-index: 102;
+	-webkit-transform: rotate(-45deg);
+	height: 0.325rem;
+	width: 0.5rem;
+	top: 0.25rem;
+	right: 0.25rem;
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.drop-shadow {
+	-webkit-box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.4);
+	box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.4);
+}
+.rounded {
+	border-radius: 0.25rem !important;
 }
