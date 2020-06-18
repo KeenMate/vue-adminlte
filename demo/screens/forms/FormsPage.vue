@@ -473,7 +473,7 @@ import {
 	CheckboxGroup,
 	Page,
 	LteSwitch
-} from "../../src"
+} from "../../../src"
 
 export default {
 	name: "FormsPage",

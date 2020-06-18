@@ -1,21 +1,22 @@
 import VueRouter from "vue-router"
 
-import {Empty} from "../src/components"
+import {
+	Empty
+} from "../src/components"
 
-import FormsPage from "./screens/FormsPage.vue"
+import FormsPage from "./screens/forms/FormsPage.vue"
 import UiPage from "./screens/UiPage.vue"
 import NotImplemented from "./screens/NotImplemented.vue"
 import Validations from "./screens/ValidationsPage.vue"
 import MainPage from "./screens/MainPage.vue"
-import SummernoteEditorPage from "./screens/SummernoteEditorPage"
-import ComponentsPage from "./screens/ComponentsPage"
+import SummernoteEditorPage from "./screens/SummernoteEditorPage.vue"
+import ComponentsPage from "./screens/ComponentsPage.vue"
+import AdvancedElements from "./screens/forms/AdvancedElements.vue"
 
-const routes = [
-	{
+const routes = [{
 		path: "/",
 		component: Empty,
-		children: [
-			{
+		children: [{
 				path: "/",
 				name: "main",
 				component: MainPage
@@ -27,8 +28,7 @@ const routes = [
 				meta: {
 					breadcrumb: "Forms"
 				},
-				children: [
-					{
+				children: [{
 						path: "general",
 						name: "forms-general",
 						component: FormsPage,
@@ -43,6 +43,15 @@ const routes = [
 						meta: {
 							breadcrumb: "Validations"
 						}
+					},
+					{
+						path: "advanced-elements",
+						name: "advanced-elements",
+						component: AdvancedElements,
+						meta: {
+							breadcrumb: "Advanced Elements"
+						}
+
 					}
 				]
 			},
@@ -53,16 +62,14 @@ const routes = [
 				meta: {
 					breadcrumb: "UI"
 				},
-				children: [
-					{
-						path: "general",
-						name: "ui-general",
-						component: UiPage,
-						meta: {
-							breadcrumb: "General"
-						}
+				children: [{
+					path: "general",
+					name: "ui-general",
+					component: UiPage,
+					meta: {
+						breadcrumb: "General"
 					}
-				]
+				}]
 			},
 			{
 				name: "summernote-editor",
