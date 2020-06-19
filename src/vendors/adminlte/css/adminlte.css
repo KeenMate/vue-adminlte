@@ -31433,6 +31433,10 @@ textarea {
   padding-top: .6rem;
 }
 
+.table tr > td {
+  vertical-align: middle;
+}
+
 .table tr > td > button > i {
   font-size: .6rem;
 }
