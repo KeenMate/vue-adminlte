@@ -103,13 +103,16 @@
         </div>
       </div>
     </card>
-    <card title="dual-listbox-vue" is-info></card>
+    <card title="dual listbox" is-info>
+      <dualListBox :list1="ListBox1" :list2="ListBox2" title="Dual list box"></dualListBox>
+    </card>
   </page>
 </template>
 
 
 <script>
 import Multiselect from "vue-multiselect";
+import dualListBox from "../../../src/components/forms/DualListBox"
 export default {
   name: "AdvancedElements",
   components: {
@@ -131,6 +134,12 @@ export default {
         { name: "BBB" },
         { name: "CCC", $isDisabled: true },
         { name: "DDD" }
+      ],
+      ListBox1:[
+        "James", "John","Robert", "Michael","William","David","Richard","Joseph","Thomas","Charles"
+      ],
+      ListBox2:[
+        "James2", "John2","Robert2", "Michael2","William2","David2","Richard2","Joseph2","Thomas2","Charles2"
       ]
     };
   }
@@ -139,7 +148,9 @@ export default {
 
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 <style >
+
 .multiselect__option--highlight {
   background: red;
 }
+
 </style>
