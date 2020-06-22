@@ -41,6 +41,7 @@ export {default as Badge} from "./ui/Badge.vue"
 export {default as MultiError} from "./validation/MultiError.vue"
 
 export {default as KmImage} from "./keenmate/KmImage.vue"
+export {default as KmLoader} from "./keenmate/KmLoader"
 
 export {default as PhotoSwipe} from "./PhotoSwipe.vue"
 export {default as Empty} from "./Empty.vue"

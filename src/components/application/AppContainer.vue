@@ -7,6 +7,7 @@
 			<sidenav v-if="$scopedSlots['side-nav']">
 				<slot name="side-nav"></slot>
 			</sidenav>
+			<km-loader v-if="isLoading" />
 			<slot></slot>
 		</div>
 	</div>
@@ -15,11 +16,18 @@
 <script>
 import TopNavigation from "../navigation/TopNavigation.vue"
 import Sidenav from "../navigation/Sidenav.vue"
+import KmLoader from "../keenmate/KmLoader"
 
 export default {
 	name: "AppContainer",
-	components: {Sidenav, TopNavigation},
+	components: {KmLoader, Sidenav, TopNavigation},
 	props: {
+		/**
+		 * determines whether to display indeterminate loader or not
+		 * Alternatively can be set on page (and not here)
+		 */
+		isLoading: Boolean,
+
 		/**
 		 * @type {Boolean}
 		 * @description Sets .3rem margin for app container

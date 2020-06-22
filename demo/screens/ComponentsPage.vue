@@ -1,5 +1,5 @@
 <template>
-	<page>
+	<page :is-loading="!loaded">
 		<template #header>
 			<page-header title="Components" />
 		</template>
@@ -64,6 +64,11 @@
 <script>
 export default {
 	name: "ComponentsPage",
+	mounted() {
+		setTimeout(() => {
+			this.loaded = true
+		}, 3000)
+	},
 	methods: {
 		toggleModal() {
 			this.$refs.modal.toggle()
@@ -71,6 +76,7 @@ export default {
 	},
 	data() {
 		return {
+			loaded: false,
 			modalInput: "",
 			someFiles: [],
 			myTableItems: [

@@ -1,5 +1,5 @@
 <template>
-	<app-container top-nav-color="indigo">
+	<app-container top-nav-color="indigo" :is-loading="isLoading">
 		<template #top-nav>
 			<top-nav-link :to="{name: 'forms-general'}">Forms</top-nav-link>
 			<top-nav-link :to="{name: 'forms-validations'}">Validations</top-nav-link>
@@ -19,7 +19,20 @@ import DemoSidenav from "./DemoSidenav"
 
 export default {
 	name: "Demo",
-	components: {DemoSidenav}
+	components: {DemoSidenav},
+	mounted() {
+		setTimeout(() => {
+			this.isLoading = true
+			setTimeout(() => {
+				this.isLoading = false
+			}, 2000)
+		}, 5000)
+	},
+	data() {
+		return {
+			isLoading: false
+		}
+	}
 }
 </script>
 
