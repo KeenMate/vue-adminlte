@@ -12,7 +12,7 @@
           <multiselect
             v-model="singleselectvalue"
             :options="SelectOptions"
-            close-on-select="true"
+            :close-on-select="true"
             placeholder="Select one"
             label="name"
             track-by="name"
@@ -24,8 +24,8 @@
           <multiselect
             v-model="multiselectValue"
             :options="SelectOptions"
-            multiple="true"
-            close-on-select="true"
+            :multiple="true"
+            :close-on-select="true"
             placeholder="Pick some"
             label="name"
             track-by="name"
@@ -56,8 +56,8 @@
           <multiselect
             v-model="multiselectValue"
             :options="SelectOptionsWdisabled"
-            multiple="true"
-            close-on-select="true"
+            :multiple="true"
+            :close-on-select="true"
             placeholder="Pick some"
             label="name"
             track-by="name"
@@ -79,7 +79,7 @@
           <multiselect
             v-model="singleselectvalue"
             :options="SelectOptions"
-            close-on-select="true"
+            :close-on-select="true"
             placeholder="Select one"
             label="name"
             track-by="name"
@@ -92,8 +92,8 @@
           <multiselect
             v-model="multiselectValue"
             :options="SelectOptions"
-            multiple="true"
-            close-on-select="true"
+            :multiple="true"
+            :close-on-select="true"
             placeholder="Pick some"
             label="name"
             track-by="name"
@@ -104,7 +104,14 @@
       </div>
     </card>
     <card title="dual listbox" is-info>
-      <dualListBox :list1="ListBox1" :list2="ListBox2" title="Dual list box"></dualListBox>
+      <div class="row">
+        <dualListBox
+          :list1="ListBox1"
+          :list2="ListBox2"
+          title="Dual list box"
+          id="dualListBox"
+        >DualListBox</dualListBox>
+      </div>
     </card>
   </page>
 </template>
@@ -112,11 +119,12 @@
 
 <script>
 import Multiselect from "vue-multiselect";
-import dualListBox from "../../../src/components/forms/DualListBox"
+import dualListBox from "../../../src/components/forms/DualListBox";
 export default {
   name: "AdvancedElements",
   components: {
-    Multiselect
+    Multiselect,
+    dualListBox
   },
   data() {
     return {
@@ -135,11 +143,29 @@ export default {
         { name: "CCC", $isDisabled: true },
         { name: "DDD" }
       ],
-      ListBox1:[
-        "James", "John","Robert", "Michael","William","David","Richard","Joseph","Thomas","Charles"
+      ListBox1: [
+        "James",
+        "John",
+        "Robert",
+        "Michael",
+        "William",
+        "David",
+        "Richard",
+        "Joseph",
+        "Thomas",
+        "Charles"
       ],
-      ListBox2:[
-        "James2", "John2","Robert2", "Michael2","William2","David2","Richard2","Joseph2","Thomas2","Charles2"
+      ListBox2: [
+        "James2",
+        "John2",
+        "Robert2",
+        "Michael2",
+        "William2",
+        "David2",
+        "Richard2",
+        "Joseph2",
+        "Thomas2",
+        "Charles2"
       ]
     };
   }
@@ -148,9 +174,7 @@ export default {
 
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 <style >
-
 .multiselect__option--highlight {
   background: red;
 }
-
 </style>
