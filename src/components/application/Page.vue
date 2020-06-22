@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import KmLoader from "../keenmate/KmLoader"
+import KmLoader from "../keenmate/KmLoader.vue"
 
 export default {
 	name: "Page",

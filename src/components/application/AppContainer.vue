@@ -16,7 +16,7 @@
 <script>
 import TopNavigation from "../navigation/TopNavigation.vue"
 import Sidenav from "../navigation/Sidenav.vue"
-import KmLoader from "../keenmate/KmLoader"
+import KmLoader from "../keenmate/KmLoader.vue"
 
 export default {
 	name: "AppContainer",
