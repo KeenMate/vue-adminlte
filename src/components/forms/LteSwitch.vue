@@ -6,6 +6,7 @@
 				class="custom-control-input"
 				:id="inputId"
 				:disabled="isDisabled"
+				:checked="value"
 				@input="$emit('input', $event.target.checked)"
 			>
 			<label class="custom-control-label" :for="inputId">

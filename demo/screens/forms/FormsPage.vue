@@ -420,13 +420,13 @@
 								</div>
 							</div>
 
-							<lte-switch input-id="customSwitch1">
+							<lte-switch input-id="customSwitch1" v-model="switchedValue">
 								Toggle this custom switch element
 							</lte-switch>
-							<lte-switch input-id="customSwitch3" switch-off-color="danger" switch-on-color="success">
+							<lte-switch input-id="customSwitch3" v-model="switchedValue" switch-off-color="danger" switch-on-color="success">
 								Toggle this custom switch element with custom colors danger/success
 							</lte-switch>
-							<lte-switch input-id="customSwitch2" is-disabled>
+							<lte-switch input-id="customSwitch2" v-model="switchedValue" is-disabled>
 								Disabled custom switch element
 							</lte-switch>
 							<div class="form-group">
@@ -480,6 +480,7 @@ export default {
 	components: {Page, LteSwitch, Card, CheckboxGroup, LteSelect, FormInput, Checkbox, RadioGroup},
 	data() {
 		return {
+			switchedValue: false,
 			textValue: "",
 			checkboxOptions: [
 				{

@@ -7,7 +7,7 @@
 			:fas-icon="fasIcon"
 			:far-icon="farIcon"
 		>
-			{{label}}
+			{{ label }}
 		</FormLabel>
 		<div v-if="$scopedSlots.prepend" class="input-group-prepend">
 			<slot name="prepend"></slot>
@@ -23,7 +23,7 @@
 					:disabled="isDisabled"
 					:rows="rows"
 					:cols="cols"
-					v-on="{...$listeners, input: ev => $emit('input', ev.target.value)}"
+					v-on="{ ...$listeners, input: ev => $emit('input', ev.target.value) }"
 				></textarea>
 				<input
 					v-else
@@ -34,14 +34,20 @@
 					:value="value"
 					:disabled="isDisabled"
 					:pattern="pattern"
-					v-on="{...$listeners, input: ev => $emit('input', ev.target.value)}"
+					v-on="{ ...$listeners, input: ev => $emit('input', ev.target.value) }"
+				/>
+				<FormInputFeedback
+					:visible="computedInvalidity || computedValidity"
+					:styles="feedbackStyles"
 				>
-				<FormInputFeedback :visible="computedInvalidity || computedValidity" :styles="feedbackStyles">
-					{{computedFeedback}}
+					{{ computedFeedback }}
 				</FormInputFeedback>
 			</div>
 		</WithRoot>
-		<span v-if="$scopedSlots['invalid-msg'] && isInvalid" class="error invalid-feedback">
+		<span
+			v-if="$scopedSlots['invalid-msg'] && isInvalid"
+			class="error invalid-feedback"
+		>
 			<slot name="invalid-msg"></slot>
 		</span>
 		<div v-if="$scopedSlots.append" class="input-group-append">
@@ -58,7 +64,7 @@ import validatedInputProps from "./validatedInputProps"
 
 export default {
 	name: "FormInput",
-	components: {FormInputFeedback, WithRoot, FormLabel},
+	components: { FormInputFeedback, WithRoot, FormLabel },
 	props: {
 		/**
 		 * @type {any}
@@ -136,30 +142,32 @@ export default {
 			type: String,
 			default: "text",
 			validator(x) {
-				return [
-					"button",
-					"checkbox",
-					"color",
-					"date",
-					"datetime-local",
-					"email",
-					"file",
-					"hidden",
-					"image",
-					"month",
-					"number",
-					"password",
-					"radio",
-					"range",
-					"reset",
-					"search",
-					"submit",
-					"tel",
-					"text",
-					"time",
-					"url",
-					"week"
-				].indexOf(x) !== -1
+				return (
+					[
+						"button",
+						"checkbox",
+						"color",
+						"date",
+						"datetime-local",
+						"email",
+						"file",
+						"hidden",
+						"image",
+						"month",
+						"number",
+						"password",
+						"radio",
+						"range",
+						"reset",
+						"search",
+						"submit",
+						"tel",
+						"text",
+						"time",
+						"url",
+						"week"
+					].indexOf(x) !== -1
+				)
 			}
 		},
 		...validatedInputProps
@@ -169,17 +177,14 @@ export default {
 			const invalid = this.computedInvalidity
 			const valid = this.computedValidity
 
-			if (invalid !== undefined && invalid)
-				return this.invalidMsg
+			if (invalid !== undefined && invalid) return this.invalidMsg
 
-			if (valid !== undefined && valid)
-				return this.validMsg
+			if (valid !== undefined && valid) return this.validMsg
 
 			return undefined
 		},
 		computedInvalidity() {
-			if (this.isInvalid !== undefined)
-				return this.isInvalid
+			if (this.isInvalid !== undefined) return this.isInvalid
 
 			return this.validatorHasErrors
 		},
@@ -197,8 +202,7 @@ export default {
 			// 	: !anyErrors
 		},
 		validatorHasErrors() {
-			if (!this.validator || !this.validator.$dirty)
-				return null
+			if (!this.validator || !this.validator.$dirty) return null
 
 			return this.validator.$anyError
 		},
@@ -206,7 +210,8 @@ export default {
 			return [
 				this.computedInvalidity && "error invalid-feedback",
 				this.computedValidity && "success valid-feedback"
-			].filter(x => x)
+			]
+				.filter(x => x)
 				.join(" ")
 		},
 		computedLabelStyles() {
@@ -219,12 +224,9 @@ export default {
 		innerInputStyles() {
 			const styles = ["form-control"]
 
-			if (this.computedInvalidity)
-				styles.push("is-invalid")
-			else if (this.computedValidity)
-				styles.push("is-valid")
-			else if (this.isWarning)
-				styles.push("is-warning")
+			if (this.computedInvalidity) styles.push("is-invalid")
+			else if (this.computedValidity) styles.push("is-valid")
+			else if (this.isWarning) styles.push("is-warning")
 
 			return styles
 		},
@@ -234,15 +236,11 @@ export default {
 		wrapperStyles() {
 			const styles = []
 
-			if (this.isInputGroup)
-				styles.push("input-group")
-			else
-				styles.push("form-group")
+			if (this.isInputGroup) styles.push("input-group")
+			else styles.push("form-group")
 
-			if (this.isSmall)
-				styles.push("input-group-sm")
-			else if (this.isLarge)
-				styles.push("input-group-lg")
+			if (this.isSmall) styles.push("input-group-sm")
+			else if (this.isLarge) styles.push("input-group-lg")
 
 			return styles
 		}
@@ -251,5 +249,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>

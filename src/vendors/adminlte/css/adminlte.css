@@ -31318,6 +31318,7 @@ textarea {
   justify-content: space-between;
   -ms-flex-align: center;
   align-items: center;
+  height: 2.5rem;
 }
 
 .card-header > .card-title {
@@ -31430,6 +31431,10 @@ textarea {
 
 .content-wrapper {
   padding-top: .6rem;
+}
+
+.table tr > td {
+  vertical-align: middle;
 }
 
 .table tr > td > button > i {
