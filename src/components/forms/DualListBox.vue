@@ -145,6 +145,15 @@ export default {
         this.list1.push(el);
       });
       this.list2.splice(0, this.list2.length);
+    },
+    sortArrays: function() {
+      this.list1.sort(compare);
+      this.list2.sort(compare);
+    },
+    compare: function(a, b) {
+      if (a.name < b.name) return -1;
+      if (a.name > b.name) return 1;
+      return 0;
     }
   },
   data() {

@@ -86,7 +86,7 @@
               label="name"
               track-by="name"
               class="has-text-danger"
-              style=" background:red; color: blue;"
+              style="  color: blue;"
             ></multiselect>
           </div>
           <!-- Multu select with seatch-->
@@ -100,7 +100,7 @@
               label="name"
               track-by="name"
               class="has-text-success"
-              style=" background:red; color: yellow;"
+              style=" color: yellow;"
             ></multiselect>
           </div>
         </div>
@@ -117,19 +117,88 @@
           </div>
         </div>
       </card>
+      <!--https://vuejs-tips.github.io/vue-the-mask/
+			'#': {pattern: /\d/},
+    	'X': {pattern: /[0-9a-zA-Z]/},
+    	'S': {pattern: /[a-zA-Z]/},
+  	  'A': {pattern: /[a-zA-Z]/, transform: v => v.toLocaleUpperCase()},
+  	  'a': {pattern: /[a-zA-Z]/, transform: v => v.toLocaleLowerCase()},
+  	  '!': {escape: true}  
+      -->
+      <card title="the-mask" is-danger>
+        <div class="d-flex flex-column bd-highlight mb-2">
+          <label class="mb-1">
+            <b>Date masks:</b>
+          </label>
+          <the-mask
+            mask="##/##/####"
+            type="text"
+            :masked="true"
+            placeholder="dd/mm/yyy"
+            class="d-flex mb-2"
+          ></the-mask>
+          <the-mask
+            mask="##/##/####"
+            type="text"
+            :masked="true"
+            placeholder="mm/dd/yyy"
+            class="d-flex mb-2"
+          ></the-mask>
+        </div>
+        <div class="d-flex flex-column bd-highlight mb-2">
+          <label class="mb-1">
+            <b>US phone mask:</b>
+          </label>
+          <the-mask
+            mask="(###) ###-####"
+            type="text"
+            :masked="true"
+            placeholder="(___) ___-____"
+            class="d-flex mb-2"
+          ></the-mask>
+        </div>
+        <div class="d-flex flex-column bd-highlight mb-2">
+          <label class="mb-1">
+            <b>Intl US phone mask:</b>
+          </label>
+          <the-mask
+            mask="###-###-####"
+            type="text"
+            :masked="true"
+            placeholder="___-___-____ "
+            class="d-flex mb-2"
+          ></the-mask>
+        </div>
+        <div class="d-flex flex-column bd-highlight mb-2">
+          <label class="mb-1">
+            <b>IP mask:</b>
+          </label>
+          <the-mask
+            mask="###.###.###.###"
+            type="text"
+            :masked="true"
+            placeholder="_._._._"
+            class="d-flex mb-2"
+          ></the-mask>
+        </div>
+      </card>
     </section>
   </page>
 </template>
 
 
 <script>
+import Vue from "vue";
 import Multiselect from "vue-multiselect";
 import dualListBox from "../../../src/components/forms/DualListBox";
+import VueTheMask from "vue-the-mask";
+Vue.use(VueTheMask);
 export default {
   name: "AdvancedElements",
   components: {
     Multiselect,
-    dualListBox
+    dualListBox,
+    VueTheMask
   },
   data() {
     return {
@@ -179,7 +248,7 @@ export default {
 
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 <style >
-.multiselect__option--highlight {
+/*.multiselect__option--highlight {
   background: red;
-}
+}*/
 </style>
