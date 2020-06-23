@@ -15,13 +15,7 @@
         >
           <option v-for="item1 in list1">{{item1}}</option>
         </select>
-      </div>
-      <!--<div class="buttons are-primary">
-        <button class="button" @click="oneToRight">></button>
-        <button class="button" @click="allToRight">>></button>
-        <button class="button" @click="oneToLeft">&lt;</button>
-        <button class="button" @click="allToLeft">&lt;&lt;</button>
-      </div>
+
       <div class="box2 col-md-6">
         <div class="btn-group buttons">
           <button class="btn removeall btn-outline-secondary" @click="allToLeft">&lt;&lt;</button>
@@ -43,63 +37,47 @@
     <div class="bootstrap-duallistbox-container row moveonselect moveondoubleclick">
       <div class="box1 col-md-6">
         <label for="bootstrap-duallistbox-nonselected-list_" style="display: none;"></label>
-        <span class="info-container">
-          <span class="info">Showing all 6</span>
-          <button type="button" class="btn btn-sm clear1" style="float:right!important;">show all</button>
-        </span>
-        <input class="form-control filter" type="text" placeholder="Filter" />
         <div class="btn-group buttons">
-          <button type="button" class="btn moveall btn-outline-secondary" title="Move all">&gt;&gt;</button>
+          <button
+            type="button"
+            class="btn moveall btn-outline-secondary"
+            title="Move all"
+            @click="allToRight"
+          >&gt;&gt;</button>
         </div>
         <select
           multiple="multiple"
-          id="bootstrap-duallistbox-nonselected-list_"
+          id="leftSelect"
           name="_helper1"
           style="height: 102px;"
           class="form-control"
+          @change="oneToRight"
         >
-          <option selected>Alabama</option>
-          <option>California</option>
-          <option>Delaware</option>
-          <option>Tennessee</option>
-          <option>Texas</option>
-          <option>Washington</option>
+          <option v-for="item1 in list1">{{item1}}</option>
         </select>
       </div>
       <div class="box2 col-md-6">
         <label for="bootstrap-duallistbox-selected-list_" style="display: none;"></label>
-        <span class="info-container">
-          <span class="info">Showing all 1</span>
-          <button type="button" class="btn btn-sm clear2" style="float:right!important;">show all</button>
-        </span>
-        <input class="form-control filter" type="text" placeholder="Filter" />
         <div class="btn-group buttons">
           <button
             type="button"
             class="btn removeall btn-outline-secondary"
             title="Remove all"
+            @click="allToLeft"
           >&lt;&lt;</button>
         </div>
         <select
           multiple="multiple"
-          id="bootstrap-duallistbox-selected-list_"
+          id="rightSelect"
+          @change="oneToLeft"
           name="_helper2"
           style="height: 102px;"
           class="form-control"
         >
-          <option data-sortindex="21">Alaska</option>
+          <option v-for="item2 in list2">{{item2}}</option>
         </select>
       </div>
     </div>
-    <select class="duallistbox" multiple="multiple" style="display: none;">
-      <option selected>Alabama</option>
-      <option data-sortindex="21">Alaska</option>
-      <option>California</option>
-      <option>Delaware</option>
-      <option>Tennessee</option>
-      <option>Texas</option>
-      <option>Washington</option>
-    </select>
   </div>
 </template>
 
@@ -141,9 +119,10 @@ export default {
         });
         this.list1.splice(del, 1);
       }
+      document.getElementById("leftSelect").value = "";
     },
     oneToLeft: function() {
-      var select = document.getElementById("rightselect").value;
+      var select = document.getElementById("rightSelect").value;
 
       if (select != "" || select != null) {
         this.list1.push(select);
@@ -153,6 +132,7 @@ export default {
         });
         this.list2.splice(del, 1);
       }
+      document.getElementById("rightSelect").value = "";
     },
     allToRight: function() {
       this.list1.forEach((el, i) => {
@@ -168,10 +148,13 @@ export default {
     }
   },
   data() {
-    return {};
+    return {
+      rightSelectValue: "",
+      leftSelectValue: ""
+    };
   }
 };
 </script>
 
-<style scoped>
+<style src="../../vendors/adminlte/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css">
 </style>
