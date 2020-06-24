@@ -19,8 +19,6 @@
 <script>
 export default {
 	name: "Card",
-	components: {
-	},
 	props: {
 		title: String,
 		icon: String,

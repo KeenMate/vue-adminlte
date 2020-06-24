@@ -2,7 +2,6 @@
 	<Card v-bind="$attrs">
 		<template #header>
 			<slot name="card-header"></slot>
-			<CardTools />
 		</template>
 		<template #default>
 			<div
@@ -32,14 +31,13 @@
 
 <script>
 import Card from "./Card.vue"
-import CardTools from "./CardTools.vue"
 
 const BS_MaxColumnSize = 12
 
 export default {
 	name: "Gallery",
 	inheritAttrs: false,
-	components: {CardTools, Card},
+	components: {Card},
 	props: {
 		images: {
 			type: Array,
