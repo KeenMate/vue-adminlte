@@ -6,30 +6,67 @@ We cannot and will not work on this 100% of our time byt ee add new components a
 We aim for:
 - rapid application development
 
-## Project setup
+
+## Usage
+
+### Install package
+```sh
+$ npm i @keenmate/vue-adminlte
+```
+
+### Include our p11n plugin with setup script
+```javascript
+// main.js
+import Vue from "vue"
+import VueAdminLte from "@keenmate/vue-adminlte"
+// import code of original (mostly) adminlte project
+import "@keenmate/vue-adminlte/src/vue-adminlte-setup"
+
+Vue.use(VueAdminLte)
+```
+And now you have all components available in your code.
+
+### Main component
+Your page should start with this:
+```html
+<app-container
+	:is-loading="isLoading"
+	top-nav-color="success"
+	no-bars
+>
+	<template #top-nav>
+		<top-nav-link :to="{name: 'route1'}">route1</top-nav-link>
+    <top-nav-link :to="{name: 'route2'}">route2</top-nav-link>
+    <top-nav-link :to="{name: 'route3'}">route3</top-nav-link>
+    <top-nav-link :to="{name: 'route4'}">route4</top-nav-link>
+	</template>
+	<router-view></router-view>
+	<your-footer />
+</app-container>
+```
+
+With example page:
+```html
+<!-- @/views/Route1.vue -->
+<page>
+	<template #header>
+		<page-header title="Your page header title" />
+	</template>
+	<p>Your page content here</p>
+</page>
+```
+
+Our components use JSDoc way of documenting code. So if you are struggling with some component, try to look into source code for these comments
+
+
+## Project Development
+
+### Project setup
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+#### For development
 ```
-npm run serve
+npm run demo
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

@@ -29,8 +29,7 @@ module.exports = {
           link: 'https://github.com//vue-adminlte/releases'
         }],
         sidebar: [
-          '/installation.md',
-          '/started.md',
+          '/installation.md'
         ]
       }
     }
