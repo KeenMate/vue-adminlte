@@ -34,7 +34,7 @@ Features include:
 
 - Plug&Play
 - Simple components
-- Working SPA with breadcrumbs
+- Working SPA with self-updating breadcrumbs (requires metadata for each route to be set. See demo for more info)
 - Open source, forever
 
 
