@@ -111,8 +111,8 @@
         <div class="row">
           <div class="col-12">
             <dualListBox
-              :list1="ListBox1"
-              :list2="ListBox2"
+              :leftList="ListBox1"
+              :rightList="ListBox2"
               title="Dual list box"
               id="dualListBox"
             >DualListBox</dualListBox>
@@ -140,7 +140,13 @@
                 :masked="true"
                 placeholder="dd/mm/yyy"
                 class="d-flex mb-2 form-control"
-              ></the-mask>
+              >
+                <template #prepend>
+                  <span class="input-group-text">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+                </template>
+              </the-mask>
               <the-mask
                 mask="##/##/####"
                 type="text"
@@ -349,9 +355,9 @@ export default {
 </style>
 
 <style >
-/*.multiselect__option--highlight {
+.multiselect__option--highlight {
   background: red;
-}*/
+}
 .vdatetime-input {
   border: 0ch;
 }

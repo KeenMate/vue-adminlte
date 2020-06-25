@@ -13,7 +13,7 @@
           @change="oneToRight"
           class="d-flex align-items-stretch flex-grow-1"
         >
-          <option v-for="item1 in list1">{{item1}}</option>
+          <option v-for="item1 in leftList">{{item1}}</option>
         </select>
 
       <div class="box2 col-md-6">
@@ -27,7 +27,7 @@
           @change="oneToLeft"
           class="d-flex align-items-stretch flex-grow-1"
         >
-          <option v-for="item2 in list2">{{item2}}</option>
+          <option v-for="item2 right">{{item2}}</option>
         </select>
       </div>
     </div>
@@ -53,18 +53,18 @@
           class="form-control"
           @change="oneToRight"
         >
-          <option v-for="item1 in list1">{{item1}}</option>
+          <option v-for="item1 in leftList">{{item1}}</option>
         </select>
       </div>
       <div class="box2 col-md-6">
         <label for="bootstrap-duallistbox-selected-list_" style="display: none;"></label>
         <div class="btn-group buttons">
-          <button
+          <lte-button
             type="button"
             class="btn removeall btn-outline-secondary"
             title="Remove all"
             @click="allToLeft"
-          >&lt;&lt;</button>
+          >&lt;&lt;</lte-button>
         </div>
         <select
           multiple="multiple"
@@ -74,7 +74,7 @@
           style="height: 102px;"
           class="form-control"
         >
-          <option v-for="item2 in list2">{{item2}}</option>
+          <option v-for="item2 in rightList">{{item2}}</option>
         </select>
       </div>
     </div>
@@ -93,15 +93,15 @@ export default {
 
     /**
      * @type {array},
-     * @description content of First List
+     * @description content of left List
      */
-    list1: Array,
+    leftList: Array,
 
     /**
      * @type {array},
-     * @description content of Second List
+     * @description content of right List
      */
-    list2: Array,
+    rightList: Array,
     /**
      * @type {string}
      * @description Title of DualListBox
@@ -112,12 +112,12 @@ export default {
     oneToRight: function() {
       var select = document.getElementById("leftSelect").value;
       if (select != "" || select != null) {
-        this.list2.push(select);
+        rightList.push(select);
         var del;
-        this.list1.forEach((el, index) => {
+        this.leftList.forEach((el, index) => {
           if (el === select) del = index;
         });
-        this.list1.splice(del, 1);
+        this.leftList.splice(del, 1);
       }
       document.getElementById("leftSelect").value = "";
     },
@@ -125,30 +125,30 @@ export default {
       var select = document.getElementById("rightSelect").value;
 
       if (select != "" || select != null) {
-        this.list1.push(select);
+        this.leftList.push(select);
         var del;
-        this.list2.forEach((el, index) => {
+        rightList.forEach((el, index) => {
           if (el === select) del = index;
         });
-        this.list2.splice(del, 1);
+        rightList.splice(del, 1);
       }
       document.getElementById("rightSelect").value = "";
     },
     allToRight: function() {
-      this.list1.forEach((el, i) => {
-        this.list2.push(el);
+      this.leftList.forEach((el, i) => {
+        rightList.push(el);
       });
-      this.list1.splice(0, this.list1.length);
+      this.leftList.splice(0, this.leftList.length);
     },
     allToLeft: function() {
-      this.list2.forEach((el, i) => {
-        this.list1.push(el);
+      rightList.forEach((el, i) => {
+        this.leftList.push(el);
       });
-      this.list2.splice(0, this.list2.length);
+      rightList.splice(0, rightList.length);
     },
     sortArrays: function() {
-      this.list1.sort(compare);
-      this.list2.sort(compare);
+      this.leftList.sort(compare);
+      rightList.sort(compare);
     },
     compare: function(a, b) {
       if (a.name < b.name) return -1;
