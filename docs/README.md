@@ -37,5 +37,4 @@ Features include:
 - Working SPA with self-updating breadcrumbs (requires metadata for each route to be set. See demo for more info)
 - Open source, forever
 
-
-[Get started](./started/) or play with the [demo](https://github.com/keenmate/vue-adminlte/tree/master/demo) (see [`README.md`](https://github.com/keenmate/vue-adminlte/) to run them).
+Link to [demo](https://github.com/keenmate/vue-adminlte/tree/master/demo) (see [`README.md`](https://github.com/keenmate/vue-adminlte/) for further instructions).

@@ -10,7 +10,7 @@ We aim for:
 ## Usage
 
 ### Install package
-```bash
+```sh
 $ npm i @keenmate/vue-adminlte
 ```
 
