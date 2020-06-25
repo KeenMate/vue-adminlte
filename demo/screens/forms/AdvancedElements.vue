@@ -9,7 +9,7 @@
       <h1>Advanced Elements</h1>
     </section>
     <section class="content">
-      <card title="Vue-Multiselect default" is-info>
+      <card title="Vue-Multiselect default">
         <!-- -->
         <div class="row">
           <!-- Single select with search -->
@@ -107,7 +107,7 @@
           </div>
         </div>
       </card>
-      <card title="dual listbox" is-info>
+      <card title="dual listbox">
         <div class="row">
           <div class="col-12">
             <dualListBox
@@ -127,63 +127,127 @@
   	  'a': {pattern: /[a-zA-Z]/, transform: v => v.toLocaleLowerCase()},
   	  '!': {escape: true}  
       -->
-      <card title="the-mask" is-danger>
-        <div class="d-flex flex-column bd-highlight mb-2">
-          <label class="mb-1">
-            <b>Date masks:</b>
-          </label>
-          <the-mask
-            mask="##/##/####"
-            type="text"
-            :masked="true"
-            placeholder="dd/mm/yyy"
-            class="d-flex mb-2"
-          ></the-mask>
-          <the-mask
-            mask="##/##/####"
-            type="text"
-            :masked="true"
-            placeholder="mm/dd/yyy"
-            class="d-flex mb-2"
-          ></the-mask>
+      <div class="row">
+        <div class="col-6">
+          <card title="the-mask" is-danger>
+            <div class="d-flex flex-column bd-highlight mb-2">
+              <label class="mb-1">
+                <b>Date masks:</b>
+              </label>
+              <the-mask
+                mask="##/##/####"
+                type="text"
+                :masked="true"
+                placeholder="dd/mm/yyy"
+                class="d-flex mb-2 form-control"
+              ></the-mask>
+              <the-mask
+                mask="##/##/####"
+                type="text"
+                :masked="true"
+                placeholder="mm/dd/yyy"
+                class="d-flex mb-2 form-control"
+              ></the-mask>
+            </div>
+            <div class="d-flex flex-column bd-highlight mb-2">
+              <label class="mb-1">
+                <b>US phone mask:</b>
+              </label>
+              <the-mask
+                mask="(###) ###-####"
+                type="text"
+                :masked="true"
+                placeholder="(___) ___-____"
+                class="d-flex mb-2 form-control"
+              ></the-mask>
+            </div>
+            <div class="d-flex flex-column bd-highlight mb-2">
+              <label class="mb-1">
+                <b>Intl US phone mask:</b>
+              </label>
+              <the-mask
+                mask="###-###-####"
+                type="text"
+                :masked="true"
+                placeholder="___-___-____ "
+                class="d-flex mb-2 form-control"
+              ></the-mask>
+            </div>
+            <div class="d-flex flex-column bd-highlight mb-2">
+              <label class="mb-1">
+                <b>IP mask:</b>
+              </label>
+              <the-mask
+                mask="###.###.###.###"
+                type="text"
+                :masked="true"
+                placeholder="_._._._"
+                class="d-flex mb-2 form-control"
+              ></the-mask>
+            </div>
+          </card>
         </div>
-        <div class="d-flex flex-column bd-highlight mb-2">
-          <label class="mb-1">
-            <b>US phone mask:</b>
-          </label>
-          <the-mask
-            mask="(###) ###-####"
-            type="text"
-            :masked="true"
-            placeholder="(___) ___-____"
-            class="d-flex mb-2"
-          ></the-mask>
+        <div class="col-6">
+          <card title="Date picker" is-info>
+            <div class="d-flex flex-column bd-highlight mb-1">
+              <label class="mb-1">Date:</label>
+              <v-date-picker v-model="date"></v-date-picker>
+            </div>
+            <div class="d-flex flex-column bd-highlight mb-1">
+              <label class="mb-1">Date range :</label>
+              <v-date-picker mode="range" v-model="range" />
+            </div>
+            <div class="d-flex flex-column bd-highlight mb-1">
+              <label class="mb-1">Date and time range :</label>
+
+              <div class="row">
+                <div class="col-6">
+                  <datetime
+                    type="datetime"
+                    v-model="rangeWithTime.start"
+                    use12-hour
+                    class="form-control"
+                  ></datetime>
+                </div>
+                <div class="col-6">
+                  <datetime
+                    type="datetime"
+                    v-model="rangeWithTime.end"
+                    use12-hour
+                    class="form-control"
+                  ></datetime>
+                </div>
+              </div>
+              <label>Date range picker</label>
+              <multiselect
+                v-model="DateRangePickerValue"
+                :options="DateRangePickerOprions"
+                :multiple="false"
+                :close-on-select="true"
+                placeholder="Date range picker"
+                track-by="DateRangePicker"
+              ></multiselect>
+            </div>
+          </card>
         </div>
-        <div class="d-flex flex-column bd-highlight mb-2">
-          <label class="mb-1">
-            <b>Intl US phone mask:</b>
-          </label>
-          <the-mask
-            mask="###-###-####"
-            type="text"
-            :masked="true"
-            placeholder="___-___-____ "
-            class="d-flex mb-2"
-          ></the-mask>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <card title="time and color picker" is-info>
+            <div class="d-flex flex-column bd-highlight mb-1">
+              <colour-picker v-model="color" label="Pick Colour" picker="chrome" />
+            </div>
+            <div class="d-flex flex-column bd-highlight mb-1">
+              <vue-timepicker
+                format="hh:mm:ss a"
+                :v-model="Time"
+                :second-interval="10"
+                :minute-interval="5"
+              ></vue-timepicker>
+            </div>
+          </card>
         </div>
-        <div class="d-flex flex-column bd-highlight mb-2">
-          <label class="mb-1">
-            <b>IP mask:</b>
-          </label>
-          <the-mask
-            mask="###.###.###.###"
-            type="text"
-            :masked="true"
-            placeholder="_._._._"
-            class="d-flex mb-2"
-          ></the-mask>
-        </div>
-      </card>
+      </div>
     </section>
   </page>
 </template>
@@ -194,13 +258,22 @@ import Vue from "vue";
 import Multiselect from "vue-multiselect";
 import dualListBox from "../../../src/components/forms/DualListBox";
 import VueTheMask from "vue-the-mask";
+import VueTimepicker from "vue2-timepicker";
+import VCalendar from "v-calendar";
+import Datetime from "vue-datetime";
+import ColourPicker from "vue-colour-picker";
 Vue.use(VueTheMask);
+Vue.use(VCalendar);
+Vue.use(Datetime);
 export default {
   name: "AdvancedElements",
   components: {
     Multiselect,
     dualListBox,
-    VueTheMask
+    VueTheMask,
+    VCalendar,
+    VueTimepicker,
+    ColourPicker
   },
   data() {
     return {
@@ -242,15 +315,44 @@ export default {
         "Joseph2",
         "Thomas2",
         "Charles2"
-      ]
+      ],
+      date: new Date(),
+      range: {
+        start: new Date(2019, 0, 16), // Jan 16th, 2019
+        end: new Date(2020, 0, 19) // Jan 19th, 2020
+      },
+      rangeWithTime: {
+        start: "",
+        end: ""
+      },
+      DateRangePickerOprions: [
+        "Today",
+        "Yesterday",
+        "Last 7 Days",
+        "Last 30 Days",
+        "This month",
+        "Last month"
+      ],
+      DateRangePickerValue: "",
+      color: {
+        hex: "#000000"
+      },
+      Time: ""
     };
   }
 };
 </script>
 
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
+<style src='vue2-timepicker/dist/VueTimepicker.css'></style>
+<style src="vue-datetime/dist/vue-datetime.css">
+</style>
+
 <style >
 /*.multiselect__option--highlight {
   background: red;
 }*/
+.vdatetime-input {
+  border: 0ch;
+}
 </style>
