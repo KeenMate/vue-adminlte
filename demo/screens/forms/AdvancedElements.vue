@@ -134,19 +134,11 @@
               <label class="mb-1">
                 <b>Date masks:</b>
               </label>
-              <the-mask
-                mask="##/##/####"
-                type="text"
-                :masked="true"
-                placeholder="dd/mm/yyy"
-                class="d-flex mb-2 form-control"
-              >
-                <template #prepend>
-                  <span class="input-group-text">
-                    <i class="fas fa-envelope"></i>
-                  </span>
-                </template>
-              </the-mask>
+              <input
+                name="text"
+                v-cleave="{date: true,datePattern: [ 'd','m', 'Y']}"
+                class="d-flex flex-column bd-highlight mb-2"
+              />
               <the-mask
                 mask="##/##/####"
                 type="text"
@@ -268,9 +260,22 @@ import VueTimepicker from "vue2-timepicker";
 import VCalendar from "v-calendar";
 import Datetime from "vue-datetime";
 import ColourPicker from "vue-colour-picker";
+import Cleave from "cleave.js";
 Vue.use(VueTheMask);
 Vue.use(VCalendar);
 Vue.use(Datetime);
+Vue.directive("cleave", {
+  inserted: (el, binding) => {
+    el.cleave = new Cleave(el, binding.value || {});
+  },
+  update: el => {
+    const event = new Event("input", { bubbles: true });
+    setTimeout(function() {
+      el.value = el.cleave.properties.result;
+      el.dispatchEvent(event);
+    }, 100);
+  }
+});
 export default {
   name: "AdvancedElements",
   components: {
@@ -279,7 +284,8 @@ export default {
     VueTheMask,
     VCalendar,
     VueTimepicker,
-    ColourPicker
+    ColourPicker,
+    Cleave
   },
   data() {
     return {

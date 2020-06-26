@@ -38,12 +38,12 @@
       <div class="box1 col-md-6">
         <label for="bootstrap-duallistbox-nonselected-list_" style="display: none;"></label>
         <div class="btn-group buttons">
-          <button
+          <lte-button
             type="button"
             class="btn moveall btn-outline-secondary"
             title="Move all"
-            @click="allToRight"
-          >&gt;&gt;</button>
+            @click.native="allToRight"
+          >&gt;&gt;</lte-button>
         </div>
         <select
           multiple="multiple"
@@ -63,7 +63,7 @@
             type="button"
             class="btn removeall btn-outline-secondary"
             title="Remove all"
-            @click="allToLeft"
+            @click.native="allToLeft"
           >&lt;&lt;</lte-button>
         </div>
         <select
@@ -112,7 +112,7 @@ export default {
     oneToRight: function() {
       var select = document.getElementById("leftSelect").value;
       if (select != "" || select != null) {
-        rightList.push(select);
+        this.rightList.push(select);
         var del;
         this.leftList.forEach((el, index) => {
           if (el === select) del = index;
@@ -127,28 +127,28 @@ export default {
       if (select != "" || select != null) {
         this.leftList.push(select);
         var del;
-        rightList.forEach((el, index) => {
+        this.rightList.forEach((el, index) => {
           if (el === select) del = index;
         });
-        rightList.splice(del, 1);
+        this.rightList.splice(del, 1);
       }
       document.getElementById("rightSelect").value = "";
     },
     allToRight: function() {
       this.leftList.forEach((el, i) => {
-        rightList.push(el);
+        this.rightList.push(el);
       });
       this.leftList.splice(0, this.leftList.length);
     },
     allToLeft: function() {
-      rightList.forEach((el, i) => {
+      this.rightList.forEach((el, i) => {
         this.leftList.push(el);
       });
-      rightList.splice(0, rightList.length);
+      this.rightList.splice(0, this.rightList.length);
     },
     sortArrays: function() {
       this.leftList.sort(compare);
-      rightList.sort(compare);
+      this.rightList.sort(compare);
     },
     compare: function(a, b) {
       if (a.name < b.name) return -1;
