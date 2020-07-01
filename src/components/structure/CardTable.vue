@@ -10,7 +10,10 @@
 			</tr>
 			</thead>
 			<tbody>
-			<slot v-for="(item, i) in items" :item="item" :index="i"></slot>
+			<tr v-if="!items.length">
+				<slot name="no-entries"></slot>
+			</tr>
+			<slot v-else v-for="(item, i) in items" :item="item" :index="i"></slot>
 			</tbody>
 		</table>
 	</Card>

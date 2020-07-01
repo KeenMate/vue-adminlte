@@ -22,8 +22,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-3">
-				<card-table :items="myTableItems" item-key="id" is-paddingless>
-					<template #card-header>Simple Card Table</template>
+				<card-table :items="myTableItems" item-key="id" title="Simple Card Table" is-paddingless>
 					<template #head>
 						<th>#</th>
 						<th>The Title</th>
@@ -33,6 +32,11 @@
 							<td>{{index + 1}}</td>
 							<td>{{item.title}}</td>
 						</tr>
+					</template>
+					<template #no-entries>
+						<td colspan="2">
+							<p style="text-align: center">(No entries to display)</p>
+						</td>
 					</template>
 				</card-table>
 			</div>
