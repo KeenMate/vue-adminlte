@@ -22,8 +22,14 @@ export default {
 	props: {
 		title: String,
 		icon: String,
-		outlined: Boolean,
+		isOutlined: Boolean,
+
+		/**
+		 * Whether card header will contain tabs component
+		 */
+		isTabbed: Boolean,
 		isPaddingless: Boolean,
+		isPrimary: Boolean,
 		isInfo: Boolean,
 		isSuccess: Boolean,
 		isDanger: Boolean,
@@ -33,17 +39,14 @@ export default {
 		cardStyles() {
 			const styles = ["card"]
 
-			if (this.outlined)
-				styles.push("card-outline")
+			this.isOutlined && styles.push("card-outline")
+			this.isTabbed && styles.push(`card-${this.isOutlined && "outline-" || ""}tabs`)
 
-			if (this.isInfo)
-				styles.push("card-info")
-			if (this.isSuccess)
-				styles.push("card-success")
-			if (this.isDanger)
-				styles.push("card-danger")
-			if (this.isWarning)
-				styles.push("card-warning")
+			this.isPrimary && styles.push("card-primary")
+			this.isInfo && styles.push("card-info")
+			this.isSuccess && styles.push("card-success")
+			this.isDanger && styles.push("card-danger")
+			this.isWarning && styles.push("card-warning")
 
 			return styles
 		}

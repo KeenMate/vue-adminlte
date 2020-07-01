@@ -21,6 +21,17 @@
 			</div>
 		</div>
 		<div class="row">
+			<div class="col-md-6">
+				<card is-tabbed is-outlined is-primary>
+					<template #header>
+						<card-tabs :tabs="demoTabs" #default="{item}" :key="item">
+							{{item}}
+						</card-tabs>
+					</template>
+				</card>
+			</div>
+		</div>
+		<div class="row">
 			<div class="col-md-3">
 				<card-table :items="myTableItems" item-key="id" title="Simple Card Table" is-paddingless>
 					<template #head>
@@ -83,6 +94,12 @@ export default {
 			loaded: false,
 			modalInput: "",
 			someFiles: [],
+			demoTabs: [
+				"Tab 1",
+				"Tab 2",
+				"Tab 3"
+			],
+			activeTab: null,
 			myTableItems: [
 				{
 					id: 1,

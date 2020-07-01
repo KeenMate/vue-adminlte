@@ -37,6 +37,7 @@ export {default as Modal} from "./ui/modal/Modal.vue"
 export {default as ModalHeader} from "./ui/modal/ModalHeader.vue"
 export {default as LteButton} from "./ui/LteButton.vue"
 export {default as Badge} from "./ui/Badge.vue"
+export {default as CardTabs} from "./ui/CardTabs.vue"
 
 export {default as MultiError} from "./validation/MultiError.vue"
 
