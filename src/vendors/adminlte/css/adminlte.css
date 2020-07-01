@@ -31209,6 +31209,10 @@ body {
   margin-right: .5rem;
 }
 
+ul.nav.nav-tabs a.nav-link.active {
+  margin-right: 0 !important;
+}
+
 .nav-sidebar .nav-header:not(:first-of-type) {
   padding: .7rem .5rem .5rem .5rem;
 }
