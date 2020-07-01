@@ -27,6 +27,7 @@ export default {
 	inheritAttrs: false,
 	components: {Card},
 	props: {
+		...Card.props,
 		items: {
 			type: Array,
 			default: () => []
