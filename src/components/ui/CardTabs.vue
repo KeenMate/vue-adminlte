@@ -8,6 +8,7 @@
 				:class="hrefClasses(tab)"
 				data-toggle="pill"
 				role="tab"
+				@click="$emit('click', tab)"
 			>
 				<slot :item="tab"></slot>
 			</a>
