@@ -1,5 +1,5 @@
 <template>
-	<Card v-bind="$attrs" is-paddingless>
+	<Card v-bind="Object.assign({}, $attrs, $props)" is-paddingless>
 		<template v-if="$scopedSlots['card-header']" #header>
 			<slot name="card-header"></slot>
 		</template>
