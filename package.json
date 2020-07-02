@@ -79,6 +79,7 @@
 		"vue": "^2.6.11",
 		"vue-cli-plugin-p11n": "^0.4.0",
 		"vue-template-compiler": "^2.6.11",
+		"vuedraggable": "^2.23.2",
 		"vuepress": "^1.5.0",
 		"vuepress-plugin-autometa": "^0.1.13",
 		"webpack": "^4.43.0"

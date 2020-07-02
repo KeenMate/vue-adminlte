@@ -3,6 +3,7 @@
 		<li
 			v-for="tab in tabs"
 			class="nav-item"
+      :key="getKey(tab)"
 		>
 			<a
 				:class="hrefClasses(tab)"
@@ -23,7 +24,16 @@ export default {
 		/**
 		 * @type {any[]}
 		 */
-		tabs: Array,
+    tabs: Array,
+    
+    /**
+     * Function that will be called for every tab to get its key that will be used with v-for directive
+     * @type {function(any): string | number}
+     */
+    getKey: {
+      type: Function,
+      default: x => x
+    },
 
 		/**
 		 * @type {function(any): boolean}
