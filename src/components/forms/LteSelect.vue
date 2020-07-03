@@ -40,7 +40,7 @@ export default {
 	props: {
 		label: String,
 		inputId: String,
-		value: String,
+		value: null,
 		fasIcon: String,
 		farIcon: String,
 		isMultiple: Boolean,
