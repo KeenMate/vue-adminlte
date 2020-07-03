@@ -126,7 +126,6 @@ export default {
 				this.computedInvalidity && "error invalid-feedback",
 				this.computedValidity && "success valid-feedback"
 			].filter(x => x)
-				.join(" ")
 		},
 		innerInputStyles() {
 			return [
@@ -134,7 +133,7 @@ export default {
 				this.computedValidity && "is-valid",
 				this.computedInvalidity && "is-invalid",
 				this.isWarning && "is-warning"
-			].filter(x => x).join(" ")
+			].filter(x => x)
 		}
 	}
 }
