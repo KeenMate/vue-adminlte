@@ -16,6 +16,7 @@
 			<div :class="horizontalStyles">
 				<textarea
 					v-if="isTextarea"
+					ref="input"
 					:class="[...innerInputStyles, ...inputStyles]"
 					:id="inputId"
 					:placeholder="placeholder"
@@ -27,6 +28,7 @@
 				></textarea>
 				<input
 					v-else
+					ref="input"
 					:class="[...innerInputStyles, ...inputStyles]"
 					:type="type"
 					:id="inputId"
@@ -243,6 +245,11 @@ export default {
 			else if (this.isLarge) styles.push("input-group-lg")
 
 			return styles
+		}
+	},
+	methods: {
+		focus() {
+			this.$refs.input.focus()
 		}
 	}
 }

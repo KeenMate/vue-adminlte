@@ -11,7 +11,7 @@
 			<div class="col-md-6">
 				<!-- general form elements -->
 				<card title="Quick Example" is-info>
-					<form-input v-model="textValue" type="email" input-id="exampleInputEmail1" placeholder="Enter email" />
+					<form-input v-model="textValue" ref="firstInput" type="email" input-id="exampleInputEmail1" placeholder="Enter email" />
 					<form-input
 						v-model="textValue"
 						type="password"
@@ -478,6 +478,11 @@ import {
 export default {
 	name: "FormsPage",
 	components: {Page, LteSwitch, Card, CheckboxGroup, LteSelect, FormInput, Checkbox, RadioGroup},
+	mounted() {
+		setTimeout(() => {
+			this.$refs.firstInput.focus()
+		}, 1500)
+	},
 	data() {
 		return {
 			switchedValue: false,
