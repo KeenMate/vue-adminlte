@@ -481,12 +481,13 @@ export default {
 	mounted() {
 		setTimeout(() => {
 			this.$refs.firstInput.focus()
+			this.$refs.firstInput.select()
 		}, 1500)
 	},
 	data() {
 		return {
 			switchedValue: false,
-			textValue: "",
+			textValue: "Hello world",
 			checkboxOptions: [
 				{
 					value: "cb1",
