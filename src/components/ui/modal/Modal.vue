@@ -1,6 +1,6 @@
 <template>
 	<div ref="modal" class="modal fade">
-		<div class="modal-dialog">
+		<div :class="modalDialogClasses">
 			<div :class="contentStyles">
 				<modal-header>
 					<slot name="header"></slot>
@@ -32,10 +32,22 @@ export default {
 		isDanger: Boolean,
 		isWarning: Boolean,
 		isSuccess: Boolean,
+		
+		isSmall: Boolean,
+		isLarge: Boolean,
+		isXlarge: Boolean,
 
 		footerItemsAlignedRight: Boolean
 	},
 	computed: {
+		modalDialogClasses() {
+			return [
+				"modal-dialog",
+				this.isSmall && "modal-sm",
+				this.isLarge && "modal-lg",
+				this.isXlarge && "modal-xl",
+			]
+		},
 		contentStyles() {
 			const styles = ["modal-content"]
 
