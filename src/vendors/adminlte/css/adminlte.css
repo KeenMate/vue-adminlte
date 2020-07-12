@@ -31458,18 +31458,27 @@ textarea {
 }
 
 .modal-content .modal-header {
-  padding: .3rem;
+  padding: 0.7rem;
 }
 
 .modal-content .modal-header h4 {
   font-size: 1rem;
 }
 
+.modal-content .modal-header .close, .modal-content .modal-header .mailbox-attachment-close {
+  padding: 0;
+  margin: 0;
+}
+
 .modal-content .modal-body {
-  padding: .3rem;
+  padding: 0.7rem;
 }
 
 .modal-content .modal-footer {
   padding: 0;
+}
+
+button {
+  padding: .3rem;
 }
 /*# sourceMappingURL=adminlte.css.map */
