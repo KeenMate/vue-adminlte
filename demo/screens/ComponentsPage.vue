@@ -80,7 +80,7 @@
 				<p v-html="sampleContent"></p>
 			</div>
 		</div>
-		<modal ref="modal">
+		<modal ref="modal" :on-hide="onModalHide" @shown="onModalShown" @hidden="onModalHidden">
 			<template #header>Some modal header title</template>
 			<form-input v-model="modalInput" />
 			<template #footer>
@@ -106,6 +106,18 @@ export default {
 	methods: {
 		toggleModal() {
 			this.$refs.modal.toggle();
+		},
+		onModalShown() {
+			console.log("Modal has been shown")
+		},
+		onModalHide(ev) {
+			console.log("Modal is trying to hide. Answer is NEIN!")
+			ev.preventDefault()
+			ev.stopImmediatePropagation()
+			return false
+		},
+		onModalHidden() {
+			console.log("Modal has been hidden")
 		}
 	},
 	data() {

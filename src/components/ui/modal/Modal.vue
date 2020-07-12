@@ -37,6 +37,20 @@ export default {
 		isLarge: Boolean,
 		isXlarge: Boolean,
 
+		/**
+		 * Called when modal is to be opened
+		 * Can cancel opening by stopping provided event and returning false
+		 * @type {function(Event): boolean}
+		 */
+		onShow: Function,
+
+		/**
+		 * Called when modal is to be closed
+		 * Can cancel closing by stopping provided event and returning false
+		 * @type {function(Event): boolean}
+		 */
+		onHide: Function,
+
 		footerItemsAlignedRight: Boolean
 	},
 	computed: {
@@ -69,17 +83,40 @@ export default {
 		}
 	},
 	mounted() {
-		// BsModal(this.$refs.modal, {
-		// 	show: false
-		// })
-
 		$(this.$refs.modal).modal({
 			show: false
 		})
+		
+		$(this.$refs.modal).on("show.bs.modal", this.localOnShow)
+		$(this.$refs.modal).on("shown.bs.modal", this.onShown)
+		$(this.$refs.modal).on("hide.bs.modal", this.localOnHide)
+		$(this.$refs.modal).on("hidden.bs.modal", this.onHidden)
+	},
+	beforeDestroy() {
+		$(this.$refs.modal).off("show.bs.modal", this.localOnShow)
+		$(this.$refs.modal).off("shown.bs.modal", this.onShown)
+		$(this.$refs.modal).off("hide.bs.modal", this.localOnHide)
+		$(this.$refs.modal).off("hidden.bs.modal", this.onHidden)
 	},
 	methods: {
 		toggle() {
 			$(this.$refs.modal).modal("toggle")
+		},
+		localOnShow() {
+			if (this.onShow)
+				return this.onShow(...arguments)
+			// this.$emit("show", ...arguments)
+		},
+		onShown() {
+			this.$emit("shown", ...arguments)
+		},
+		localOnHide() {
+			if (this.onHide)
+				return this.onHide(...arguments)
+			// this.$emit("hide", ...arguments)
+		},
+		onHidden() {
+			this.$emit("hidden", ...arguments)
 		}
 	}
 }
