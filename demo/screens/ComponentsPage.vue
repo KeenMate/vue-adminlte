@@ -3,6 +3,15 @@
 		<template #header>
 			<page-header title="Components" />
 		</template>
+		<div class="row accordion-test">
+			<div class="col-md-6">
+				<accordion acc-id="accordion-test1">
+					<accordion-child parent="#accordion-test1" child-id="#child-1"></accordion-child>
+					<accordion-child parent="#accordion-test1" child-id="#child-2"></accordion-child>
+					<accordion-child parent="#accordion-test1" child-id="#child-2"></accordion-child>
+				</accordion>
+			</div>
+		</div>
 		<div class="row">
 			<div class="col-md-6">
 				<lte-button is-info @click.native="toggleModal">Open modal</lte-button>

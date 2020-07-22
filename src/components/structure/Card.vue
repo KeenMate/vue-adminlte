@@ -4,6 +4,7 @@
 			<h3 class="card-title">
 				<i v-if="icon" :class="'fas ' + icon"></i>
 				{{title}}
+				<slot v-if="!title" name="card-title"></slot>
 			</h3>
 			<slot name="header"></slot>
 		</div>

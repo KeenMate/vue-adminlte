@@ -32,6 +32,8 @@ export {default as Card} from "./structure/Card.vue"
 export {default as CardTable} from "./structure/CardTable.vue"
 export {default as CardTools} from "./structure/CardTools.vue"
 export {default as Gallery} from "./structure/Gallery.vue"
+export {default as Accordion} from "./structure/Accordion.vue"
+export {default as AccordionChild} from "./structure/AccordionChild.vue"
 
 export {default as Modal} from "./ui/modal/Modal.vue"
 export {default as ModalHeader} from "./ui/modal/ModalHeader.vue"
