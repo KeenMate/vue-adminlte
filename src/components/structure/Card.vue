@@ -8,7 +8,10 @@
 			</h3>
 			<slot name="header"></slot>
 		</div>
-		<div :class="'card-body' + (isPaddingless && ' p-0' || '')">
+		<template v-if="$scopedSlots['alternative-body']">
+			<slot name="alternative-body"></slot>
+		</template>
+		<div v-else :class="'card-body' + (isPaddingless && ' p-0' || '')">
 			<slot></slot>
 		</div>
 		<div v-if="$scopedSlots.footer" class="card-footer">
@@ -56,5 +59,7 @@ export default {
 </script>
 
 <style scoped>
-
+	.card-footer:empty {
+		padding: 0;
+	}
 </style>

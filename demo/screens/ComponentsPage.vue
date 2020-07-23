@@ -5,11 +5,31 @@
 		</template>
 		<div class="row accordion-test">
 			<div class="col-md-6">
-				<accordion acc-id="accordion-test1">
-					<accordion-child parent="#accordion-test1" child-id="#child-1"></accordion-child>
-					<accordion-child parent="#accordion-test1" child-id="#child-2"></accordion-child>
-					<accordion-child parent="#accordion-test1" child-id="#child-2"></accordion-child>
+				<accordion acc-id="accordion-test1" v-model="selectedAccordion">
+					<accordion-child title="Accordion child 1" parent="accordion-test1" child-id="child-1" @selected="magick">
+						Accordion child content 1
+					</accordion-child>
+					<accordion-child title="Accordion child 2" parent="accordion-test1" child-id="child-2">
+						<template v-slot:header>
+							<lte-button is-danger>Delete me</lte-button>
+						</template>
+						Accordion child content 2
+					</accordion-child>
+					<accordion-child title="Accordion child 3" parent="accordion-test1" child-id="child-3">
+						Accordion child content 3
+					</accordion-child>
 				</accordion>
+			</div>
+			<div class="col-md-6">
+				<div class="row">
+					<div class="col-md-3">
+						<lte-select v-model="selectedAccordion" label="Accordion selection">
+							<option :value="0">1. Accordion</option>
+							<option :value="1">2. Accordion</option>
+							<option :value="2">3. Accordion</option>
+						</lte-select>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="row">
@@ -100,7 +120,7 @@
 </template>
 
 <script>
-import VueDraggable from "vuedraggable";
+import VueDraggable from "vuedraggable"
 
 export default {
 	name: "ComponentsPage",
@@ -109,12 +129,15 @@ export default {
 	},
 	mounted() {
 		setTimeout(() => {
-			this.loaded = true;
-		}, 3000);
+			this.loaded = true
+		}, 3000)
 	},
 	methods: {
+		magick() {
+			console.log("DEMO")
+		},
 		toggleModal() {
-			this.$refs.modal.toggle();
+			this.$refs.modal.toggle()
 		},
 		onModalShown() {
 			console.log("Modal has been shown")
@@ -132,6 +155,7 @@ export default {
 	data() {
 		return {
 			loaded: false,
+			selectedAccordion: 0,
 			modalInput: "",
 			someFiles: [],
 			demoTabs: ["Tab 1", "Tab 2", "Tab 3"],
@@ -156,9 +180,9 @@ export default {
 			],
 			sampleContent: "<h1>Hello world</h1>",
 			uploadedFile: null
-		};
+		}
 	}
-};
+}
 </script>
 
 <style scoped>
