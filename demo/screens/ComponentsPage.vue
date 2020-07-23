@@ -6,9 +6,15 @@
 		<div class="row accordion-test">
 			<div class="col-md-6">
 				<accordion acc-id="accordion-test1">
-					<accordion-child parent="#accordion-test1" child-id="#child-1"></accordion-child>
-					<accordion-child parent="#accordion-test1" child-id="#child-2"></accordion-child>
-					<accordion-child parent="#accordion-test1" child-id="#child-2"></accordion-child>
+					<accordion-child parent="#accordion-test1" child-id="#child-1">
+						This is some accordion child 1
+					</accordion-child>
+					<accordion-child parent="#accordion-test1" child-id="#child-2">
+						This is some accordion child 2
+					</accordion-child>
+					<accordion-child parent="#accordion-test1" child-id="#child-3">
+						This is some accordion child 3
+					</accordion-child>
 				</accordion>
 			</div>
 		</div>
