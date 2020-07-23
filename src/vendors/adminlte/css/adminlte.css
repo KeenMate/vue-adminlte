@@ -31314,7 +31314,15 @@ textarea {
   margin-left: .3rem;
 }
 
-.card-header {
+.accordion > .card:not(:last-child) {
+  margin-bottom: 0;
+}
+
+.accordion > .card > .card-header {
+  background-color: #f8f8f8;
+}
+
+.card .card-header {
   padding: 0.35rem 0.5rem;
   display: -ms-flexbox;
   display: flex;
@@ -31325,13 +31333,14 @@ textarea {
   height: 2.5rem;
 }
 
-.card-header > .card-title {
+.card .card-header > .card-title {
   float: none;
   -ms-flex: 1;
   flex: 1;
+  font-size: 1rem;
 }
 
-.card-header > .card-tools {
+.card .card-header > .card-tools {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: end;
@@ -31342,17 +31351,19 @@ textarea {
   margin-right: 0;
 }
 
-.card-header > .card-tools .btn-tool {
+.card .card-header > .card-tools .btn-tool {
   margin: 0;
 }
 
-.card-body,
-.card-footer {
+.card .card-body,
+.card .card-footer {
   padding: .5rem;
 }
 
-.card-title {
-  font-size: 1rem;
+.card .card-body.p-0 > .note-editor {
+  margin-bottom: 0 !important;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .form-group {
@@ -31425,12 +31436,6 @@ textarea {
 
 .form-group select.form-control.is-invalid {
   background-position: right calc(.375em + .6rem) center !important;
-}
-
-.card-body.p-0 > .note-editor {
-  margin-bottom: 0 !important;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
 }
 
 .content-wrapper {
