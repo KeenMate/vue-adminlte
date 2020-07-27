@@ -1,10 +1,11 @@
-<!-- MODEL: https://admin-lte.keenmate.com/pages/forms/advanced.html# -->
+<!-- MODEL: https://admin-lte.keenmate.com/pages/forms/advanced.html# 
+prvni date mask placeholder
+color picker
+pridat input addons
+-->
 
 <template>
   <page>
-    <!-- 
-									kdys se zmeni  nebo track-by u multiselect tak prestane fungovat
-    -->
     <section class="content-header">
       <h1>Advanced Elements</h1>
     </section>
@@ -137,7 +138,8 @@
               <input
                 name="text"
                 v-cleave="{date: true,datePattern: [ 'd','m', 'Y']}"
-                class="d-flex flex-column bd-highlight mb-2"
+                placeholder="dd/mm/yyyy"
+                class="d-flex flex-column bd-highlight mb-2 form-control"
               />
               <the-mask
                 mask="##/##/####"
@@ -188,43 +190,20 @@
         <div class="col-6">
           <card title="Date picker" is-info>
             <div class="d-flex flex-column bd-highlight mb-1">
-              <label class="mb-1">Date:</label>
-              <v-date-picker v-model="date"></v-date-picker>
+              <label class="mb-0">Date:</label>
+              <VCalendar format="L" id="adminLteVCalendar"></VCalendar>
             </div>
             <div class="d-flex flex-column bd-highlight mb-1">
-              <label class="mb-1">Date range :</label>
-              <v-date-picker mode="range" v-model="range" />
+              <label class="mb-0">Date range :</label>
+              <VDateRangePicker id="admitLteVDateRangePicker" />
             </div>
             <div class="d-flex flex-column bd-highlight mb-1">
-              <label class="mb-1">Date and time range :</label>
-
-              <div class="row">
-                <div class="col-6">
-                  <datetime
-                    type="datetime"
-                    v-model="rangeWithTime.start"
-                    use12-hour
-                    class="form-control"
-                  ></datetime>
-                </div>
-                <div class="col-6">
-                  <datetime
-                    type="datetime"
-                    v-model="rangeWithTime.end"
-                    use12-hour
-                    class="form-control"
-                  ></datetime>
-                </div>
-              </div>
-              <label>Date range picker</label>
-              <multiselect
-                v-model="DateRangePickerValue"
-                :options="DateRangePickerOprions"
-                :multiple="false"
-                :close-on-select="true"
-                placeholder="Date range picker"
-                track-by="DateRangePicker"
-              ></multiselect>
+              <label class="mb-0">Date and time range :</label>
+            </div>
+            <VDateRangePicker :withTime="true" />
+            <div class="d-flex flex-column bd-highlight mb-1">
+              <label class="mb-0">Date range picker</label>
+              <VDateRangeButton id="admitLteVDateRangeButton"></VDateRangeButton>
             </div>
           </card>
         </div>
@@ -232,16 +211,12 @@
       <div class="row">
         <div class="col-6">
           <card title="time and color picker" is-info>
-            <div class="d-flex flex-column bd-highlight mb-1">
+            <div class="d-flex flex-column bd-highlight mb-1 input-group row">
               <colour-picker v-model="color" label="Pick Colour" picker="chrome" />
             </div>
             <div class="d-flex flex-column bd-highlight mb-1">
-              <vue-timepicker
-                format="hh:mm:ss a"
-                :v-model="Time"
-                :second-interval="10"
-                :minute-interval="5"
-              ></vue-timepicker>
+              <label>time picker</label>
+              <VCalendar format="LT" id="vcal2"></VCalendar>
             </div>
           </card>
         </div>
@@ -256,14 +231,14 @@ import Vue from "vue";
 import Multiselect from "vue-multiselect";
 import dualListBox from "../../../src/components/forms/DualListBox";
 import VueTheMask from "vue-the-mask";
-import VueTimepicker from "vue2-timepicker";
-import VCalendar from "v-calendar";
-import Datetime from "vue-datetime";
+
 import ColourPicker from "vue-colour-picker";
 import Cleave from "cleave.js";
+import VCalendar from "../../../src/components/forms/VCalendar";
+import VDateRangePicker from "../../../src/components/forms/VDateRangePicker";
+import VDateRangeButton from "../../../src/components/forms/VDateRangeButton";
 Vue.use(VueTheMask);
-Vue.use(VCalendar);
-Vue.use(Datetime);
+
 Vue.directive("cleave", {
   inserted: (el, binding) => {
     el.cleave = new Cleave(el, binding.value || {});
@@ -282,10 +257,11 @@ export default {
     Multiselect,
     dualListBox,
     VueTheMask,
-    VCalendar,
-    VueTimepicker,
     ColourPicker,
-    Cleave
+    Cleave,
+    VCalendar,
+    VDateRangePicker,
+    VDateRangeButton
   },
   data() {
     return {
@@ -330,8 +306,8 @@ export default {
       ],
       date: new Date(),
       range: {
-        start: new Date(2019, 0, 16), // Jan 16th, 2019
-        end: new Date(2020, 0, 19) // Jan 19th, 2020
+        start: null, // Jan 16th, 2019
+        end: null // Jan 19th, 2020
       },
       rangeWithTime: {
         start: "",
@@ -357,14 +333,9 @@ export default {
 
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 <style src='vue2-timepicker/dist/VueTimepicker.css'></style>
-<style src="vue-datetime/dist/vue-datetime.css">
-</style>
 
 <style >
-.multiselect__option--highlight {
+.multiselect__option--highlight #red {
   background: red;
-}
-.vdatetime-input {
-  border: 0ch;
 }
 </style>
