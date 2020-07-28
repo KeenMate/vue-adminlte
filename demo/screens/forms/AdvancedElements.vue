@@ -210,13 +210,76 @@ pridat input addons
       </div>
       <div class="row">
         <div class="col-6">
-          <card title="time and color picker" is-info>
-            <div class="d-flex flex-column bd-highlight mb-1 input-group row">
+          <card title="time and color picker" is-info class="d-flex flex-column flex-grow">
+            <div class="d-flex flex-column bd-highlight mb-1 input-group input-group-inline">
               <colour-picker v-model="color" label="Pick Colour" picker="chrome" />
             </div>
             <div class="d-flex flex-column bd-highlight mb-1">
               <label>time picker</label>
               <VCalendar format="LT" id="vcal2"></VCalendar>
+            </div>
+          </card>
+        </div>
+        <div class="col-6">
+          <card title="Checkbox and Radio Inputs">
+            <div class="row">
+              <div class="col-6">
+                <div class="form-group-inline row">
+                  <input
+                    class="form-input mr-1"
+                    type="checkbox"
+                    id="customcheckbox1"
+                    value
+                    checked
+                    style="width: 25px; height: 25px;"
+                  />
+                  <input
+                    class="form-input mr-1"
+                    type="checkbox"
+                    id="customcheckbox2"
+                    value
+                    style="width: 25px; height: 25px;"
+                  />
+                  <input
+                    class="form-input mr-1"
+                    type="checkbox"
+                    id="customcheckbox3"
+                    value
+                    disabled
+                    style="width: 25px; height: 25px;"
+                  />
+                  <label>primary check box</label>
+                </div>
+                <!--   <div class="form-group-inline row">
+                  <input
+                    class="form-input mr-1 red-checkbox is-danger"
+                    type="checkbox"
+                    id="customcheckbox1"
+                    value
+                    checked
+                    style="width: 25px; height: 25px;"
+                  />
+                  <input
+                    class="form-input mr-1 red-checkbox"
+                    type="checkbox"
+                    id="customcheckbox2"
+                    value
+                    style="width: 25px; height: 25px;"
+                  />
+                  <input
+                    class="form-input mr-1 red-checkbox"
+                    type="checkbox"
+                    id="customcheckbox3"
+                    value
+                    disabled
+                    style="width: 25px; height: 25px;"
+                  />
+                  <label>primary check box</label>
+                </div>-->
+              </div>
+              <div class="col-6">
+                <Radio value :inputStyles="['input-lg']"></Radio>
+              </div>
             </div>
           </card>
         </div>
@@ -334,8 +397,14 @@ export default {
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 <style src='vue2-timepicker/dist/VueTimepicker.css'></style>
 
+
 <style >
 .multiselect__option--highlight #red {
   background: red;
+}
+
+.red-checkbox:checked {
+  background-color: red;
+  color: red;
 }
 </style>
