@@ -35,11 +35,11 @@
 		"start": "vue-cli-service serve"
 	},
 	"dependencies": {
-		"@popperjs/core": "^2.4.0",
+		"@popperjs/core": "^2.4.2",
 		"cleave.js": "^1.6.0",
 		"core-js": "^3.6.4",
 		"dual-listbox-vue": "^1.0.2",
-		"filepond": "^4.15.1",
+		"filepond": "^4.17.1",
 		"filepond-plugin-image-exif-orientation": "^1.0.9",
 		"filepond-plugin-image-preview": "^4.6.4",
 		"jquery": "^3.5.1",
@@ -53,7 +53,7 @@
 		"vue-fragment": "^1.5.1",
 		"vue-multiselect": "^2.1.6",
 		"vue-popperjs": "^2.3.0",
-		"vue-router": "^3.1.6",
+		"vue-router": "^3.3.4",
 		"vue-text-mask": "^6.1.2",
 		"vue-the-mask": "^0.11.1",
 		"vue2-timepicker": "^1.1.3",
