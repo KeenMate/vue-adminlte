@@ -1,17 +1,20 @@
 <template>
 	<page>
 		<template #header>
-			<PageHeader
-				title="General Form"
-				far icon="copy"
-			/>
+			<PageHeader title="General Form" far icon="copy" />
 		</template>
 		<div class="row">
 			<!-- left column -->
 			<div class="col-md-6">
 				<!-- general form elements -->
 				<card title="Quick Example" is-info>
-					<form-input v-model="textValue" ref="firstInput" type="email" input-id="exampleInputEmail1" placeholder="Enter email" />
+					<form-input
+						v-model="textValue"
+						ref="firstInput"
+						type="email"
+						input-id="exampleInputEmail1"
+						placeholder="Enter email"
+					/>
 					<form-input
 						v-model="textValue"
 						type="password"
@@ -20,20 +23,18 @@
 						placeholder="Password"
 						is-invalid
 					>
-						<template #invalid-msg>
-							Your password must be at least 5 characters long
-						</template>
+						<template #invalid-msg>Your password must be at least 5 characters long</template>
 					</form-input>
 					<form-input v-model="textValue" type="password" label="Password" placeholder="Password" />
 					<div class="form-group">
 						<label for="exampleInputFile">File input</label>
 						<div class="input-group">
 							<div class="custom-file">
-								<input type="file" class="custom-file-input" id="exampleInputFile">
+								<input type="file" class="custom-file-input" id="exampleInputFile" />
 								<label class="custom-file-label" for="exampleInputFile">Choose file</label>
 							</div>
 							<div class="input-group-append">
-								<span class="input-group-text" id="">Upload</span>
+								<span class="input-group-text" id>Upload</span>
 							</div>
 						</div>
 					</div>
@@ -47,9 +48,9 @@
 				<!-- Form Element sizes -->
 				<card title="Different Height" is-success>
 					<form-input v-model="textValue" placeholder=".form-control-lg" size-large />
-					<br>
+					<br />
 					<form-input v-model="textValue" placeholder="Default input" />
-					<br>
+					<br />
 					<form-input v-model="textValue" placeholder=".form-control-sm" is-small />
 				</card>
 
@@ -90,12 +91,16 @@
 					<h4>With icons</h4>
 					<form-input v-model="textValue" class="mb-3" type="email" placeholder="Email">
 						<template #prepend>
-							<span class="input-group-text"><i class="fas fa-envelope"></i></span>
+							<span class="input-group-text">
+								<i class="fas fa-envelope"></i>
+							</span>
 						</template>
 					</form-input>
 					<form-input v-model="textValue" class="mb-3">
 						<template #append>
-							<span class="input-group-text"><i class="fas fa-check"></i></span>
+							<span class="input-group-text">
+								<i class="fas fa-check"></i>
+							</span>
 						</template>
 					</form-input>
 					<form-input v-model="textValue">
@@ -105,7 +110,9 @@
 							</span>
 						</template>
 						<template #append>
-							<div class="input-group-text"><i class="fas fa-ambulance"></i></div>
+							<div class="input-group-text">
+								<i class="fas fa-ambulance"></i>
+							</div>
 						</template>
 					</form-input>
 
@@ -125,7 +132,9 @@
 						<div class="col-lg-6">
 							<form-input v-model="textValue">
 								<template #prepend>
-									<span class="input-group-text"><input type="radio"></span>
+									<span class="input-group-text">
+										<input type="radio" />
+									</span>
 								</template>
 							</form-input>
 						</div>
@@ -134,18 +143,32 @@
 					<!-- /.row -->
 
 					<h5 class="mt-4 mb-2">With buttons</h5>
-					<p>Large: <code>.input-group.input-group-lg</code></p>
+					<p>
+						Large:
+						<code>.input-group.input-group-lg</code>
+					</p>
 					<form-input v-model="textValue" is-large>
 						<template #prepend>
-							<button ref="dropdownToggle" type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
-								Action
-							</button>
+							<button
+								ref="dropdownToggle"
+								type="button"
+								class="btn btn-warning dropdown-toggle"
+								data-toggle="dropdown"
+							>Action</button>
 							<ul class="dropdown-menu">
-								<li class="dropdown-item"><a href="#">Action</a></li>
-								<li class="dropdown-item"><a href="#">Another action</a></li>
-								<li class="dropdown-item"><a href="#">Something else here</a></li>
+								<li class="dropdown-item">
+									<a href="#">Action</a>
+								</li>
+								<li class="dropdown-item">
+									<a href="#">Another action</a>
+								</li>
+								<li class="dropdown-item">
+									<a href="#">Something else here</a>
+								</li>
 								<li class="dropdown-divider"></li>
-								<li class="dropdown-item"><a href="#">Separated link</a></li>
+								<li class="dropdown-item">
+									<a href="#">Separated link</a>
+								</li>
 							</ul>
 						</template>
 					</form-input>
@@ -157,7 +180,10 @@
 						</template>
 					</form-input>
 
-					<p>Small <code>.input-group.input-group-sm</code></p>
+					<p>
+						Small
+						<code>.input-group.input-group-sm</code>
+					</p>
 					<form-input v-model="textValue" is-small>
 						<template #append>
 							<button type="button" class="btn btn-info btn-flat">Go!</button>
@@ -189,9 +215,7 @@
 					/>
 					<div class="row form-group">
 						<div class="offset-sm-2 col-sm-10">
-							<checkbox input-id="exampleCheck2">
-								Remember me
-							</checkbox>
+							<checkbox input-id="exampleCheck2">Remember me</checkbox>
 						</div>
 					</div>
 
@@ -200,7 +224,6 @@
 						<button type="submit" class="btn btn-default float-right">Cancel</button>
 					</template>
 				</card>
-
 			</div>
 			<!--/.col (left) -->
 			<!-- right column -->
@@ -219,15 +242,23 @@
 						<div class="row">
 							<div class="col-sm-6">
 								<!-- textarea -->
-								<form-input v-model="textValue" label="Textarea" rows="3" placeholder="Enter ..." is-textarea />
+								<form-input
+									v-model="textValue"
+									label="Textarea"
+									rows="3"
+									placeholder="Enter ..."
+									is-textarea
+								/>
 							</div>
 							<div class="col-sm-6">
-								<form-input v-model="textValue"
+								<form-input
+									v-model="textValue"
 									label="Textarea Disabled"
 									rows="3"
 									placeholder="Enter ..."
 									is-textarea
-									is-disabled />
+									is-disabled
+								/>
 							</div>
 						</div>
 
@@ -332,15 +363,15 @@
 									<!-- checkbox -->
 									<div class="form-group">
 										<div class="custom-control custom-checkbox">
-											<input class="custom-control-input" type="checkbox" id="customcheckbox1" value="option1">
+											<input class="custom-control-input" type="checkbox" id="customcheckbox1" value="option1" />
 											<label for="customcheckbox1" class="custom-control-label">Custom checkbox</label>
 										</div>
 										<div class="custom-control custom-checkbox">
-											<input class="custom-control-input" type="checkbox" id="customcheckbox2" checked>
+											<input class="custom-control-input" type="checkbox" id="customcheckbox2" checked />
 											<label for="customcheckbox2" class="custom-control-label">Custom checkbox checked</label>
 										</div>
 										<div class="custom-control custom-checkbox">
-											<input class="custom-control-input" type="checkbox" id="customcheckbox3" disabled>
+											<input class="custom-control-input" type="checkbox" id="customcheckbox3" disabled />
 											<label for="customcheckbox3" class="custom-control-label">Custom checkbox disabled</label>
 										</div>
 									</div>
@@ -349,15 +380,21 @@
 									<!-- radio -->
 									<div class="form-group">
 										<div class="custom-control custom-radio">
-											<input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
+											<input class="custom-control-input" type="radio" id="customRadio1" name="customRadio" />
 											<label for="customRadio1" class="custom-control-label">Custom Radio</label>
 										</div>
 										<div class="custom-control custom-radio">
-											<input class="custom-control-input" type="radio" id="customRadio2" name="customRadio" checked>
+											<input
+												class="custom-control-input"
+												type="radio"
+												id="customRadio2"
+												name="customRadio"
+												checked
+											/>
 											<label for="customRadio2" class="custom-control-label">Custom Radio checked</label>
 										</div>
 										<div class="custom-control custom-radio">
-											<input class="custom-control-input" type="radio" id="customRadio3" disabled>
+											<input class="custom-control-input" type="radio" id="customRadio3" disabled />
 											<label for="customRadio3" class="custom-control-label">Custom Radio disabled</label>
 										</div>
 									</div>
@@ -420,37 +457,42 @@
 								</div>
 							</div>
 
-							<lte-switch input-id="customSwitch1" v-model="switchedValue">
-								Toggle this custom switch element
-							</lte-switch>
-							<lte-switch input-id="customSwitch3" v-model="switchedValue" switch-off-color="danger" switch-on-color="success">
-								Toggle this custom switch element with custom colors danger/success
-							</lte-switch>
-							<lte-switch input-id="customSwitch2" v-model="switchedValue" is-disabled>
-								Disabled custom switch element
-							</lte-switch>
+							<lte-switch
+								input-id="customSwitch1"
+								v-model="switchedValue"
+							>Toggle this custom switch element</lte-switch>
+							<lte-switch
+								input-id="customSwitch3"
+								v-model="switchedValue"
+								switch-off-color="danger"
+								switch-on-color="success"
+							>Toggle this custom switch element with custom colors danger/success</lte-switch>
+							<lte-switch
+								input-id="customSwitch2"
+								v-model="switchedValue"
+								is-disabled
+							>Disabled custom switch element</lte-switch>
 							<div class="form-group">
 								<label for="customRange1">Custom range</label>
-								<input type="range" class="custom-range" id="customRange1">
+								<input type="range" class="custom-range" id="customRange1" />
 							</div>
 							<div class="form-group">
 								<label for="customRange1">Custom range (custom-range-danger)</label>
-								<input type="range" class="custom-range custom-range-danger" id="customRange12">
+								<input type="range" class="custom-range custom-range-danger" id="customRange12" />
 							</div>
 							<div class="form-group">
 								<label for="customRange1">Custom range (custom-range-teal)</label>
-								<input type="range" class="custom-range custom-range-teal" id="customRange13">
+								<input type="range" class="custom-range custom-range-teal" id="customRange13" />
 							</div>
 							<div class="form-group">
 								<!-- <label for="customFile">Custom File</label> -->
 
 								<div class="custom-file">
-									<input type="file" class="custom-file-input" id="customFile">
+									<input type="file" class="custom-file-input" id="customFile" />
 									<label class="custom-file-label" for="customFile">Choose file</label>
 								</div>
 							</div>
-							<div class="form-group">
-							</div>
+							<div class="form-group"></div>
 						</form>
 					</div>
 					<!-- /.card-body -->
@@ -472,17 +514,25 @@ import {
 	Checkbox,
 	CheckboxGroup,
 	Page,
-	LteSwitch
-} from "../../src"
-
+	LteSwitch,
+} from "../../../src";
 export default {
 	name: "FormsPage",
-	components: {Page, LteSwitch, Card, CheckboxGroup, LteSelect, FormInput, Checkbox, RadioGroup},
+	components: {
+		Page,
+		LteSwitch,
+		Card,
+		CheckboxGroup,
+		LteSelect,
+		FormInput,
+		Checkbox,
+		RadioGroup,
+	},
 	mounted() {
 		setTimeout(() => {
-			this.$refs.firstInput.focus()
-			this.$refs.firstInput.select()
-		}, 1500)
+			this.$refs.firstInput.focus();
+			this.$refs.firstInput.select();
+		}, 1500);
 	},
 	data() {
 		return {
@@ -491,36 +541,36 @@ export default {
 			checkboxOptions: [
 				{
 					value: "cb1",
-					text: "checkbox"
+					text: "checkbox",
 				},
 				{
 					value: "cb2",
-					text: "checkbox checked"
+					text: "checkbox checked",
 				},
 				{
 					value: "cb3",
 					text: "checkbox disabled",
-					disabled: true
-				}
+					disabled: true,
+				},
 			],
 			checkedCheckboxes: ["cb2"],
 			radioOptions: [
 				{
 					value: "r1",
-					text: "Radio"
+					text: "Radio",
 				},
 				{
 					value: "r2",
-					text: "Radio checked"
+					text: "Radio checked",
 				},
 				{
 					value: "r3",
 					text: "Radio disabled",
-					disabled: true
-				}
+					disabled: true,
+				},
 			],
-			radioValue: "r2"
-		}
-	}
-}
+			radioValue: "r2",
+		};
+	},
+};
 </script>
