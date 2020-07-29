@@ -25,7 +25,7 @@ import WithRoot from "../helper-components/WithRoot"
 export default {
 	name: "CardTable",
 	inheritAttrs: false,
-	components: { Card, WithRoot },
+	components: {Card, WithRoot},
 	props: {
 		...Card.props,
 
@@ -33,13 +33,13 @@ export default {
 		 * Whether or not to render default slot inside tbody element (useful for external libraries that need to render wrapper by themself)
 		 * @type {boolean}
 		 */
-		noTbody: Boolean
+		noTbody: Boolean,
 	},
 	computed: {
 		tableStyles() {
-			return ["table table-sm"];
-		}
-	}
+			return ["table table-sm"]
+		},
+	},
 }
 </script>
 

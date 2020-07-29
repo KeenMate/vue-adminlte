@@ -1,12 +1,9 @@
 <template>
 	<div :class="imageContainerClasses">
-		<img
-			:alt="alt"
-			:src="src"
-			style="width: 100%; display: block;">
+		<img :alt="alt" :src="src" style="width: 100%; display: block;" />
 		<span v-if="title" class="title">
-			{{title}}
-    </span>
+			{{ title }}
+		</span>
 	</div>
 </template>
 
@@ -31,7 +28,7 @@ export default {
 		isSelected: Boolean,
 		isThumbnailed: Boolean,
 		isRounded: Boolean,
-		hasShadow: Boolean
+		hasShadow: Boolean,
 	},
 	computed: {
 		imageContainerClasses() {
@@ -43,11 +40,11 @@ export default {
 			this.hasShadow && classes.push("drop-shadow")
 
 			return classes.join(" ")
-		}
-	}
+		},
+	},
 }
 </script>
 
 <style lang="scss">
-	@import "../../assets/keenmate/image.css";
+@import "../../assets/keenmate/image.css";
 </style>

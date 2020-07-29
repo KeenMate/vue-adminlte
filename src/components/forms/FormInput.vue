@@ -24,7 +24,7 @@
 					:disabled="isDisabled"
 					:rows="rows"
 					:cols="cols"
-					v-on="{ ...$listeners, input: ev => $emit('input', ev.target.value) }"
+					v-on="{...$listeners, input: (ev) => $emit('input', ev.target.value)}"
 				></textarea>
 				<input
 					v-else
@@ -36,7 +36,7 @@
 					:value="value"
 					:disabled="isDisabled"
 					:pattern="pattern"
-					v-on="{ ...$listeners, input: ev => $emit('input', ev.target.value) }"
+					v-on="{...$listeners, input: (ev) => $emit('input', ev.target.value)}"
 				/>
 				<FormInputFeedback
 					:visible="computedInvalidity || computedValidity"
@@ -66,7 +66,7 @@ import validatedInputProps from "./validatedInputProps"
 
 export default {
 	name: "FormInput",
-	components: { FormInputFeedback, WithRoot, FormLabel },
+	components: {FormInputFeedback, WithRoot, FormLabel},
 	props: {
 		/**
 		 * @type {any}
@@ -106,11 +106,11 @@ export default {
 		isLarge: Boolean,
 		labelStyles: {
 			type: Array,
-			default: () => []
+			default: () => [],
 		},
 		inputStyles: {
 			type: Array,
-			default: () => []
+			default: () => [],
 		},
 
 		/**
@@ -119,7 +119,7 @@ export default {
 		 */
 		horizontalStyles: {
 			type: Array,
-			default: () => []
+			default: () => [],
 		},
 		isDisabled: Boolean,
 		isTextarea: Boolean,
@@ -167,12 +167,12 @@ export default {
 						"text",
 						"time",
 						"url",
-						"week"
+						"week",
 					].indexOf(x) !== -1
 				)
-			}
+			},
 		},
-		...validatedInputProps
+		...validatedInputProps,
 	},
 	computed: {
 		computedFeedback() {
@@ -211,9 +211,9 @@ export default {
 		feedbackStyles() {
 			return [
 				this.computedInvalidity && "error invalid-feedback",
-				this.computedValidity && "success valid-feedback"
+				this.computedValidity && "success valid-feedback",
 			]
-				.filter(x => x)
+				.filter((x) => x)
 				.join(" ")
 		},
 		computedLabelStyles() {
@@ -245,7 +245,7 @@ export default {
 			else if (this.isLarge) styles.push("input-group-lg")
 
 			return styles
-		}
+		},
 	},
 	methods: {
 		focus() {
@@ -253,8 +253,8 @@ export default {
 		},
 		select() {
 			this.$refs.input.select()
-		}
-	}
+		},
+	},
 }
 </script>
 
