@@ -25,22 +25,22 @@
 			<span class="badge badge-info right">6</span>
 			<template #sublinks>
 				<sidenav-link to="../layout/top-nav.html">Top Navigation</sidenav-link>
-				<sidenav-link to="../layout/top-nav-sidebar.html"
-					>Top Navigation + Sidebar</sidenav-link
-				>
+				<sidenav-link to="../layout/top-nav-sidebar.html">
+					Top Navigation + Sidebar
+				</sidenav-link>
 				<sidenav-link to="#/not-implemented">Boxed</sidenav-link>
-				<sidenav-link to="../layout/fixed-sidebar.html"
-					>Fixed Sidebar</sidenav-link
-				>
-				<sidenav-link to="../layout/fixed-topnav.html"
-					>Fixed Navbar</sidenav-link
-				>
-				<sidenav-link to="../layout/fixed-footer.html"
-					>Fixed Footer</sidenav-link
-				>
-				<sidenav-link to="../layout/collapsed-sidebar.html"
-					>Collapsed Sidebar</sidenav-link
-				>
+				<sidenav-link to="../layout/fixed-sidebar.html">
+					Fixed Sidebar
+				</sidenav-link>
+				<sidenav-link to="../layout/fixed-topnav.html">
+					Fixed Navbar
+				</sidenav-link>
+				<sidenav-link to="../layout/fixed-footer.html">
+					Fixed Footer
+				</sidenav-link>
+				<sidenav-link to="../layout/collapsed-sidebar.html">
+					Collapsed Sidebar
+				</sidenav-link>
 			</template>
 		</sidenav-link>
 		<sidenav-link to="#/not-implemented" fas-icon="chart-pie" nested>
@@ -70,12 +70,12 @@
 			Forms
 			<i class="fas fa-angle-left right"></i>
 			<template #sublinks>
-				<sidenav-link :to="{name: 'forms-general'}" is-active
-					>General Elements</sidenav-link
-				>
-				<sidenav-link :to="{name: 'advanced-elements'}"
-					>Advanced Elements</sidenav-link
-				>
+				<sidenav-link :to="{name: 'forms-general'}" is-active>
+					General Elements
+				</sidenav-link>
+				<sidenav-link :to="{name: 'advanced-elements'}">
+					Advanced Elements
+				</sidenav-link>
 				<sidenav-link to="#/not-implemented">Editors</sidenav-link>
 				<sidenav-link to="#/not-implemented">Validation</sidenav-link>
 			</template>
@@ -112,15 +112,15 @@
 				<sidenav-link to="#/not-implemented">Profile</sidenav-link>
 				<sidenav-link to="../examples/e-commerce.html">E-commerce</sidenav-link>
 				<sidenav-link to="#/not-implemented">Projects</sidenav-link>
-				<sidenav-link to="../examples/project-add.html"
-					>Project Add</sidenav-link
-				>
-				<sidenav-link to="../examples/project-edit.html"
-					>Project Edit</sidenav-link
-				>
-				<sidenav-link to="../examples/project-detail.html"
-					>Project Detail</sidenav-link
-				>
+				<sidenav-link to="../examples/project-add.html">
+					Project Add
+				</sidenav-link>
+				<sidenav-link to="../examples/project-edit.html">
+					Project Edit
+				</sidenav-link>
+				<sidenav-link to="../examples/project-detail.html">
+					Project Detail
+				</sidenav-link>
 				<sidenav-link to="#/not-implemented">Contacts</sidenav-link>
 			</template>
 		</sidenav-link>
@@ -130,19 +130,19 @@
 			<template #sublinks>
 				<sidenav-link to="#/not-implemented">Login</sidenav-link>
 				<sidenav-link to="#/not-implemented">Register</sidenav-link>
-				<sidenav-link to="../examples/forgot-password.html"
-					>Forgot Password</sidenav-link
-				>
-				<sidenav-link to="../examples/recover-password.html"
-					>Recover Password</sidenav-link
-				>
+				<sidenav-link to="../examples/forgot-password.html">
+					Forgot Password
+				</sidenav-link>
+				<sidenav-link to="../examples/recover-password.html">
+					Recover Password
+				</sidenav-link>
 				<sidenav-link to="#/not-implemented">Lockscreen</sidenav-link>
-				<sidenav-link to="../examples/legacy-user-menu.html"
-					>Legacy User Menu</sidenav-link
-				>
-				<sidenav-link to="../examples/language-menu.html"
-					>Language Menu</sidenav-link
-				>
+				<sidenav-link to="../examples/legacy-user-menu.html">
+					Legacy User Menu
+				</sidenav-link>
+				<sidenav-link to="../examples/language-menu.html">
+					Language Menu
+				</sidenav-link>
 				<sidenav-link to="#/not-implemented">Error 404</sidenav-link>
 				<sidenav-link to="#/not-implemented">Error 500</sidenav-link>
 				<sidenav-link to="#/not-implemented">Pace</sidenav-link>
@@ -153,15 +153,15 @@
 		<li class="nav-header">MISCELLANEOUS</li>
 		<sidenav-link to="https://adminlte.io/docs/3.0">Documentation</sidenav-link>
 		<li class="nav-header">LABELS</li>
-		<sidenav-link to="#/not-implemented" fas-icon="circle text-danger"
-			>Important</sidenav-link
-		>
-		<sidenav-link to="#/not-implemented" fas-icon="circle text-warning"
-			>Warning</sidenav-link
-		>
-		<sidenav-link to="#/not-implemented" fas-icon="circle text-info"
-			>Informational</sidenav-link
-		>
+		<sidenav-link to="#/not-implemented" fas-icon="circle text-danger">
+			Important
+		</sidenav-link>
+		<sidenav-link to="#/not-implemented" fas-icon="circle text-warning">
+			Warning
+		</sidenav-link>
+		<sidenav-link to="#/not-implemented" fas-icon="circle text-info">
+			Informational
+		</sidenav-link>
 	</fragment>
 </template>
 
