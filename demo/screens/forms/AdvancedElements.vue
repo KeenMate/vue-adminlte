@@ -129,7 +129,7 @@
 							</label>
 							<input
 								name="text"
-								v-cleave="{ date: true, datePattern: ['d', 'm', 'Y'] }"
+								v-cleave="{date: true, datePattern: ['d', 'm', 'Y']}"
 								placeholder="dd/mm/yyyy"
 								class="d-flex flex-column bd-highlight mb-2 form-control"
 							/>
@@ -285,7 +285,7 @@ Vue.directive("cleave", {
 		el.cleave = new Cleave(el, binding.value || {})
 	},
 	update: (el) => {
-		const event = new Event("input", { bubbles: true })
+		const event = new Event("input", {bubbles: true})
 		setTimeout(function () {
 			el.value = el.cleave.properties.result
 			el.dispatchEvent(event)
@@ -310,16 +310,16 @@ export default {
 			multiselectValue: null,
 			singleselectvalue: null,
 			SelectOptions: [
-				{ name: "AAA" },
-				{ name: "BBB" },
-				{ name: "CCC" },
-				{ name: "DDD" },
+				{name: "AAA"},
+				{name: "BBB"},
+				{name: "CCC"},
+				{name: "DDD"},
 			],
 			SelectOptionsWdisabled: [
-				{ name: "AAA" },
-				{ name: "BBB" },
-				{ name: "CCC", $isDisabled: true },
-				{ name: "DDD" },
+				{name: "AAA"},
+				{name: "BBB"},
+				{name: "CCC", $isDisabled: true},
+				{name: "DDD"},
 			],
 			ListBox1: [
 				"James",

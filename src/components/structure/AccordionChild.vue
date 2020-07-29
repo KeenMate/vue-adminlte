@@ -39,7 +39,7 @@ import Card from "./Card.vue"
 
 export default {
 	name: "AccordionChild",
-	components: { Card },
+	components: {Card},
 	props: {
 		...Card.props,
 		title: String,

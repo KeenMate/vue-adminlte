@@ -70,10 +70,10 @@
 			Forms
 			<i class="fas fa-angle-left right"></i>
 			<template #sublinks>
-				<sidenav-link to="#/not-implemented" is-active
+				<sidenav-link :to="{name: 'forms-general'}" is-active
 					>General Elements</sidenav-link
 				>
-				<sidenav-link :to="{ name: 'advanced-elements' }"
+				<sidenav-link :to="{name: 'advanced-elements'}"
 					>Advanced Elements</sidenav-link
 				>
 				<sidenav-link to="#/not-implemented">Editors</sidenav-link>
