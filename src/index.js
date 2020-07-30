@@ -3,6 +3,8 @@
 // import "./vendors/adminlte/dist/css/adminlte.css"
 // import "./vendors/adminlte/build/scss/AdminLTE-condensed.scss"
 
+import jQuery from "jquery"
+
 import * as components from "./components"
 export * from "./components"
 
@@ -11,19 +13,22 @@ export const Toast = ToastModule
 
 const version = "__VERSION__"
 
-const install = Vue => {
-	Object
-		.keys(components)
-		.forEach(name => {
-			Vue.component(name, components[name])
-		})
+const install = (Vue) => {
+	Object.keys(components).forEach((name) => {
+		Vue.component(name, components[name])
+	})
 }
 const plugin = {
 	install,
-	version
+	version,
 }
 
 export default plugin
 
-if (typeof window !== "undefined" && window.Vue)
-	window.Vue.use(plugin)
+if (typeof window !== "undefined") {
+	if (window.Vue) {
+		window.Vue.use(plugin)
+	}
+
+	window.jQuery = jQuery
+}
