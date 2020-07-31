@@ -3,7 +3,7 @@
 // import "./vendors/adminlte/dist/css/adminlte.css"
 // import "./vendors/adminlte/build/scss/AdminLTE-condensed.scss"
 
-import jQuery from "jquery"
+// import jQuery from "jquery"
 
 import * as components from "./components"
 export * from "./components"
@@ -30,5 +30,5 @@ if (typeof window !== "undefined") {
 		window.Vue.use(plugin)
 	}
 
-	window.jQuery = jQuery
+	// window.jQuery = jQuery
 }
