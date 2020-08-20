@@ -21,7 +21,6 @@ export default {
 
 			this.$refs.vueEasyMde.isValueUpdateFromInner =
 				val === this.valueFromNested
-			this.$refs.vueEasyMde.initialize()
 		},
 	},
 	methods: {
