@@ -5,6 +5,7 @@
 		:server="server"
 		:allow-revert="allowRevert"
 		:allow-multiple="allowMultiple"
+		v-on="$listeners"
 	/>
 </template>
 
@@ -52,6 +53,6 @@ export default {
 </script>
 
 <style>
-	@import "~filepond/dist/filepond.min.css";
-	@import "~filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css";
+@import "~filepond/dist/filepond.min.css";
+@import "~filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css";
 </style>
