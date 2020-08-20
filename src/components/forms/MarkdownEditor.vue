@@ -1,5 +1,10 @@
 <template>
-	<vue-easymde ref="vueEasyMde" v-bind="$attrs" v-on="$listeners" @input="onInput" />
+	<vue-easymde
+		ref="vueEasyMde"
+		v-bind="$attrs"
+		v-on="$listeners"
+		@input="onInput"
+	/>
 </template>
 
 <script>
@@ -8,37 +13,40 @@ import VueEasymde from "vue-easymde"
 export default {
 	name: "MarkdownEditor",
 	components: {
-		VueEasymde
+		VueEasymde,
 	},
 	watch: {
 		"$attrs.value"(val) {
 			console.log("Initializing editor")
 
-			this.$refs.vueEasyMde.isValueUpdateFromInner = val === this.valueFromNested
-		}
+			this.$refs.vueEasyMde.isValueUpdateFromInner =
+				val === this.valueFromNested
+			this.$refs.vueEasyMde.initialize()
+		},
 	},
 	methods: {
 		onInput(val) {
 			this.valueFromNested = val
-		}
+		},
 	},
 	data() {
 		return {
-			valueFromNested: this.$attrs.value
+			valueFromNested: this.$attrs.value,
 		}
-	}
+	},
 }
 </script>
 
 <style lang="scss">
-	@import "../../../node_modules/easymde/dist/easymde.min";
+@import "../../../node_modules/easymde/dist/easymde.min";
 
-	.editor-toolbar {
-		border-radius: 0 !important;
-		padding: 0 !important;
+.editor-toolbar {
+	border-radius: 0 !important;
+	padding: 0 !important;
 
-		&:before, &:after {
-			margin: 0 !important;
-		}
+	&:before,
+	&:after {
+		margin: 0 !important;
 	}
+}
 </style>
