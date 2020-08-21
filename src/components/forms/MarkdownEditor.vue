@@ -1,7 +1,8 @@
 <template>
 	<vue-easymde
 		ref="vueEasyMde"
-		v-bind="$attrs"
+		v-bind="attrsWithoutValue"
+		:value=""
 		v-on="listenersWithoutInput"
 		@input="onInput"
 	/>
@@ -45,8 +46,12 @@ export default {
 		"$attrs.value"(val) {
 			// console.log("Initializing editor")
 
-			this.$refs.vueEasyMde.isValueUpdateFromInner =
-				val === this.valueFromNested
+			if (val !== this.valueFromNested) {
+				this.$refs.vueEasyMde.easymde.value(val)
+				this.valueFromNested = val
+			} else
+				this.$refs.vueEasyMde.isValueUpdateFromInner =
+					val === this.valueFromNested
 			
 			// not working because it sets cursor position to beginning
 			// this.$refs.vueEasyMde.easymde.value(val)
