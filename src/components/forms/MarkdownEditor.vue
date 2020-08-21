@@ -2,7 +2,8 @@
 	<vue-easymde
 		ref="vueEasyMde"
 		v-bind="$attrs"
-		v-on="$listeners"
+		v-on="listenersWithoutInput"
+		@input="onInput"
 	/>
 </template>
 
@@ -15,6 +16,18 @@ export default {
 		VueEasymde,
 	},
 	computed: {
+		listenersWithoutInput() {
+			const res = {}
+			Object.keys(this.$listeners)
+				.forEach(key => {
+					if (key === "input")
+						return
+					
+					res[key] = this.$listeners[key]
+				})
+
+			return res
+		},
 		attrsWithoutValue() {
 			const res = {}
 			Object.keys(this.$attrs)
@@ -32,21 +45,24 @@ export default {
 		"$attrs.value"(val) {
 			// console.log("Initializing editor")
 
-			// this.$refs.vueEasyMde.isValueUpdateFromInner =
-			// 	val === this.valueFromNested
-			this.$refs.vueEasyMde.easymde.value(val)
+			this.$refs.vueEasyMde.isValueUpdateFromInner =
+				val === this.valueFromNested
+			
+			// not working because it sets cursor position to beginning
+			// this.$refs.vueEasyMde.easymde.value(val)
 		},
-	}
-	// methods: {
-	// 	onInput(val) {
-	// 		this.valueFromNested = val
-	// 	}
-	// }
-	// data() {
-	// 	return {
-	// 		valueFromNested: this.$attrs.value,
-	// 	}
-	// },
+	},
+	methods: {
+		onInput(val) {
+			this.valueFromNested = val
+			this.$emit("input", val)
+		}
+	},
+	data() {
+		return {
+			valueFromNested: this.$attrs.value,
+		}
+	},
 }
 </script>
 
