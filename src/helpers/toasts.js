@@ -2,13 +2,19 @@ import $ from "jquery"
 
 export default function defaultToast(config) {
 	if (!$.fn.Toasts) {
-		console.warn("Toasts are not imported (probably missing import of adminlte.js")
+		console.warn(
+			"Toasts are not imported (probably missing import of adminlte.js"
+		)
 	}
+
+	const fixedConfig = Object.assign({}, config)
+	if (fixedConfig.body !== undefined && !fixedConfig.body)
+		delete fixedConfig.body
 
 	$(document).Toasts("create", {
 		autohide: true,
 		delay: 5000,
-		...config
+		...fixedConfig
 	})
 }
 
