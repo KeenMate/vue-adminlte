@@ -3,7 +3,6 @@
 		ref="vueEasyMde"
 		v-bind="$attrs"
 		v-on="$listeners"
-		@input="onInput"
 	/>
 </template>
 
@@ -15,24 +14,39 @@ export default {
 	components: {
 		VueEasymde,
 	},
-	watch: {
-		"$attrs.value"(val) {
-			console.log("Initializing editor")
+	computed: {
+		attrsWithoutValue() {
+			const res = {}
+			Object.keys(this.$attrs)
+				.forEach(key => {
+					if (key === "value")
+						return
+					
+					res[key] = this.$attrs[key]
+				})
 
-			this.$refs.vueEasyMde.isValueUpdateFromInner =
-				val === this.valueFromNested
-		},
-	},
-	methods: {
-		onInput(val) {
-			this.valueFromNested = val
-		},
-	},
-	data() {
-		return {
-			valueFromNested: this.$attrs.value,
+			return res
 		}
 	},
+	watch: {
+		"$attrs.value"(val) {
+			// console.log("Initializing editor")
+
+			// this.$refs.vueEasyMde.isValueUpdateFromInner =
+			// 	val === this.valueFromNested
+			this.$refs.vueEasyMde.easymde.value(val)
+		},
+	}
+	// methods: {
+	// 	onInput(val) {
+	// 		this.valueFromNested = val
+	// 	}
+	// }
+	// data() {
+	// 	return {
+	// 		valueFromNested: this.$attrs.value,
+	// 	}
+	// },
 }
 </script>
 
