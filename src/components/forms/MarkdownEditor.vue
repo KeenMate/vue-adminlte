@@ -2,7 +2,6 @@
 	<vue-easymde
 		ref="vueEasyMde"
 		v-bind="attrsWithoutValue"
-		:value=""
 		v-on="listenersWithoutInput"
 		@input="onInput"
 	/>
