@@ -58,7 +58,11 @@
 		</div>
 		<div class="row">
 			<div class="col-md-3">
-				<card-table title="Simple Card Table (with draggable)" no-tbody is-paddingless>
+				<card-table no-tbody is-paddingless>
+					<template #card-title>
+						Simple Card Table (with draggable)
+						<lte-button is-danger>Simple button</lte-button>
+					</template>
 					<template #head>
 						<th>#</th>
 						<th>The Title</th>
