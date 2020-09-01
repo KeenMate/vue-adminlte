@@ -1,6 +1,6 @@
 <template>
 	<section class="content-header">
-		<with-root :if="$scopedSlots.default">
+		<with-root :if="!!$scopedSlots.default">
 			<div class="the-flex-wrapper">
 				<h1>
 					<i v-if="iconStyles" :class="iconStyles"></i>
