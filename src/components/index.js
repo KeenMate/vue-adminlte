@@ -26,6 +26,7 @@ export { default as validatedInputProps } from "./forms/validatedInputProps"
 
 export { default as WithRoot } from "./helper-components/WithRoot"
 
+export { default as DropdownLinkItem } from "./navigation/DropdownLinkItem.vue"
 export { default as TopNavigation } from "./navigation/TopNavigation.vue"
 export { default as TopNavLink } from "./navigation/TopNavLink.vue"
 export { default as PageBreadcrumbs } from "./navigation/PageBreadcrumbs.vue"
