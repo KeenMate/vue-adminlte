@@ -1,7 +1,9 @@
 <template>
 	<page :is-loading="!loaded">
 		<template #header>
-			<page-header title="Components" />
+			<page-header title="Components">
+				<lte-button is-primary>This is page header button</lte-button>
+			</page-header>
 		</template>
 		<div class="row accordion-test">
 			<div class="col-md-6">

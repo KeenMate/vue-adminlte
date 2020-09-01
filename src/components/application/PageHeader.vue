@@ -1,15 +1,21 @@
 <template>
 	<section class="content-header">
-		<h1>
-			<i v-if="iconStyles" :class="iconStyles"></i>
-			{{title}}
-		</h1>
+		<with-root :if="$scopedSlots.default">
+			<div class="the-flex-wrapper">
+				<h1>
+					<i v-if="iconStyles" :class="iconStyles"></i>
+					{{title}}
+				</h1>
+				<slot></slot>
+			</div>
+		</with-root>
 		<PageBreadcrumbs :breadcrumbs="breadcrumbsWithDefault" />
 	</section>
 </template>
 
 <script>
 import PageBreadcrumbs from "../navigation/PageBreadcrumbs.vue"
+import WithRoot from "../helper-components/WithRoot"
 
 /**
  * @typedef RouteItem
@@ -21,7 +27,7 @@ import PageBreadcrumbs from "../navigation/PageBreadcrumbs.vue"
 
 export default {
 	name: "PageHeader",
-	components: {PageBreadcrumbs},
+	components: {WithRoot, PageBreadcrumbs},
 	props: {
 		title: String,
 		/**
@@ -75,6 +81,10 @@ export default {
 		align-items: center;
 		justify-content: space-between;
 		padding: 0 1rem;
+
+		.the-flex-wrapper {
+			display: flex;
+		}
 	}
 
 	h1 {
