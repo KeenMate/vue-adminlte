@@ -1,6 +1,6 @@
 <template>
 	<div class="form-group">
-		<div :class="innerWrapperStyles">isTextLeft
+		<div :class="innerWrapperStyles">
 			<label v-if="isTextLeft" class="custom-control-label" :for="inputId">
 				<slot></slot>
 			</label>
