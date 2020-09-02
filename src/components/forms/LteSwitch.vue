@@ -1,9 +1,6 @@
 <template>
 	<div class="form-group">
 		<div :class="innerWrapperStyles">
-			<label v-if="isTextLeft" class="custom-control-label" :for="inputId">
-				<slot></slot>
-			</label>
 			<input
 				type="checkbox"
 				class="custom-control-input"
@@ -12,7 +9,7 @@
 				:checked="value"
 				@input="$emit('input', $event.target.checked)"
 			>
-			<label v-if="!isTextLeft" class="custom-control-label" :for="inputId">
+			<label class="custom-control-label" :for="inputId">
 				<slot></slot>
 			</label>
 		</div>
