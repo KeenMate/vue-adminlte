@@ -13,6 +13,9 @@
 				</template>
 			</top-nav-link>
 		</template>
+		<template #navbar-right>
+				<lte-button is-warning>Button on the right</lte-button>
+			</template>
 		<template #side-nav>
 			<demo-sidenav />
 		</template>
