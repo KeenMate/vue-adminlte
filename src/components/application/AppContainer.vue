@@ -3,6 +3,12 @@
 		<div class="wrapper">
 			<top-navigation v-if="$scopedSlots['top-nav']" :no-bars="noBars" :class="navbarClasses">
 				<slot name="top-nav"></slot>
+				<template v-if="$scopedSlots['navbar-append']" #navbar-append>
+					<slot name="navbar-append"></slot>
+				</template>
+				<template v-if="$scopedSlots['navbar-right']" #navbar-right>
+					<slot name="navbar-right"></slot>
+				</template>
 			</top-navigation>
 			<sidenav v-if="$scopedSlots['side-nav']">
 				<slot name="side-nav"></slot>
