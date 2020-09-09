@@ -34,6 +34,8 @@
 				</div>
 			</div>
 		</div>
+		<gallery :images="galleryImages" image-key="id" cols="3" is-draggable>
+		</gallery>
 		<div class="row">
 			<div class="col-md-6">
 				<lte-button is-info @click.native="toggleModal">Open modal</lte-button>
@@ -185,7 +187,18 @@ export default {
 				}
 			],
 			sampleContent: "<h1>Hello world</h1>",
-			uploadedFile: null
+			uploadedFile: null,
+			galleryImages: [
+				{id: "1", msrc: "https://dev.babetti.cz/api/img/3b96a68c2eab4a6ab55cfe1fe07c9aa8/t/400"},
+				{id: "2", msrc: "https://dev.babetti.cz/api/img/867ba8742de54580bd980e6c2d3ed0c0/t/400"},
+				{id: "3", msrc: "https://dev.babetti.cz/api/img/f736ac53414240888b35eeb432c5569b/t/400"},
+				{id: "4", msrc: "https://dev.babetti.cz/api/img/f189be3c82c0466a9cd61e6bbac364ea/t/400"},
+				{id: "11", msrc: "https://dev.babetti.cz/api/img/3b96a68c2eab4a6ab55cfe1fe07c9aa8/t/400"},
+				{id: "12", msrc: "https://dev.babetti.cz/api/img/867ba8742de54580bd980e6c2d3ed0c0/t/400"},
+				{id: "13", msrc: "https://dev.babetti.cz/api/img/f736ac53414240888b35eeb432c5569b/t/400"},
+				{id: "14", msrc: "https://dev.babetti.cz/api/img/f189be3c82c0466a9cd61e6bbac364ea/t/400"},
+				// {id: "21", msrc: "https://dev.babetti.cz/api/img/3b96a68c2eab4a6ab55cfe1fe07c9aa8/t/400"}
+			]
 		}
 	}
 }
