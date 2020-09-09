@@ -309,12 +309,12 @@
 
 						<div class="row">
 							<div class="col-sm-6">
-								<lte-select label="Select">
-									<option>option 1</option>
-									<option>option 2</option>
-									<option>option 3</option>
-									<option>option 4</option>
-									<option>option 5</option>
+								<lte-select v-model="firstSelectValue.value" label="Select">
+									<option value="option 1">option 1</option>
+									<option value="option 2">option 2</option>
+									<option value="option 3">option 3</option>
+									<option value="option 4">option 4</option>
+									<option value="option 5">option 5</option>
 								</lte-select>
 							</div>
 							<div class="col-sm-6">
@@ -532,6 +532,7 @@ export default {
 		setTimeout(() => {
 			this.$refs.firstInput.focus();
 			this.$refs.firstInput.select();
+			this.firstSelectValue = {value: "option 3"}
 		}, 1500);
 	},
 	data() {
@@ -570,6 +571,7 @@ export default {
 				},
 			],
 			radioValue: "r2",
+			firstSelectValue: {value: "option 2"}
 		};
 	},
 };

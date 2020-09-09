@@ -127,6 +127,7 @@
 
 <script>
 import VueDraggable from "vuedraggable"
+import * as Toast from "../../src/helpers/toasts"
 
 export default {
 	name: "ComponentsPage",
@@ -136,7 +137,9 @@ export default {
 	mounted() {
 		setTimeout(() => {
 			this.loaded = true
+			Toast.successToast("Title", "body", {position: "bottomRight"})
 		}, 3000)
+		Toast.successToast("Title", null, {position: "bottomRight"})
 	},
 	methods: {
 		magick() {
