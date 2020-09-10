@@ -149,12 +149,9 @@ export default {
 			let position
 			let targetImage
 
-			debugger
-
 			position = newImageAbsoluteIndex === this.images.length - 1
 				&& "after"
 				|| "before"
-
 
 			const currentImages = this.imagesGridToArray()
 			targetImage = currentImages[newImageAbsoluteIndex + (position === "before" && 1 || -1)]
