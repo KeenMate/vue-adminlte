@@ -19,7 +19,7 @@
 						<a :href="image.src"
 							data-toggle="lightbox"
 							:data-title="image.title">
-							<img :src="image.msrc" class="img-fluid mb-2" :alt="image.title" style="height: 200px; width: auto">
+							<img :src="image.msrc" class="img-fluid" :alt="image.title">
 						</a>
 					</slot>
 				</div>
@@ -134,9 +134,9 @@ export default {
 
 <style lang="scss">
 	.my-flex-row {
-		display: flex;
-		flex-wrap: wrap;
-		column-gap: .5rem;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		grid-gap: .5rem;
 	}
 
 	img {
