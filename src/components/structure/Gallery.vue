@@ -149,16 +149,25 @@ export default {
 			let position
 			let targetImage
 
-			if (newImageAbsoluteIndex === this.images.length - 1) {
-				position = "after"
-				// images still hold original structure (so old, target image is still on new position)
-				targetImage = this.images[newImageAbsoluteIndex]
-			} else {
-				position = "before"
-				targetImage = this.images[newImageAbsoluteIndex + 1]
-			}
+			debugger
+
+			position = newImageAbsoluteIndex === this.images.length - 1
+				&& "after"
+				|| "before"
+
+
+			const currentImages = this.imagesGridToArray()
+			targetImage = currentImages[newImageAbsoluteIndex + (position === "before" && 1 || -1)]
 
 			this.$emit("dragged", image, position, targetImage)
+		},
+		imagesGridToArray() {
+			const result = []
+			this.imagesGrid.forEach(row => {
+				row.items.forEach(item => result.push(item))
+			})
+
+			return result
 		},
 		getAbsoluteImageIndex(image) {
 			let foundIndex
