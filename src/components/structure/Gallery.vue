@@ -4,46 +4,27 @@
 			<slot name="card-header"></slot>
 		</template>
 		<template #default>
-			<vue-draggable
-				v-if="isDraggable"
-				:list="images"
-				class="my-flex-row"
-				@change="onDraggableChange"
-			>
-				<div
-					v-for="image in images"
-					:key="image[imageKey]"
-					class="image-wrapper"
+			<with-root :if="isDraggable">
+				<vue-draggable
+					:list="images"
+					class="my-flex-row"
+					@change="onDraggableChange"
 				>
-					<slot :image="image">
-						<a :href="image.src"
-							data-toggle="lightbox"
-							:data-title="image.title">
-							<img :src="image.msrc" class="img-fluid" :alt="image.title">
-						</a>
-					</slot>
-				</div>
-			</vue-draggable>
-			<div
-				v-else
-				v-for="imageRow in imagesGrid"
-				:key="imageRow.index"
-				class="row"
-			>
-				<div
-					v-for="image in imageRow.items"
-					:key="image[imageKey]"
-					:class="columnClass"
-				>
-					<slot :image="image">
-						<a :href="image.src"
-							data-toggle="lightbox"
-							:data-title="image.title">
-							<img :src="image.msrc" class="img-fluid mb-2" :alt="image.title">
-						</a>
-					</slot>
-				</div>
-			</div>
+					<div
+						v-for="image in images"
+						:key="image[imageKey]"
+						class="image-wrapper"
+					>
+						<slot :image="image">
+							<a :href="image.src"
+								data-toggle="lightbox"
+								:data-title="image.title">
+								<img :src="image.msrc" class="img-fluid" :alt="image.title">
+							</a>
+						</slot>
+					</div>
+				</vue-draggable>
+			</with-root>
 		</template>
 		<template #footer>
 			<slot name="card-footer"></slot>
@@ -74,22 +55,17 @@ export default {
 		},
 		imageKey: String,
 
-		/**
-		 * Number of columns the gallery component should render
-		 * @type {number | string}
-		 * @default 4
-		 */
-		cols: {
-			type: [Number, String],
-			default: 4
-		},
+		// /**
+		//  * Number of columns the gallery component should render
+		//  * @type {number | string}
+		//  * @default 4
+		//  */
+		// cols: {
+		// 	type: [Number, String],
+		// 	default: 4
+		// },
 
 		isDraggable: Boolean
-	},
-	computed: {
-		columnClass() {
-			return "col-md-" + (BS_MaxColumnSize / Number(this.cols))
-		}
 	},
 	watch: {
 		images: {
