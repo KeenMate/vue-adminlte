@@ -139,10 +139,12 @@ export default {
 		},
 		onDraggableColumnsInput(row, event) {
 			console.log("draggable columns input", arguments)
-			if (!event.added)
+
+			const interestingObject = event.added || event.moved
+			if (!interestingObject)
 				return
 
-			const image = event.added.element
+			const image = interestingObject.element
 			const newImageAbsoluteIndex = this.getAbsoluteImageIndex(image)
 			let position
 			let targetImage
