@@ -4,27 +4,41 @@
 			<slot name="card-header"></slot>
 		</template>
 		<template #default>
-			<with-root :if="isDraggable">
-				<vue-draggable
-					:list="images"
-					class="my-flex-row"
-					@change="onDraggableChange"
+			<vue-draggable
+				v-if="isDraggable"
+				:list="images"
+				class="my-flex-row"
+				@change="onDraggableChange"
+			>
+				<div
+					v-for="image in images"
+					:key="image[imageKey]"
+					class="image-wrapper"
 				>
-					<div
-						v-for="image in images"
-						:key="image[imageKey]"
-						class="image-wrapper"
-					>
-						<slot :image="image">
-							<a :href="image.src"
-								data-toggle="lightbox"
-								:data-title="image.title">
-								<img :src="image.msrc" class="img-fluid" :alt="image.title">
-							</a>
-						</slot>
-					</div>
-				</vue-draggable>
-			</with-root>
+					<slot :image="image">
+						<a :href="image.src"
+							data-toggle="lightbox"
+							:data-title="image.title">
+							<img :src="image.msrc" class="img-fluid" :alt="image.title">
+						</a>
+					</slot>
+				</div>
+			</vue-draggable>
+			<div v-else class="my-flex-row">
+				<div
+					v-for="image in images"
+					:key="image[imageKey]"
+					class="image-wrapper"
+				>
+					<slot :image="image">
+						<a :href="image.src"
+							data-toggle="lightbox"
+							:data-title="image.title">
+							<img :src="image.msrc" class="img-fluid" :alt="image.title">
+						</a>
+					</slot>
+				</div>
+			</div>
 		</template>
 		<template #footer>
 			<slot name="card-footer"></slot>
