@@ -6,7 +6,7 @@
 		<template #default>
 			<vue-draggable
 				v-if="isDraggable"
-				v-model="imagesGrid"
+				:value="imagesGrid"
 				@input="onDraggableRowsInput"
 			>
 				<div
@@ -15,9 +15,11 @@
 				>
 					<vue-draggable
 						:list="imageRow.items"
+						group="gallery-row"
 						tag="div"
 						class="row"
 						@input="onDraggableColumnsInput"
+						@change="onDraggableColumnsInput(imageRow, $event)"
 					>
 						<div
 							v-for="image in imageRow.items"
@@ -135,8 +137,42 @@ export default {
 		onDraggableRowsInput(val) {
 			console.log("draggable rows input", val)
 		},
-		onDraggableColumnsInput(val) {
-			console.log("draggable columns input", val)
+		onDraggableColumnsInput(row, event) {
+			console.log("draggable columns input", arguments)
+			if (!event.added)
+				return
+
+			const image = event.added.element
+			const newImageAbsoluteIndex = this.getAbsoluteImageIndex(image)
+			let position
+			let targetImage
+
+			if (newImageAbsoluteIndex === this.images.length - 1) {
+				position = "after"
+				// images still hold original structure (so old, target image is still on new position)
+				targetImage = this.images[newImageAbsoluteIndex]
+			} else {
+				position = "before"
+				targetImage = this.images[newImageAbsoluteIndex + 1]
+			}
+
+			this.$emit("dragged", image, position, targetImage)
+		},
+		getAbsoluteImageIndex(image) {
+			let foundIndex
+			let itemsCounter = -1
+			for (const row of this.imagesGrid) {
+				for (const item of row.items) {
+					itemsCounter++
+					if (item !== image) continue
+
+					foundIndex = itemsCounter
+					break
+				}
+				if (foundIndex) break
+			}
+
+			return foundIndex
 		}
 	},
 	data() {
