@@ -102,19 +102,7 @@ export default {
 	computed: {
 		columnClass() {
 			return "col-md-" + (BS_MaxColumnSize / Number(this.cols))
-		},
-		// imagesGrid() {
-		// 	const result = []
-		// 	const colsNumber = Number(this.cols)
-		//
-		// 	for (let rowIndex = 0; rowIndex < this.images.length / colsNumber; rowIndex++)
-		// 		result.push({
-		// 			index: rowIndex,
-		// 			items: this.images.slice(rowIndex * colsNumber, (rowIndex + 1) * colsNumber)
-		// 		})
-		//
-		// 	return result
-		// }
+		}
 	},
 	watch: {
 		images: {
