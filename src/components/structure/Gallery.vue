@@ -6,35 +6,22 @@
 		<template #default>
 			<vue-draggable
 				v-if="isDraggable"
-				:value="imagesGrid"
-				@input="onDraggableRowsInput"
+				:list="images"
+				class="my-flex-row"
+				@change="onDraggableChange"
 			>
 				<div
-					v-for="imageRow in imagesGrid"
-					:key="imageRow.index"
+					v-for="image in images"
+					:key="image[imageKey]"
+					class="image-wrapper"
 				>
-					<vue-draggable
-						:list="imageRow.items"
-						group="gallery-row"
-						tag="div"
-						class="row"
-						@input="onDraggableColumnsInput"
-						@change="onDraggableColumnsInput(imageRow, $event)"
-					>
-						<div
-							v-for="image in imageRow.items"
-							:key="image[imageKey]"
-							:class="columnClass"
-						>
-							<slot :image="image">
-								<a :href="image.src"
-									data-toggle="lightbox"
-									:data-title="image.title">
-									<img :src="image.msrc" class="img-fluid mb-2" :alt="image.title">
-								</a>
-							</slot>
-						</div>
-					</vue-draggable>
+					<slot :image="image">
+						<a :href="image.src"
+							data-toggle="lightbox"
+							:data-title="image.title">
+							<img :src="image.msrc" class="img-fluid mb-2" :alt="image.title" style="height: 200px; width: auto">
+						</a>
+					</slot>
 				</div>
 			</vue-draggable>
 			<div
@@ -122,10 +109,7 @@ export default {
 		}
 	},
 	methods: {
-		onDraggableRowsInput(val) {
-			console.log("draggable rows input", val)
-		},
-		onDraggableColumnsInput(row, event) {
+		onDraggableChange(event) {
 			console.log("draggable columns input", arguments)
 
 			const interestingObject = event.added || event.moved
@@ -133,55 +117,26 @@ export default {
 				return
 
 			const image = interestingObject.element
-			const newImageAbsoluteIndex = this.getAbsoluteImageIndex(image)
+			const newImageAbsoluteIndex = this.images.indexOf(image)
 			let position
 			let targetImage
 
 			position = newImageAbsoluteIndex === this.images.length - 1
 				&& "after"
 				|| "before"
-
-			const currentImages = this.imagesGridToArray()
-			targetImage = currentImages[newImageAbsoluteIndex + (position === "before" && 1 || -1)]
+			targetImage = this.images[newImageAbsoluteIndex + (position === "before" && 1 || -1)]
 
 			this.$emit("dragged", image, position, targetImage)
-		},
-		imagesGridToArray() {
-			const result = []
-			this.imagesGrid.forEach(row => {
-				row.items.forEach(item => result.push(item))
-			})
-
-			return result
-		},
-		getAbsoluteImageIndex(image) {
-			let foundIndex
-			let itemsCounter = -1
-			for (const row of this.imagesGrid) {
-				for (const item of row.items) {
-					itemsCounter++
-					if (item !== image) continue
-
-					foundIndex = itemsCounter
-					break
-				}
-				if (foundIndex) break
-			}
-
-			return foundIndex
-		}
-	},
-	data() {
-		return {
-			imagesGrid: []
 		}
 	}
 }
 </script>
 
 <style lang="scss">
-	.row {
-		margin-bottom: .5rem;
+	.my-flex-row {
+		display: flex;
+		flex-wrap: wrap;
+		column-gap: .5rem;
 	}
 
 	img {
