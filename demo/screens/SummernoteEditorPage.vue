@@ -10,8 +10,8 @@
 				</card>
 				<card title="EasyMDE">
 					<template #header>
-						<lte-button @click.native="onLoadData">Load data</lte-button>
-						<lte-button @click.native="onLoadDataLocal">Load local data</lte-button>
+						<lte-button @click="onLoadData">Load data</lte-button>
+						<lte-button @click="onLoadDataLocal">Load local data</lte-button>
 					</template>
 					<markdown-editor v-model="editorText" />
 				</card>

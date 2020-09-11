@@ -38,7 +38,7 @@
 		</gallery>
 		<div class="row">
 			<div class="col-md-6">
-				<lte-button is-info @click.native="toggleModal">Open modal</lte-button>
+				<lte-button is-info @click="toggleModal">Open modal</lte-button>
 			</div>
 		</div>
 		<div class="row">
@@ -121,7 +121,7 @@
 			<template #header>Some modal header title</template>
 			<form-input v-model="modalInput" />
 			<template #footer>
-				<lte-button @click.native="toggleModal">Close</lte-button>
+				<lte-button @click="toggleModal">Close</lte-button>
 			</template>
 		</modal>
 	</page>

@@ -14,7 +14,7 @@
 						type="button"
 						class="btn moveall btn-outline-secondary"
 						title="Move all"
-						@click.native="allToRight"
+						@click="allToRight"
 						>&gt;&gt;</lte-button
 					>
 				</div>
@@ -41,7 +41,7 @@
 						type="button"
 						class="btn removeall btn-outline-secondary"
 						title="Remove all"
-						@click.native="allToLeft"
+						@click="allToLeft"
 						>&lt;&lt;</lte-button
 					>
 				</div>

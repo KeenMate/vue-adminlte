@@ -111,7 +111,7 @@
 		<template #footer>
 			<!--<button type="submit" class="btn btn-info">Sign in</button>-->
 			<!--<button type="submit" class="btn btn-default float-right">Cancel</button>-->
-			<lte-button is-primary is-submit @click.native="onSubmit">Register</lte-button>
+			<lte-button is-primary is-submit @click="onSubmit">Register</lte-button>
 		</template>
 	</card>
 </template>
