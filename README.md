@@ -33,7 +33,7 @@ And now you have all components available in your code.
 
 This includes adding `Fira` font and font-awesome icons (note that versions may vary) and jquery
 
-```
+```diff
 diff --git a/public/index.html b/public/index.html
 index 4123528..1a60926 100644
 --- a/public/index.html
