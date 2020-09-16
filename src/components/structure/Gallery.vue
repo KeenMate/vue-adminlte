@@ -69,34 +69,7 @@ export default {
 		},
 		imageKey: String,
 
-		// /**
-		//  * Number of columns the gallery component should render
-		//  * @type {number | string}
-		//  * @default 4
-		//  */
-		// cols: {
-		// 	type: [Number, String],
-		// 	default: 4
-		// },
-
 		isDraggable: Boolean
-	},
-	watch: {
-		images: {
-			immediate: true,
-			handler(val) {
-				const result = []
-				const colsNumber = Number(this.cols)
-
-				for (let rowIndex = 0; rowIndex < val.length / colsNumber; rowIndex++)
-					result.push({
-						index: rowIndex,
-						items: val.slice(rowIndex * colsNumber, (rowIndex + 1) * colsNumber)
-					})
-
-				this.imagesGrid = result
-			}
-		}
 	},
 	methods: {
 		onDraggableChange(event) {
