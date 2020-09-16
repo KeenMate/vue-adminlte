@@ -1,23 +1,12 @@
 <template>
-	<div :class="styles">
+	<div class="button-grp">
 		<slot></slot>
 	</div>
 </template>
 
 <script>
 export default {
-  name: "ButtonGroup",
-	props: {
-  	isFlat: Boolean
-	},
-	computed: {
-  	styles() {
-  		return [
-  			"button-grp",
-			  this.isFlat && "btn-flat"
-		  ]
-	  }
-	}
+  name: "ButtonGroup"
 }
 </script>
 
