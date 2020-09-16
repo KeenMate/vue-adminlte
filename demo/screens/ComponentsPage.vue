@@ -34,8 +34,12 @@
 				</div>
 			</div>
 		</div>
-		<gallery :images="galleryImages" image-key="id" cols="6" :is-draggable="true" @dragged="onGalleryImageDragged">
-		</gallery>
+		<div class="row">
+			<div class="col-md-8">
+				<gallery :images="galleryImages" image-key="id" cols="6" :is-draggable="true" @dragged="onGalleryImageDragged">
+				</gallery>
+			</div>
+		</div>
 		<div class="row">
 			<div class="col-md-6">
 				<lte-button is-info @click="toggleModal">Open modal</lte-button>
