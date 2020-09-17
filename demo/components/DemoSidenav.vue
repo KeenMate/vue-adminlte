@@ -1,5 +1,5 @@
 <template>
-	<fragment>
+	<sidenav>
 		<template #brand>
 			<a href="../../index3.html" class="brand-link">
 				<!--<img alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">-->
@@ -162,12 +162,14 @@
 		<sidenav-link to="/not-implemented" fas-icon="circle text-info">
 			Informational
 		</sidenav-link>
-	</fragment>
+	</sidenav>
 </template>
 
 <script>
+import Sidenav from "../../src/components/navigation/Sidenav"
 export default {
 	name: "DemoSidenav",
+  components: {Sidenav},
 }
 </script>
 
