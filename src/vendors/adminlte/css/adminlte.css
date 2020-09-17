@@ -31495,4 +31495,8 @@ button {
 .dropdown-menu > .dropdown-item {
   padding: .25rem .5rem !important;
 }
+
+aside .main-sidebar .brand-link {
+  padding: .275rem .5rem;
+}
 /*# sourceMappingURL=adminlte.css.map */
