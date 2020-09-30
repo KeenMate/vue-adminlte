@@ -1,6 +1,6 @@
 <template>
 	<li :class="liStyles">
-		<router-link :to="to" :class="linkStyles">
+		<router-link :to="to" :class="linkStyles" active-class="active">
 			<i v-if="fasIcon" :class="'nav-icon fas fa-' + fasIcon"></i>
 			<p>
 				<slot></slot>
