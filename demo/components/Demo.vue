@@ -1,5 +1,5 @@
 <template>
-	<app-container top-nav-color="indigo" :is-loading="isLoading">
+	<app-container :is-loading="isLoading" :top-nav-attrs="{backgroundColor: 'indigo'}">
 		<template #top-nav>
 			<top-nav-link :to="{name: 'forms-general'}">Forms</top-nav-link>
 			<top-nav-link :to="{name: 'forms-validations'}">Validations</top-nav-link>
@@ -14,7 +14,7 @@
 			</top-nav-link>
 		</template>
 		<template #navbar-right>
-				<lte-button is-warning>Button on the right</lte-button>
+			<lte-button is-warning>Button on the right</lte-button>
 			</template>
 		<template #side-nav>
 			<demo-sidenav />

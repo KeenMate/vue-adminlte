@@ -36,7 +36,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-8">
-				<gallery :images="galleryImages" image-key="id" cols="6" :is-draggable="true" @dragged="onGalleryImageDragged">
+				<gallery :images="galleryImages" image-key="id" cols="6" :is-draggable="true" @dragged="onGalleryImageDragged" @delete="onGalleryImagesDelete">
 				</gallery>
 			</div>
 		</div>
@@ -148,6 +148,9 @@ export default {
 		// Toast.successToast("Title", null, {position: "bottomRight"})
 	},
 	methods: {
+		onGalleryImagesDelete() {
+			console.log("Delete pressed for gallery")
+		},
 		onGalleryImageDragged(image, position, target) {
 			console.log("Dragged ", image.id, position, target.id)
 		},
