@@ -89,7 +89,7 @@
 				<sidenav-link to="/not-implemented">jsGrid</sidenav-link>
 			</template>
 		</sidenav-link>
-		<li class="nav-header">EXAMPLES</li>
+		<sidenav-header>EXAMPLES</sidenav-header>
 		<sidenav-link to="/not-implemented">
 			Callendar
 			<span class="badge badge-info right">2</span>
@@ -150,9 +150,9 @@
 				<sidenav-link to="/not-implemented">Starter Page</sidenav-link>
 			</template>
 		</sidenav-link>
-		<li class="nav-header">MISCELLANEOUS</li>
+		<sidenav-header>MISCELLANEOUS</sidenav-header>
 		<sidenav-link to="https://adminlte.io/docs/3.0">Documentation</sidenav-link>
-		<li class="nav-header">LABELS</li>
+		<sidenav-header>LABELS</sidenav-header>
 		<sidenav-link to="/not-implemented" fas-icon="circle text-danger">
 			Important
 		</sidenav-link>

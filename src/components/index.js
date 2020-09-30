@@ -31,6 +31,7 @@ export { default as TopNavigation } from "./navigation/TopNavigation.vue"
 export { default as TopNavLink } from "./navigation/TopNavLink.vue"
 export { default as PageBreadcrumbs } from "./navigation/PageBreadcrumbs.vue"
 export { default as Sidenav } from "./navigation/Sidenav.vue"
+export { default as SidenavHeader } from "./navigation/SidenavHeader.vue"
 export { default as SidenavLink } from "./navigation/SidenavLink.vue"
 
 export { default as Card } from "./structure/Card.vue"
