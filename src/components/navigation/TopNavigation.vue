@@ -1,5 +1,5 @@
 <template>
-	<nav class="main-header navbar navbar-expand navbar-light">
+	<nav :class="navbarClasses">
 		<!-- Left navbar links -->
 		<ul class="navbar-nav">
 			<li v-if="!noBars" class="nav-item" @click="$emit('toggle-sidenav')">
@@ -22,7 +22,26 @@
 export default {
 	name: "TopNavigation",
 	props: {
-		noBars: Boolean
+		noBars: Boolean,
+		backgroundColor: String
+	},
+	computed: {
+		navbarClasses() {
+			const classes = ["main-header navbar navbar-expand"]
+
+			if (this.backgroundColor) {
+				if (["primary", "secondary", "info", "success", "danger", "indigo", "purple", "pink", "navy", "lightblue", "teal", "cyan", "dark", "gray-dark", "gray"].includes(this.backgroundColor))
+					classes.push("navbar-dark")
+				
+				if (["light", "warning", "white", "orange"].includes(this.backgroundColor))
+					classes.push("navbar-light")
+
+				classes.push("navbar-" + this.backgroundColor)
+			} else
+				classes.push("navbar-light")
+
+			return classes
+		}
 	},
 	mounted() {
 		// this.pushMenu = import("AdminLTE/build/js/PushMenu.js")
