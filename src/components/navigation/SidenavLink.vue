@@ -34,7 +34,7 @@ export default {
 		liStyles() {
 			const styles = ["nav-item"]
 
-			if (this.nested && this.$scopedSlots.sublinks)
+			if (this.$scopedSlots.sublinks)
 				styles.push("has-treeview")
 
 			if (this.isOpen)
