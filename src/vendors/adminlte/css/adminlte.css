@@ -31205,10 +31205,6 @@ body {
   padding: 0.15rem .3rem;
 }
 
-.nav-link.active {
-  margin-right: .5rem;
-}
-
 ul.nav.nav-tabs a.nav-link.active {
   margin-right: 0 !important;
 }

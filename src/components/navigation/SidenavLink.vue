@@ -1,6 +1,6 @@
 <template>
 	<li :class="liStyles">
-		<router-link :to="to" :class="linkStyles" active-class="active">
+		<router-link :to="to" :class="linkStyles" active-class="active" :exact="exactMatch">
 			<i v-if="fasIcon" :class="'nav-icon fas fa-' + fasIcon"></i>
 			<p>
 				<slot></slot>
@@ -16,13 +16,23 @@
 export default {
 	name: "SidenavLink",
 	props: {
+		fasIcon: String,
+
 		/**
 		 * @type {String | {name: String, path: String}}
 		 * @description Passed to &lt;router-link&gt; tag
 		 */
 		to: null,
-		fasIcon: String,
+		/**
+		 * @type {Boolean}
+		 * @description Passed to &lt;router-link&gt; tag
+		 */
 		isActive: Boolean,
+		/**
+		 * @type {Boolean}
+		 * @description Passed to &lt;router-link&gt; tag's `exact`
+		 */
+		exactMatch: Boolean,
 
 		/**
 		 * @type {Boolean}
