@@ -31336,6 +31336,10 @@ textarea {
   font-size: 1rem;
 }
 
+.card .card-header > button + button {
+  margin-left: .3rem;
+}
+
 .card .card-header > .card-tools {
   display: -ms-flexbox;
   display: flex;
