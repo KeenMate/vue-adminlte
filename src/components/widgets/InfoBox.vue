@@ -28,7 +28,7 @@ export default {
 		iconClasses() {
 			return [
 				"fas",
-				this.fasIcon && `fa-${fasIcon}`
+				this.fasIcon && `fa-${this.fasIcon}`
 			]
 		},
 		rootClasses() {
