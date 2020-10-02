@@ -51,6 +51,8 @@ export { default as CardTabs } from "./ui/CardTabs.vue"
 
 export { default as MultiError } from "./validation/MultiError.vue"
 
+export { default as InfoBox } from "./widgets/InfoBox.vue"
+
 export { default as KmImage } from "./keenmate/KmImage.vue"
 export { default as KmLoader } from "./keenmate/KmLoader.vue"
 
