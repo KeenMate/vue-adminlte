@@ -1,7 +1,7 @@
 <template>
 	<div class="form-group">
 		<FormLabel
-			v-if="!noLabel"
+			v-if="label"
 			:class="labelStyles"
 			:fas-icon="fasIcon"
 			:far-icon="farIcon"
@@ -44,7 +44,6 @@ export default {
 		value: null,
 		fasIcon: String,
 		farIcon: String,
-		noLabel: Boolean,
 		isMultiple: Boolean,
 		isDisabled: Boolean,
 		isHorizontal: Boolean,
