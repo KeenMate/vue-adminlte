@@ -8,8 +8,8 @@
 			input-id="per-field-first-name-input"
 			label="First name"
 			placeholder="First name"
-			label-styles="col-sm-2""
-			horizontal-styles="col-sm-10""
+			label-styles="col-sm-2"
+			horizontal-styles="col-sm-10"
 			is-horizontal
 			@blur="$v.firstName.$touch()"
 		/>
@@ -21,8 +21,8 @@
 			input-id="per-field-last-name-input"
 			label="Last name"
 			placeholder="Last name"
-			label-styles="col-sm-2""
-			horizontal-styles="col-sm-10""
+			label-styles="col-sm-2"
+			horizontal-styles="col-sm-10"
 			is-horizontal
 			@blur="$v.lastName.$touch()"
 		/>
@@ -35,8 +35,8 @@
 			type="password"
 			label="Password"
 			placeholder="Password"
-			label-styles="col-sm-2""
-			horizontal-styles="col-sm-10""
+			label-styles="col-sm-2"
+			horizontal-styles="col-sm-10"
 			is-horizontal
 			@blur="$v.password.$touch()"
 		/>
@@ -49,8 +49,8 @@
 			input-id="per-field-age-input"
 			label="Age"
 			placeholder="Age"
-			label-styles="col-sm-2""
-			horizontal-styles="col-sm-10""
+			label-styles="col-sm-2"
+			horizontal-styles="col-sm-10"
 			is-horizontal
 			@blur="$v.age.$touch()"
 		/>
@@ -62,8 +62,8 @@
 			label="Region"
 			class="row"
 			input-id="per-field-region-select"
-			label-styles="col-sm-2""
-			horizontal-styles="col-sm-10""
+			label-styles="col-sm-2"
+			horizontal-styles="col-sm-10"
 			is-horizontal
 			@blur="$v.region.$touch()"
 		>
@@ -80,8 +80,8 @@
 				input-id="per-field-eid-input"
 				label="EU Identification"
 				placeholder="EU Identification"
-				label-styles="col-sm-2""
-				horizontal-styles="col-sm-10""
+				label-styles="col-sm-2"
+				horizontal-styles="col-sm-10"
 				is-horizontal
 				@blur="$v.eid.$touch()"
 			/>
