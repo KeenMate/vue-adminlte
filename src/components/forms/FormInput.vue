@@ -63,6 +63,7 @@ import FormLabel from "./FormLabel.vue"
 import WithRoot from "../helper-components/WithRoot"
 import FormInputFeedback from "./FormInputFeedback.vue"
 import validatedInputProps from "./validatedInputProps"
+import FormInputStylesProps from "../../common/formInputStyleProps"
 
 export default {
 	name: "FormInput",
@@ -105,32 +106,7 @@ export default {
 		isSmall: Boolean,
 		isLarge: Boolean,
 
-		/**
-		 * @type {string[] | string | object}
-		 * @description Styles applied on `label` element
-		 */
-		labelStyles: {
-			type: [Array, String, Object],
-			default: "",
-		},
-
-		/**
-		 * @type {string[] | string | object}
-		 * @description Styles applied on `input` element
-		 */
-		inputStyles: {
-			type: [Array, String, Object],
-			default: () => "",
-		},
-
-		/**
-		 * @type {string[] | string | object}
-		 * @description Styles for horizontally positioned form input
-		 */
-		horizontalStyles: {
-			type: [Array, String, Object],
-			default: () => "",
-		},
+		...FormInputStylesProps,
 		isDisabled: Boolean,
 		isTextarea: Boolean,
 

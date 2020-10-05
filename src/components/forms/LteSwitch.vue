@@ -17,19 +17,14 @@
 </template>
 
 <script>
+import FormInputStylesProps from "../../common/formInputStyleProps"
+
 export default {
 	name: "LteSwitch",
 	props: {
 		inputId: String,
 		value: Boolean,
-		labelStyles: {
-			type: Array,
-			default: () => []
-		},
-		inputStyles: {
-			type: Array,
-			default: () => []
-		},
+		...FormInputStylesProps,
 		isDisabled: Boolean,
 		isTextLeft: Boolean,
 		switchOffColor: String,

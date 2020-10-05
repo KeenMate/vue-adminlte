@@ -7,20 +7,15 @@
 <script>
 import FormCheck from "./FormCheck.vue"
 
+import FormInputStylesProps from "../../common/formInputStyleProps"
+
 export default {
 	name: "Checkbox",
 	components: {FormCheck},
 	props: {
 		inputId: String,
 		value: Boolean,
-		labelStyles: {
-			type: Array,
-			default: () => []
-		},
-		inputStyles: {
-			type: Array,
-			default: () => []
-		},
+		...FormInputStylesProps,
 		isDisabled: Boolean
 	}
 }

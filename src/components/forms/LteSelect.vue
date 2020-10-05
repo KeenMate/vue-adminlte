@@ -35,6 +35,8 @@ import WithRoot from "../helper-components/WithRoot"
 import FormInputFeedback from "./FormInputFeedback.vue"
 import validatedInputProps from "./validatedInputProps"
 
+import FormInputStylesProps from "../../common/formInputStyleProps"
+
 export default {
 	name: "LteSelect",
 	components: {FormInputFeedback, WithRoot, FormLabel},
@@ -46,7 +48,6 @@ export default {
 		farIcon: String,
 		isMultiple: Boolean,
 		isDisabled: Boolean,
-		isHorizontal: Boolean,
 
 		...validatedInputProps,
 
@@ -56,33 +57,7 @@ export default {
 		 */
 		isWarning: String,
 
-		/**
-		 * @type {Array}
-		 * @description Styles for horizontally positioned form input
-		 */
-		horizontalStyles: {
-			type: Array,
-			default:
-				() => []
-		},
-
-		/**
-		 * @type {Array}
-		 * @description classes applied to label
-		 */
-		labelStyles: {
-			type: Array,
-			default: () => []
-		},
-
-		/**
-		 * @type {Array}
-		 * @description classes applied to input
-		 */
-		inputStyles: {
-			type: Array,
-			default: () => []
-		}
+		...FormInputStylesProps
 	},
 	computed: {
 		computedFeedback() {

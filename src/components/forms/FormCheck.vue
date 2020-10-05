@@ -8,26 +8,25 @@
 			:disabled="isDisabled"
 			@input="$emit('input', $event.target.checked)"
 		>
-		<label :class="['form-check-label', ...labelStyles]" :for="inputId">
+		<label :class="['form-check-label', labelStyles]" :for="inputId">
 			<slot></slot>
 		</label>
 	</div>
 </template>
 
 <script>
+import FormInputStylesProps from "../../common/formInputStyleProps"
+
 export default {
 	name: "FormCheck",
 	props: {
 		inputId: String,
 		value: Boolean,
-		labelStyles: {
-			type: Array,
-			default: () => []
-		},
-		inputStyles: {
-			type: Array,
-			default: () => []
-		},
+		/**
+		 * @type {string[] | string | object}
+		 * @description Styles applied on `label` element
+		 */
+		FormInputStylesProps,
 		isDisabled: Boolean,
 		type: String
 	}
