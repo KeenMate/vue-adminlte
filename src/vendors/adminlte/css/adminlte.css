@@ -31394,8 +31394,8 @@ textarea {
   top: .1rem;
 }
 
-.form-group .custom-control.custom-switch .custom-control-label::after {
-  top: .2rem;
+.form-group .custom-control.custom-switch .custom-control-label::after, .form-group .custom-control.custom-switch .custom-control-label::after {
+  top: unset;
 }
 
 .form-group label {
