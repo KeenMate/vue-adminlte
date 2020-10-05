@@ -104,22 +104,32 @@ export default {
 		farIcon: String,
 		isSmall: Boolean,
 		isLarge: Boolean,
+
+		/**
+		 * @type {string[] | string | object}
+		 * @description Styles applied on `label` element
+		 */
 		labelStyles: {
-			type: Array,
-			default: () => [],
-		},
-		inputStyles: {
-			type: Array,
-			default: () => [],
+			type: [Array, String, Object],
+			default: "",
 		},
 
 		/**
-		 * @type {Array}
+		 * @type {string[] | string | object}
+		 * @description Styles applied on `input` element
+		 */
+		inputStyles: {
+			type: [Array, String, Object],
+			default: () => "",
+		},
+
+		/**
+		 * @type {string[] | string | object}
 		 * @description Styles for horizontally positioned form input
 		 */
 		horizontalStyles: {
-			type: Array,
-			default: () => [],
+			type: [Array, String, Object],
+			default: () => "",
 		},
 		isDisabled: Boolean,
 		isTextarea: Boolean,

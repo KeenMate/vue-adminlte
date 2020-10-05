@@ -198,8 +198,8 @@
 						input-id="inputEmail3"
 						label="Email"
 						placeholder="Email"
-						:label-styles="['col-sm-2']"
-						:horizontal-styles="['col-sm-10']"
+						label-styles="col-sm-2""
+						horizontal-styles="col-sm-10""
 						is-horizontal
 					/>
 					<form-input
@@ -209,8 +209,8 @@
 						type="password"
 						label="Password"
 						placeholder="Password"
-						:label-styles="['col-sm-2']"
-						:horizontal-styles="['col-sm-10']"
+						label-styles="col-sm-2""
+						horizontal-styles="col-sm-10""
 						is-horizontal
 					/>
 					<div class="row form-group">
