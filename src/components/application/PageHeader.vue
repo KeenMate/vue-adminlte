@@ -67,7 +67,7 @@ export default {
 			return this.$route.matched
 				.filter(x => x.meta && x.meta.breadcrumb)
 				.map(x => ({
-					to: {name: x.name},
+					to: x,
 					text: x.meta && x.meta.breadcrumb || ""
 				}))
 		}
