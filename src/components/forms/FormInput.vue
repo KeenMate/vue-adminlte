@@ -223,15 +223,18 @@ export default {
 				this.computedInvalidity && "error invalid-feedback",
 				this.computedValidity && "success valid-feedback",
 			]
-				.filter((x) => x)
-				.join(" ")
 		},
 		computedLabelStyles() {
-			const styles = [...this.labelStyles]
+			const styles = []
+
+			if (typeof this.labelStyles === "string" || this.labelStyles instanceof Object)
+				styles.push(this.labelStyles)
+			else if (this.labelStyles instanceof Array)
+				styles.splice(0, 0, ...this.labelStyles)
 
 			this.isHorizontal && styles.push("col-form-label")
 
-			return styles.join(" ")
+			return styles
 		},
 		innerInputStyles() {
 			const styles = ["form-control"]
