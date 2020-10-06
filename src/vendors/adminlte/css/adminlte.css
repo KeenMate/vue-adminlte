@@ -31203,7 +31203,7 @@ body {
 
 .sidebar-mini > .wrapper > .content-wrapper {
   padding-top: .6rem;
-  height: 100%;
+  height: calc(100% - 2.45rem);
 }
 
 .sidebar {
