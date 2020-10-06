@@ -16,7 +16,8 @@ export default {
 		inputId: String,
 		value: Boolean,
 		...FormInputStylesProps,
-		isDisabled: Boolean
+		isDisabled: Boolean,
+		isReadonly: Boolean
 	}
 }
 </script>
