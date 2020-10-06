@@ -31193,6 +31193,19 @@ body {
 }
 
 /* NAVIGATION */
+.sidebar-mini {
+  height: 100vh;
+}
+
+.sidebar-mini > .wrapper {
+  height: 100%;
+}
+
+.sidebar-mini > .wrapper > .content-wrapper {
+  padding-top: .6rem;
+  height: 100%;
+}
+
 .sidebar {
   padding: 0 .2rem;
 }
@@ -31432,11 +31445,6 @@ textarea {
   background-position: right calc(.375em + .6rem) center !important;
 }
 
-.content-wrapper {
-  padding-top: .6rem;
-  height: calc(100vh - $main_header_height - (2 * $main_header_padding_vertical));
-}
-
 .table tr > td {
   vertical-align: middle;
 }
@@ -31491,7 +31499,7 @@ button {
   padding: .25rem .5rem !important;
 }
 
-aside .main-sidebar .brand-link {
+aside.main-sidebar .brand-link {
   padding: .275rem .5rem;
 }
 /*# sourceMappingURL=adminlte.css.map */
