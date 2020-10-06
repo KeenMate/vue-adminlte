@@ -31194,7 +31194,7 @@ body {
 
 /* NAVIGATION */
 .sidebar-mini {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .sidebar-mini > .wrapper {
