@@ -31515,8 +31515,8 @@ aside.main-sidebar .brand-link {
 }
 
 span.badge {
-  display: -ms-flexbox;
-  display: flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   padding: .25rem .4rem;
   font-size: .69rem;
   -ms-flex-align: center;
