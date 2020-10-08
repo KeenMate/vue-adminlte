@@ -20,7 +20,7 @@
 		</table>
 
 		<template v-if="$scopedSlots['card-footer']" #footer>
-			<slot name="footer"></slot>
+			<slot name="card-footer"></slot>
 		</template>
 	</Card>
 </template>
