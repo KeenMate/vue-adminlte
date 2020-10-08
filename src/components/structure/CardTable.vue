@@ -18,6 +18,10 @@
 				</tbody>
 			</with-root>
 		</table>
+
+		<template v-if="$scopedSlots.footer" #footer>
+			<slot name="card-footer"></slot>
+		</template>
 	</Card>
 </template>
 
