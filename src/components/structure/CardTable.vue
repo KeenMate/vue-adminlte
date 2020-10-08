@@ -19,8 +19,8 @@
 			</with-root>
 		</table>
 
-		<template v-if="$scopedSlots.footer" #footer>
-			<slot name="card-footer"></slot>
+		<template v-if="$scopedSlots['card-footer']" #card-footer>
+			<slot name="footer"></slot>
 		</template>
 	</Card>
 </template>
