@@ -1,13 +1,24 @@
 <template>
-	<span :class="spanStyles">
+	<span v-if="$scopedSlots.default" :class="spanStyles">
 		<slot></slot>
 	</span>
+	<div v-else class="badge-group">
+		<span :class="leftBadgeStyles">
+			<slot name="left"></slot>
+		</span>
+		<span :class="rightBadgeStyles">
+			<slot name="right"></slot>
+		</span>
+	</div>
 </template>
 
 <script>
 export default {
 	name: "Badge",
 	props: {
+		leftBadgeClass: String,
+		rightBadgeClass: String,
+
 		isDanger: Boolean,
 		isWarning: Boolean,
 		isSuccess: Boolean,
@@ -17,28 +28,47 @@ export default {
 	},
 	computed: {
 		spanStyles() {
-			const styles = ["badge"]
-
-			if (this.isDanger)
-				styles.push("badge-danger")
-			else if (this.isWarning)
-				styles.push("badge-warning")
-			else if (this.isSuccess)
-				styles.push("badge-success")
-			else if (this.isInfo)
-				styles.push("badge-info")
-			else if (this.isPrimary)
-				styles.push("badge-primary")
-
-			if (this.isRight)
-				styles.push("right")
-
-			return styles
+			return [
+				"badge",
+				this.isDanger && "badge-danger",
+				this.isWarning && "badge-warning",
+				this.isSuccess && "badge-success",
+				this.isInfo && "badge-info",
+				this.isPrimary && "badge-primary",
+				this.isRight && "right"
+				// !this.$scopedSlots.default && "has-flex"
+			]
+		},
+		leftBadgeStyles() {
+			return [
+				"badge",
+				this.leftBadgeClass
+			]
+		},
+		rightBadgeStyles() {
+			return [
+				"badge",
+				this.rightBadgeClass
+			]
 		}
 	}
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.badge-group {
+	display: flex;
 
+	& > .badge {
+		&:first-child {
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+
+		&:last-child {
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+	}
+}
 </style>

@@ -36,7 +36,21 @@
 		</div>
 		<div class="row">
 			<div class="col-md-8">
-				<gallery :images="galleryImages" image-key="id" cols="6" :is-draggable="true" @dragged="onGalleryImageDragged" @delete="onGalleryImagesDelete">
+				<gallery
+					title="Sample gallery"
+					:images="galleryImages"
+					image-key="id"
+					cols="6"
+					:is-draggable="true"
+					@dragged="onGalleryImageDragged"
+					@delete="onGalleryImagesDelete"
+				>
+					<template #card-header>
+						<badge left-badge-class="bg-navy" right-badge-class="bg-success">
+							<template #left>Left text</template>
+							<template #right>Right value</template>
+						</badge>
+					</template>
 				</gallery>
 			</div>
 		</div>
