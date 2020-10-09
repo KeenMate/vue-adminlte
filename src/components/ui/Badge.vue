@@ -1,14 +1,16 @@
 <template>
-	<span v-if="$scopedSlots.default" :class="spanStyles">
-		<slot></slot>
-	</span>
-	<div v-else class="badge-group">
-		<span :class="leftBadgeStyles">
-			<slot name="left"></slot>
+	<div class="badge-group">
+		<span v-if="$scopedSlots.default" :class="spanStyles">
+			<slot></slot>
 		</span>
-		<span :class="rightBadgeStyles">
-			<slot name="right"></slot>
-		</span>
+		<template v-else>
+			<span :class="leftBadgeStyles">
+				<slot name="left"></slot>
+			</span>
+			<span :class="rightBadgeStyles">
+				<slot name="right"></slot>
+			</span>
+		</template>
 	</div>
 </template>
 
@@ -60,12 +62,12 @@ export default {
 	display: flex;
 
 	& > .badge {
-		&:first-child {
+		&:first-child:not(:only-child) {
 			border-top-right-radius: 0;
 			border-bottom-right-radius: 0;
 		}
 
-		&:last-child {
+		&:last-child:not(:only-child) {
 			border-top-left-radius: 0;
 			border-bottom-left-radius: 0;
 		}

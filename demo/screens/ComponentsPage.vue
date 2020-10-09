@@ -46,6 +46,7 @@
 					@delete="onGalleryImagesDelete"
 				>
 					<template #card-header>
+						<badge is-success>Simple badge</badge>
 						<badge left-badge-class="bg-navy" right-badge-class="bg-success">
 							<template #left>Left text</template>
 							<template #right>Right value</template>
