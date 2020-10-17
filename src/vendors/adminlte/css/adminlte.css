@@ -31283,6 +31283,17 @@ select.form-control > option {
 
 .custom-file-label {
   height: calc(1.7rem + 2px);
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.custom-file-label::after {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .custom-file-label::after {
@@ -31501,5 +31512,15 @@ button {
 
 aside.main-sidebar .brand-link {
   padding: .275rem .5rem;
+}
+
+span.badge {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: .25rem .4rem;
+  font-size: .69rem;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 1.2rem;
 }
 /*# sourceMappingURL=adminlte.css.map */
