@@ -6,6 +6,7 @@
 		<template v-if="$scopedSlots['card-header']" #header>
 			<slot name="card-header"></slot>
 		</template>
+		<slot name="before-table"></slot>
 		<table :class="tableStyles">
 			<thead>
 				<tr>
@@ -18,7 +19,7 @@
 				</tbody>
 			</with-root>
 		</table>
-
+		<slot name="after-table"></slot>
 		<template v-if="$scopedSlots['card-footer']" #footer>
 			<slot name="card-footer"></slot>
 		</template>
