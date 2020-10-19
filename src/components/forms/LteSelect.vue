@@ -17,6 +17,7 @@
 					:multiple="isMultiple"
 					:disabled="isDisabled"
 					:value="value"
+					v-on="$listeners"
 					@input="$emit('input', $event.target.value)"
 				>
 					<slot></slot>
