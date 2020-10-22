@@ -55,12 +55,12 @@ export default {
 	},
 	watch: {
 		startDate(val) {
-			this.daterangepickerInstance
-				&& this.daterangepickerInstance.setStartDate(moment(val))
+			this.dateRangePickerInstance
+				&& this.dateRangePickerInstance.setStartDate(moment(val))
 		},
 		endDate(val) {
-			this.daterangepickerInstance
-				&& this.daterangepickerInstance.setEndDate(moment(val))
+			this.dateRangePickerInstance
+				&& this.dateRangePickerInstance.setEndDate(moment(val))
 		},
 		format() {
 			// watch it
@@ -69,7 +69,7 @@ export default {
 	},
 	methods: {
 		daterangepicker() {
-			this.daterangepickerInstance = $(this.$refs.input).daterangepicker({
+			this.$daterangepickerInstance = $(this.$refs.input).daterangepicker({
 				timePicker: this.withTime,
 				startDate: moment(this.startDate),
 				endDate: moment(this.endDate),
@@ -88,10 +88,14 @@ export default {
 			const theDate = this[originalFieldName]
 			const theDateMoment = moment(theDate)
 
-			return theDateMoment.format(this.locale.format) === newDate.format(this.locale.format)
+			return theDateMoment.format(this.locale.format) !== newDate.format(this.locale.format)
 		}
 	},
 	computed: {
+		dateRangePickerInstance() {
+			return this.$daterangepickerInstance
+				&& this.$daterangepickerInstance.data("daterangepicker")
+		},
 		value() {
 			return `${moment(this.startDate).format(this.locale.format)} - ${moment(this.endDate).format(this.locale.format)}`
 		},
@@ -103,7 +107,7 @@ export default {
 	},
 	data() {
 		return {
-			daterangepickerInstance: null
+			$daterangepickerInstance: null
 		}
 	}
 }

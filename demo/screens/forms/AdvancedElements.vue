@@ -17,8 +17,8 @@
 							placeholder="Select one"
 							label="name"
 							track-by="name"
-							>Single select with search</multiselect
-						>
+						>Single select with search
+						</multiselect>
 					</div>
 					<!-- Multiselect with seatch-->
 					<div class="col-md-6">
@@ -68,12 +68,12 @@
 				<div class="row">
 					<div class="col-md-6">
 						<label
-							>Single select with search and blue text and red background</label
+						>Single select with search and blue text and red background</label
 						>
 					</div>
 					<div class="col-md-6">
 						<label
-							>Multi select with search and yelow text and red background</label
+						>Multi select with search and yelow text and red background</label
 						>
 					</div>
 				</div>
@@ -115,7 +115,8 @@
 							:rightList="ListBox2"
 							title="Dual list box"
 							id="dualListBox"
-							>DualListBox</dualListBox
+						>DualListBox
+						</dualListBox
 						>
 					</div>
 				</div>
@@ -337,7 +338,7 @@ export default {
 				"Richard",
 				"Joseph",
 				"Thomas",
-				"Charles",
+				"Charles"
 			],
 			ListBox2: [
 				"James2",
@@ -379,10 +380,10 @@ export default {
 </script>
 
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
-<style src='vue2-timepicker/dist/VueTimepicker.css'></style>
+<style src="vue2-timepicker/dist/VueTimepicker.css"></style>
 
 
-<style >
+<style>
 .multiselect__option--highlight #red {
 	background: red;
 }
