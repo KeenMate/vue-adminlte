@@ -1,20 +1,19 @@
 <template>
-	<div class="container mw-100 m-100">
+	<div class="mw-100 m-100">
 		<div class="input-group w-100 mb-3">
 			<div class="input-group-prepend">
 				<div class="input-group-text">
 					<i v-if="withTime" class="fa fa-clock"></i>
-					<i v-if="!withTime" class="fa fa-calendar"></i>
+					<i v-else class="fa fa-calendar"></i>
 				</div>
 			</div>
 			<input
+				ref="input"
+				v-bind="$attrs"
 				type="text"
 				:id="id"
-				class="form-control"
-				ref="input"
 				:value="value"
-				v-on:change="onDateRangeChanged"
-				v-on:input="onDateRangeChanged"
+				class="form-control"
 			/>
 		</div>
 	</div>
