@@ -88,7 +88,7 @@
 							label="name"
 							track-by="name"
 							class="has-text-danger"
-							style="color: blue;"
+							style="color: blue"
 						></multiselect>
 					</div>
 					<!-- Multu select with seatch-->
@@ -102,7 +102,7 @@
 							label="name"
 							track-by="name"
 							class="has-text-success"
-							style="color: yellow;"
+							style="color: yellow"
 						></multiselect>
 					</div>
 				</div>
@@ -187,12 +187,20 @@
 						</div>
 						<div class="d-flex flex-column bd-highlight mb-1">
 							<label class="mb-0">Date range :</label>
-							<lte-date-range-picker id="admitLteLteDateRangePicker" />
+							<lte-date-range-picker
+								id="admitLteLteDateRangePicker"
+								:start-date.sync="firstStart"
+								:end-date.sync="firstEnd"
+							/>
 						</div>
 						<div class="d-flex flex-column bd-highlight mb-1">
 							<label class="mb-0">Date and time range :</label>
 						</div>
-						<lte-date-range-picker :withTime="true" />
+						<lte-date-range-picker
+							:start-date.sync="secondStart"
+							:end-date.sync="secondEnd"
+							withTime
+						/>
 						<div class="d-flex flex-column bd-highlight mb-1">
 							<label class="mb-0">Date range picker</label>
 							<lte-date-range-button
@@ -235,14 +243,14 @@
 										id="customcheckbox1"
 										value
 										checked
-										style="width: 25px; height: 25px;"
+										style="width: 25px; height: 25px"
 									/>
 									<input
 										class="form-input mr-1"
 										type="checkbox"
 										id="customcheckbox2"
 										value
-										style="width: 25px; height: 25px;"
+										style="width: 25px; height: 25px"
 									/>
 									<input
 										class="form-input mr-1"
@@ -250,7 +258,7 @@
 										id="customcheckbox3"
 										value
 										disabled
-										style="width: 25px; height: 25px;"
+										style="width: 25px; height: 25px"
 									/>
 									<label>primary check box</label>
 								</div>
@@ -266,46 +274,44 @@
 	</page>
 </template>
 
-
 <script>
 import Vue from "vue"
 import Multiselect from "vue-multiselect"
-import dualListBox from "../../../src/components/forms/DualListBox"
 import VueTheMask from "vue-the-mask"
 
 import ColourPicker from "vue-colour-picker"
 import Cleave from "cleave.js"
-import LteCalendar from "../../../src/components/forms/LteCalendar"
-import LteDateRangePicker from "../../../src/components/forms/LteDateRangePicker"
-import LteDateRangeButton from "../../../src/components/forms/LteDateRangeButton"
+
+import moment from "moment"
+
 Vue.use(VueTheMask)
 
 Vue.directive("cleave", {
-	inserted: (el, binding) => {
+	inserted(el, binding) {
 		el.cleave = new Cleave(el, binding.value || {})
 	},
-	update: (el) => {
+	update(el) {
 		const event = new Event("input", {bubbles: true})
-		setTimeout(function () {
+		setTimeout(() => {
 			el.value = el.cleave.properties.result
 			el.dispatchEvent(event)
 		}, 100)
-	},
+	}
 })
 export default {
 	name: "AdvancedElements",
 	components: {
 		Multiselect,
-		dualListBox,
 		VueTheMask,
 		ColourPicker,
-		Cleave,
-		LteCalendar,
-		LteDateRangePicker,
-		LteDateRangeButton,
+		Cleave
 	},
 	data() {
 		return {
+			firstStart: moment(),
+			firstEnd: moment().add(10, "days"),
+			secondStart: moment().subtract(30, "minutes"),
+			secondEnd: moment(),
 			isDisabled: true,
 			multiselectValue: null,
 			singleselectvalue: null,
@@ -313,13 +319,13 @@ export default {
 				{name: "AAA"},
 				{name: "BBB"},
 				{name: "CCC"},
-				{name: "DDD"},
+				{name: "DDD"}
 			],
 			SelectOptionsWdisabled: [
 				{name: "AAA"},
 				{name: "BBB"},
 				{name: "CCC", $isDisabled: true},
-				{name: "DDD"},
+				{name: "DDD"}
 			],
 			ListBox1: [
 				"James",
@@ -343,16 +349,16 @@ export default {
 				"Richard2",
 				"Joseph2",
 				"Thomas2",
-				"Charles2",
+				"Charles2"
 			],
 			date: new Date(),
 			range: {
 				start: null, // Jan 16th, 2019
-				end: null, // Jan 19th, 2020
+				end: null // Jan 19th, 2020
 			},
 			rangeWithTime: {
 				start: "",
-				end: "",
+				end: ""
 			},
 			DateRangePickerOprions: [
 				"Today",
@@ -360,15 +366,15 @@ export default {
 				"Last 7 Days",
 				"Last 30 Days",
 				"This month",
-				"Last month",
+				"Last month"
 			],
 			DateRangePickerValue: "",
 			color: {
-				hex: "#000000",
+				hex: "#000000"
 			},
-			Time: "",
+			Time: ""
 		}
-	},
+	}
 }
 </script>
 

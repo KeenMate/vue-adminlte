@@ -47,7 +47,7 @@ export default {
 	mounted() {
 		$(() => {
 			//last 30 days is default
-			var start = moment().subtract(29, "days")
+			var start = moment().subtract(1, "month")
 			var end = moment()
 
 			$(this.$refs.reportrange).daterangepicker(
