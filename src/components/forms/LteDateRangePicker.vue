@@ -74,6 +74,7 @@ export default {
 				startDate: moment(this.startDate),
 				endDate: moment(this.endDate),
 				locale: this.locale,
+				...this.$attrs
 			}, this.onDateRangeChanged)
 			// $(this.$refs.input).on("apply.daterangepicker", this.onDateRangeChanged)
 		},
