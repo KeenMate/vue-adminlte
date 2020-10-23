@@ -1,6 +1,6 @@
 <template>
 	<div class="mw-100 m-100">
-		<div class="input-group w-100 mb-3">
+		<div class="input-group w-100">
 			<div class="input-group-prepend">
 				<div class="input-group-text">
 					<i v-if="withTime" class="fa fa-clock"></i>
