@@ -4,7 +4,7 @@
 		<div class="content-wrapper">
 			<slot name="header"></slot>
 			<section class="content">
-				<div class="container-fluid">
+				<div :class="['container-fluid', isFullheight && 'h-100']">
 					<slot></slot>
 				</div>
 			</section>
@@ -23,7 +23,12 @@ export default {
 		 * determines whether to display indeterminate loader or not
 		 * Alternatively can be set on app-container (and not here)
 		 */
-		isLoading: Boolean
+		isLoading: Boolean,
+
+		/**
+		 * @description Adds height 100% to parent of default slot
+		 */
+		isFullheight: Boolean
 	}
 }
 </script>
