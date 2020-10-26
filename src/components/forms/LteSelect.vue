@@ -17,7 +17,7 @@
 					:multiple="isMultiple"
 					:disabled="isDisabled"
 					:value="value"
-					v-on="$listeners"
+					v-on="listenersWithoutInput"
 					@input="$emit('input', $event.target.value)"
 				>
 					<slot></slot>
@@ -61,6 +61,16 @@ export default {
 		...FormInputStylesProps
 	},
 	computed: {
+		listenersWithoutInput() {
+			return Object.keys(this.$listeners)
+				.reduce((acc, listenKey) => {
+					if (listenKey === "input")
+						return acc
+					
+					acc[listenKey] = this.$listeners[listenKey]
+					return acc
+				}, {})
+		},
 		computedFeedback() {
 			const invalid = this.computedInvalidity
 			const valid = this.computedValidity
