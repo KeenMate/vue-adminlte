@@ -107,7 +107,6 @@ export default {
 		farIcon: String,
 		isSmall: Boolean,
 		isLarge: Boolean,
-
 		...FormInputStylesProps,
 		isDisabled: Boolean,
 		isReadonly: Boolean,
