@@ -24,6 +24,7 @@
 					:disabled="isDisabled"
 					:rows="rows"
 					:cols="cols"
+					:readonly="isReadonly"
 					v-on="{...$listeners, input: (ev) => $emit('input', ev.target.value)}"
 				></textarea>
 				<input
@@ -36,6 +37,7 @@
 					:value="value"
 					:disabled="isDisabled"
 					:pattern="pattern"
+					:readonly="isReadonly"
 					v-on="{...$listeners, input: (ev) => $emit('input', ev.target.value)}"
 				/>
 				<FormInputFeedback
@@ -108,6 +110,7 @@ export default {
 
 		...FormInputStylesProps,
 		isDisabled: Boolean,
+		isReadonly: Boolean,
 		isTextarea: Boolean,
 
 		/**
