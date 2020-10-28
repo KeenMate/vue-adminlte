@@ -52,7 +52,7 @@ export default {
 	computed: {
 		filteredListeners() {
 			return Object.keys(this.$listeners)
-				.filter(x => ["click", "input"].includes(x))
+				.filter(x => !["click", "input"].includes(x))
 				.reduce((acc, key) => Object.assign(acc, {[key]: this.$listeners[key]}), {})
 		}
 	}
