@@ -6,7 +6,7 @@
 
 <script>
 export default {
-	name: "Progress",
+	name: "LteProgress",
 	props: {
 		percentage: [String, Number]
 	},

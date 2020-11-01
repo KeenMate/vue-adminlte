@@ -49,7 +49,7 @@ export { default as ButtonGroup } from "./ui/buttons/ButtonGroup.vue"
 export { default as LteButton } from "./ui/buttons/LteButton.vue"
 export { default as Badge } from "./ui/Badge.vue"
 export { default as CardTabs } from "./ui/CardTabs.vue"
-export { default as Progress } from "./ui/Progress.vue"
+export { default as LteProgress } from "./ui/LteProgress.vue"
 
 export { default as MultiError } from "./validation/MultiError.vue"
 
