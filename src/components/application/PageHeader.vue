@@ -67,8 +67,11 @@ export default {
 			return this.$route.matched
 				.filter(x => x.meta && x.meta.breadcrumb)
 				.map(x => ({
-					to: x,
-					text: x.meta && x.meta.breadcrumb || ""
+					to: {
+						name: x.name,
+						params: this.$route.params
+					},
+					text: x.meta && x.meta.breadcrumb
 				}))
 		}
 	}
