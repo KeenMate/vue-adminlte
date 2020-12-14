@@ -1,12 +1,14 @@
 <template>
 	<div class="form-check">
 		<input
+			v-bind="$attrs"
 			:type="type"
 			:class="['form-check-input', ...inputStyles]"
 			:id="inputId"
 			:checked="value"
 			:disabled="isDisabled"
 			:readonly="isReadonly"
+			v-on="filteredListeners"
 			@click="onClick"
 			@input="onInput"
 		/>
@@ -47,6 +49,13 @@ export default {
 			return false
 		}
 	},
+	computed: {
+		filteredListeners() {
+			return Object.keys(this.$listeners)
+				.filter(x => !["click", "input"].includes(x))
+				.reduce((acc, key) => Object.assign(acc, {[key]: this.$listeners[key]}), {})
+		}
+	}
 }
 </script>
 
