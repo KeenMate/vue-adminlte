@@ -59,7 +59,7 @@ export default {
 
 <style lang="scss" scoped>
 .badge-group {
-	display: flex;
+	display: inline-flex;
 
 	& > .badge {
 		&:first-child:not(:only-child) {
