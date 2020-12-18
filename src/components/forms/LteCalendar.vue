@@ -4,23 +4,20 @@
 			<div class="col-sm-6 w-100 mw-100 d-flex" style="flex-basis: 100%;">
 				<div class="form-group w-100">
 					<div
-						class="input-group date"
 						ref="dtpicker"
 						:id="id"
+						class="input-group date"
 						data-target-input="nearest"
 					>
 						<input
+							v-bind="$attrs"
+							:data-target="`#${id}`"
 							type="text"
 							class="form-control datetimepicker-input"
-							:data-target="idWHastag"
-							v-model="value"
-							v-on:change="signalChange"
-							v-on:input="signalChange"
-							ref="input"
 						/>
 						<div
+							:data-target="`#${id}`"
 							class="input-group-append"
-							:data-target="idWHastag"
 							data-toggle="datetimepicker"
 						>
 							<div class="input-group-text">
@@ -35,85 +32,89 @@
 </template>
 
 <script>
-import Cleave from "vue-cleave-component"
-import $ from "jquery"
 import Vue from "vue"
+import $ from "jquery"
+import Cleave from "vue-cleave-component"
+import m from "moment"
+
 Vue.use(Cleave)
+
 export default {
 	name: "LteCalendar",
-	component: {
-		Cleave,
-	},
 	props: {
 		/**
-		 * @type {String}
-		 * @description L = Dateonly |LT = TimeOnly
+		 * @type {"L" | "LT"}
 		 */
 		format: String,
+
 		/**
-		 *@type {Array}
+		 *@type {string[]}
 		 *@description array of disbled dates (string)
 		 */
 		disabledDates: Array,
 
 		/**
-		 * @type {Array}
+		 * @type {number[]}
 		 * @description array 0-6
 		 */
 		disabledDaysOfWeek: Array,
+
 		/**
-		 * @type {String}
 		 * @description See momentjs for valid locales.
 		 */
-		locale: {
-			type: String,
-			default: "cs",
-		},
+		locale: String,
+
 		/**
-		 * @type {String}
-		 * @description index of LteCalendar
+		 * @description id of LteCalendar
 		 */
 		id: String,
+
+		value: [Date, String],
+
 		/**
-		 * @type {String}
-		 * @description selected date
+		 * @description Whether or not the clock should be displayed
 		 */
-		value: String,
+		withTime: Boolean
 	},
 	watch: {
-		format() {
-			// watch it
-			this.$forceUpdate()
+		value(val) {
+			this.getDatePicker().datetimepicker("date", m(val))
 		},
-		value() {},
+		format(val) {
+			this.getDatePicker().datetimepicker("format", val)
+		}
 	},
-
 	mounted() {
 		this.datetimepicker()
 	},
-	updated() {
-		this.datetimepicker()
-		this.$emit("change", this.value)
-	},
 	methods: {
 		datetimepicker() {
-			$(this.$refs.dtpicker).datetimepicker({
+			this.getDatePicker().datetimepicker({
+				timepicker: this.withTime,
 				locale: this.locale,
 				format: this.format,
 				disabledDates: this.disabledDates,
 				daysOfWeekDisabled: this.disabledDaysOfWeek,
+				useCurrent: false
 			})
-			$(this.$refs.dtpicker).on("change.datetimepicker", this.signalChange)
+			
+			// const vm = this
+			$(this.$refs.dtpicker).on("change.datetimepicker", ({oldDate, date}) => {
+				this.$emit("input", date && date.toDate() || null)
+			})
 		},
-
-		signalChange() {
-			this.$emit("input", this.value)
-		},
+		getDatePicker() {
+			return $(this.$refs.dtpicker)
+		}
 	},
 	computed: {
-		idWHastag() {
-			return "#" + this.id
-		},
-	},
+		stringValue() {
+			if (typeof this.value === "string")
+				return this.value
+			
+			if (this.value instanceof Date)
+				return this.value.toISOString()
+		}
+	}
 }
 </script>

@@ -184,7 +184,12 @@
 					<card title="Date picker" is-info>
 						<div class="d-flex flex-column bd-highlight mb-1">
 							<label class="mb-0">Date:</label>
-							<lte-calendar format="L" id="adminLteVCalendar"></lte-calendar>
+							<lte-calendar
+								v-model="calendarValue"
+								id="v-calendar-1"
+								format="yyyy-MM-DD HH:mm"
+								placeholder="Enter some date"
+							/>
 						</div>
 						<div class="d-flex flex-column bd-highlight mb-1">
 							<label class="mb-0">Date range :</label>
@@ -373,7 +378,8 @@ export default {
 			color: {
 				hex: "#000000"
 			},
-			Time: ""
+			Time: "",
+			calendarValue: null
 		}
 	}
 }
