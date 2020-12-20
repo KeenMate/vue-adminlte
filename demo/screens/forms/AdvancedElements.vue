@@ -187,7 +187,7 @@
 							<lte-calendar
 								v-model="calendarValue"
 								id="v-calendar-1"
-								format="yyyy-MM-DD HH:mm"
+								format="yyyy/MM/DD HH:mm"
 								placeholder="Enter some date"
 							/>
 						</div>
@@ -379,7 +379,7 @@ export default {
 				hex: "#000000"
 			},
 			Time: "",
-			calendarValue: null
+			calendarValue: "2020-01-12T18:33:00Z"
 		}
 	}
 }

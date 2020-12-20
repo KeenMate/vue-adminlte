@@ -88,7 +88,7 @@ export default {
 		this.datetimepicker()
 	},
 	methods: {
-		datetimepicker() {
+		async datetimepicker() {
 			this.getDatePicker().datetimepicker({
 				timepicker: this.withTime,
 				locale: this.locale,
@@ -102,6 +102,9 @@ export default {
 			$(this.$refs.dtpicker).on("change.datetimepicker", ({oldDate, date}) => {
 				this.$emit("input", date && date.toDate() || null)
 			})
+
+			await this.$nextTick()
+			this.getDatePicker().datetimepicker("date", m(this.value))
 		},
 		getDatePicker() {
 			return $(this.$refs.dtpicker)
