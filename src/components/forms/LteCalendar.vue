@@ -90,6 +90,9 @@ export default {
 	},
 	methods: {
 		onInput(ev) {
+			if (!ev.target.value)
+				return ev.target.value
+
 			const parsedDate = m(ev.target.value)
 			if (!parsedDate._isValid)
 				return
