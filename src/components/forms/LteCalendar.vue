@@ -14,6 +14,7 @@
 							:data-target="`#${id}`"
 							type="text"
 							class="form-control datetimepicker-input"
+							@input="onInput"
 						/>
 						<div
 							:data-target="`#${id}`"
@@ -88,6 +89,13 @@ export default {
 		this.datetimepicker()
 	},
 	methods: {
+		onInput(ev) {
+			const parsedDate = m(ev.target.value)
+			if (!parsedDate._isValid)
+				return
+
+			this.$emit("input", parsedDate.toDate())
+		},
 		async datetimepicker() {
 			this.getDatePicker().datetimepicker({
 				timepicker: this.withTime,
@@ -100,7 +108,9 @@ export default {
 			
 			// const vm = this
 			$(this.$refs.dtpicker).on("change.datetimepicker", ({oldDate, date}) => {
-				this.$emit("input", date && date.toDate() || null)
+				if (!date || date.isSame(this.value, "second"))
+					return
+				this.$emit("input", date.toDate())
 			})
 
 			await this.$nextTick()
