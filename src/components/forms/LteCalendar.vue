@@ -14,7 +14,7 @@
 							:data-target="`#${id}`"
 							type="text"
 							class="form-control datetimepicker-input"
-							@input="onInput"
+							@change="onChange"
 						/>
 						<div
 							:data-target="`#${id}`"
@@ -107,7 +107,7 @@ export default {
 		this.datetimepicker()
 	},
 	methods: {
-		onInput(ev) {
+		onChange(ev) {
 			if (!ev.target.value)
 				return ev.target.value
 
