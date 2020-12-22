@@ -54,6 +54,9 @@ export default {
 		 */
 		disabledDates: Array,
 
+		startDate: [String, Date, m],
+		endDate: [String, Date, m],
+
 		/**
 		 * @type {number[]}
 		 * @description array 0-6
@@ -70,7 +73,7 @@ export default {
 		 */
 		id: String,
 
-		value: [Date, String],
+		value: [Date, String, m],
 
 		/**
 		 * @description Whether or not the clock should be displayed
@@ -104,6 +107,8 @@ export default {
 				timepicker: this.withTime,
 				locale: this.locale,
 				format: this.format,
+				startDate: this.startDate && m(this.startDate) || null,
+				endDate: this.endDate && m(this.endDate) || null,
 				disabledDates: this.disabledDates,
 				daysOfWeekDisabled: this.disabledDaysOfWeek,
 				useCurrent: false
