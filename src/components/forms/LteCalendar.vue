@@ -126,7 +126,8 @@ export default {
 				endDate: this.endDate && m(this.endDate) || null,
 				disabledDates: this.disabledDates,
 				daysOfWeekDisabled: this.disabledDaysOfWeek,
-				useCurrent: false
+				useCurrent: false,
+				icons: this.icons || null
 			})
 			
 			// const vm = this
