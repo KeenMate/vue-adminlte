@@ -54,7 +54,16 @@ export default {
 		 */
 		disabledDates: Array,
 
+		/**
+		 * @type {string | Date | Moment}
+		 * @description Used to restrict what value can be entered using calendar popup
+		 */
 		startDate: [String, Date, m],
+
+		/**
+		 * @type {string | Date | Moment}
+		 * @description Used to restrict what value can be entered using calendar popup
+		 */
 		endDate: [String, Date, m],
 
 		/**
@@ -78,7 +87,13 @@ export default {
 		/**
 		 * @description Whether or not the clock should be displayed
 		 */
-		withTime: Boolean
+		withTime: Boolean,
+
+		/**
+		 * @type {object}
+		 * @description Used to alter icons of LteCalendar
+		 */
+		icons: Object
 	},
 	watch: {
 		value(val) {
