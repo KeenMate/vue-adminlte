@@ -145,7 +145,7 @@ export default {
 		momentDateToNativeDate(momentDate) {
 			return momentDate
 				.utc(this.inputIsUtc)
-				.toDate()
+				.format()
 		},
 		getDatePicker() {
 			return $(this.$refs.dtpicker)
@@ -155,7 +155,8 @@ export default {
 		stringValue() {
 			if (typeof this.value === "string")
 				return this.value
-			
+			if (this.value instanceof m)
+				return this.value.format()
 			if (this.value instanceof Date)
 				return this.value.toISOString()
 		}
