@@ -93,7 +93,9 @@ export default {
 		 * @type {object}
 		 * @description Used to alter icons of LteCalendar
 		 */
-		icons: Object
+		icons: Object,
+	
+		inputIsUtc: Boolean
 	},
 	watch: {
 		value(val) {
@@ -115,7 +117,7 @@ export default {
 			if (!parsedDate._isValid)
 				return
 
-			this.$emit("input", parsedDate.toDate())
+			this.$emit("input", this.momentDateToNativeDate(parsedDate))
 		},
 		async datetimepicker() {
 			this.getDatePicker().datetimepicker({
@@ -134,11 +136,16 @@ export default {
 			$(this.$refs.dtpicker).on("change.datetimepicker", ({oldDate, date}) => {
 				if (!date || date.isSame(this.value, "second"))
 					return
-				this.$emit("input", date.toDate())
+				this.$emit("input", this.momentDateToNativeDate(date))
 			})
 
 			await this.$nextTick()
 			this.getDatePicker().datetimepicker("date", m(this.value))
+		},
+		momentDateToNativeDate(momentDate) {
+			return momentDate
+				.utc(this.inputIsUtc)
+				.toDate()
 		},
 		getDatePicker() {
 			return $(this.$refs.dtpicker)
