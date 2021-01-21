@@ -82,7 +82,7 @@ export default {
 		 */
 		id: String,
 
-		value: [Date, String, m],
+		value: [Date, String, m, Object],
 
 		/**
 		 * @description Whether or not the clock should be displayed
@@ -95,11 +95,14 @@ export default {
 		 */
 		icons: Object,
 	
-		inputIsUtc: Boolean
+		inputIsUtc: Boolean,
+		keepLocalTime: Boolean
 	},
 	watch: {
 		value(val) {
-			this.getDatePicker().datetimepicker("date", m(val))
+			console.log("value changed", val)
+			const momentDate = (val && val._isAMomentObject) && val || this.stringToMoment(val)
+			this.setMomentDate(momentDate)
 		},
 		format(val) {
 			this.getDatePicker().datetimepicker("format", val)
@@ -109,18 +112,31 @@ export default {
 		this.datetimepicker()
 	},
 	methods: {
+		setMomentDate(momentDate) {
+			console.log("setting moment date", momentDate)
+			this.getDatePicker().datetimepicker("date", this.inputIsUtc && momentDate.utc(this.keepLocalTime) || momentDate)
+		},
+		getMomentValue() {
+			if (this.value && this.value._isAMomentObject)
+				return this.value
+			return this.stringToMoment(this.value)
+		},
 		onChange(ev) {
-			if (!ev.target.value)
-				return ev.target.value
+			const value = ev.target.value
+			console.log("on change event", value)
 
-			const parsedDate = m(ev.target.value)
-			if (!parsedDate._isValid)
+			if (!value)
 				return
 
-			this.$emit("input", this.momentDateToNativeDate(parsedDate))
+			const parsedMomentDate = this.stringToMoment(value)
+			if (!parsedMomentDate._isValid)
+				return
+
+			this.$emit("input", parsedMomentDate)
 		},
 		async datetimepicker() {
-			this.getDatePicker().datetimepicker({
+			const $datepicker = this.getDatePicker()
+			$datepicker.datetimepicker({
 				timepicker: this.withTime,
 				locale: this.locale,
 				format: this.format,
@@ -129,36 +145,43 @@ export default {
 				disabledDates: this.disabledDates,
 				daysOfWeekDisabled: this.disabledDaysOfWeek,
 				useCurrent: false,
-				icons: this.icons || null
+				icons: this.icons || {}
 			})
 			
 			// const vm = this
-			$(this.$refs.dtpicker).on("change.datetimepicker", ({oldDate, date}) => {
-				if (!date || date.isSame(this.value, "second"))
+			$(this.$refs.dtpicker).on("change.datetimepicker", ev => {
+				const {oldDate, date} = ev
+
+				if (ev.target.nodeName === "INPUT")
 					return
-				this.$emit("input", this.momentDateToNativeDate(date))
+
+				console.log("datepicker on change date", ev, date, this.getMomentValue(), oldDate)
+
+				if (!date || date.isSame(this.getMomentValue(), "second"))
+					return
+				this.$emit("input", date)
 			})
 
 			await this.$nextTick()
-			this.getDatePicker().datetimepicker("date", m(this.value))
+			this.setMomentDate(this.getMomentValue())
 		},
-		momentDateToNativeDate(momentDate) {
-			return momentDate
-				.utc(this.inputIsUtc)
-				.format()
+		stringToMoment(value) {
+			if (!value)
+				return
+
+			const momentDate = m(value, this.format)
+
+			if (!this.inputIsUtc)
+				return momentDate
+
+			return momentDate.utc(this.keepLocalTime)
 		},
 		getDatePicker() {
 			return $(this.$refs.dtpicker)
 		}
 	},
-	computed: {
-		stringValue() {
-			if (typeof this.value === "string")
-				return this.value
-			if (this.value instanceof m)
-				return this.value.format()
-			if (this.value instanceof Date)
-				return this.value.toISOString()
+	data() {
+		return {
 		}
 	}
 }
