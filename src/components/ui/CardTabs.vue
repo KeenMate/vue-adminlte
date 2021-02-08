@@ -51,5 +51,10 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+li.nav-item {
+	&:hover {
+		cursor: pointer;
+	}
+}
 </style>
