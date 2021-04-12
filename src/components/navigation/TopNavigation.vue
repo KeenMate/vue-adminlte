@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import {PushMenu} from "../../vendors/adminlte/js/adminlte.esm"
+// import {PushMenu} from "../../vendors/adminlte/js/adminlte.esm"
 
 export default {
 	name: "TopNavigation",
@@ -49,14 +49,14 @@ export default {
 	mounted() {
 		// this.pushMenu = import("AdminLTE/build/js/PushMenu.js")
 		// this.pushMenu = import("../../vendors/adminlte/build/js/PushMenu.js")
-		if (!this.noBars) {
-			this.pushMenu = new PushMenu(this.$refs.bars, {
-				"autoCollapseSize": 992,
-				"enableRemember": false,
-				"noTransitionAfterReload": true,
-				"widget": "pushmenu"
-			})
-		}
+		// if (!this.noBars) {
+		// 	this.pushMenu = new PushMenu(this.$refs.bars, {
+		// 		"autoCollapseSize": 992,
+		// 		"enableRemember": false,
+		// 		"noTransitionAfterReload": true,
+		// 		"widget": "pushmenu"
+		// 	})
+		// }
 	},
 	data() {
 		return {
