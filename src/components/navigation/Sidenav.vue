@@ -26,7 +26,6 @@ import $ from "jquery"
 export default {
 	name: "Sidenav",
 	mounted() {
-		// this.treeview = import("AdminLTE/build/js/Treeview.js")
 		this.treeview = Treeview($)
 	},
 	data() {
