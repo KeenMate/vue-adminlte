@@ -50,7 +50,7 @@ export default {
 		// this.pushMenu = import("AdminLTE/build/js/PushMenu.js")
 		// this.pushMenu = import("../../vendors/adminlte/build/js/PushMenu.js")
 		if (!this.noBars) {
-			PushMenu(this.$refs.bars, {
+			this.pushMenu = new PushMenu(this.$refs.bars, {
 				"autoCollapseSize": 992,
 				"enableRemember": false,
 				"noTransitionAfterReload": true,
