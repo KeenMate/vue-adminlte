@@ -3,7 +3,7 @@
 		<!-- Left navbar links -->
 		<ul class="navbar-nav">
 			<li v-if="!noBars" class="nav-item" @click="$emit('toggle-sidenav')">
-				<a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+				<a ref="bars" class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
 			</li>
 			<slot></slot>
 		</ul>
@@ -19,6 +19,8 @@
 </template>
 
 <script>
+import {PushMenu} from "../../vendors/adminlte/js/adminlte.esm"
+
 export default {
 	name: "TopNavigation",
 	props: {
@@ -30,9 +32,10 @@ export default {
 			const classes = ["main-header navbar navbar-expand"]
 
 			if (this.backgroundColor) {
-				if (["primary", "secondary", "info", "success", "danger", "indigo", "purple", "pink", "navy", "lightblue", "teal", "cyan", "dark", "gray-dark", "gray"].includes(this.backgroundColor))
+				if (["primary", "secondary", "info", "success", "danger", "indigo", "purple", "pink", "navy", "lightblue", "teal", "cyan", "dark", "gray-dark", "gray"]
+					.includes(this.backgroundColor))
 					classes.push("navbar-dark")
-				
+
 				if (["light", "warning", "white", "orange"].includes(this.backgroundColor))
 					classes.push("navbar-light")
 
@@ -46,6 +49,14 @@ export default {
 	mounted() {
 		// this.pushMenu = import("AdminLTE/build/js/PushMenu.js")
 		// this.pushMenu = import("../../vendors/adminlte/build/js/PushMenu.js")
+		if (!this.noBars) {
+			PushMenu(this.$refs.bars, {
+				"autoCollapseSize": 992,
+				"enableRemember": false,
+				"noTransitionAfterReload": true,
+				"widget": "pushmenu"
+			})
+		}
 	},
 	data() {
 		return {
