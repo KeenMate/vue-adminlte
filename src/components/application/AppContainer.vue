@@ -10,7 +10,6 @@
 					<slot name="navbar-right"></slot>
 				</template>
 			</top-navigation>
-			<!-- <sidenav v-if="$scopedSlots['side-nav']"> -->
 			<slot name="side-nav"></slot>
 			<!-- </sidenav> -->
 			<km-loader v-if="isLoading" />

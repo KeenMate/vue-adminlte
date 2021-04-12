@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import {Treeview} from "../../vendors/adminlte/js/adminlte.esm"
+import {Treeview} from "AdminLTE/js/adminlte.esm"
 import $ from "jquery"
 
 export default {
