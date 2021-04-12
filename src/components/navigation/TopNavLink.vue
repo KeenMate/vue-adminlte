@@ -51,7 +51,7 @@ export default {
 			return classes
 		},
 		liClasses() {
-			const classes = ["nav-item d-inline-block"]
+			const classes = ["nav-item d-none d-sm-inline-block"]
 
 			this.isDropdown && classes.push("dropdown")
 
