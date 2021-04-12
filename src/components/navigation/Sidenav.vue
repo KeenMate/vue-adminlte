@@ -19,7 +19,8 @@
 </template>
 
 <script>
-import {Treeview} from "AdminLTE/js/adminlte.esm"
+// noinspection ES6PreferShortImport
+import {Treeview} from "../../vendors/adminlte/js/adminlte.esm"
 import $ from "jquery"
 
 export default {
