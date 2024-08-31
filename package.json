@@ -100,7 +100,7 @@
 		"vuedraggable": "^2.23.2",
 		"vuepress": "^1.5.2",
 		"vuepress-plugin-autometa": "^0.1.13",
-		"webpack": "^4.44.0"
+		"webpack": "^5.94.0"
 	},
 	"jsdelivr": "dist/vue-adminlte.umd.min.js",
 	"sideeffects": false
